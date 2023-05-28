@@ -8,7 +8,5 @@ print("Here are some age facts, " + name + ":")
 age = year - birth_year
 
 print("You are ~" + str(age) + " years old.")
-
 print("You were ~" + str(y2k - birth_year) + " years old when Y2K happened.")
-
 print("You are approximately " + str(age * 365 * 24 * 60 * 60) + " seconds old!")
