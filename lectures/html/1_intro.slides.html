@@ -16165,7 +16165,7 @@ Cell <span class="ansi-green-fg">In[4], line 1</span>
 </div>
 </div>
 </div>
-</div><div class="fragment" ><div id="cell-id=ca9c2851" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=ca9c2851" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16204,7 +16204,7 @@ Cell <span class="ansi-green-fg">In[4], line 1</span>
 
 </div>
 
-</div></div><div class="fragment" ><div id="cell-id=5bbfd0a1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=5bbfd0a1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16243,7 +16243,7 @@ Cell <span class="ansi-green-fg">In[4], line 1</span>
 
 </div>
 
-</div></div><div class="fragment" ><div id="cell-id=c9fc78fa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=c9fc78fa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16282,7 +16282,7 @@ a		box
 
 </div>
 
-</div></div><div class="fragment" ><div id="cell-id=20c342bb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=20c342bb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16321,7 +16321,131 @@ complicated\interesting
 
 </div>
 
-</div></div></section></section>
+</div></section></section><section ><section >
+<div id="cell-id=ac6467cb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Tracing-&amp;-Debugging">Tracing &amp; Debugging<a class="anchor-link" href="#Tracing-&amp;-Debugging">&#182;</a></h1><ul>
+<li>Often, your code won't work as expected (or at all)</li>
+<li>&quot;Debugging&quot; - finding and fixing the errors - is a skill on its own</li>
+<li>You also won't always be working with code YOU wrote - you need practice in deciphering others' code</li>
+<li>You'll spend almost as much time on tracing &amp; debugging assignments as you will writing your own code in this class.</li>
+<li>We'll cover some basic, but widely useful strategies during the semester</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=ffbce638" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Step-thru-debugging">Step-thru debugging<a class="anchor-link" href="#Step-thru-debugging">&#182;</a></h2><p>repl.it: <a href="https://replit.com/@cosi-10a-fall23/Strings-practice#main.py">Lecture 1 exercises: Strings Practice</a></p>
+
+</div>
+</div>
+</div>
+</div></section><section ><div id="cell-id=0ad648e3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %load ../../snippets/strings_practice.py</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello!</span><span class="se">\t</span><span class="s1">I</span><span class="se">\&#39;</span><span class="s1">m a</span><span class="se">\n</span><span class="s1">complicated</span><span class="se">\\</span><span class="s1">interesting</span><span class="se">\n</span><span class="s1">\”string\”&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">a</span><span class="se">\t</span><span class="s2">b</span><span class="se">\t</span><span class="s2">c&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\\\</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;\&quot;\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C:</span><span class="se">\n</span><span class="s2">in</span><span class="se">\t</span><span class="s2">he downward spiral&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Hello!	I&#39;m a
+complicated\interesting
+\”string\”
+
+	a	b	c
+
+\\
+
+&#39;
+
+&#34;&#34;&#34;
+
+C:
+in	he downward spiral
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=d3041bc0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Open the debugging tab from the list of tools on the left</li>
+<li>Add a &quot;breakpoint&quot; by clicking in the code margins</li>
+<li>Click the play button to start your program, and the &quot;Next step&quot; arrow to move to the next line.</li>
+</ol>
+<img src="../../assets/replit_debugging.png" style="display:block; margin:auto; width: 80%;"/>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=8e88575f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section></section>
 </div>
 </div>
 </body>
