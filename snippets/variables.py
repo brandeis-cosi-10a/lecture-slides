@@ -1,8 +1,8 @@
 tetons = "mountains"
 acadia = "forests"
 
-print(answer)
 print(tetons)
+print(acadia)
 
 tetons = "beautiful"
 
