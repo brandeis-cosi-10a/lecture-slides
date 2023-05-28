@@ -8,5 +8,5 @@ print("'")
 print()
 print("\"\"\"")
 print()
-print("what is going " + str(10 * 2 - 20) + "n here?")
+print("c:\now\then\this_is_confusing")
 
