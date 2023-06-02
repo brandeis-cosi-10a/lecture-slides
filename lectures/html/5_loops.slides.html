@@ -15172,12 +15172,18 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Loops">Loops<a class="anchor-link" href="#Loops">&#182;</a></h1><p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/5_loops.ipynb">Link to interactive slides on Google Colab</a></small></p>
+<h1 id="Loops">Loops<a class="anchor-link" href="#Loops">&#182;</a></h1><style>
+section.present > section.present { 
+    max-height: 100%; 
+    overflow-y: scroll;
+}
+</style>
+<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/5_loops.ipynb">Link to interactive slides on Google Colab</a></small></p>
 
 </div>
 </div>
 </div>
-</div></section></section><section ><section ><div id="cell-id=fe39c074" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section></section><section ><section ><div id="cell-id=71eccbdb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15234,7 +15240,7 @@ div.jp-OutputPrompt {
 </div>
 
 </div></section><section >
-<div id="cell-id=80c452eb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=35fc233e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15253,7 +15259,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div id="cell-id=30784aa1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=7761130b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15292,7 +15298,7 @@ div.jp-OutputPrompt {
 </div>
 
 </div></section><section >
-<div id="cell-id=ab195645" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d0bf50fa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15302,7 +15308,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div id="cell-id=869c5d42" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=815d61e5" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15344,31 +15350,37 @@ div.jp-OutputPrompt {
 </div>
 
 </div>
-<div id="cell-id=4663401b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8b10ef58" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Today we'll talk about loops, which let you repeat sections of code.</p>
-<p>We'll learn <code>for</code>f and <code>while</code> loops, and then spend a time going through lots of different examples and exercises showing real examples of loops.</p>
+<p>We'll learn <code>for</code> and <code>while</code> loops, and then spend most of the time going through many different examples and exercises showing real examples of loops.</p>
 
 </div>
 </div>
 </div>
 </div></section><section >
-<div id="cell-id=14090d9f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6a640677" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="The-for-loop">The <code>for</code> loop<a class="anchor-link" href="#The-for-loop">&#182;</a></h1><p>(One variation):</p>
-<pre><code>for &lt;var&gt; in range(&lt;start&gt;, &lt;stop&gt;):
+<h1 id="The-for/range-loop">The <code>for/range</code> loop<a class="anchor-link" href="#The-for/range-loop">&#182;</a></h1><pre><code>for &lt;var&gt; in range(&lt;start&gt;, &lt;stop&gt;):
     statement(s)
 </code></pre>
 <ul>
-<li>A <code>for</code> loop using a <code>range</code> will <strong>iterate</strong>, or repeat, <code>&lt;stop&gt; - &lt;start&gt;</code> times.</li>
+<li><code>for</code> loops that use <code>range</code> will <strong>iterate</strong>, or repeat, a set number of times.<ul>
+<li>There are other ways to use <code>for</code>, we'll look at them later in the term.</li>
+</ul>
+</li>
+</ul>
+<br/>
+<ul>
+<li>A <code>for</code> loop that uses <code>range</code> will <strong>iterate</strong> <code>&lt;stop&gt; - &lt;start&gt;</code> times.</li>
 <li>For each <strong>iteration</strong> of the loop, <code>&lt;var&gt;</code> will be set to the next number in the sequence <code>[start, stop)</code>.<ul>
 <li>So, <code>for i in range(3, 7)</code> will <strong>iterate over</strong> the numbers: 3, 4, 5, 6</li>
 </ul>
@@ -15378,7 +15390,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div id="cell-id=c8cad9cb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=20156919" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15420,7 +15432,7 @@ div.jp-OutputPrompt {
 </div>
 
 </div></section><section >
-<div id="cell-id=b90056a4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=97566f4c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15431,7 +15443,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div id="cell-id=a8549dd2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=ade30494" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15470,7 +15482,7 @@ div.jp-OutputPrompt {
 </div>
 
 </div>
-<div id="cell-id=a7b0ed73" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0f26011d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15492,7 +15504,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div></section><section >
-<div id="cell-id=ad11ca2b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=39d76897" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15503,7 +15515,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=1bcdb81c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=66e35180" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15543,7 +15555,7 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div></section><section >
-<div id="cell-id=ce3e5435" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=139cbda1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15560,7 +15572,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div></section><section ><div id="cell-id=e7cb1d69" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=0db8ed61" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15597,7 +15609,7 @@ if <b>6</b> % 2 == 0:
 
 </div>
 
-</div><div id="cell-id=6cb5c4b3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=16917ea0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15634,7 +15646,7 @@ if <b>6</b> % 2 == 0:
 
 </div>
 
-</div></section><section ><div id="cell-id=666f0e00" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=05d4ab35" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15671,7 +15683,7 @@ if <b>6</b> % 2 == 0:
 
 </div>
 
-</div><div id="cell-id=c4378293" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=f9c3a80e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15712,7 +15724,7 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=fbe34602" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3a324b89" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15724,7 +15736,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=6e1c62b6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=f7b152bf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15764,7 +15776,7 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div></section><section >
-<div id="cell-id=553c0b0f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=88060957" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15779,7 +15791,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div></section><section >
-<div id="cell-id=943df4d9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=482242ef" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15790,7 +15802,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=4fe0dc37" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=6b6992ff" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15831,7 +15843,7 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div><div class="fragment" >
-<div id="cell-id=1c6ec1f7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=06919794" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15842,7 +15854,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=3a0cdd38" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=aaca82b7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15882,7 +15894,7 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div></div></section></section><section ><section >
-<div id="cell-id=7b7efe84" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9369463d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15893,7 +15905,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=33817351" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=9f41b674" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15937,7 +15949,7 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div></section><section >
-<div id="cell-id=aecaa0ea" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=74d8bfc5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15948,7 +15960,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=dcee867f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=d1c35fca" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15994,13 +16006,13 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=485dd2c9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f345e50f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="while-loops"><code>while</code> loops<a class="anchor-link" href="#while-loops">&#182;</a></h1><p><code>for</code> loops run for a predetermined number of iterations. There is another kind of loop - <code>while</code> - that runs until a condition becomes False.</p>
+<h1 id="while-loops"><code>while</code> loops<a class="anchor-link" href="#while-loops">&#182;</a></h1><p><code>for/range</code> loops repeat for a predetermined number of iterations. There is another kind of loop - <code>while</code> - that iterates until a condition becomes False.</p>
 <pre><code>while &lt;boolean expression&gt;:
     statement(s)
 </code></pre>
@@ -16008,7 +16020,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=2ab9c2b2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=235604dd" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16055,7 +16067,7 @@ if <b>6</b> % 2 == 0:
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=d750f58b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=118f2f47" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16067,7 +16079,7 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div><div class="fragment" >
-<div id="cell-id=7ed00385" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=11dec15c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16079,12 +16091,12 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 </div>
-</div><div id="cell-id=b2a5c46d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=84a47680" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
@@ -16101,49 +16113,8 @@ if <b>6</b> % 2 == 0:
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[17], line 4</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> answer <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">dummy</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">while</span> answer <span style="color: rgb(98,98,98)">!=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">quit</span><span style="color: rgb(175,0,0)">&#34;</span>:
-<span class="ansi-green-fg">----&gt; 4</span>     answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Type a number, or </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">quit</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)"> to stop: </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     total <span style="color: rgb(98,98,98)">=</span> total <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">int</span>(answer)
-<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sum so far:</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">str</span>(total))
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></div></section><section >
-<div id="cell-id=91bbf16a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=30178d0e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16154,12 +16125,12 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div>
-</div><div id="cell-id=153ac389" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=0287a3e6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
@@ -16176,64 +16147,25 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[18], line 2</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> total <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
-<span class="ansi-green-fg">----&gt; 2</span> answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Type a number, or </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">quit</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)"> to stop: </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">while</span> answer <span style="color: rgb(98,98,98)">!=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">quit</span><span style="color: rgb(175,0,0)">&#34;</span>:
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     total <span style="color: rgb(98,98,98)">=</span> total <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">int</span>(answer)
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section><section >
-<div id="cell-id=432b6291" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=819b81ab" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There's also another solution: set our initial &quot;dummy&quot; value to 0.</p>
+<p>This pattern is common when dealing with user input.</p>
+<p>In some cases, there's another possible solution: set our initial &quot;dummy&quot; value to 0 and re-order the statements in the loop.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=95cd8d2f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=7c2a6d52" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
@@ -16250,70 +16182,23 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Sum so far:0
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[19], line 6</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     total <span style="color: rgb(98,98,98)">=</span> total <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">int</span>(answer)
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sum so far:</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">str</span>(total))
-<span class="ansi-green-fg">----&gt; 6</span>     answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Type a number, or </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">quit</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)"> to stop: </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Sum: </span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">str</span>(total))
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=d48d7f26" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=220ca77f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note that, depending on what your loop does, this won't always be possible - sometimes the best option is to use the first pattern, where you repeat some code outside the loop.</p>
+<p>One difference here is that we printed &quot;Sum so far&quot; before the user entered any numbers.</p>
+<p>For this program, that seems ok, but it might not be for every program.</p>
+<p>Sometimes the best option is to use the first pattern, where you repeat some code outside the loop.</p>
+<p>Picking the right loop structure will take practice to master!</p>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=79d886f5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=571b90f0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16324,7 +16209,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div>
-</div><div id="cell-id=7c06d95a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=76a76759" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16340,7 +16225,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 
-</div><div id="cell-id=62503591" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=c085e1fa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16388,7 +16273,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 
 </div></section><section >
-<div id="cell-id=fe3d5f85" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2014985b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16414,7 +16299,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div></section><section >
-<div id="cell-id=45bfffdc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e7305d1f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16425,7 +16310,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div>
-</div><div id="cell-id=f0f0538c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=fbddd3bc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16473,19 +16358,20 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 
 </div></section><section >
-<div id="cell-id=943163f6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=2628cdb4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="First-question:-How-do-we-know-for-sure-it's-wrong?">First question: How do we know for sure it's wrong?<a class="anchor-link" href="#First-question:-How-do-we-know-for-sure-it's-wrong?">&#182;</a></h2><p>The probability of at least one 7 in 10 rolls is: <code>1 - (90% ^ 10)</code>, or about 65%.<br />
-We can run our function a lot of times to see if we're close!</p>
+<h2 id="First-question:-How-can-we-test-whether-it's-correct?">First question: How can we test whether it's correct?<a class="anchor-link" href="#First-question:-How-can-we-test-whether-it's-correct?">&#182;</a></h2><p>The probability of at least one <code>7</code> in 10 rolls is: <code>1 - (90% ^ 10)</code>, or about 65%.</p>
+<p>We could run the code above a bunch of times by hand, and keep a count to see if we're close...</p>
+<p>Or we can use code to do it for us!</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=fc738573" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e047ea29" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16494,11 +16380,13 @@ We can run our function a lot of times to see if we're close!</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">iterations</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">expected_sevens</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.9</span> <span class="o">**</span> <span class="mi">10</span><span class="p">))</span> <span class="o">*</span> <span class="n">iterations</span>
+
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">roll</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rolled a 7 &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">iterations</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; times&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected number of 7s is ~&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">expected_sevens</span><span class="p">)))</span>
 </pre></div>
@@ -16520,8 +16408,8 @@ We can run our function a lot of times to see if we're close!</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 9929/100000 times
-Expected number of 7s is ~65132
+<pre>Rolled a 7 1025/10000 times
+Expected number of 7s is ~6513
 </pre>
 </div>
 </div>
@@ -16531,18 +16419,18 @@ Expected number of 7s is ~65132
 </div>
 
 </div>
-<div id="cell-id=66fac332" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=982cce1f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>So, looks like we wrong... what's the logic error?</p>
+<p>The counts are way off... what's the logic error?</p>
 
 </div>
 </div>
 </div>
-</div></section><section ><div id="cell-id=2c03fd19" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=1a00cd3c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16580,7 +16468,7 @@ Expected number of 7s is ~65132
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -16589,7 +16477,7 @@ Expected number of 7s is ~65132
 
 </div>
 
-</div><div id="cell-id=1d79339d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=cb9083ab" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16600,9 +16488,11 @@ Expected number of 7s is ~65132
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">iterations</span> <span class="o">=</span> <span class="mi">100000</span>
 <span class="n">expected_sevens</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.9</span> <span class="o">**</span> <span class="mi">10</span><span class="p">))</span> <span class="o">*</span> <span class="n">iterations</span>
+
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">roll</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rolled a 7 &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">iterations</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; times&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected number of 7s is ~&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">expected_sevens</span><span class="p">)))</span>
 </pre></div>
@@ -16624,7 +16514,7 @@ Expected number of 7s is ~65132
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 65142/100000 times
+<pre>Rolled a 7 64839/100000 times
 Expected number of 7s is ~65132
 </pre>
 </div>
@@ -16635,20 +16525,20 @@ Expected number of 7s is ~65132
 </div>
 
 </div>
-<div id="cell-id=764eede7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f057b0b7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>That looks right!</p>
-<p>Returning out of loops can be tricky,</p>
+<p>Returning out of loops can be tricky. Be sure to think about whether it's ok to skip the rest of the loop iterations and the rest of the function when you return.</p>
 
 </div>
 </div>
 </div>
 </div></section></section><section ><section >
-<div id="cell-id=b4b4b845" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ab94d165" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16664,7 +16554,7 @@ Expected number of 7s is ~65132
 </div>
 </div>
 </div></section><section >
-<div id="cell-id=f6bc1787" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e16f65e9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16675,12 +16565,12 @@ Expected number of 7s is ~65132
 </div>
 </div>
 </div>
-</div><div id="cell-id=51370ab1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=5023d3d0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
@@ -16698,49 +16588,8 @@ Expected number of 7s is ~65132
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[25], line 3</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> total <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">while</span> <span class="ansi-bold" style="color: rgb(0,135,0)">True</span>:
-<span class="ansi-green-fg">----&gt; 3</span>     answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Type a number, or </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">quit</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#39;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)"> to stop: </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">quit</span><span style="color: rgb(175,0,0)">&#34;</span>:
-<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">break</span>
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=07443566" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c3c14e68" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16752,18 +16601,19 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div>
-<div id="cell-id=0362326b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=13a6474c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="continue"><code>continue</code><a class="anchor-link" href="#continue">&#182;</a></h2><p><code>continue</code> is never <strong>necessary</strong>. You can always recreate the same logic with nested <code>if/else</code> statements. But it can help improve readability by letting you avoid deep nesting of conditionals.</p>
+<h2 id="continue"><code>continue</code><a class="anchor-link" href="#continue">&#182;</a></h2><p><code>continue</code> skips the rest of the current iteration, and starts at the beginning of the next iteration (if there are any left).</p>
+<p><code>continue</code> is never <strong>necessary</strong>. You can always recreate the same logic with nested <code>if/else</code> statements. But it can help improve readability by letting you avoid deep nesting of conditionals.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=df2e1a38" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=a001c39f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16804,9 +16654,6 @@ made it! pretend this block contains lots and lots of code
 made it! pretend this block contains lots and lots of code
 made it! pretend this block contains lots and lots of code
 made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
 </pre>
 </div>
 </div>
@@ -16815,7 +16662,7 @@ made it! pretend this block contains lots and lots of code
 
 </div>
 
-</div><div id="cell-id=f0fa93be" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=c8ff9c76" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16865,6 +16712,12 @@ made it! pretend this block contains lots and lots of code
 made it! pretend this block contains lots and lots of code
 made it! pretend this block contains lots and lots of code
 made it! pretend this block contains lots and lots of code
+made it! pretend this block contains lots and lots of code
+made it! pretend this block contains lots and lots of code
+made it! pretend this block contains lots and lots of code
+made it! pretend this block contains lots and lots of code
+made it! pretend this block contains lots and lots of code
+made it! pretend this block contains lots and lots of code
 </pre>
 </div>
 </div>
@@ -16873,85 +16726,8 @@ made it! pretend this block contains lots and lots of code
 
 </div>
 
-</div><div id="cell-id=b4888d3d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=70d53f84" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">response</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<span class="k">while</span> <span class="n">response</span> <span class="o">!=</span> <span class="s2">&quot;quit&quot;</span><span class="p">:</span>
-    <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Type a word (or </span><span class="se">\&quot;</span><span class="s2">quit</span><span class="se">\&quot;</span><span class="s2"> to exit): &quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You typed a total of &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; characters.&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[28], line 5</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">while</span> response <span style="color: rgb(98,98,98)">!=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">quit</span><span style="color: rgb(175,0,0)">&#34;</span>:
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">sum</span> <span style="color: rgb(98,98,98)">+</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">len</span>(response)
-<span class="ansi-green-fg">----&gt; 5</span>     response <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Type a word (or </span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,0)">\&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">quit</span><span class="ansi-yellow-bg ansi-bold" style="color: rgb(175,95,0)">\&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)"> to exit): </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">You typed a total of </span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">str</span>(<span style="color: rgb(0,135,0)">sum</span>) <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)"> characters.</span><span style="color: rgb(175,0,0)">&#34;</span>)
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=e1344e50" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ed7bc744" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16959,7 +16735,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><ul>
 <li>Write a program that plays an adding game.<ul>
-<li>Ask user to solve random adding problems with 2-5 numbers.</li>
+<li>Ask the user to solve random addition problems with 2-5 numbers.</li>
 <li>The user gets 1 point for a correct answer, 0 for incorrect.</li>
 <li>The program stops after 3 incorrect answers.</li>
 </ul>
@@ -16970,7 +16746,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div><div class="fragment" >
-<div id="cell-id=9df74871" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1c180d3b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16992,35 +16768,26 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div>
-</div></div></section><section ><div id="cell-id=70f59bf8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section ><div id="cell-id=b38eb285" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">turn</span><span class="p">():</span>
     <span class="n">number_count</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
     <span class="n">expected_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_count</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_count</span><span class="p">):</span>
         <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
         <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; + &#39;</span><span class="p">)</span>
+        <span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span>
 
-    <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-    <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; = &#39;</span><span class="p">)</span>
-
-    <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-    
-    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">expected_sum</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! 1 point&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="kc">True</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BZZZT, wrong answer! The correct answer was: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expected_sum</span><span class="p">))</span>
-        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span> <span class="o">+</span> <span class="s2">&quot; = &quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17028,23 +16795,12 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 
-</div></section><section >
-<div id="cell-id=80e6ca03" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Let's-test-it-first">Let's test it first<a class="anchor-link" href="#Let's-test-it-first">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div><div id="cell-id=489a763f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e4ad1c19" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">turn</span><span class="p">()</span>
@@ -17067,40 +16823,8 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>17 + 20 + 11 = </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[30], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">turn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-Cell <span class="ansi-green-fg">In[29], line 14</span>, in <span class="ansi-cyan-fg">turn</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> expected_sum <span style="color: rgb(98,98,98)">=</span> expected_sum <span style="color: rgb(98,98,98)">+</span> number
-<span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(0,135,0)">print</span>(number, end<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"> = </span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-fg">---&gt; 14</span> guess <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> guess <span style="color: rgb(98,98,98)">==</span> expected_sum:
-<span class="ansi-green-intense-fg ansi-bold">     17</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct! 1 point</span><span style="color: rgb(175,0,0)">&#34;</span>)
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+<pre>17 + 15 + 7 + 15 + 16 +  = 
+</pre>
 </div>
 </div>
 
@@ -17109,7 +16833,140 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 
 </div></section><section >
-<div id="cell-id=70ab98f8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=5532fcf1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Wait, we've seen this bug before...</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" >
+<div id="cell-id=5b3bac9e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Fenceposts!</p>
+<p><code>|===|===|===|</code><br />
+<code>5 + 3 + 7 + 10</code></p>
+
+</div>
+</div>
+</div>
+</div></div></section><section ><div id="cell-id=61e83173" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">turn</span><span class="p">():</span>
+    <span class="n">number_count</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">expected_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_count</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
+        <span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span>
+
+    <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; = &quot;</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=79da7033" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">turn</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>20 + 5 + 13 + 10 = 
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section ><div id="cell-id=18d01c9f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prompt_and_check</span><span class="p">(</span><span class="n">solution</span><span class="p">):</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">solution</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! 1 point&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BZZZT, wrong answer! The correct answer was: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">solution</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">False</span>    
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=3333aa4a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prompt_and_check</span><span class="p">(</span><span class="mi">34</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section >
+<div id="cell-id=7a126ab0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17122,12 +16979,12 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div>
-</div><div id="cell-id=db6cd7a0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div id="cell-id=886dc479" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="mi">34</span> <span class="o">==</span> <span class="s2">&quot;34&quot;</span>
@@ -17146,7 +17003,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 
 
 
@@ -17161,35 +17018,23 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 
 </div>
 
-</div></section><section ><div id="cell-id=10a2b2bc" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section ><div id="cell-id=81875551" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">turn</span><span class="p">():</span>
-    <span class="n">number_count</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-    <span class="n">expected_sum</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_count</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-        <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; + &#39;</span><span class="p">)</span>
-
-    <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-    <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; = &#39;</span><span class="p">)</span>
-
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">prompt_and_check</span><span class="p">(</span><span class="n">solution</span><span class="p">):</span>
     <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
     
-    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">expected_sum</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">solution</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct! 1 point&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BZZZT, wrong answer! The correct answer was: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">expected_sum</span><span class="p">))</span>
-        <span class="k">return</span> <span class="kc">False</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BZZZT, wrong answer! The correct answer was: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">solution</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">False</span>    
 </pre></div>
 
      </div>
@@ -17197,12 +17042,58 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 
-</div></section><section ><div id="cell-id=286acc56" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=df6b5509" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">prompt_and_check</span><span class="p">(</span><span class="mi">34</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section ><div id="cell-id=03c0e74f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">turn</span><span class="p">():</span>
+    <span class="n">number_count</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">expected_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number_count</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
+        <span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; + &quot;</span>
+
+    <span class="n">number</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    <span class="n">expected_sum</span> <span class="o">=</span> <span class="n">expected_sum</span> <span class="o">+</span> <span class="n">number</span>
+    <span class="n">problem</span> <span class="o">=</span> <span class="n">problem</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">prompt_and_check</span><span class="p">(</span><span class="n">expected_sum</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=b2903c8c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">turn</span><span class="p">()</span>
@@ -17213,61 +17104,8 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>10 + 12 + 4 = </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[33], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">turn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-Cell <span class="ansi-green-fg">In[32], line 14</span>, in <span class="ansi-cyan-fg">turn</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> expected_sum <span style="color: rgb(98,98,98)">=</span> expected_sum <span style="color: rgb(98,98,98)">+</span> number
-<span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(0,135,0)">print</span>(number, end<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"> = </span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-fg">---&gt; 14</span> guess <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">int</span>(<span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>)
-<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> guess <span style="color: rgb(98,98,98)">==</span> expected_sum:
-<span class="ansi-green-intense-fg ansi-bold">     17</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct! 1 point</span><span style="color: rgb(175,0,0)">&#34;</span>)
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section><section >
-<div id="cell-id=25ed3faa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=14dce698" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17277,12 +17115,12 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 </div>
-</div><div id="cell-id=890f8ef0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=f423766e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">game</span><span class="p">():</span>
@@ -17306,84 +17144,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 </div>
 </div>
 
-</div></section><section ><div id="cell-id=70c7a2c3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Welcome to the number sum game!
-6 + 6 + 12 = </pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[35], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">game</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-
-Cell <span class="ansi-green-fg">In[34], line 8</span>, in <span class="ansi-cyan-fg">game</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> points <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-bold" style="color: rgb(0,135,0)">while</span> errors <span style="color: rgb(98,98,98)">&lt;</span> <span style="color: rgb(98,98,98)">3</span>:
-<span class="ansi-green-fg">----&gt; 8</span>     turn_result <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">turn</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> turn_result:
-<span class="ansi-green-intense-fg ansi-bold">     10</span>         points <span style="color: rgb(98,98,98)">=</span> points <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
-
-Cell <span class="ansi-green-fg">In[32], line 14</span>, in <span class="ansi-cyan-fg">turn</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> expected_sum <span style="color: rgb(98,98,98)">=</span> expected_sum <span style="color: rgb(98,98,98)">+</span> number
-<span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(0,135,0)">print</span>(number, end<span style="color: rgb(98,98,98)">=</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)"> = </span><span style="color: rgb(175,0,0)">&#39;</span>)
-<span class="ansi-green-fg">---&gt; 14</span> guess <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">int</span>(<span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>)
-<span class="ansi-green-intense-fg ansi-bold">     16</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> guess <span style="color: rgb(98,98,98)">==</span> expected_sum:
-<span class="ansi-green-intense-fg ansi-bold">     17</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct! 1 point</span><span style="color: rgb(175,0,0)">&#34;</span>)
-
-File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
-<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
-<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
-<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
-<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
-<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
-
-<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=85f57734" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section ><div id="cell-id=6c2f36e5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17391,7 +17152,7 @@ File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ip
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">game</span><span class="p">()</span>
 </pre></div>
 
      </div>
