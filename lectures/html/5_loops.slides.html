@@ -15174,7 +15174,7 @@ div.jp-OutputPrompt {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Loops">Loops<a class="anchor-link" href="#Loops">&#182;</a></h1><style>
 section.present > section.present { 
-    max-height: 100%; 
+    max-height: 90%; 
     overflow-y: scroll;
 }
 </style>
@@ -15487,7 +15487,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-</div><div id="cell-id=62ed9067" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=f089f132" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16178,10 +16178,12 @@ section.present > section.present {
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span>
+
 <span class="k">while</span> <span class="n">answer</span> <span class="o">!=</span> <span class="s2">&quot;quit&quot;</span><span class="p">:</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum so far:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
     <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Type a number, or &#39;quit&#39; to stop: &quot;</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
 </pre></div>
 
@@ -16199,8 +16201,7 @@ section.present > section.present {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>One difference here is that we printed &quot;Sum so far&quot; before the user entered any numbers.</p>
 <p>For this program, that seems ok, but it might not be for every program.</p>
-<p>Sometimes the best option is to use the first pattern, where you repeat some code outside the loop.</p>
-<p>Picking the right loop structure will take practice to master!</p>
+<p>Picking the right loop structure will take practice!</p>
 
 </div>
 </div>
@@ -16217,28 +16218,12 @@ section.present > section.present {
 </div>
 </div>
 </div>
-</div><div id="cell-id=76a76759" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="fragment" ><div id="cell-id=c085e1fa" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=c085e1fa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
@@ -16255,32 +16240,7 @@ section.present > section.present {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[21], line 7</span>
-<span class="ansi-red-fg">    </span>
-    ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> incomplete input
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
+</div></div></section><section >
 <div id="cell-id=2014985b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16288,9 +16248,7 @@ section.present > section.present {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Side-note:-generating-random-numbers">Side note: generating random numbers<a class="anchor-link" href="#Side-note:-generating-random-numbers">&#182;</a></h2><p>You can generate random integers with the function:</p>
-<pre><code>random.randint(a, b)
-   Return a random integer N such that a &lt;= N &lt;= b. 
-</code></pre>
+<p><code>random.randint(a, b)</code>: Return a random integer N such that <code>a &lt;= N &lt;= b</code>.</p>
 <ul>
 <li>In order to use this, you must add <code>import random</code> at the top of your program.</li>
 <li>This makes the random <strong>module</strong> available for use.<ul>
@@ -16356,7 +16314,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -16379,7 +16337,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-</div><div id="cell-id=e047ea29" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=e047ea29" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16416,7 +16374,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 944/10000 times
+<pre>Rolled a 7 1012/10000 times
 Expected number of 7s is ~6513
 </pre>
 </div>
@@ -16426,7 +16384,7 @@ Expected number of 7s is ~6513
 
 </div>
 
-</div>
+</div><div class="fragment" >
 <div id="cell-id=982cce1f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16438,7 +16396,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div></section><section ><div id="cell-id=1a00cd3c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div></section><section ><div id="cell-id=1a00cd3c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16453,8 +16411,6 @@ Expected number of 7s is ~6513
         <span class="k">if</span> <span class="n">roll</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="kc">False</span>
-
-<span class="n">roll</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16462,30 +16418,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=cb9083ab" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=cb9083ab" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16494,7 +16427,7 @@ Expected number of 7s is ~6513
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">iterations</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">iterations</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">expected_sevens</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.9</span> <span class="o">**</span> <span class="mi">10</span><span class="p">))</span> <span class="o">*</span> <span class="n">iterations</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">iterations</span><span class="p">):</span>
@@ -16522,8 +16455,8 @@ Expected number of 7s is ~6513
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 65399/100000 times
-Expected number of 7s is ~65132
+<pre>Rolled a 7 6460/10000 times
+Expected number of 7s is ~6513
 </pre>
 </div>
 </div>
@@ -16608,7 +16541,7 @@ Expected number of 7s is ~65132
 </div>
 </div>
 </div>
-</div>
+</div></section><section >
 <div id="cell-id=13a6474c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16621,12 +16554,12 @@ Expected number of 7s is ~65132
 </div>
 </div>
 </div>
-</div><div id="cell-id=a001c39f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=a001c39f" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
@@ -16643,47 +16576,12 @@ Expected number of 7s is ~65132
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=c8ff9c76" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=c8ff9c76" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># vs.</span>
@@ -16707,40 +16605,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-made it! pretend this block contains lots and lots of code
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
+</div></section></section><section ><section >
 <div id="cell-id=ed7bc744" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16774,7 +16639,7 @@ made it! pretend this block contains lots and lots of code
 </ul>
 </li>
 <li>We could decompose this further - each of the things listed on those lines could be its own function.<ul>
-<li>However, we don't have all the language tools we need for that yet (lists!)</li>
+<li>However, we haven't learned all the language tools we need for that yet (lists, tuples)</li>
 </ul>
 </li>
 </ul>
@@ -16782,7 +16647,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 </div>
-</div></div></section><section ><div id="cell-id=422fd258" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section ><div id="cell-id=ae770f9d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16809,7 +16674,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 
-</div><div id="cell-id=4ee68085" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=8832bae3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16837,7 +16702,7 @@ made it! pretend this block contains lots and lots of code
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>3 + 12 + 13 + 5 + 5 +  = 
+<pre>12 + 11 + 9 + 9 +  = 
 </pre>
 </div>
 </div>
@@ -16847,7 +16712,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 
 </div></section><section >
-<div id="cell-id=7d314789" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c46eb79f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16859,7 +16724,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 </div><div class="fragment" >
-<div id="cell-id=87e42b06" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=55c761dd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16902,7 +16767,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 
-</div><div id="cell-id=49638064" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=f428f493" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16930,7 +16795,7 @@ made it! pretend this block contains lots and lots of code
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>5 + 11 = 
+<pre>12 + 15 + 19 + 12 = 
 </pre>
 </div>
 </div>
@@ -16939,7 +16804,7 @@ made it! pretend this block contains lots and lots of code
 
 </div>
 
-</div></section><section ><div id="cell-id=988e12a8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section ><div id="cell-id=8c4af042" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16963,7 +16828,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 
-</div><div id="cell-id=78d1ed76" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
+</div><div id="cell-id=5e1bbffb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17032,7 +16897,7 @@ made it! pretend this block contains lots and lots of code
 
 </div>
 
-</div></div></section><section ><div id="cell-id=72c5b1be" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section ><div id="cell-id=67a55eb7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17056,7 +16921,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 
-</div><div id="cell-id=0c70772c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
+</div><div id="cell-id=e39559e9" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17072,7 +16937,7 @@ made it! pretend this block contains lots and lots of code
 </div>
 </div>
 
-</div></section><section ><div id="cell-id=d04eb7d7" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section ><div id="cell-id=82b45d38" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
