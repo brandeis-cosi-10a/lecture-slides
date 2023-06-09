@@ -1,0 +1,43 @@
+- functional decomposition
+- writing code using pre-existing functions/code
+- debugging existing code
+- effective comments
+- something for using reference docs?
+- data structures - appropriate choice of structures
+- translating written requirements to code
+- constructing larger programs (something for larger projects, beyond functional decomposition?)
+
+- variables - proper usage, naming
+- datatypes - proper usage of basic types
+- string escaping
+- expressions - evaluation, construction
+- input()
+- conditionals - if/elif/else
+- conditionals - choosing the right structure & comparisons
+- functions - invocation
+- functions - definition
+- functions - using parameters 
+- loops - for/range
+- loops - while
+- lists - initialization, modification
+- lists - iteration
+- lists - working with nested lists
+- advanced string manipulation
+- tuples - appropriate usage?
+- references - use list references appropriately
+- dictionaries - initialization, modification
+- dictionaries - iteration
+- sets - appropriate usage?
+- classes - definition
+- classes - use
+- file i/o - read/write files, split
+- functors - pass to std/given functions
+- functors - define functions that use them
+
+- lists - comprehensions, filtering
+- lists - comprehensions, mapping
+- dictionaries - comprehensions, filtering
+- dictionaries - comprehensions, mapping
+- file i/o - read/write csv
+- file i/o - read/write json?
+- async/await? (probably drop)
