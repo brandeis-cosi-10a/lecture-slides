@@ -39,22 +39,28 @@ PS3:
 - advanced string manipulation
 - tuples - appropriate usage?
 - references - use list references appropriately
+
+PS4:
 - dictionaries - initialization, modification
 - dictionaries - iteration
 - sets - appropriate usage?
 
-PS4:
+PS5:
+- file i/o - read/write files, split
 - classes - definition
 - classes - use
-- file i/o - read/write files, split
+
+PS6:
 - functors - pass to std/given functions
 - functors - define functions that use them
-
-PS5:
 - lists - comprehensions, filtering
 - lists - comprehensions, mapping
 - dictionaries - comprehensions, filtering
 - dictionaries - comprehensions, mapping
+
+PS7??:
 - file i/o - read/write csv
 - file i/o - read/write json?
 - async/await? (probably drop)
+
+regular expressions?

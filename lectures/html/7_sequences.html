@@ -15122,6 +15122,18 @@ section.present > section.present {
 </div>
 </div>
 </div>
+<div id="cell-id=0d68f822" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To add: in-class exercises</p>
+
+</div>
+</div>
+</div>
+</div>
 <div id="cell-id=61f0aac4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15894,7 +15906,7 @@ d
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;This,is,a,sentence,with,lots,of,words&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;This,is a sentence,with,lots of words&quot;</span>
 <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -15917,7 +15929,7 @@ d
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;This&#39;, &#39;is&#39;, &#39;a&#39;, &#39;sentence&#39;, &#39;with&#39;, &#39;lots&#39;, &#39;of&#39;, &#39;words&#39;]</pre>
+<pre>[&#39;This&#39;, &#39;is a sentence&#39;, &#39;with&#39;, &#39;lots of words&#39;]</pre>
 </div>
 
 </div>
@@ -16347,7 +16359,7 @@ d
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note that we were able to include an integer (<code>age</code>) without an explicit typ conversion.</p>
+<p>Note that we were able to include an integer (<code>age</code>) without an explicit type conversion.</p>
 <p>This makes printing <strong>much</strong> easier, no more awful lines like this: <code>print(&quot;Some text: &quot; + str(some_number) + &quot;.&quot;)</code></p>
 
 </div>
@@ -16419,20 +16431,52 @@ d
 </div>
 </div>
 </div>
-<div id="cell-id=745c64d9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f63edc4d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Still to cover:</p>
+<h1 id="Iterables">Iterables<a class="anchor-link" href="#Iterables">&#182;</a></h1><p>An <strong>iterable</strong> object is an object capable of returning its members one at a time.</p>
+<p>All sequence types are <strong>iterables</strong>. Other types can be iterable too.</p>
+<p>An <strong>iterator</strong> is an object you use to iterate over and <strong>iterable</strong>.</p>
+<p>Some examples of non-sequence iterable usage:</p>
 <ul>
-<li>Strings (separate lecture)</li>
-<li>References<ul>
-<li>Step thru debugging with references? Python tutor better than repl.it</li>
+<li>Reading a file line-by-line - a file reader creates an iterator over all the lines in the file.</li>
+<li>A &quot;generator&quot; - an iterator that generates a sequence on-demand, as each item is requested.</li>
 </ul>
-</li>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=548058cc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The details of iterables and iterators are beyond the scope of this class. The important things to know for now are:</p>
+<ul>
+<li><strong>Iterables</strong> are objects that can return their members one at a time</li>
+<li>All iterables can be iterated over in a <code>for</code> loop.</li>
 </ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=cf56a774" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="for-revisited,-again"><code>for</code> revisited, again<a class="anchor-link" href="#for-revisited,-again">&#182;</a></h1><p>Last time, I promise.</p>
+<pre><code>for &lt;var&gt; in &lt;iterable&gt;:
+   statement(s)
+</code></pre>
+<p><code>for</code> loops can loop over anything that is an <strong>iterable</strong>. This capture more than just <strong>sequences</strong>.</p>
 
 </div>
 </div>
