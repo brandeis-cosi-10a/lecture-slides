@@ -31,6 +31,7 @@ PS2:
 - loops - while
 - loops - nested
 - loops - choosing the correct loop type
+- unit tests
 
 PS3:
 - lists - initialization, modification

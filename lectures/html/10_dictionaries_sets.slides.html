@@ -15896,7 +15896,7 @@ Cell <span class="ansi-green-fg">In[8], line 1</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Modifying-dictionaries">Modifying dictionaries<a class="anchor-link" href="#Modifying-dictionaries">&#182;</a></h2><p>You can assign to a key to either add it to the dictionary (if it doesn't exist) or update the value for an existing item.</p>
+<h2 id="Modifying-dictionaries">Modifying dictionaries<a class="anchor-link" href="#Modifying-dictionaries">&#182;</a></h2><p>Assigning a value to a key adds a key/value pair to the dictionary if the key doesn't already exist. If the key does already exist, the value for that key is updated.</p>
 
 </div>
 </div>
@@ -16196,243 +16196,12 @@ My dominant hand is left
 </div>
 
 </div></section><section >
-<div id="cell-id=61ba394f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Side-note:-Value-unpacking">Side note: Value unpacking<a class="anchor-link" href="#Side-note:-Value-unpacking">&#182;</a></h2><p>Initializing 2 values in a <code>for</code> loop is something we haven't seen before:</p>
-<p><code>for statname, value in stats.items():</code></p>
-<p>This uses something called &quot;value unpacking&quot;. It's a shortcut to assign multiple values to multiple variables at once. It works with any sequence.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=5f3f4586" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">b</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>a=1 b=2
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=e020b2f6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Moe&quot;</span><span class="p">,</span> <span class="s2">&quot;Curly&quot;</span><span class="p">]</span>
-<span class="n">stooge1</span><span class="p">,</span> <span class="n">stooge2</span><span class="p">,</span> <span class="n">stooge3</span> <span class="o">=</span> <span class="n">names</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">stooge1</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">stooge2</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">stooge3</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>stooge1=&#39;Larry&#39; stooge2=&#39;Moe&#39; stooge3=&#39;Curly&#39;
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=d2c5e787" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number_words</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;one&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">&quot;four&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="s2">&quot;one hundred&quot;</span><span class="p">:</span> <span class="mi">100</span>
-<span class="p">}</span>
-<span class="n">o</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">oh</span> <span class="o">=</span> <span class="n">number_words</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">o</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">f</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">oh</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>o=&#39;one&#39;, f=&#39;four&#39;, oh=&#39;one hundred&#39;
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=4d870d3a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The number of variables on the left must match the length of the sequence being unpacked.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=476bb441" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[23], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> a, b, c <span style="color: rgb(98,98,98)">=</span> (<span style="color: rgb(98,98,98)">1</span>, <span style="color: rgb(98,98,98)">2</span>)
-
-<span class="ansi-red-fg">ValueError</span>: not enough values to unpack (expected 3, got 2)</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=c54413d7" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[24], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> a, b <span style="color: rgb(98,98,98)">=</span> (<span style="color: rgb(98,98,98)">1</span>, <span style="color: rgb(98,98,98)">2</span>, <span style="color: rgb(98,98,98)">3</span>)
-
-<span class="ansi-red-fg">ValueError</span>: too many values to unpack (expected 2)</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
 <div id="cell-id=dc53395a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Back to dictionaries...</p>
 <p><code>.items()</code> produces the keys/values as 2-tuples:</p>
 
 </div>
@@ -16487,7 +16256,7 @@ Cell <span class="ansi-green-fg">In[24], line 1</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This is why our <code>for</code> loop worked - each key from <code>.items()</code> is unpacked into <code>statname</code>, and each value is unpacke into <code>value</code>:</p>
+<p>Our <code>for</code> loop used value unpacking - each key from <code>.items()</code> is unpacked into <code>statname</code>, and each value is unpacke into <code>value</code>:</p>
 
 </div>
 </div>
@@ -16550,7 +16319,7 @@ My dominant hand is left
 </div>
 </div>
 </div>
-</div><div id="cell-id=eb2b9699" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=b25ae039" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16568,7 +16337,7 @@ My dominant hand is left
 </div>
 </div>
 
-</div></section><section ><div id="cell-id=66ec20bd" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section ><div id="cell-id=9ec62ab3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16587,7 +16356,7 @@ My dominant hand is left
 </div>
 </div>
 
-</div><div id="cell-id=dd246221" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
+</div><div id="cell-id=1e5650f8" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16639,7 +16408,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=60c40625" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3cf810ee" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16650,7 +16419,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
-</div></section><section ><div id="cell-id=6bd60182" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section ><div id="cell-id=b74fc415" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16669,7 +16438,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div id="cell-id=2bc53859" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=3280b0da" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16708,7 +16477,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 
 </div>
 
-</div><div id="cell-id=1b087336" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=78beb8ae" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16753,7 +16522,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=6ea22517" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9d371d7c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16764,7 +16533,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
-</div><div id="cell-id=1878e457" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=6bd7b29a" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16788,7 +16557,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div id="cell-id=35c65840" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=17fecd2a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16833,18 +16602,18 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=ab7b2665" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1e956111" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Can you spot the bug?</p>
+<p>That output looks correct... but can you spot the bug?</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=9d874390" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=ce18d9ec" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16868,7 +16637,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div class="fragment" ><div id="cell-id=c90c2b60" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div id="cell-id=526e7e17" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16913,7 +16682,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 
 </div>
-<div id="cell-id=b548bf4f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ae847962" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16924,7 +16693,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
-</div></div></section><section ><div id="cell-id=9be80d57" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section ><div id="cell-id=c3676c09" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16948,7 +16717,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div class="fragment" ><div id="cell-id=77dbb29e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div id="cell-id=81f99fca" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16993,18 +16762,18 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 
 </div></div></section><section >
-<div id="cell-id=70b30d76" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=249bfeb7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Write a function that takes a string, and returns a dictionary representing the unique words and the number of times each word occurred.</p>
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Write a function that takes a string, and returns a dictionary representing the unique words in the string, and the number of times each word occurred.</p>
 
 </div>
 </div>
 </div>
-</div></section><section ><div id="cell-id=4f5dcfc4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section ><div id="cell-id=757ecb85" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17022,7 +16791,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div></section><section ><div id="cell-id=c4cac522" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section ><div id="cell-id=495abde5" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17044,7 +16813,7 @@ Cell <span class="ansi-green-fg">In[28], line 3</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div id="cell-id=f352f2c5" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
+</div><div id="cell-id=dca8dd3b" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17092,7 +16861,19 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div></section><section ><div id="cell-id=78ed9714" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section >
+<div id="cell-id=85172442" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We need to handle the initial condition, where the word hasn't been found yet.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=1f41ae33" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17117,7 +16898,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div id="cell-id=5d9cd47b" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
+</div><div id="cell-id=80f13cee" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17166,7 +16947,19 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div></section><section ><div id="cell-id=a11b6824" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section >
+<div id="cell-id=d4685ea7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Whoops, looks like we have to deal with upper vs. lower case.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=29d0c676" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17191,7 +16984,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div id="cell-id=d715a6cf" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
+</div><div id="cell-id=9d416a45" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17239,7 +17032,19 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div><div id="cell-id=30c5a529" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div id="cell-id=f6478b85" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>That was perfectly good code! But we can make it a little cleaner using <code>get()</code>:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=cf794570" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17261,7 +17066,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div id="cell-id=4f010a33" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
+</div><div id="cell-id=96f44ddd" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17310,7 +17115,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=cb58f1cf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=add953fb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17322,7 +17127,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 </div></section><section >
-<div id="cell-id=2c522cc4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=823df567" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17333,7 +17138,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
-</div><div id="cell-id=5c1b8835" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=54986c12" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17362,7 +17167,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Spongebob&#39;, &#39;Spiderman&#39;, &#39;Batman&#39;}
+<pre>{&#39;Spongebob&#39;, &#39;Batman&#39;, &#39;Spiderman&#39;}
 </pre>
 </div>
 </div>
@@ -17372,7 +17177,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=e227a5b6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e51b981d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17383,7 +17188,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
-</div><div id="cell-id=06d4adf4" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=313bed9b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17399,7 +17204,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 
-</div><div id="cell-id=3406ac5b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=abeb0fc4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17438,7 +17243,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div><div id="cell-id=0991bbb2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=73d210fb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17478,7 +17283,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=69f8219d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=aad239e3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17489,7 +17294,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
-</div><div id="cell-id=aea80ac2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=da7bfa62" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17519,7 +17324,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Spongebob&#39;, &#39;Spiderman&#39;, &#39;Peppa&#39;, &#39;Batman&#39;}
+<pre>{&#39;Spongebob&#39;, &#39;Batman&#39;, &#39;Peppa&#39;, &#39;Spiderman&#39;}
 </pre>
 </div>
 </div>
@@ -17528,7 +17333,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div><div id="cell-id=d714c92a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=8f0cb2a7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17567,7 +17372,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div><div id="cell-id=bd839cfa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=d807b3bf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17606,31 +17411,19 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div></section><section >
-<div id="cell-id=0a5bbde3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div id="cell-id=58f4e563" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Set-operations">Set operations<a class="anchor-link" href="#Set-operations">&#182;</a></h2><p>Sets provide union, intersection, and difference operators.</p>
+<h2 id="Modifying-sets">Modifying sets<a class="anchor-link" href="#Modifying-sets">&#182;</a></h2><p><code>update()</code> will add multiple items at once.</p>
 
 </div>
 </div>
 </div>
-</div></section><section >
-<div id="cell-id=88e2cf03" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Equality">Equality<a class="anchor-link" href="#Equality">&#182;</a></h2><p>Sets can be compared with <code>==</code></p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=13909daf" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=be5e930e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17638,9 +17431,9 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;dandelion&quot;</span><span class="p">,</span> <span class="s2">&quot;pillow&quot;</span><span class="p">])</span>
-<span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;baby&quot;</span><span class="p">,</span> <span class="s2">&quot;horn&quot;</span><span class="p">,</span> <span class="s2">&quot;alarm&quot;</span><span class="p">])</span>
-<span class="n">fluffy</span> <span class="o">==</span> <span class="n">loud</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Spiderman&quot;</span><span class="p">,</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Spongebob&quot;</span><span class="p">])</span>
+<span class="n">names</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s2">&quot;Wolverine&quot;</span><span class="p">,</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Wolverine&quot;</span><span class="p">,</span> <span class="s2">&quot;Magneto&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17654,17 +17447,15 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputArea-child">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;Spongebob&#39;, &#39;Batman&#39;, &#39;Wolverine&#39;, &#39;Spiderman&#39;, &#39;Magneto&#39;}
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -17672,18 +17463,30 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=08033d07" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=5e54dda1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Intersection">Intersection<a class="anchor-link" href="#Intersection">&#182;</a></h2><p>The &quot;intersection&quot; of 2 (or more) sets is the set of elements that appear in all sets</p>
+<h2 id="Set-operations">Set operations<a class="anchor-link" href="#Set-operations">&#182;</a></h2><p>Sets provide equality, intersection, union, and difference operators.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=7ef62e9d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section >
+<div id="cell-id=0f16dfec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Equality">Equality<a class="anchor-link" href="#Equality">&#182;</a></h2><p>Sets can be compared with <code>==</code></p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=0da2c191" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17693,7 +17496,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;dandelion&quot;</span><span class="p">,</span> <span class="s2">&quot;pillow&quot;</span><span class="p">])</span>
 <span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;baby&quot;</span><span class="p">,</span> <span class="s2">&quot;horn&quot;</span><span class="p">,</span> <span class="s2">&quot;alarm&quot;</span><span class="p">])</span>
-<span class="n">fluffy</span> <span class="o">&amp;</span> <span class="n">loud</span>
+<span class="n">fluffy</span> <span class="o">==</span> <span class="n">loud</span>
 </pre></div>
 
      </div>
@@ -17715,7 +17518,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;cat&#39;, &#39;dog&#39;}</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -17725,18 +17528,18 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=5920c178" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7c02d975" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Union">Union<a class="anchor-link" href="#Union">&#182;</a></h2><p>The &quot;union&quot; of 2 (or more) sets is the set of elements that appear in any sets</p>
+<h2 id="Intersection">Intersection<a class="anchor-link" href="#Intersection">&#182;</a></h2><p>The &quot;intersection&quot; of 2 (or more) sets is the set of elements that appear in all sets. The <code>&amp;</code> operator performs an intersection on 2 sets.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=47f13196" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=d489db25" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17746,7 +17549,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;dandelion&quot;</span><span class="p">,</span> <span class="s2">&quot;pillow&quot;</span><span class="p">])</span>
 <span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;baby&quot;</span><span class="p">,</span> <span class="s2">&quot;horn&quot;</span><span class="p">,</span> <span class="s2">&quot;alarm&quot;</span><span class="p">])</span>
-<span class="n">fluffy</span> <span class="o">|</span> <span class="n">loud</span>
+<span class="n">fluffy</span> <span class="o">&amp;</span> <span class="n">loud</span>
 </pre></div>
 
      </div>
@@ -17768,7 +17571,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;alarm&#39;, &#39;baby&#39;, &#39;cat&#39;, &#39;dandelion&#39;, &#39;dog&#39;, &#39;horn&#39;, &#39;pillow&#39;}</pre>
+<pre>{&#39;cat&#39;, &#39;dog&#39;}</pre>
 </div>
 
 </div>
@@ -17778,18 +17581,18 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=b6925e18" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8e00199b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Subtraction-/-difference">Subtraction / difference<a class="anchor-link" href="#Subtraction-/-difference">&#182;</a></h2><p>The &quot;difference&quot; of 2 sets is the set of elements that appears in set A, but not in set B.</p>
+<h2 id="Union">Union<a class="anchor-link" href="#Union">&#182;</a></h2><p>The &quot;union&quot; of 2 (or more) sets is the set of elements that appear in any of the sets. The <code>|</code> operator performs a union on 2 sets.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=82212f31" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=cdaf5fc2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17799,7 +17602,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;dandelion&quot;</span><span class="p">,</span> <span class="s2">&quot;pillow&quot;</span><span class="p">])</span>
 <span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;baby&quot;</span><span class="p">,</span> <span class="s2">&quot;horn&quot;</span><span class="p">,</span> <span class="s2">&quot;alarm&quot;</span><span class="p">])</span>
-<span class="n">fluffy</span> <span class="o">-</span> <span class="n">loud</span>
+<span class="n">fluffy</span> <span class="o">|</span> <span class="n">loud</span>
 </pre></div>
 
      </div>
@@ -17821,7 +17624,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;dandelion&#39;, &#39;pillow&#39;}</pre>
+<pre>{&#39;alarm&#39;, &#39;baby&#39;, &#39;cat&#39;, &#39;dandelion&#39;, &#39;dog&#39;, &#39;horn&#39;, &#39;pillow&#39;}</pre>
 </div>
 
 </div>
@@ -17830,19 +17633,19 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div>
-<div id="cell-id=a8560886" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section><section >
+<div id="cell-id=0f397b58" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Order matters for subtraction.</p>
+<h2 id="Subtraction-/-difference">Subtraction / difference<a class="anchor-link" href="#Subtraction-/-difference">&#182;</a></h2><p>The &quot;difference&quot; of 2 sets is the set of elements that appears in set A, but not in set B. The <code>-</code> operator performs a difference on 2 sets.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=06190e83" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=fa27ec38" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17850,7 +17653,9 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loud</span> <span class="o">-</span> <span class="n">fluffy</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;dandelion&quot;</span><span class="p">,</span> <span class="s2">&quot;pillow&quot;</span><span class="p">])</span>
+<span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;baby&quot;</span><span class="p">,</span> <span class="s2">&quot;horn&quot;</span><span class="p">,</span> <span class="s2">&quot;alarm&quot;</span><span class="p">])</span>
+<span class="n">fluffy</span> <span class="o">-</span> <span class="n">loud</span>
 </pre></div>
 
      </div>
@@ -17872,7 +17677,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;alarm&#39;, &#39;baby&#39;, &#39;horn&#39;}</pre>
+<pre>{&#39;dandelion&#39;, &#39;pillow&#39;}</pre>
 </div>
 
 </div>
@@ -17881,19 +17686,19 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 </div>
 
-</div></section><section >
-<div id="cell-id=2ac7c640" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div id="cell-id=7710f7b9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Symmetric-difference-(%22xor%22)">Symmetric difference ("xor")<a class="anchor-link" href="#Symmetric-difference-(%22xor%22)">&#182;</a></h2><p>The &quot;symmetric difference&quot; of 2 sets is the set of items that appear in one set, but not the other. This is also sometimes referred to as <code>xor</code> (&quot;exclusive or&quot;), from boolean/digital logic.</p>
+<p>Order matters for subtraction.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=454d7c7d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=3e04f91f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17901,9 +17706,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;dandelion&quot;</span><span class="p">,</span> <span class="s2">&quot;pillow&quot;</span><span class="p">])</span>
-<span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;baby&quot;</span><span class="p">,</span> <span class="s2">&quot;horn&quot;</span><span class="p">,</span> <span class="s2">&quot;alarm&quot;</span><span class="p">])</span>
-<span class="n">fluffy</span> <span class="o">^</span> <span class="n">loud</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loud</span> <span class="o">-</span> <span class="n">fluffy</span>
 </pre></div>
 
      </div>
@@ -17925,7 +17728,7 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;alarm&#39;, &#39;baby&#39;, &#39;dandelion&#39;, &#39;horn&#39;, &#39;pillow&#39;}</pre>
+<pre>{&#39;alarm&#39;, &#39;baby&#39;, &#39;horn&#39;}</pre>
 </div>
 
 </div>
@@ -17935,19 +17738,20 @@ Cell <span class="ansi-green-fg">In[40], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div></section><section >
-<div id="cell-id=fbfa4cff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=5b7dc6d3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Superset-/-subset">Superset / subset<a class="anchor-link" href="#Superset-/-subset">&#182;</a></h2><p>Superset: a set contains all elements of another set<br />
-Subset: a set is made up only of elements from another set</p>
+<h2 id="Symmetric-difference-(%22xor%22)">Symmetric difference ("xor")<a class="anchor-link" href="#Symmetric-difference-(%22xor%22)">&#182;</a></h2><p>The &quot;symmetric difference&quot; of 2 sets is the set of items that appear in one set, but not the other.</p>
+<p>This is also sometimes referred to as <code>xor</code> (&quot;exclusive or&quot;), from boolean/digital logic.</p>
+<p>The <code>^</code> operator performs a symmetric difference.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=73115c9b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e812620d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17955,9 +17759,9 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">)</span>
-<span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiou&quot;</span><span class="p">)</span>
-<span class="n">letters</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;dandelion&quot;</span><span class="p">,</span> <span class="s2">&quot;pillow&quot;</span><span class="p">])</span>
+<span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;baby&quot;</span><span class="p">,</span> <span class="s2">&quot;horn&quot;</span><span class="p">,</span> <span class="s2">&quot;alarm&quot;</span><span class="p">])</span>
+<span class="n">fluffy</span> <span class="o">^</span> <span class="n">loud</span>
 </pre></div>
 
      </div>
@@ -17979,7 +17783,7 @@ Subset: a set is made up only of elements from another set</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
+<pre>{&#39;alarm&#39;, &#39;baby&#39;, &#39;dandelion&#39;, &#39;horn&#39;, &#39;pillow&#39;}</pre>
 </div>
 
 </div>
@@ -17988,7 +17792,20 @@ Subset: a set is made up only of elements from another set</p>
 
 </div>
 
-</div><div id="cell-id=5557f2b9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section >
+<div id="cell-id=40187608" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Superset-/-subset">Superset / subset<a class="anchor-link" href="#Superset-/-subset">&#182;</a></h2><p>Superset: a set contains all elements of another set<br />
+Subset: a set is made up only of elements from another set</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=a2e376ab" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17996,7 +17813,9 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vowels</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;abcdefghijklmnopqrstuvwxyz&quot;</span><span class="p">)</span>
+<span class="n">vowels</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">&quot;aeiou&quot;</span><span class="p">)</span>
+<span class="n">letters</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18018,7 +17837,7 @@ Subset: a set is made up only of elements from another set</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
+<pre>True</pre>
 </div>
 
 </div>
@@ -18027,7 +17846,7 @@ Subset: a set is made up only of elements from another set</p>
 
 </div>
 
-</div><div id="cell-id=549f8c7f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=3c4c3a75" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18035,7 +17854,7 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vowels</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vowels</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18057,7 +17876,7 @@ Subset: a set is made up only of elements from another set</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -18066,7 +17885,7 @@ Subset: a set is made up only of elements from another set</p>
 
 </div>
 
-</div><div id="cell-id=b19dd6b3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=168f2584" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18074,7 +17893,7 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">letters</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vowels</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18096,6 +17915,45 @@ Subset: a set is made up only of elements from another set</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=6458b474" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">letters</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>False</pre>
 </div>
 
@@ -18106,18 +17964,18 @@ Subset: a set is made up only of elements from another set</p>
 </div>
 
 </div></section><section >
-<div id="cell-id=48bc3aae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e1b338c7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h2><p>Write a program that prompts the user to enter the postal abbreviations for all 50 U.S. states. The player loses if they repeat a guess, or guess something that isn't valid.</p>
+<h2 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h2><p>Write a program that prompts the user to enter the postal abbreviations for all 50 U.S. states. The player loses if they repeat a guess, or guesses something that isn't valid.</p>
 
 </div>
 </div>
 </div>
-</div></section><section ><div id="cell-id=9ec23b05" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
+</div></section><section ><div id="cell-id=8e5e3add" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>

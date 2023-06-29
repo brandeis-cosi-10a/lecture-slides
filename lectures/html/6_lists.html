@@ -16749,13 +16749,12 @@ List after the pop: [&#39;everest&#39;, &#39;whitney&#39;, &#39;denali&#39;, &#3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">below_average</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_average</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span>  <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
         <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">num</span>
     <span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">avg</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">avg</span>
 </pre></div>
 
      </div>
@@ -16771,7 +16770,7 @@ List after the pop: [&#39;everest&#39;, &#39;whitney&#39;, &#39;denali&#39;, &#3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">below_average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">100000</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">find_average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">100000</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -16785,15 +16784,17 @@ List after the pop: [&#39;everest&#39;, &#39;whitney&#39;, &#39;denali&#39;, &#3
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The average is: 20002.0.
-</pre>
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>20002.0</pre>
 </div>
+
 </div>
 
 </div>
@@ -16821,10 +16822,7 @@ List after the pop: [&#39;everest&#39;, &#39;whitney&#39;, &#39;denali&#39;, &#3
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">below_average</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span>  <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">num</span>
-    <span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+    <span class="n">avg</span> <span class="o">=</span> <span class="n">find_average</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The average is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">avg</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Here are all the below average numbers: &quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
@@ -16881,7 +16879,8 @@ List after the pop: [&#39;everest&#39;, &#39;whitney&#39;, &#39;denali&#39;, &#3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><p>Write a function to find the largest number in a list</p>
+<h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><p>Write a function to find the largest number in a list.</p>
+<p>Similar to &quot;cumulative algorithms&quot;, we'll define a variable to hold the largest number we've seen so far.</p>
 
 </div>
 </div>
@@ -17318,6 +17317,59 @@ Cell <span class="ansi-green-fg">In[42], line 2</span>, in <span class="ansi-cya
 <pre>None
 </pre>
 </div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=60927821" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Oh-wait,-Python-does-this-for-us">Oh wait, Python does this for us<a class="anchor-link" href="#Oh-wait,-Python-does-this-for-us">&#182;</a></h2><p>There is a <code>max</code> function (also <code>min</code>) that will give us the largest/smallest item in a list: <a href="https://docs.python.org/3/library/functions.html#max">max() documentation</a></p>
+<p>This was still a useful exercise to go through, because the issues we encountered and fixed are all common coding challenges.</p>
+<p>But when you're writing code in the wild, check for a built-in function or library that you can use before building it all yourself!</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=26982949" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">max</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>-1</pre>
+</div>
+
 </div>
 
 </div>

@@ -15461,6 +15461,18 @@ Cell <span class="ansi-green-fg">In[1], line 3</span>, in <span class="ansi-cyan
 </div>
 </div>
 </div>
+</div>
+<div id="cell-id=c6de0859" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To add: sorting tuples</p>
+
+</div>
+</div>
+</div>
 </div><div id="cell-id=813e90a8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15651,7 +15663,7 @@ Sorted animals: [&#39;Aardvark&#39;, &#39;Cat&#39;, &#39;Dog&#39;, &#39;Ferret&#
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Original animals: [&#39;Zebra&#39;, &#39;Aardvark&#39;, &#39;Sloth&#39;, &#39;Cat&#39;, &#39;Dog&#39;, &#39;Ferret&#39;]
-New animals: &lt;list_reverseiterator object at 0x7fa03ce63c40&gt;
+New animals: &lt;list_reverseiterator object at 0x7f9c69b08940&gt;
 </pre>
 </div>
 </div>
@@ -15680,8 +15692,8 @@ New animals: &lt;list_reverseiterator object at 0x7fa03ce63c40&gt;
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><code>reversed()</code> returns an <strong>iterator</strong>.</p>
-<p>Iterators are mostly beyond the scope of this class, but they are really neat and useful. If you want to learn about them, this is a decent resource from <a href="https://towardsdatascience.com/python-basics-iteration-and-looping-6ca63b30835c">Towards Data Science</a>.</p>
-<p>2 important things to know for now:</p>
+<p>Recall from the <em>Sequences</em> lecture that an <strong>iterator</strong> is an object that returns the items in an <strong>iterable</strong>, one at a time.</p>
+<p>The details of iterators are (still) mostly beyond the scope of this class, but you will encounter them from time to time. Useful things to know for now:</p>
 <ol>
 <li>You can easily convert an iterator to a list, by using <code>list(&lt;iterator&gt;)</code>.</li>
 <li>You can use a <code>for</code> loop on an iterator, but only once (using an iterator &quot;consumes&quot; it).</li>
@@ -15731,6 +15743,94 @@ New animals: [&#39;Ferret&#39;, &#39;Dog&#39;, &#39;Cat&#39;, &#39;Sloth&#39;, &
 
 </div>
 
+</div></section><section ><div id="cell-id=7f33d581" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># our trusty for loop works on iterables</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Zebra&quot;</span><span class="p">,</span> <span class="s2">&quot;Aardvark&quot;</span><span class="p">,</span> <span class="s2">&quot;Sloth&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span> <span class="s2">&quot;Dog&quot;</span><span class="p">,</span> <span class="s2">&quot;Ferret&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">animals</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Ferret
+Dog
+Cat
+Sloth
+Aardvark
+Zebra
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=c60dfb1c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># using an iterator &quot;consumes&quot; it - you can&#39;t convert it to a list or iterate over it more than once</span>
+<span class="n">animals</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Zebra&quot;</span><span class="p">,</span> <span class="s2">&quot;Aardvark&quot;</span><span class="p">,</span> <span class="s2">&quot;Sloth&quot;</span><span class="p">,</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span> <span class="s2">&quot;Dog&quot;</span><span class="p">,</span> <span class="s2">&quot;Ferret&quot;</span><span class="p">]</span>
+<span class="n">new_animals</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">animals</span><span class="p">)</span>
+<span class="n">new_animal_list1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">new_animals</span><span class="p">)</span>
+<span class="n">new_animal_list2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">new_animals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">new_animal_list1</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">new_animal_list2</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>new_animal_list1=[&#39;Ferret&#39;, &#39;Dog&#39;, &#39;Cat&#39;, &#39;Sloth&#39;, &#39;Aardvark&#39;, &#39;Zebra&#39;]
+new_animal_list2=[]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div></section><section >
 <div id="cell-id=274746db" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15760,7 +15860,7 @@ New animals: [&#39;Ferret&#39;, &#39;Dog&#39;, &#39;Cat&#39;, &#39;Sloth&#39;, &
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Spongebob&quot;</span><span class="p">,</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">,</span> <span class="s2">&quot;Peppa&quot;</span><span class="p">]</span>
@@ -15817,7 +15917,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Spongebob&quot;</span><span class="p">,</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">,</span> <span class="s2">&quot;Peppa&quot;</span><span class="p">]</span>
@@ -15874,7 +15974,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ascii_art</span> <span class="o">=</span> <span class="p">[</span>
@@ -15896,7 +15996,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ascii_art</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
@@ -15933,7 +16033,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ascii_art</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
@@ -15982,7 +16082,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ascii_art</span><span class="p">:</span>
@@ -16038,7 +16138,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
@@ -16058,7 +16158,7 @@ Peppa is 4 years old
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -16078,7 +16178,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
@@ -16154,7 +16254,7 @@ Peppa is 4 years old
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
@@ -16226,7 +16326,7 @@ data = [
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Spongebob&quot;</span><span class="p">,</span> <span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="s2">&quot;Dora&quot;</span><span class="p">,</span> <span class="s2">&quot;Peppa&quot;</span><span class="p">,</span> <span class="s2">&quot;Bill Murray&quot;</span><span class="p">]</span>
