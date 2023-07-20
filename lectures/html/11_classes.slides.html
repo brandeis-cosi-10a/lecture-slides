@@ -15319,7 +15319,7 @@ section.present > section.present {
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>Balance: 150
-Transactions: [(100, 1688052845.171335), (50, 1688052845.171361)]
+Transactions: [(100, 1689867598.3607528), (50, 1689867598.360778)]
 </pre>
 </div>
 </div>
@@ -15340,11 +15340,11 @@ Transactions: [(100, 1688052845.171335), (50, 1688052845.171361)]
 <ul>
 <li>We specified that a <code>BankAccount</code> has a balance, a list of transactions, and a few methods that let you access or modify those fields.</li>
 </ul>
-<p><strong>Instantiating</strong> a class means you create an object from the blueprint.</p>
+<p><strong>Instantiating</strong> a class is like creating an object from the blueprint.</p>
 <ul>
 <li>We created a single <code>BankAccount</code> object named <code>b</code>, then did some things with it.</li>
 <li>You could also say we created a <code>BankAccount</code> <strong>instance</strong>.</li>
-<li>You can create multiple instances of a class, and each instance is independent.</li>
+<li>You can create multiple instances of a class, and each instance is independent, just like you can create multiple copies of the same physical object from a blueprint.</li>
 </ul>
 
 </div>
@@ -15413,8 +15413,8 @@ Transactions: [(100, 1688052845.171335), (50, 1688052845.171361)]
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>b: Balance: 100; b.transactions=[(100, 1688052845.186049)]
-c: Balance: 50; c.transactions=[(50, 1688052845.186095)]
+<pre>b: Balance: 100; b.transactions=[(100, 1689867598.374804)]
+c: Balance: 50; c.transactions=[(50, 1689867598.37495)]
 </pre>
 </div>
 </div>
@@ -15504,8 +15504,8 @@ c: Balance: 50; c.transactions=[(50, 1688052845.186095)]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="self"><code>self</code><a class="anchor-link" href="#self">&#182;</a></h2><p>We see this strange keyword, <code>self</code>, all over the place.</p>
-<p><code>self</code> is the way Python gives methods access to the instance they're being called on. When you call a method on an instance, the instance itself is passed as the first argument.</p>
+<h2 id="self"><code>self</code><a class="anchor-link" href="#self">&#182;</a></h2><p>We see this strange parameter, <code>self</code>, all over the place in classes.</p>
+<p>The <code>self</code> parameter is the way Python gives methods access to the instance they're being called on. When you call a method on an instance, the instance itself is passed as the first argument.</p>
 <p>This means that, when you call a method with 1 argument, it will actually be passed 2 arguments: the instance, and then your argument.</p>
 <p>It's easy to forget to add it when defining methods. If you get strange errors about calling methods with the wrong number of arguments, check to see if you left out the <code>self</code> parameter.</p>
 
@@ -15530,6 +15530,7 @@ c: Balance: 50; c.transactions=[(50, 1688052845.186095)]
 <span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
 <span class="c1"># This is equivalent to b.deposit(700):</span>
 <span class="c1"># (This is only shown to de-mystify `self`, it&#39;s not a recommended way to call instance methods)</span>
 <span class="n">BankAccount</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">700</span><span class="p">)</span>
@@ -15571,9 +15572,11 @@ c: Balance: 50; c.transactions=[(50, 1688052845.186095)]
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Class-and-instance-attributes">Class and instance attributes<a class="anchor-link" href="#Class-and-instance-attributes">&#182;</a></h2><p>Classes can have attributes that hold data (e.g. <code>balance</code> and <code>transactions</code> from <code>BankAccount</code>).</p>
-<p>There are 2 types of attributes: &quot;class attributes&quot; and &quot;instance attributes&quot;.</p>
-<p><strong>Instance attributes</strong> are unique to each instance. They are usually defined in <code>__init__</code>.</p>
-<p><strong>Class attributes</strong> are shared among every instance of a class. They are defined directly on the class.</p>
+<p>There are 2 types of attributes:</p>
+<ul>
+<li><strong>Instance attributes</strong> are unique to each instance. They are usually defined in <code>__init__</code>.</li>
+<li><strong>Class attributes</strong> are shared among every instance of a class. They are defined directly on the class.</li>
+</ul>
 
 </div>
 </div>
@@ -15586,7 +15589,7 @@ c: Balance: 50; c.transactions=[(50, 1688052845.186095)]
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Beware-class-attributes">Beware class attributes<a class="anchor-link" href="#Beware-class-attributes">&#182;</a></h2><p>Class attributes are shared between <strong>all instances</strong>.</p>
-<p>There are legitimate uses for them, but they are special cases. Until you're a move advanced programmer, you can safely avoid them and always use instance variables.</p>
+<p>There are legitimate uses for them, but they are special cases. Until you're a move advanced programmer, you can safely avoid them, and always use instance variables.</p>
 
 </div>
 </div>
@@ -15599,7 +15602,9 @@ c: Balance: 50; c.transactions=[(50, 1688052845.186095)]
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># example of the surprising behavior of class attributes </span>
+
+<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
     <span class="c1"># A class variable; it is defined directly on the class</span>
     <span class="n">class_transactions</span> <span class="o">=</span> <span class="p">[]</span>
     
@@ -15675,7 +15680,7 @@ b.transactions=[&#39;first instance transaction&#39;]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2><p>Each class is its own <strong>type</strong> - just like <code>int</code>, <code>str</code>, <code>list</code>, <code>dict</code>, etc are types.</p>
+<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2><p>Each class definition creates a new <strong>type</strong> - just like <code>int</code>, <code>str</code>, <code>list</code>, <code>dict</code>, etc are types.</p>
 <p>You can check the type of a variable with the built-in <code>isinstance()</code> function:</p>
 
 </div>
@@ -15799,6 +15804,136 @@ b.transactions=[&#39;first instance transaction&#39;]
 
 </div>
 
+</div>
+<div id="cell-id=67e9c15f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can also get the type of an object with <code>type()</code>:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=d23af553" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>int</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=1718780d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=663158bc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>__main__.BankAccount</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div></section><section >
 <div id="cell-id=5c77ebae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15806,9 +15941,8 @@ b.transactions=[&#39;first instance transaction&#39;]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><p>Where references are concerned, class instances are similar to lists - they are mutable.</p>
-<p>This means that, if multiple variables refer to the same instance, changes made to one variable will be visible from all variables referring to the same object.</p>
-<p><a href="https://pythontutor.com/visualize.html#code=class%20BankAccount%3A%0A%20%20%20%20def%20__init__%28self,%20initial_balance%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%20initial_balance%0A%20%20%20%20%0A%20%20%20%20def%20deposit%28self,%20amount%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%2B%3D%20amount%0A%0Ab%20%3D%20BankAccount%28100%29%0Ac%20%3D%20b%0Ab.deposit%28200%29%0Aprint%28%22b%3A%20%22%20%2B%20b.balance%29%0Aprint%28%22c%3A%20%22%20%2B%20c.balance%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><p><a href="https://pythontutor.com/visualize.html#code=class%20BankAccount%3A%0A%20%20%20%20def%20__init__%28self,%20initial_balance%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%20initial_balance%0A%20%20%20%20%0A%20%20%20%20def%20deposit%28self,%20amount%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%2B%3D%20amount%0A%0Ab%20%3D%20BankAccount%28100%29%0Ac%20%3D%20b%0Ab.deposit%28200%29%0Aprint%28%22b%3A%20%22%20%2B%20b.balance%29%0Aprint%28%22c%3A%20%22%20%2B%20c.balance%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
+<p>Class instances behave just like lists, dictionaries, and other mutable objects. Variables <strong>refer</strong> to the instances, and any mutations of the instances will be seen by all variables referring to the same object.</p>
 
 </div>
 </div>
@@ -15818,7 +15952,7 @@ b.transactions=[&#39;first instance transaction&#39;]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -15847,7 +15981,7 @@ b.transactions=[&#39;first instance transaction&#39;]
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[10], line 3</span>
+Cell <span class="ansi-green-fg">In[13], line 3</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> b <span style="color: rgb(98,98,98)">=</span> BankAccount(<span style="color: rgb(98,98,98)">100</span>)
 <span class="ansi-green-intense-fg ansi-bold">      2</span> c <span style="color: rgb(98,98,98)">=</span> b
 <span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-yellow-bg">b</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">deposit</span>(<span style="color: rgb(98,98,98)">200</span>)
@@ -15861,6 +15995,19 @@ Cell <span class="ansi-green-fg">In[10], line 3</span>
 
 </div>
 
+</div>
+<div id="cell-id=705fe7d2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Class-design">Class design<a class="anchor-link" href="#Class-design">&#182;</a></h2><p>TODO
+Briefly cover interface / API, hard to misuse, encapsulation, etc</p>
+
+</div>
+</div>
+</div>
 </div></section></section><section ><section >
 <div id="cell-id=5bb7ca70" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15870,17 +16017,16 @@ Cell <span class="ansi-green-fg">In[10], line 3</span>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Best-practices">Best practices<a class="anchor-link" href="#Best-practices">&#182;</a></h1><ul>
 <li>It can be tempting to make everything a class.<ul>
-<li>You don't need to! If you're dealing with a very simple data structure, or a very small number of operations, it might be simpler to skip the class.</li>
+<li>You don't need to! If you're dealing with a very simple data structure, or a very small number of operations, it's probably simpler to skip the class.</li>
 <li>It's a judgment call - classes add coding overhead, but can also make code much easier to use, follow, and maintain.</li>
 </ul>
 </li>
 <li>It can also be tempting to rope a lot of loosely related code into a single, large class.<ul>
-<li>Again, this is a judgment call</li>
+<li>Again, this is a judgment call.</li>
 <li>Classes that are too large are hard to use and maintain, and don't add much value.</li>
-<li>Breaking things down into tiny classes that all depend on one another makes it hard to change one class without changing them all.</li>
 </ul>
 </li>
-<li>A good class definition provides a clean <strong>interface</strong> (set of methods / attributes for a user to interact with), and doesn't <strong>couple</strong> tightly with other code (i.e. changes to the class, or to code that uses the class, can be made relatively independently).<ul>
+<li>A good class definition provides a clean <strong>interface</strong> (set of methods / attributes for a user to interact with), and doesn't <strong>couple</strong> tightly with other code (i.e. the logic in the class is self-contained, and doesn't make assumptions about code outside the class).<ul>
 <li>Good class design is a learned skill. Don't be afraid to just try things out, and learn from the tries that cause more trouble than they save.</li>
 </ul>
 </li>
@@ -15899,7 +16045,7 @@ Cell <span class="ansi-green-fg">In[10], line 3</span>
 <h1 id="Inheritance">Inheritance<a class="anchor-link" href="#Inheritance">&#182;</a></h1><p>Classes can <strong>inherit</strong> from other classes.</p>
 <p>A class that inherits from another class is called a <strong>child</strong> class. A class that is inherited from is called a <strong>parent</strong> class.</p>
 <p>A child class has access to all of the parent class's attributes and methods.</p>
-<p>It can add its own attributes or methods, or <strong>override</strong> the parent methods by providing different implementations.</p>
+<p>A child class can add its own attributes or methods, or <strong>override</strong> the parent methods by providing different implementations.</p>
 
 </div>
 </div>
@@ -15911,10 +16057,13 @@ Cell <span class="ansi-green-fg">In[10], line 3</span>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Inheritance---why-so-brief?">Inheritance - why so brief?<a class="anchor-link" href="#Inheritance---why-so-brief?">&#182;</a></h2><p>Many intro to programming courses will spend a full lecture or 2 (or more) on inheritance. We're mostly skipping it.</p>
-<p>You should know it exists, and understand the idea. In some languages, like Java, inheritance is a critical, required language feature.</p>
-<p>But in Python, inheritance is overused, and very often misused. It is easy to create convoluted, interdependent, highly coupled parent and child classes. You probably don't need it.</p>
-<p>If you think you need it, consider using instance attributes to control behavior, breaking your class up into smaller classes, or introducing helper functions that act on your class instances.</p>
+<h2 id="Inheritance---why-so-brief?">Inheritance - why so brief?<a class="anchor-link" href="#Inheritance---why-so-brief?">&#182;</a></h2><p>Many intro to programming courses will spend a full lecture or 2 (or more) on inheritance. We'll be mostly skipping it for 2 reasons:</p>
+<ol>
+<li><p>If you continue into the Computer Science curriculum, you will cover object-oriented programming and inheritance in depth in Cosi-12b.</p>
+</li>
+<li><p>I think inheritance is overused and often misused in Python. There are often better ways to add structure and separation of concerns to your code, such as using instance attributes to control behavior, breaking a larger class up into smaller classes, or introducing helper functions. You probably won't need inheritance, unless you are working with pre-exisiting code that already uses it.</p>
+</li>
+</ol>
 
 </div>
 </div>
@@ -15924,7 +16073,7 @@ Cell <span class="ansi-green-fg">In[10], line 3</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># an inheritance examples:</span>
@@ -15963,7 +16112,7 @@ Cell <span class="ansi-green-fg">In[10], line 3</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># non-inheritance alternative:</span>
@@ -15996,7 +16145,7 @@ Cell <span class="ansi-green-fg">In[10], line 3</span>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Inheritance-quick-reference">Inheritance quick reference<a class="anchor-link" href="#Inheritance-quick-reference">&#182;</a></h2><ul>
-<li>Define an inherited class with <code>class &lt;child class name&gt;(&lt;parent class name&gt;)</code></li>
+<li>Define an inherited class with <code>class &lt;child class name&gt;(&lt;parent class name&gt;)</code>, e.g. <code>class FeeBasedAccount(BankAccount)</code></li>
 <li>Child classes have access to all attributes and methods from a parent class.</li>
 <li>Override a method from a parent class by defining a method with the same signature on a child class.</li>
 <li>Inheritance can be chained<ul>

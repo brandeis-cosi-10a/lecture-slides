@@ -47,9 +47,11 @@ PS4:
 - sets - appropriate usage?
 
 PS5:
-- file i/o - read/write files, split
 - classes - definition
 - classes - use
+- file i/o - read/write files, split
+- file i/o - read/write csv
+- file i/o - read/write json?
 
 PS6:
 - functors - pass to std/given functions
@@ -60,8 +62,6 @@ PS6:
 - dictionaries - comprehensions, mapping
 
 PS7??:
-- file i/o - read/write csv
-- file i/o - read/write json?
 - async/await? (probably drop)
 
 regular expressions?

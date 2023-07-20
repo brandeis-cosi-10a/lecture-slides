@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="chrome=1" />
 
-<title>11_classes</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
+<title>13_class_design slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
+<!-- General and theme style sheets -->
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+}
+</script>
 
 <style type="text/css">
     pre { line-height: 125%; }
@@ -14968,103 +14982,145 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
-/* Force rendering true colors when outputing to pdf */
-* {
-  -webkit-print-color-adjust: exact;
-}
-
-/* Misc */
 a.anchor-link {
-  display: none;
+   display: none;
+}
+.highlight  {
+    margin: 0.4em;
+}
+.jp-Notebook {
+    padding: 0;
+}
+:root {
+    --jp-ui-font-size1: 20px;       /* instead of 14px */
+    --jp-content-font-size1: 20px;  /* instead of 14px */
+    --jp-code-font-size: 19px;      /* instead of 13px */
+    --jp-cell-prompt-width: 110px;  /* instead of 64px */
+}
+@media print {
+  body {
+    margin: 0;
+  }
+}
+</style>
+
+<style type="text/css">
+/* Overrides of notebook CSS for static HTML export */
+.reveal {
+  font-size: 160%;
+}
+.reveal table {
+  font-size: var(--jp-ui-font-size1);
+}
+.reveal pre {
+  width: inherit;
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+.reveal pre code {
+  padding: 0px;
+}
+.reveal section img {
+  border: 0px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+}
+.reveal .slides {
+  text-align: left;
+}
+.reveal.fade {
+  opacity: 1;
+}
+.reveal .progress {
+  position: static;
 }
 
-/* Input area styling */
-.jp-InputArea {
-  overflow: hidden;
+div.jp-InputArea-editor {
+  padding: 0.06em;
 }
 
-.jp-InputArea-editor {
-  overflow: hidden;
+div.code_cell {
+  background-color: transparent;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+div.output_area pre {
+  font-family: monospace, sans-serif;
+  font-size: 80%;
+}
+
+div.jp-OutputPrompt {
+  /* 5px right shift to account for margin in parent container */
+  margin: 5px 5px 0 0;
+}
+
+.reveal div.highlight {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
 }
 
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
+.reveal div.highlight > pre {
+  margin: 0;
+  width: 100%;
   font-size: var(--jp-code-font-size);
 }
 
-/* Using table instead of flexbox so that we can use break-inside property */
-/* CSS rules under this comment should not be required anymore after we move to the JupyterLab 4.0 CSS */
-
-
-.jp-CodeCell.jp-mod-outputsScrolled .jp-OutputArea-prompt {
-  min-width: calc(
-    var(--jp-cell-prompt-width) - var(--jp-private-cell-scrolling-output-offset)
-  );
+.reveal div.jp-OutputArea-output > pre {
+  margin: 0;
+  width: 90%;
+  font-size: var(--jp-code-font-size);
+  box-shadow: none;
 }
 
-.jp-OutputArea-child {
-  display: table;
-  width: 100%;
+/* Reveal navigation controls */
+
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #727272;
+}
+.reveal .controls .navigate-left.enabled:hover,
+.reveal .controls .navigate-left.enabled.enabled:hover {
+  border-right-color: #dfdfdf;
+}
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #727272;
+}
+.reveal .controls .navigate-right.enabled:hover,
+.reveal .controls .navigate-right.enabled.enabled:hover {
+  border-left-color: #dfdfdf;
+}
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #727272;
+}
+.reveal .controls .navigate-up.enabled:hover,
+.reveal .controls .navigate-up.enabled.enabled:hover {
+  border-bottom-color: #dfdfdf;
+}
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #727272;
+}
+.reveal .controls .navigate-down.enabled:hover,
+.reveal .controls .navigate-down.enabled.enabled:hover {
+  border-top-color: #dfdfdf;
+}
+.reveal .progress span {
+  background: #727272;
 }
 
-.jp-OutputPrompt {
-  display: table-cell;
-  vertical-align: top;
-  min-width: var(--jp-cell-prompt-width);
+/* Scrollbars */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
 }
-
-body[data-format='mobile'] .jp-OutputPrompt {
-  display: table-row;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-
-.jp-OutputArea-output {
-  display: table-cell;
-  width: 100%;
-}
-
-body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
-  display: table-row;
-}
-
-.jp-OutputArea-output.jp-OutputArea-executeResult {
-  width: 100%;
-}
-
-/* Hiding the collapser by default */
-.jp-Collapser {
-  display: none;
-}
-
-@page {
-    margin: 0.5in; /* Margin for each printed piece of paper */
-}
-
-@media print {
-  .jp-Cell-inputWrapper,
-  .jp-Cell-outputWrapper {
-    display: block;
-  }
-
-  .jp-OutputArea-child {
-    break-inside: avoid-page;
-  }
+::-webkit-scrollbar-thumb {
+  background: #727272 !important;
 }
 </style>
 
@@ -15101,58 +15157,139 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --></head>
+    <!-- End of mathjax configuration --><!-- Reveal Theme -->
+<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme">
+
+</head>
+
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
+<div class="reveal">
+<div class="slides"><section ><section >
 <div id="cell-id=1ee8a1d2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Classes">Classes<a class="anchor-link" href="#Classes">&#182;</a></h1><style>
+<h1 id="Class-Design-Exercise">Class Design Exercise<a class="anchor-link" href="#Class-Design-Exercise">&#182;</a></h1><style>
 section.present > section.present { 
     max-height: 90%; 
     overflow-y: scroll;
 }
 </style>
-<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/11_classes.ipynb">Link to interactive slides on Google Colab</a></small></p>
+<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/12_class_design.ipynb">Link to interactive slides on Google Colab</a></small></p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=ecf7cb81" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section></section><section ><section >
+<div id="cell-id=33eb51f3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><p>Create code to manage a bank account. The code should let you:</p>
+<h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><p>Create a program to model a library network:</p>
 <ul>
-<li>Deposit money</li>
-<li>Withdraw money</li>
-<li>View current balance</li>
-<li>View transaction history</li>
-<li>Apply interest payments</li>
+<li>These libraries deal in books only - no need to model magazines, video, etc.</li>
+<li>There are multiple library branches, each with their own book inventory.</li>
+<li>Library patrons have accounts in the library network, and can have books out on loan.</li>
+<li>Loans have due dates.</li>
+<li>Data on books, branches, and patrons will be loaded from files.</li>
+</ul>
+<p>Our program should be able to:</p>
+<ul>
+<li>List the branches and their info.</li>
+<li>Print out all the available and/or checked out books from a branch.</li>
+<li>Print out the books a patron has checked out.</li>
+<li>Provide very simple text search (substring matching) over book titles.</li>
+</ul>
+<p>Today we'll focus mostly on how we can model the data with classes and data structures, and less on the outer scaffold of a program like this.</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=875c1014" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="File-structure">File structure<a class="anchor-link" href="#File-structure">&#182;</a></h1><p>We have 3 files:</p>
+<ul>
+<li><code>branches.csv</code><ul>
+<li>A comma-delimited file that contains one row per branch, with 3 string fields: <code>id</code>, <code>name</code>, and <code>address</code>.</li>
+</ul>
+</li>
+<li><code>books.json</code><ul>
+<li>A JSON file with a list of dictionaries. Each dictionary represents a unique title. They have the following fields:<ul>
+<li><code>id</code> (str)</li>
+<li><code>name</code> (str)</li>
+<li><code>description</code> (str)</li>
+<li><code>copies</code><ul>
+<li>A list of dictionaries, each of which has several keys: <code>copy_id</code>, <code>branch_id</code>, <code>due_date</code>, and <code>patron_id</code>. <code>due_date</code> and <code>patron_id</code> are <code>None</code> if the book is not checked out.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>patrons.json</code><ul>
+<li>A JSON file that contains a list of dictionaries. Each dictionary represents a patron. They have the folloing fields:<ul>
+<li><code>id</code> (str)</li>
+<li><code>name</code> (str)</li>
+<li><code>checked_out_copy_ids</code> (list of str)</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=dbd3faf8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section></section><section ><section >
+<div id="cell-id=33b3b272" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We could achieve this with a couple of related data structures and some functions...</p>
+<h1 id="Where-do-we-start??">Where do we start??<a class="anchor-link" href="#Where-do-we-start??">&#182;</a></h1><p>This is a big problem, we can't tackle it all at once.</p>
+<p>Two main strategies:</p>
+<ul>
+<li>&quot;Bottom up&quot;<ul>
+<li>Start by defining small classes/functions for basic operations we think we'll need, then combine them into the larger, more complicated user-facing operations.</li>
+<li>e.g. Define classes and some methods for <code>Branch</code>, <code>Book</code>, and <code>Patron</code>, then implement functions that do each of the larger operations above using the class methods.</li>
+</ul>
+</li>
+<li>&quot;Top down&quot;<ul>
+<li>Start by writing the main operations, noting and creating classes and methods as we need them.</li>
+<li>e.g. Write a function that prints out a patron's checked out books, and discover that we need a Patron class, and a way to get a book by copy_id. Then implement those methods.</li>
+</ul>
+</li>
+</ul>
+<p>Neither strategy is necessarily better, and you don't need to follow either one dogmatically - they just give you a place to start.</p>
+<p>I prefer &quot;top down&quot; in this case, because the exact set of operations we'll need isn't clear. With &quot;bottom up&quot; we risk defining a bunch of classes / methods we don't need.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=7e96a7d8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section></section><section ><section >
+<div id="cell-id=bc673a50" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Listing-branches">Listing branches<a class="anchor-link" href="#Listing-branches">&#182;</a></h1><p>This is the simplest operation - load <code>branches.csv</code> into a list, and then print each branch.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=6d92d2d0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15160,22 +15297,21 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 
-<span class="k">def</span> <span class="nf">make_bank_data</span><span class="p">():</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s2">&quot;balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-        <span class="s2">&quot;transactions&quot;</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="p">}</span>
+<span class="k">def</span> <span class="nf">load_branches</span><span class="p">():</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../data/library/branches.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">branches</span>
 
-<span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="n">bank_data</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-    <span class="n">bank_data</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">amount</span>
-    <span class="n">bank_data</span><span class="p">[</span><span class="s1">&#39;transactions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">amount</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
-
-<span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="n">bank_data</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">bank_data</span><span class="p">[</span><span class="s1">&#39;balance&#39;</span><span class="p">]</span>
-
-<span class="c1"># ... you get the picture</span>
+<span class="k">def</span> <span class="nf">list_branches</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Listing all branches...&quot;</span><span class="p">)</span>    
+    <span class="n">branches</span> <span class="o">=</span> <span class="n">load_branches</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Branch name: </span><span class="si">{</span><span class="n">branch</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">, address: </span><span class="si">{</span><span class="n">branch</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15183,33 +15319,19 @@ section.present > section.present {
 </div>
 </div>
 
-</div>
-<div id="cell-id=57e3d905" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section></section><section ><section >
+<div id="cell-id=b27c76c3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Classes">Classes<a class="anchor-link" href="#Classes">&#182;</a></h1><p>But there's a better way to bundle data and functionality together: <strong>classes</strong>.</p>
-<p>Classes can have data <strong>attributes</strong> to hold data, and <strong>methods</strong> for modifying or accessing the data.</p>
-<p>Defining a new class creates a new <strong>type</strong> - similar to <code>int</code>, <code>str</code>, <code>list</code>, etc.</p>
+<h2 id="Add-some-structure">Add some structure<a class="anchor-link" href="#Add-some-structure">&#182;</a></h2><p>If this was the only operation we needed to support, this code is fine. However, we have a few other operations that will deal with branches as well. It will make sense to add some structure to this data by introducing a <code>Branch</code> class.</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=202dc796" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This is what a bank account class might look like. Some of this will look strange - don't worry, we'll go through each part of this in detail today.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=355fa8d8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=d41ca885" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15217,26 +15339,28 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transactions</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Branch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">branch_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">); Address: </span><span class="se">\&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">, id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
     
-    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transactions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">amount</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
-    
-    <span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
-    
-    <span class="c1"># etc...</span>
-    
-<span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
-<span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Balance: </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">get_balance</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Transactions: </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">transactions</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">load_branches</span><span class="p">():</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../data/library/branches.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Branch</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">branches</span>
+
+<span class="k">def</span> <span class="nf">list_branches</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Listing all branches...&quot;</span><span class="p">)</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="n">load_branches</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15244,63 +15368,38 @@ section.present > section.present {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Balance: 150
-Transactions: [(100, 1689867598.3607528), (50, 1689867598.360778)]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=9131f4d0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section></section><section ><section >
+<div id="cell-id=8c19f586" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Defining-vs.-instantiating">Defining vs. instantiating<a class="anchor-link" href="#Defining-vs.-instantiating">&#182;</a></h2><p>In that example, we <strong>defined</strong> a class, then <strong>instantiated</strong>, or created an <strong>instance</strong> of, the class.</p>
-<p><strong>Defining</strong> a class is like creating a blueprint. You specify the data attributes and methods for the class.</p>
-<ul>
-<li>We specified that a <code>BankAccount</code> has a balance, a list of transactions, and a few methods that let you access or modify those fields.</li>
-</ul>
-<p><strong>Instantiating</strong> a class is like creating an object from the blueprint.</p>
-<ul>
-<li>We created a single <code>BankAccount</code> object named <code>b</code>, then did some things with it.</li>
-<li>You could also say we created a <code>BankAccount</code> <strong>instance</strong>.</li>
-<li>You can create multiple instances of a class, and each instance is independent, just like you can create multiple copies of the same physical object from a blueprint.</li>
-</ul>
+<h2 id="Side-note:-the-__str__-method">Side note: the <code>__str__</code> method<a class="anchor-link" href="#Side-note:-the-__str__-method">&#182;</a></h2><p>If you add a method with the signature <code>__str__(self)</code> to a class, and make it return a string, then Python will use it when converting your class to a string!</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=718597e2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section></section><section ><section >
+<div id="cell-id=2bbd3b44" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><a href="https://pythontutor.com/visualize.html#code=%23%20Define%20the%20class%3A%0Aclass%20BankAccount%3A%0A%20%20%20%20def%20__init__%28self%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%200%0A%20%20%20%20%20%20%20%20self.transactions%20%3D%20%5B%5D%0A%20%20%20%20%0A%20%20%20%20def%20deposit%28self,%20amount%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%2B%3D%20amount%0A%20%20%20%20%20%20%20%20self.transactions.append%28amount%29%0A%20%20%20%20%0A%20%20%20%20def%20get_balance%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20self.balance%0A%20%20%20%20%0A%20%20%20%20%23%20etc...%0A%0A%23%20Create%202%20instances%20of%20the%20class%20and%20use%20them%3A%0Ab%20%3D%20BankAccount%28%29%0Ab.deposit%28100%29%0Ac%20%3D%20BankAccount%28%29%0Ac.deposit%2850%29%0Aprint%28str%28b.get_balance%28%29%29%20%2B%20%22%3B%20%22%20%2B%20str%28b.transactions%29%29%0Aprint%28str%28c.get_balance%28%29%29%20%2B%20%22%3B%20%22%20%2B%20str%28c.transactions%29%29%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
+<h1 id="Listing-books-for-a-branch">Listing books for a branch<a class="anchor-link" href="#Listing-books-for-a-branch">&#182;</a></h1><p>This one makes us confront more tricky data modeling questions. &quot;Books&quot; in this exercise have metadata, but also a list of copies, each of which can belong to a different branch and be checked out separately.</p>
+<p>We need to list all books from a branch, with an optional filter on book availability.</p>
+<p>Do we:</p>
+<ul>
+<li>Load a list of all books, and iterate over them to find books from the branch we care about?</li>
+<li>Build a list of book copies for a branch when we load the data, and store them on a <code>Branch</code> object?</li>
+</ul>
+<p>The first option is simpler for now, let's write a function that does this.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=999fc12e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=084498b2" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15308,30 +15407,19 @@ Transactions: [(100, 1689867598.3607528), (50, 1689867598.360778)]
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">def</span> <span class="nf">load_books</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../data/library/books.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
-<span class="c1"># Define the class:</span>
-<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transactions</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transactions</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">amount</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
-    
-    <span class="k">def</span> <span class="nf">get_balance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span>
-    
-    <span class="c1"># etc...</span>
-
-<span class="c1"># Create 2 instances of the class and use them:</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
-<span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
-<span class="n">c</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b: Balance: </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">get_balance</span><span class="p">()</span><span class="si">}</span><span class="s2">; </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">transactions</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;c: Balance: </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">get_balance</span><span class="p">()</span><span class="si">}</span><span class="s2">; </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">transactions</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">list_books_for_branch</span><span class="p">(</span><span class="n">branch_id</span><span class="p">,</span> <span class="n">available_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Listing books for </span><span class="si">{</span><span class="n">branch_id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="n">load_books</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">copy</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">copy</span><span class="p">[</span><span class="s1">&#39;branch_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">branch_id</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">available_only</span> <span class="ow">and</span> <span class="p">(</span><span class="n">copy</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -15339,59 +15427,19 @@ Transactions: [(100, 1689867598.3607528), (50, 1689867598.360778)]
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>b: Balance: 100; b.transactions=[(100, 1689867598.374804)]
-c: Balance: 50; c.transactions=[(50, 1689867598.37495)]
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=4f304faf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section></section><section ><section >
+<div id="cell-id=4da22ed5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Defining-classes">Defining classes<a class="anchor-link" href="#Defining-classes">&#182;</a></h1><p>Classes are defined with the <code>class</code> keyword.</p>
-<pre><code>class &lt;ClassName&gt;:
-    &lt;statements&gt;
-</code></pre>
+<h2 id="Good-enough?">Good enough?<a class="anchor-link" href="#Good-enough?">&#182;</a></h2><p>This is ok. But what if we need to print the branch name, instead of the id?</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=ccade7eb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="__init__()"><code>__init__()</code><a class="anchor-link" href="#__init__()">&#182;</a></h2><p>This crazy looking function is called the <strong>init function</strong> or the <strong>constructor</strong>.</p>
-<p>It is run when a new instance of the class is created.</p>
-<p>You don't have to provide an <code>__init__()</code> - if you don't provide one, you get a default version that does nothing.</p>
-<p>It can take arguments, if you want it to!</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=94061d34" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=bebc092c" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15399,14 +15447,53 @@ c: Balance: 50; c.transactions=[(50, 1689867598.37495)]
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_balance</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">initial_balance</span>
-        
-<span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">csv</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;b balance: </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">; c balance: </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Branch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">branch_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">); Address: </span><span class="se">\&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">, id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+    
+    
+<span class="k">def</span> <span class="nf">load_branches</span><span class="p">():</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../data/library/branches.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">branches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Branch</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">branches</span>
+
+
+<span class="k">def</span> <span class="nf">load_books</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../data/library/books.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    
+<span class="k">def</span> <span class="nf">list_books_for_branch</span><span class="p">(</span><span class="n">branch_id</span><span class="p">,</span> <span class="n">available_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="n">load_books</span><span class="p">()</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="n">load_branches</span><span class="p">()</span>
+
+    <span class="n">branch</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">branches</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">branch</span><span class="o">.</span><span class="n">id</span> <span class="o">==</span> <span class="n">branch_id</span><span class="p">:</span>
+            <span class="n">branch</span> <span class="o">=</span> <span class="n">b</span>
+            <span class="k">break</span>
+            
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Listing books for </span><span class="si">{</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">copy</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">copy</span><span class="p">[</span><span class="s1">&#39;branch_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">branch_id</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">available_only</span> <span class="ow">and</span> <span class="p">(</span><span class="n">copy</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="k">continue</span>
+
+                <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+                <span class="k">break</span>
 </pre></div>
 
      </div>
@@ -15414,43 +15501,25 @@ c: Balance: 50; c.transactions=[(50, 1689867598.37495)]
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>b balance: 100; c balance: 500
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=7881349e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=30b201ac" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="self"><code>self</code><a class="anchor-link" href="#self">&#182;</a></h2><p>We see this strange parameter, <code>self</code>, all over the place in classes.</p>
-<p>The <code>self</code> parameter is the way Python gives methods access to the instance they're being called on. When you call a method on an instance, the instance itself is passed as the first argument.</p>
-<p>This means that, when you call a method with 1 argument, it will actually be passed 2 arguments: the instance, and then your argument.</p>
-<p>It's easy to forget to add it when defining methods. If you get strange errors about calling methods with the wrong number of arguments, check to see if you left out the <code>self</code> parameter.</p>
+<h2 id="Can-we-do-better?">Can we do better?<a class="anchor-link" href="#Can-we-do-better?">&#182;</a></h2><p>This works! But we can improve it.</p>
+<ol>
+<li>Looking up a branch by <code>branch_id</code> seems like an operation we'll need again. Let's apply functional decomposition.</li>
+<li>Storing the branches in a list makes finding a branch inefficient - let's use a dictionary from <code>branch_id</code> -&gt; <code>Branch</code> instance.</li>
+</ol>
+<p>We're going to <strong>refactor</strong> - change the way our code is structured without changing its behavior.</p>
+<p>We'll introduce a <code>BranchCollection</code> class to hold all our branches, and provide easy lookup of <code>Branch</code> instance by <code>branch_id</code>:</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=322e4978" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e97f5f75" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15458,21 +15527,51 @@ c: Balance: 50; c.transactions=[(50, 1689867598.37495)]
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_balance</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">initial_balance</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Branch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">branch_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">); Address: </span><span class="se">\&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">, id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+
     
-    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
+<span class="k">class</span> <span class="nc">BranchCollection</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">branches</span> <span class="o">=</span> <span class="p">{}</span>
+        
+    <span class="k">def</span> <span class="nf">load_from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Branch</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+                
+    <span class="k">def</span> <span class="nf">list_branches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Listing all branches...&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">get_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
+    
+    
+<span class="k">def</span> <span class="nf">list_books_for_branch</span><span class="p">(</span><span class="n">branch_id</span><span class="p">):</span>
+    <span class="n">books</span> <span class="o">=</span> <span class="n">load_books</span><span class="p">()</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="n">BranchCollection</span><span class="p">()</span>
+    <span class="n">branches</span><span class="o">.</span><span class="n">load_from_file</span><span class="p">(</span><span class="s1">&#39;../../data/library/branches.csv&#39;</span><span class="p">)</span>
+    
+    <span class="n">branch</span> <span class="o">=</span> <span class="n">branches</span><span class="o">.</span><span class="n">get_branch</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Listing books for </span><span class="si">{</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">copy</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="n">copy</span><span class="p">[</span><span class="s1">&#39;branch_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">branch_id</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">available_only</span> <span class="ow">and</span> <span class="p">(</span><span class="n">copy</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="k">continue</span>
 
-<span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># This is equivalent to b.deposit(700):</span>
-<span class="c1"># (This is only shown to de-mystify `self`, it&#39;s not a recommended way to call instance methods)</span>
-<span class="n">BankAccount</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">700</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+                <span class="k">break</span>
 </pre></div>
 
      </div>
@@ -15480,59 +15579,44 @@ c: Balance: 50; c.transactions=[(50, 1689867598.37495)]
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>65
-765
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=0c576962" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=bbff8bb9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Class-and-instance-attributes">Class and instance attributes<a class="anchor-link" href="#Class-and-instance-attributes">&#182;</a></h2><p>Classes can have attributes that hold data (e.g. <code>balance</code> and <code>transactions</code> from <code>BankAccount</code>).</p>
-<p>There are 2 types of attributes:</p>
-<ul>
-<li><strong>Instance attributes</strong> are unique to each instance. They are usually defined in <code>__init__</code>.</li>
-<li><strong>Class attributes</strong> are shared among every instance of a class. They are defined directly on the class.</li>
-</ul>
+<h2 id="Any-suggestions?">Any suggestions?<a class="anchor-link" href="#Any-suggestions?">&#182;</a></h2><p>How does this feel? What else could we refactor?</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=7410e142" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div><div class="fragment" >
+<div id="cell-id=27d5ded8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Beware-class-attributes">Beware class attributes<a class="anchor-link" href="#Beware-class-attributes">&#182;</a></h2><p>Class attributes are shared between <strong>all instances</strong>.</p>
-<p>There are legitimate uses for them, but they are special cases. Until you're a move advanced programmer, you can safely avoid them, and always use instance variables.</p>
+<p>At this point in the problem, it's still quite hard to say whether one design is &quot;better&quot; than another. Let's move on to the next operation, rather than risk over-designing things we won't need.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=35decb92" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=4e39292e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Listing-books-checked-out-by-a-patron">Listing books checked out by a patron<a class="anchor-link" href="#Listing-books-checked-out-by-a-patron">&#182;</a></h1><p>Now we need to load the third file, containing the patron data. We'll now have three related data collections - Branches, Books, and Patrons. It seems like a good idea to create a class to hold this relationship.</p>
+<p>Let's refactor again. We'll repurpose <code>BranchCollection</code> into a <code>LibraryNetwork</code>, and make it hold all of our data.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=b68cf4b4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15540,363 +15624,58 @@ c: Balance: 50; c.transactions=[(50, 1689867598.37495)]
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># example of the surprising behavior of class attributes </span>
-
-<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-    <span class="c1"># A class variable; it is defined directly on the class</span>
-    <span class="n">class_transactions</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_balance</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">initial_balance</span>
-        <span class="c1"># An instance variable - it is assigned to in __init__</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transactions</span> <span class="o">=</span> <span class="p">[]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LibraryNetwork</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">branches</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span> <span class="o">=</span> <span class="p">{}</span>
         
-<span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_load_branches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Branch</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 
-<span class="n">b</span><span class="o">.</span><span class="n">class_transactions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;first class transaction&quot;</span><span class="p">)</span>
-<span class="n">b</span><span class="o">.</span><span class="n">transactions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;first instance transaction&quot;</span><span class="p">)</span>
+                <span class="k">def</span> <span class="nf">_load_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">class_transactions</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">class_transactions</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">transactions</span><span class="si">=}</span><span class="se">\n</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">transactions</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
+    <span class="k">def</span> <span class="nf">_load_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">book_list</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">book_list</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">[</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">book</span>
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <span class="k">def</span> <span class="nf">_load_patrons</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">patron_list</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">patron_list</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span><span class="p">[</span><span class="n">patron</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">patron</span>
 
+    <span class="k">def</span> <span class="nf">load_from_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branches_filename</span><span class="p">,</span> <span class="n">books_filename</span><span class="p">,</span> <span class="n">patrons_filename</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_branches</span><span class="p">(</span><span class="n">branches_filename</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_books</span><span class="p">(</span><span class="n">books_filename</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_patrons</span><span class="p">(</span><span class="n">patrons_filename</span><span class="p">)</span>
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>b.class_transactions=[&#39;first class transaction&#39;]
-c.class_transactions=[&#39;first class transaction&#39;]
-b.transactions=[&#39;first instance transaction&#39;]
-[]
-</pre>
-</div>
-</div>
+            
+    <span class="k">def</span> <span class="nf">get_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
 
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=b6d69cbd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Instances">Instances<a class="anchor-link" href="#Instances">&#182;</a></h1><p>We've already seen the things you can do with instances.</p>
-<p>You create them by referencing the class name, and passing any arguments required by <code>__init__</code>, e.g.:</p>
-<ul>
-<li><code>b = BankAccount()</code> for a 0 argument <code>__init__</code></li>
-<li><code>b = BankAccount(100)</code> for our 1-argument <code>__init__</code>.</li>
-</ul>
-<p>You can use <code>.</code> (the dot operator) to access data or methods on an instance, e.g.:</p>
-<ul>
-<li><code>b.deposit(100)</code></li>
-<li><code>b.balance</code></li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=c9b7b696" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2><p>Each class definition creates a new <strong>type</strong> - just like <code>int</code>, <code>str</code>, <code>list</code>, <code>dict</code>, etc are types.</p>
-<p>You can check the type of a variable with the built-in <code>isinstance()</code> function:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=afbd8fcc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    <span class="k">def</span> <span class="nf">list_branches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Listing all branches...&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">branch</span><span class="p">)</span>
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=67c91f72" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=dc8e3640" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">BankAccount</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=67e9c15f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You can also get the type of an object with <code>type()</code>:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=d23af553" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>int</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=1718780d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>str</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=663158bc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>__main__.BankAccount</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=5c77ebae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><p><a href="https://pythontutor.com/visualize.html#code=class%20BankAccount%3A%0A%20%20%20%20def%20__init__%28self,%20initial_balance%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%20initial_balance%0A%20%20%20%20%0A%20%20%20%20def%20deposit%28self,%20amount%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%2B%3D%20amount%0A%0Ab%20%3D%20BankAccount%28100%29%0Ac%20%3D%20b%0Ab.deposit%28200%29%0Aprint%28%22b%3A%20%22%20%2B%20b.balance%29%0Aprint%28%22c%3A%20%22%20%2B%20c.balance%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
-<p>Class instances behave just like lists, dictionaries, and other mutable objects. Variables <strong>refer</strong> to the instances, and any mutations of the instances will be seen by all variables referring to the same object.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=9ea1bd4d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
-<span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">balance</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">list_books_for_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">available_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_branch</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Listing books for </span><span class="si">{</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">copy</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">copy</span><span class="p">[</span><span class="s1">&#39;branch_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">branch_id</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">available_only</span> <span class="ow">and</span> <span class="p">(</span><span class="n">copy</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                        <span class="k">continue</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+                    <span class="k">break</span>
 </pre></div>
 
      </div>
@@ -15917,15 +15696,11 @@ b.transactions=[&#39;first instance transaction&#39;]
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
 <pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[13], line 3</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> b <span style="color: rgb(98,98,98)">=</span> BankAccount(<span style="color: rgb(98,98,98)">100</span>)
-<span class="ansi-green-intense-fg ansi-bold">      2</span> c <span style="color: rgb(98,98,98)">=</span> b
-<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-yellow-bg">b</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">deposit</span>(<span style="color: rgb(98,98,98)">200</span>)
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>b<span style="color: rgb(98,98,98)">.</span>balance<span class="ansi-bold" style="color: rgb(175,95,135)">=}</span><span style="color: rgb(175,0,0)"> </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>c<span style="color: rgb(98,98,98)">.</span>balance<span class="ansi-bold" style="color: rgb(175,95,135)">=}</span><span style="color: rgb(175,0,0)">&#34;</span>)
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;BankAccount&#39; object has no attribute &#39;deposit&#39;</pre>
+<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[6], line 15</span>
+<span class="ansi-red-fg">    def _load_books(self, filename):</span>
+    ^
+<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> expected an indented block after function definition on line 13
+</pre>
 </div>
 </div>
 
@@ -15933,171 +15708,589 @@ Cell <span class="ansi-green-fg">In[13], line 3</span>
 
 </div>
 
-</div>
-<div id="cell-id=705fe7d2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></div></section></section><section ><section >
+<div id="cell-id=738a8031" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Class-design">Class design<a class="anchor-link" href="#Class-design">&#182;</a></h2><p>TODO
-Briefly cover interface / API, hard to misuse, encapsulation, etc</p>
+<h2 id="What-are-those-leading-underscores?">What are those leading underscores?<a class="anchor-link" href="#What-are-those-leading-underscores?">&#182;</a></h2><p>We added <code>_load_branches</code>, <code>_load_books</code>, and <code>_load_patrons</code> - why did I name them that way?</p>
+<p>The leading underscore indicates they are &quot;private&quot;. To understand what that means, let's first talk about <strong>interfaces</strong>, <strong>encapsulation</strong>.</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=5bb7ca70" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section></section><section ><section >
+<div id="cell-id=dad3c979" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Best-practices">Best practices<a class="anchor-link" href="#Best-practices">&#182;</a></h1><ul>
-<li>It can be tempting to make everything a class.<ul>
-<li>You don't need to! If you're dealing with a very simple data structure, or a very small number of operations, it's probably simpler to skip the class.</li>
-<li>It's a judgment call - classes add coding overhead, but can also make code much easier to use, follow, and maintain.</li>
-</ul>
-</li>
-<li>It can also be tempting to rope a lot of loosely related code into a single, large class.<ul>
-<li>Again, this is a judgment call.</li>
-<li>Classes that are too large are hard to use and maintain, and don't add much value.</li>
-</ul>
-</li>
-<li>A good class definition provides a clean <strong>interface</strong> (set of methods / attributes for a user to interact with), and doesn't <strong>couple</strong> tightly with other code (i.e. the logic in the class is self-contained, and doesn't make assumptions about code outside the class).<ul>
-<li>Good class design is a learned skill. Don't be afraid to just try things out, and learn from the tries that cause more trouble than they save.</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=7e47b9ec" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Inheritance">Inheritance<a class="anchor-link" href="#Inheritance">&#182;</a></h1><p>Classes can <strong>inherit</strong> from other classes.</p>
-<p>A class that inherits from another class is called a <strong>child</strong> class. A class that is inherited from is called a <strong>parent</strong> class.</p>
-<p>A child class has access to all of the parent class's attributes and methods.</p>
-<p>A child class can add its own attributes or methods, or <strong>override</strong> the parent methods by providing different implementations.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=13edd05c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Inheritance---why-so-brief?">Inheritance - why so brief?<a class="anchor-link" href="#Inheritance---why-so-brief?">&#182;</a></h2><p>Many intro to programming courses will spend a full lecture or 2 (or more) on inheritance. We'll be mostly skipping it for 2 reasons:</p>
+<h1 id="Interfaces">Interfaces<a class="anchor-link" href="#Interfaces">&#182;</a></h1><p>One of the poweful things about classes (and modules! and packages!) is that they provide an <strong>interface</strong>: a set of methods and/or data structures that can be used to interact with the class (or module! or package!).</p>
+<p>A good interface is:</p>
 <ol>
-<li><p>If you continue into the Computer Science curriculum, you will cover object-oriented programming and inheritance in depth in Cosi-12b.</p>
-</li>
-<li><p>I think inheritance is overused and often misused in Python. There are often better ways to add structure and separation of concerns to your code, such as using instance attributes to control behavior, breaking a larger class up into smaller classes, or introducing helper functions. You probably won't need inheritance, unless you are working with pre-exisiting code that already uses it.</p>
-</li>
+<li>Cohesive</li>
+<li>Easy to understand</li>
+<li>Easy to use</li>
+<li>Hard to misuse</li>
 </ol>
+<p>Designing a great interface - one that is hard to misuse - is harder than it sounds.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=28e7580b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># an inheritance examples:</span>
-<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_balance</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">initial_balance</span>
-    
-    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
-        
-    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>
-        
-<span class="k">class</span> <span class="nc">InterestBearingAccount</span><span class="p">(</span><span class="n">BankAccount</span><span class="p">):</span>
-    <span class="c1"># override __init__ to take an interest rate</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_balance</span><span class="p">,</span> <span class="n">interest_rate</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">interest_rate</span> <span class="o">=</span> <span class="n">interest_rate</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">initial_balance</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">add_interest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interest_rate</span>
-        
-<span class="k">class</span> <span class="nc">FeeBasedAccount</span><span class="p">(</span><span class="n">BankAccount</span><span class="p">):</span>
-    <span class="c1"># override withdraw() to apply a fee on every withdrawal</span>
-    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-</span> <span class="n">amount</span> <span class="o">-</span> <span class="mf">3.0</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=a01cd4ca" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># non-inheritance alternative:</span>
-<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">initial_balance</span><span class="p">,</span> <span class="n">interest_rate</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">withdraw_fee</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="n">initial_balance</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">interest_rate</span> <span class="o">=</span> <span class="n">interest_rate</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">withdraw_fee</span> <span class="o">=</span> <span class="n">withdraw_fee</span>
-    
-    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">+=</span> <span class="n">amount</span>
-        
-    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">-</span> <span class="n">amount</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">withdraw_fee</span>
-        
-    <span class="k">def</span> <span class="nf">add_interest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">interest_rate</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div id="cell-id=595843a4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=beca74c8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Inheritance-quick-reference">Inheritance quick reference<a class="anchor-link" href="#Inheritance-quick-reference">&#182;</a></h2><ul>
-<li>Define an inherited class with <code>class &lt;child class name&gt;(&lt;parent class name&gt;)</code>, e.g. <code>class FeeBasedAccount(BankAccount)</code></li>
-<li>Child classes have access to all attributes and methods from a parent class.</li>
-<li>Override a method from a parent class by defining a method with the same signature on a child class.</li>
-<li>Inheritance can be chained<ul>
-<li>If <code>B</code> inherits from <code>A</code>, and <code>C</code> inherits from <code>B</code>, then <code>C</code> has access to all of <code>A</code>'s and <code>B</code>'s data and methods.</li>
+<h1 id="Encapsulation">Encapsulation<a class="anchor-link" href="#Encapsulation">&#182;</a></h1><p>An interface provides <strong>encapsulation</strong>. This means we've hidden the details of an operation behind an interface. You, or someone else, can use the interface without needing to worry about the details of the implementation.</p>
+<p>This is an important and powerful strategy to keep code structured and understandable as a codebase grows larger.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=106444d8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Privacy">Privacy<a class="anchor-link" href="#Privacy">&#182;</a></h2><p>In Python it is a <strong>convention</strong> that methods that start with underscores (<code>_</code>) are considered <strong>private</strong>.</p>
+<p><strong>Private</strong>, in the context of classes, means a data structure or method that is only meant to be accessed from within the class.</p>
+<ul>
+<li>Making things &quot;private&quot; makes them easier to change later without needing to update every usage of the class.</li>
+</ul>
+<p><strong>Convention</strong> means that there's no enforcement of this at the language level. You can happily name and use functions with leading underscores however you want.</p>
+<ul>
+<li>But, if other people are using your code, you will confuse them if you expect them to use functions that start with underscores.</li>
+<li>Conversely, if you are using someone else's classes, avoid accessing private data structure or methods - they are likely to change without warning in future versions of the class, or be hard to use correctly.</li>
+</ul>
+<p>Other languages (e.g. Java) have language-level enforcement of privacy - you can declare that a method is &quot;private&quot;, and the language will prevent you from accessing it from outside the class.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=1338a3f9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Back-to-the-library...">Back to the library...<a class="anchor-link" href="#Back-to-the-library...">&#182;</a></h1><p>Now we'll add our <code>list_checkouts_for_patron</code> method.</p>
+<p>Note that there is a distinction between a &quot;book&quot; and a &quot;copy of a book&quot;. Patrons check out copies of books, but the book metadata (title, description) is specified for the book. In order to print out a book title and a due date, we need information about both the book and the copy.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=65916de0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LibraryNetwork</span><span class="p">:</span>
+    <span class="c1"># ...</span>
+    <span class="k">def</span> <span class="nf">get_patron</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">patron_id</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">list_checkouts_for_patron</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron_id</span><span class="p">):</span>
+        <span class="n">patron</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_patron</span><span class="p">(</span><span class="n">patron_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Checkouts for </span><span class="si">{</span><span class="n">patron</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">copy_id</span> <span class="ow">in</span> <span class="n">patron</span><span class="p">[</span><span class="s1">&#39;checked_out_copy_ids&#39;</span><span class="p">]:</span>
+            <span class="n">bc</span><span class="p">,</span> <span class="n">book</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_copy</span><span class="p">(</span><span class="n">copy_id</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">), due: </span><span class="si">{</span><span class="n">bc</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy_id</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">bc</span><span class="p">[</span><span class="s1">&#39;copy_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">copy_id</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">bc</span><span class="p">,</span> <span class="n">book</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=649bda63" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Last-operation:-simple-text-search">Last operation: simple text search<a class="anchor-link" href="#Last-operation:-simple-text-search">&#182;</a></h1><p>Let's add this last function, then we'll look at our whole program. This one is relatively straightforward.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=76bc8a4e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">LibraryNetwork</span><span class="p">:</span>
+    <span class="c1"># ...</span>
+    
+    <span class="k">def</span> <span class="nf">find_matching_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substring</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Books with </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">substring</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> in the title: &quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">substring</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=232bc8e9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="The-whole-thing">The whole thing<a class="anchor-link" href="#The-whole-thing">&#182;</a></h1><p><a href="https://replit.com/@cosi-10a-fall23/Library#main.py">repl.it link</a></p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=da9d93c6" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="k">class</span> <span class="nc">Branch</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">branch_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">); Address: </span><span class="se">\&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">, id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">LibraryNetwork</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">branches</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">_load_branches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Branch</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_load_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">book_list</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">book_list</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">[</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">book</span>
+
+    <span class="k">def</span> <span class="nf">_load_patrons</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">patron_list</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">patron_list</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span><span class="p">[</span><span class="n">patron</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">patron</span>
+
+    <span class="k">def</span> <span class="nf">load_from_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branches_filename</span><span class="p">,</span> <span class="n">books_filename</span><span class="p">,</span>
+                                            <span class="n">patrons_filename</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_branches</span><span class="p">(</span><span class="n">branches_filename</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_books</span><span class="p">(</span><span class="n">books_filename</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_patrons</span><span class="p">(</span><span class="n">patrons_filename</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_patron</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">patron_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy_id</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">bc</span><span class="p">[</span><span class="s1">&#39;copy_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">copy_id</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">bc</span><span class="p">,</span> <span class="n">book</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">list_branches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Listing all branches...&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">branch</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">list_books_for_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">available_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_branch</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Listing books for </span><span class="si">{</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">copy</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">copy</span><span class="p">[</span><span class="s1">&#39;branch_id&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">branch_id</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">available_only</span> <span class="ow">and</span> <span class="p">(</span><span class="n">copy</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                        <span class="k">continue</span>
+
+                    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+                    <span class="k">break</span>
+
+    <span class="k">def</span> <span class="nf">list_checkouts_for_patron</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron_id</span><span class="p">):</span>
+        <span class="n">patron</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_patron</span><span class="p">(</span><span class="n">patron_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Checkouts for </span><span class="si">{</span><span class="n">patron</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">copy_id</span> <span class="ow">in</span> <span class="n">patron</span><span class="p">[</span><span class="s1">&#39;checked_out_copy_ids&#39;</span><span class="p">]:</span>
+            <span class="n">bc</span><span class="p">,</span> <span class="n">book</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_copy</span><span class="p">(</span><span class="n">copy_id</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">), due: </span><span class="si">{</span><span class="n">bc</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">find_matching_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substring</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Books with </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">substring</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> in the title: &quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">substring</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=b15eb7ea" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="What-do-you-think-now?">What do you think now?<a class="anchor-link" href="#What-do-you-think-now?">&#182;</a></h1><p>Do you understand this code? Do you like it? Where could we improve?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=3dce3d54" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Some things I like:</p>
+<ul>
+<li>We avoided writing a lot of code that we didn't need.<ul>
+<li>My first instinct with a problem like this is to run off and define a class for every type of object, model the relationships between them, etc. We didn't need most of that.</li>
 </ul>
 </li>
-<li>You can reference the immediate parent class with the <code>super()</code> function.<ul>
-<li>The parent <code>__init__</code> is not called automatically; if you override <code>__init__</code> you need to call the parent <code>__init__</code> explicitly.</li>
+<li>The interface is pretty simple, clear, and mostly hard to misuse<ul>
+<li>Our LibraryNetwork can be misused if you create one, but forget to load the data, but otherwise the methods we provided are pretty straightforward.</li>
 </ul>
 </li>
 </ul>
 
 </div>
 </div>
+</div>
+</div><div class="fragment" >
+<div id="cell-id=733ae00b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Some things I don't like:</p>
+<ul>
+<li>No <code>Book</code> or <code>Patron</code> classes - we access the data directly in the dictionaries that are loaded from the JSON.<ul>
+<li>What happens if the format of the JSON changes? If this code is widely used, we'd need to update many places.</li>
+<li><strong>But</strong>: the code is not widely used, and it is unlikely to ever be used again.</li>
+</ul>
+</li>
+<li>Listing the checkouts for a patron is very inefficient<ul>
+<li>We look at every copy of every book to find the copy_id we're looking for.</li>
+<li><strong>But</strong>: the scale of data we're dealing with is tiny (in computer terms): hundreds of books and patrons.</li>
+</ul>
+</li>
+<li>You need the whole <code>LibraryNetwork</code> object in order to link between <code>Branch</code>, <code>Book</code>, and <code>Patron</code>.<ul>
+<li>Everything is referenced by ids, and the only way to get to the objects is to look them up by id in <code>LibraryNetwork</code>s data structures.</li>
+<li>We could use <strong>references</strong> to link objects together. E.g. a <code>BookCopy</code> object could reference a <code>Book</code> object, rather than holding a <code>book_id</code>.</li>
+<li><strong>But</strong>: we don't need it, the code is small manageable.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=07d67015" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Keep-it-simple">Keep it simple<a class="anchor-link" href="#Keep-it-simple">&#182;</a></h1><p>Managing complexity is the biggest challenge when writing code.</p>
+<blockquote>
+<p>&quot;YAGNI&quot; (You Ain't Gonna Need it) - <em>Kent Beck</em></p>
+</blockquote>
+<blockquote>
+<p>&quot;Premature optimization is the root of all evil&quot; - <em>Donald Knuth</em></p>
+</blockquote>
+<blockquote>
+<p>&quot;Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.&quot; - <em>Brian W. Kernighan</em></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" >
+<div id="cell-id=235dfb0e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It can be tempting to over-engineer: to add features, flexibility, or optimizations that you don't actually need.</p>
+<p>Don't do it! Keep it simple! Write the code you need to solve the problem in front of you.</p>
+<p>But also: writing simple code is harder than it looks, so don't get discouraged if you sometimes (often) end up with a tangled mess.</p>
+<p>The best, most experienced programmers may build <strong>complicated systems</strong>, but they tend to write the <strong>simplest code</strong>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=2258bd06" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="An-alternative">An alternative<a class="anchor-link" href="#An-alternative">&#182;</a></h1><p>We discussed more complicated alternatives. Here's a version of the code that uses references to tie objects together. If we needed this code to be more robust, flexible, or efficient, this might be a good approach.</p>
+<p>In this code, the loading of data is much more complicated, because all the different objects reference one another.</p>
+<p>The benefit of this version is that access to related objects is simpler, and much more efficient.</p>
+<p><a href="https://replit.com/@cosi-10a-fall23/Library-references-version">repl.it link</a></p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=e1421e5d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+
+<span class="k">class</span> <span class="nc">Branch</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">branch_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">copies</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">register_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; Registers a BookCopy with this branch &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">copies</span><span class="p">[</span><span class="n">bc</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">); Address: </span><span class="se">\&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2">, id: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">Book</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">book_id</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">description</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">book_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">copies</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">make_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy_id</span><span class="p">,</span> <span class="n">branch</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">        Creates a BookCopy, and registers it with this book and `branch`</span>
+
+<span class="sd">        returns: The new BookCopy</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">bc</span> <span class="o">=</span> <span class="n">BookCopy</span><span class="p">(</span><span class="n">copy_id</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">branch</span><span class="p">)</span>
+        <span class="n">branch</span><span class="o">.</span><span class="n">register_copy</span><span class="p">(</span><span class="n">bc</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">copies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bc</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">bc</span>
+
+
+<span class="k">class</span> <span class="nc">BookCopy</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy_id</span><span class="p">,</span> <span class="n">book</span><span class="p">,</span> <span class="n">branch</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">copy_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">book</span> <span class="o">=</span> <span class="n">book</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">branch</span> <span class="o">=</span> <span class="n">branch</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">due_date</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patron</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_register_checkout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron</span><span class="p">,</span> <span class="n">due_date</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">        Registers a checkout of this book.</span>
+<span class="sd">        Intended to be used from the Patron class only; does not update </span>
+<span class="sd">        Patron&#39;s list of checked out books.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patron</span> <span class="o">=</span> <span class="n">patron</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">due_date</span> <span class="o">=</span> <span class="n">due_date</span>
+
+    <span class="k">def</span> <span class="nf">_register_return</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">        Registers a return of this book.</span>
+<span class="sd">        Intended to be used from the Patron class only; does not update </span>
+<span class="sd">        Patron&#39;s list of checked out books.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patron</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">due_date</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">is_available</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; Returns True if this book is not checked out &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">due_date</span> <span class="ow">is</span> <span class="kc">None</span>
+
+
+<span class="k">class</span> <span class="nc">Patron</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron_id</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">patron_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">checked_out_copies</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">checkout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">due_date</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; Checks a copy of a book out &#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">checked_out_copies</span><span class="p">[</span><span class="n">bc</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc</span>
+        <span class="n">bc</span><span class="o">.</span><span class="n">_register_checkout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">due_date</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">return_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bc</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39; Marks a copy of a book as returned &#39;&#39;&#39;</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">checked_out_copies</span><span class="p">[</span><span class="n">bc</span><span class="o">.</span><span class="n">id</span><span class="p">]</span>
+        <span class="n">bc</span><span class="o">.</span><span class="n">_register_return</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">LibraryNetwork</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">branches</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">copies</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">_load_branches</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="p">[</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Branch</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_load_patrons</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">patron_list</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">patron</span> <span class="ow">in</span> <span class="n">patron_list</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span><span class="p">[</span><span class="n">patron</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">Patron</span><span class="p">(</span><span class="n">patron</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">patron</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">_load_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">book_list</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">book_json</span> <span class="ow">in</span> <span class="n">book_list</span><span class="p">:</span>
+                <span class="c1"># Steps for loading a single book and its copies:</span>
+                <span class="c1"># 1. Create the book object</span>
+                <span class="c1"># 2. For each copy:</span>
+                <span class="c1"># 2a. Look up its Branch</span>
+                <span class="c1"># 2b. Make a BookCopy object, linking it to the branch.</span>
+                <span class="c1"># 2c. If the book is checked out, look up its Patron and </span>
+                <span class="c1">#     register the checkout</span>
+                <span class="c1"># 2d. Record the BookCopy in the Network&#39;s list of copies</span>
+                <span class="c1"># 3. Record the Book in the Network&#39;s list of books.</span>
+                <span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">book_json</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">book_json</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span>
+                                        <span class="n">book_json</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
+
+                <span class="k">for</span> <span class="n">bc_json</span> <span class="ow">in</span> <span class="n">book_json</span><span class="p">[</span><span class="s1">&#39;copies&#39;</span><span class="p">]:</span>
+                    <span class="n">branch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_branch</span><span class="p">(</span><span class="n">bc_json</span><span class="p">[</span><span class="s1">&#39;branch_id&#39;</span><span class="p">])</span>
+                    <span class="n">bc</span> <span class="o">=</span> <span class="n">book</span><span class="o">.</span><span class="n">make_copy</span><span class="p">(</span><span class="n">bc_json</span><span class="p">[</span><span class="s1">&#39;copy_id&#39;</span><span class="p">],</span> <span class="n">branch</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">bc_json</span><span class="p">[</span><span class="s1">&#39;patron_id&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">patron</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_patron</span><span class="p">(</span><span class="n">bc_json</span><span class="p">[</span><span class="s1">&#39;patron_id&#39;</span><span class="p">])</span>
+                        <span class="n">patron</span><span class="o">.</span><span class="n">checkout</span><span class="p">(</span><span class="n">bc</span><span class="p">,</span> <span class="n">bc_json</span><span class="p">[</span><span class="s1">&#39;due_date&#39;</span><span class="p">])</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">copies</span><span class="p">[</span><span class="n">bc</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">[</span><span class="n">book</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">book</span>
+
+    <span class="k">def</span> <span class="nf">load_from_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branches_filename</span><span class="p">,</span> <span class="n">books_filename</span><span class="p">,</span>
+                                            <span class="n">patrons_filename</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Load start&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_branches</span><span class="p">(</span><span class="n">branches_filename</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_patrons</span><span class="p">(</span><span class="n">patrons_filename</span><span class="p">)</span>
+        <span class="c1"># Books must be loaded after Branches and Patrons - the loading process</span>
+        <span class="c1"># relies on those objects already existing.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_books</span><span class="p">(</span><span class="n">books_filename</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Load end&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_patron</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">patrons</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">patron_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">copy_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">copies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">copy_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">list_branches</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Listing all branches...&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">branch</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">branch</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">list_books_for_branch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">branch_id</span><span class="p">,</span> <span class="n">available_only</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="n">branch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_branch</span><span class="p">(</span><span class="n">branch_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Listing books for </span><span class="si">{</span><span class="n">branch</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">found_books</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span> <span class="n">branch</span><span class="o">.</span><span class="n">copies</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">available_only</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">bc</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+                <span class="k">continue</span>
+            <span class="n">found_books</span><span class="p">[</span><span class="n">bc</span><span class="o">.</span><span class="n">book</span><span class="o">.</span><span class="n">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">bc</span><span class="o">.</span><span class="n">book</span>
+
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">found_books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">list_checkouts_for_patron</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">patron_id</span><span class="p">):</span>
+        <span class="n">patron</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_patron</span><span class="p">(</span><span class="n">patron_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Checkouts for </span><span class="si">{</span><span class="n">patron</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">bc</span> <span class="ow">in</span> <span class="n">patron</span><span class="o">.</span><span class="n">checked_out_copies</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">bc</span><span class="o">.</span><span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (id: </span><span class="si">{</span><span class="n">bc</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">), due: </span><span class="si">{</span><span class="n">bc</span><span class="o">.</span><span class="n">due_date</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">find_matching_books</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">substring</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Books with </span><span class="se">\&quot;</span><span class="si">{</span><span class="n">substring</span><span class="si">}</span><span class="se">\&quot;</span><span class="s2"> in the title: &quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">substring</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></div></section></section>
 </div>
 </div>
 </body>
@@ -16107,5 +16300,56 @@ Briefly cover interface / API, hard to misuse, encapsulation, etc</p>
 
 
 
+
+<script>
+require(
+    {
+      // it makes sense to wait a little bit when you are loading
+      // reveal from a cdn in a slow connection environment
+      waitSeconds: 15
+    },
+    [
+      "https://unpkg.com/reveal.js@4.0.2/dist/reveal.js",
+      "https://unpkg.com/reveal.js@4.0.2/plugin/notes/notes.js"
+    ],
+
+    function(Reveal, RevealNotes){
+        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            transition: "slide",
+            slideNumber: "",
+            plugins: [RevealNotes]
+        });
+
+        var update = function(event){
+          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
+            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
+          }
+        };
+
+        Reveal.addEventListener('slidechanged', update);
+
+        function setScrollingSlide() {
+            var scroll = true
+            if (scroll === true) {
+              var h = $('.reveal').height() * 0.95;
+              $('section.present').find('section')
+                .filter(function() {
+                  return $(this).height() > h;
+                })
+                .css('height', 'calc(95vh)')
+                .css('overflow-y', 'scroll')
+                .css('margin-top', '20px');
+            }
+        }
+
+        // check and set the scrolling slide every time the slide change
+        Reveal.addEventListener('slidechanged', setScrollingSlide);
+    }
+);
+</script>
 
 </html>
