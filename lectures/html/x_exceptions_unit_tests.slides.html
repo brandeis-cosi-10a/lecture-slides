@@ -15953,7 +15953,7 @@ Cell <span class="ansi-green-fg">In[17], line 3</span>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">be_exceptional</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before exception&quot;</span><span class="p">)</span>
     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;this is a description&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;aftr exception&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after exception&quot;</span><span class="p">)</span>
 
 <span class="n">be_exceptional</span><span class="p">()</span>
 </pre></div>
@@ -15990,14 +15990,14 @@ Cell <span class="ansi-green-fg">In[17], line 3</span>
 <span class="ansi-red-fg">Exception</span>                                 Traceback (most recent call last)
 Cell <span class="ansi-green-fg">In[18], line 6</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">this is a description</span><span style="color: rgb(175,0,0)">&#34;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">aftr exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">after exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
 <span class="ansi-green-fg">----&gt; 6</span> <span class="ansi-yellow-bg">be_exceptional</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 
 Cell <span class="ansi-green-fg">In[18], line 3</span>, in <span class="ansi-cyan-fg">be_exceptional</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">be_exceptional</span>():
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">before exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
 <span class="ansi-green-fg">----&gt; 3</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">this is a description</span><span style="color: rgb(175,0,0)">&#34;</span>)
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">aftr exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">after exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
 
 <span class="ansi-red-fg">Exception</span>: this is a description</pre>
 </div>
@@ -16385,7 +16385,7 @@ Cell <span class="ansi-green-fg">In[22], line 5</span>, in <span class="ansi-cya
 <h2 id="pytest">pytest<a class="anchor-link" href="#pytest">&#182;</a></h2><p><code>pytest</code> is a framework - a collection of tools and conventions - that make writing and running unit tests easy. It is very powerful, and has many features. We'll only cover the basics, but it has <a href="https://docs.pytest.org/en/7.3.x/how-to/index.html#how-to">extensive documentation with lots of specific examples</a>.</p>
 <ul>
 <li>To run tests, type <code>pytest</code> on the command line (in repl.it: the &quot;Shell&quot; tab)</li>
-<li>To define a test, create a function whose name starts with &quot;test_&quot; in a file whose name starts with &quot;test_&quot;.<ul>
+<li>To define a test, create a function whose name starts with <code>test_</code> in a file whose name starts with <code>test_</code>.<ul>
 <li>e.g. <code>test_add()</code> could go in a file named <code>test_math_stuff.py</code></li>
 <li>The <code>pytest</code> program will &quot;magically&quot; find and run any functions that are named like this.</li>
 </ul>
