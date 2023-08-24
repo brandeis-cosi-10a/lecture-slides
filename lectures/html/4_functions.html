@@ -18385,61 +18385,18 @@ Outside after func: changed global
 </div>
 
 </div>
-<div id="cell-id=c7ee14d7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c4d0a102" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>TODO: Either replace this, or replace the problem set exercise...</p>
+<h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><p>Write a program which quizzes a player with a series of questions. The player should be awarded 1 point for each correct answer. If the player answers incorrectly 2 times, the quiz should end.</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=2db5688b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h1><p>Let's revisit our dice game now that we have loops and functions.</p>
-<p>A reminder on the rules:</p>
-<ul>
-<li>The player rolls a die repeatedly.</li>
-<li>If they roll a 1, their money is halved</li>
-<li>If they roll a 2, 3, 4, they gain dollars equal to the roll</li>
-<li>If they roll a 5, they gain \$10</li>
-<li>If they roll a 6, their money is doubled.</li>
-</ul>
-<p>In the previous version, we hardcoded 5 rolls. Now, the player will start with $10, each roll will cost \$3, and they can roll as many times as they want. The game ends when they stop, or can't afford to roll.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=b635e920" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's <strong>decompose</strong> again. The main parts of the game are:</p>
-<ul>
-<li>A single roll</li>
-<li>The outer game loop</li>
-</ul>
-<p>A roll function takes some thought:</p>
-<ul>
-<li>Does it need to know the total amount of money the player has?</li>
-<li>Will it update the total on its own, or will the code calling the function handle that?</li>
-</ul>
-<p>Let's try to keep it self-contained first:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=62fa2b4b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=dc1312aa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18447,13 +18404,45 @@ Outside after func: changed global
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-<span class="k">def</span> <span class="nf">roll</span><span class="p">():</span>
-    <span class="n">roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled a &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the geography quiz!&quot;</span><span class="p">)</span>
+<span class="n">incorrect</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">points</span> <span class="o">=</span> <span class="mi">0</span>
 
-    <span class="c1"># don&#39;t have total money, can&#39;t do anything else</span>
-    <span class="k">return</span> <span class="n">roll</span>
+<span class="n">answer1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">answer1</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">answer2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">answer2</span> <span class="o">==</span> <span class="s2">&quot;50&quot;</span><span class="p">:</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">incorrect</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">answer3</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 3: In which state can you find the Grand Canyon? &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer3</span> <span class="o">==</span> <span class="s2">&quot;Arizona&quot;</span><span class="p">:</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">incorrect</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">answer4</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 4: Which North American city has a larger population: Los Angeles or Mexico City? &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer4</span> <span class="o">==</span> <span class="s2">&quot;Mexico City&quot;</span><span class="p">:</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">incorrect</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">answer4</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 5: Which country has the most volcanoes? &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer4</span> <span class="o">==</span> <span class="s2">&quot;Indonesia&quot;</span><span class="p">:</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18461,7 +18450,70 @@ Outside after func: changed global
 </div>
 </div>
 
-</div><div id="cell-id=bac431a7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Welcome to the geography quiz!
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[48], line 6</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> incorrect <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> points <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
+<span class="ansi-green-fg">----&gt; 6</span> answer1 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer1 <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">y</span><span style="color: rgb(175,0,0)">&#39;</span>:
+<span class="ansi-green-intense-fg ansi-bold">      8</span>     points <span style="color: rgb(98,98,98)">=</span> points <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
+
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
+
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=70ffe635" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is ok, but pretty clunky. Let's add some feedback after answering the questions.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=00ffe2d0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18469,7 +18521,55 @@ Outside after func: changed global
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">roll</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the geography quiz!&quot;</span><span class="p">)</span>
+<span class="n">incorrect</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">points</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">answer1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">answer1</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;y&#39;&quot;</span><span class="p">)</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">answer2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">answer2</span> <span class="o">==</span> <span class="s2">&quot;50&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;50&#39;&quot;</span><span class="p">)</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">incorrect</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">answer3</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 3: In which state can you find the Grand Canyon? &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer3</span> <span class="o">==</span> <span class="s2">&quot;Arizona&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;Arizona&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">incorrect</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">answer4</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 4: Which North American city has a larger population: Los Angeles or Mexico City? &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer4</span> <span class="o">==</span> <span class="s2">&quot;Mexico City&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;Mexico City&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">incorrect</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">answer4</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question 5: Which country has the most volcanoes? &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer4</span> <span class="o">==</span> <span class="s2">&quot;Indonesia&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;Indonesia&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18489,19 +18589,39 @@ Outside after func: changed global
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>You rolled a 6.
+<pre>Welcome to the geography quiz!
 </pre>
 </div>
 </div>
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputArea-child">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[49], line 6</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> incorrect <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> points <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">0</span>
+<span class="ansi-green-fg">----&gt; 6</span> answer1 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer1 <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">y</span><span style="color: rgb(175,0,0)">&#39;</span>:
+<span class="ansi-green-intense-fg ansi-bold">      8</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct!</span><span style="color: rgb(175,0,0)">&#34;</span>)
 
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
 
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>6</pre>
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+</div>
 </div>
 
 </div>
@@ -18509,21 +18629,19 @@ Outside after func: changed global
 </div>
 
 </div>
-
-</div>
-<div id="cell-id=5e4c4242" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d8c42a42" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>That <code>roll</code> function isn't very helpful. It generates a random number and prints something - it doesn't capture any real logic.</p>
-<p>Let's add the total amount of money as a parameter so it can do the calculations.</p>
+<p>It plays a little better, but making that change was tedious - we had to make 5 almost identical edits. There's a lot duplication. Let's <strong>decompose</strong>.</p>
+<p>The main repeated parts of the game are asking a question, and checking the answer. Let's write functions for those operations.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=85906d92" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=9e7bb4b3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18531,24 +18649,33 @@ Outside after func: changed global
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="n">roll_number</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">total_money</span>
-    <span class="n">roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 3 - is this good?</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">answer</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="k">def</span> <span class="nf">check_answer</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expected</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>        
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>        
+        <span class="k">return</span> <span class="kc">False</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">+</span> <span class="n">roll</span>
+<span class="n">answer1</span> <span class="o">=</span> <span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">check_answer</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">):</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">5</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">+</span> <span class="mi">10</span>
+<span class="n">answer2</span> <span class="o">=</span> <span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">check_answer</span><span class="p">(</span><span class="n">answer2</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">):</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
 
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">6</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">*</span> <span class="mi">2</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled a &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, and now have $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">))</span>
-    
+<span class="c1">#...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18556,7 +18683,67 @@ Outside after func: changed global
 </div>
 </div>
 
-</div><div id="cell-id=a05b1ccd" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[50], line 14</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Incorrect! The answer was </span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> expected_answer <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)        
+<span class="ansi-green-intense-fg ansi-bold">     12</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">False</span>
+<span class="ansi-green-fg">---&gt; 14</span> answer1 <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">do_question</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     15</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> check_answer(answer, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">y</span><span style="color: rgb(175,0,0)">&#34;</span>):
+<span class="ansi-green-intense-fg ansi-bold">     16</span>     points <span style="color: rgb(98,98,98)">=</span> points <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
+
+Cell <span class="ansi-green-fg">In[50], line 3</span>, in <span class="ansi-cyan-fg">do_question</span><span class="ansi-blue-fg">(question)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">do_question</span>(question):
+<span class="ansi-green-fg">----&gt; 3</span>     answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">question</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> answer
+
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
+
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=7feac485" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Hm, this has taken away <strong>some</strong> duplication.</p>
+<p>But <code>do_question</code> is too small to be very useful, and we still have a lot of boilerplate for each question.</p>
+<p>Let's try combining these 2 together - they always happen in sequence, and we don't have much of a reason to split them apart.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=f6679dff" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18564,9 +18751,28 @@ Outside after func: changed global
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_money</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">roll</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 4</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">expected_answer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+        
+<span class="k">if</span> <span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">):</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+    
+<span class="k">if</span> <span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">):</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="c1"># ...</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18585,10 +18791,35 @@ Outside after func: changed global
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>You rolled a 4, and now have $14
-14
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[51], line 11</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Incorrect! The answer was </span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> expected_answer <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      9</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span class="ansi-bold" style="color: rgb(0,135,0)">False</span>
+<span class="ansi-green-fg">---&gt; 11</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-yellow-bg">do_question</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">y</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>:
+<span class="ansi-green-intense-fg ansi-bold">     12</span>     points <span style="color: rgb(98,98,98)">=</span> points <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span> <span class="ansi-bold" style="color: rgb(0,135,0)">else</span>:
+
+Cell <span class="ansi-green-fg">In[51], line 3</span>, in <span class="ansi-cyan-fg">do_question</span><span class="ansi-blue-fg">(question, expected_answer)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">do_question</span>(question, expected_answer):
+<span class="ansi-green-fg">----&gt; 3</span>     answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">question</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer <span style="color: rgb(98,98,98)">==</span> expected_answer:
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct!</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
+
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
 </div>
 </div>
 
@@ -18597,33 +18828,30 @@ Outside after func: changed global
 </div>
 
 </div>
-<div id="cell-id=95744d36" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4586c7d6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This is better - the <code>roll</code> function now contains all the scoring logic.</p>
-<p>We can say it <strong>encapsulates</strong> that logic.</p>
-<p>Users of the <code>roll</code> function don't need to know anything about the logic to use it.</p>
+<p>Can we do better?</p>
 
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=dab85c8f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=1fa89d42" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Except... users of the function do need to make sure a global named <code>total_money</code> exists.</p>
-<p>Let's fix that by taking in a parameter, and returning the new total:</p>
+<p>Let's try doing the point &amp; incorrect tracking inside <code>do_question</code>.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=389d4e72" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=594ce4ce" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18631,39 +18859,22 @@ Outside after func: changed global
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="n">total_money</span><span class="p">):</span>
-    <span class="n">roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">/</span> <span class="mi">2</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">+</span> <span class="n">roll</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">5</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">+</span> <span class="mi">10</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">6</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">*</span> <span class="mi">2</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled a &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, and now have $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">total_money</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=c0718ef6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">roll</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 5</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">expected_answer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 3: In which state can you find the Grand Canyon? &quot;</span><span class="p">,</span> <span class="s2">&quot;Arizona&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 4: Which North American city has a larger population: Los Angeles or Mexico City? &quot;</span><span class="p">,</span> <span class="s2">&quot;Mexico City&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 5: Which country has the most volcanoes? &quot;</span><span class="p">,</span> <span class="s2">&quot;Indonesia&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18682,9 +18893,427 @@ Outside after func: changed global
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>You rolled a 2, and now have $12
-12
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[52], line 11</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Incorrect! The answer was </span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> expected_answer <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      9</span>         incorrect <span style="color: rgb(98,98,98)">=</span> incorrect <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-fg">---&gt; 11</span> <span class="ansi-yellow-bg">do_question</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">y</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 2: How many countries are in Europe? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">50</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     13</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 3: In which state can you find the Grand Canyon? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arizona</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+Cell <span class="ansi-green-fg">In[52], line 3</span>, in <span class="ansi-cyan-fg">do_question</span><span class="ansi-blue-fg">(question, expected_answer)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">do_question</span>(question, expected_answer):
+<span class="ansi-green-fg">----&gt; 3</span>     answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">question</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer <span style="color: rgb(98,98,98)">==</span> expected_answer:
+<span class="ansi-green-intense-fg ansi-bold">      5</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct!</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
+
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=3b294fad" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><code>UnboundLocalError: local variable 'points' referenced before assignment</code></p>
+<p>What's wrong?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=b9561251" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Those pesky globals... <code>points</code> is treated like a local variable in that function. We need to explicitly use the <code>global</code> keyword.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=5f247d53" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 6</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">points</span>
+    <span class="k">global</span> <span class="n">incorrect</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">expected_answer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 3: In which state can you find the Grand Canyon? &quot;</span><span class="p">,</span> <span class="s2">&quot;Arizona&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 4: Which North American city has a larger population: Los Angeles or Mexico City? &quot;</span><span class="p">,</span> <span class="s2">&quot;Mexico City&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 5: Which country has the most volcanoes? &quot;</span><span class="p">,</span> <span class="s2">&quot;Indonesia&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[53], line 13</span>
+<span class="ansi-green-intense-fg ansi-bold">     10</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Incorrect! The answer was </span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> expected_answer <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     11</span>         incorrect <span style="color: rgb(98,98,98)">=</span> incorrect <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-fg">---&gt; 13</span> <span class="ansi-yellow-bg">do_question</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">y</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 2: How many countries are in Europe? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">50</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     15</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 3: In which state can you find the Grand Canyon? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arizona</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+Cell <span class="ansi-green-fg">In[53], line 5</span>, in <span class="ansi-cyan-fg">do_question</span><span class="ansi-blue-fg">(question, expected_answer)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">global</span> points
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">global</span> incorrect
+<span class="ansi-green-fg">----&gt; 5</span> answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">question</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer <span style="color: rgb(98,98,98)">==</span> expected_answer:
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct!</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
+
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=2858f8ff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Globals-again">Globals again<a class="anchor-link" href="#Globals-again">&#182;</a></h1><p>Overusing globals is considered a bad coding practice. Having more than a few of them can make larger programs very difficult to debug and maintain.</p>
+<p>However, you haven't yet learned the language features that would let you avoid using them in this case - so for now, use globals if you think they can help!</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=3fbb9b19" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is much better. Is it still correct?</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=18fb68e2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 6</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">points</span>
+    <span class="k">global</span> <span class="n">incorrect</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">expected_answer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 3: In which state can you find the Grand Canyon? &quot;</span><span class="p">,</span> <span class="s2">&quot;Arizona&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 4: Which North American city has a larger population: Los Angeles or Mexico City? &quot;</span><span class="p">,</span> <span class="s2">&quot;Mexico City&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 5: Which country has the most volcanoes? &quot;</span><span class="p">,</span> <span class="s2">&quot;Indonesia&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[54], line 13</span>
+<span class="ansi-green-intense-fg ansi-bold">     10</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Incorrect! The answer was </span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> expected_answer <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     11</span>         incorrect <span style="color: rgb(98,98,98)">=</span> incorrect <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-fg">---&gt; 13</span> <span class="ansi-yellow-bg">do_question</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">y</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 2: How many countries are in Europe? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">50</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     15</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 3: In which state can you find the Grand Canyon? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arizona</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+Cell <span class="ansi-green-fg">In[54], line 5</span>, in <span class="ansi-cyan-fg">do_question</span><span class="ansi-blue-fg">(question, expected_answer)</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-bold" style="color: rgb(0,135,0)">global</span> points
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">global</span> incorrect
+<span class="ansi-green-fg">----&gt; 5</span> answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">question</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer <span style="color: rgb(98,98,98)">==</span> expected_answer:
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct!</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
+
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=0adf0f6c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Whoops... it doesn't stop after 2 wrong answers.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=cc01cb92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Here we use <code>return</code> to control the flow of the program. Once the player has accumulated 2 incorrect answers, the rest of the questions are skipped.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=2c1bd986" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 7</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">points</span>
+    <span class="k">global</span> <span class="n">incorrect</span>
+    <span class="k">if</span> <span class="n">incorrect</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span>
+    
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">expected_answer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 1: Does Kansas border Colorado? (y/n) &quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 2: How many countries are in Europe? &quot;</span><span class="p">,</span> <span class="s2">&quot;50&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 3: In which state can you find the Grand Canyon? &quot;</span><span class="p">,</span> <span class="s2">&quot;Arizona&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 4: Which North American city has a larger population: Los Angeles or Mexico City? &quot;</span><span class="p">,</span> <span class="s2">&quot;Mexico City&quot;</span><span class="p">)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="s2">&quot;Question 5: Which country has the most volcanoes? &quot;</span><span class="p">,</span> <span class="s2">&quot;Indonesia&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">StdinNotImplementedError</span>                  Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[55], line 16</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span>         <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Incorrect! The answer was </span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span> <span style="color: rgb(98,98,98)">+</span> expected_answer <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     14</span>         incorrect <span style="color: rgb(98,98,98)">=</span> incorrect <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-fg">---&gt; 16</span> <span class="ansi-yellow-bg">do_question</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Question 1: Does Kansas border Colorado? (y/n) </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">y</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     17</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 2: How many countries are in Europe? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">50</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">     18</span> do_question(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Question 3: In which state can you find the Grand Canyon? </span><span style="color: rgb(175,0,0)">&#34;</span>, <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Arizona</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+Cell <span class="ansi-green-fg">In[55], line 8</span>, in <span class="ansi-cyan-fg">do_question</span><span class="ansi-blue-fg">(question, expected_answer)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> incorrect <span style="color: rgb(98,98,98)">&gt;</span><span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">2</span>:
+<span class="ansi-green-intense-fg ansi-bold">      6</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">return</span>
+<span class="ansi-green-fg">----&gt; 8</span> answer <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">input</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">question</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> answer <span style="color: rgb(98,98,98)">==</span> expected_answer:
+<span class="ansi-green-intense-fg ansi-bold">     10</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Correct!</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+File <span class="ansi-green-fg">~/venv/lectures/lib/python3.10/site-packages/ipykernel/kernelbase.py:1190</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1188</span> <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span class="ansi-bold" style="color: rgb(175,0,255)">not</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1189</span>     msg <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">raw_input was called, but this frontend does not support input requests.</span><span style="color: rgb(175,0,0)">&#34;</span>
+<span class="ansi-green-fg">-&gt; 1190</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> StdinNotImplementedError(msg)
+<span class="ansi-green-intense-fg ansi-bold">   1191</span> <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1192</span>     <span style="color: rgb(0,135,0)">str</span>(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1193</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>_parent_ident[<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>],
+<span class="ansi-green-intense-fg ansi-bold">   1194</span>     <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>get_parent(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">shell</span><span style="color: rgb(175,0,0)">&#34;</span>),
+<span class="ansi-green-intense-fg ansi-bold">   1195</span>     password<span style="color: rgb(98,98,98)">=</span><span class="ansi-bold" style="color: rgb(0,135,0)">False</span>,
+<span class="ansi-green-intense-fg ansi-bold">   1196</span> )
+
+<span class="ansi-red-fg">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=5a696575" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Seems awkward to have to pass in the question number as part of the question text... let's add a parameter.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=57051583" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 8</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">points</span>
+    <span class="k">global</span> <span class="n">incorrect</span>
+    <span class="k">if</span> <span class="n">incorrect</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span>
+    
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">question</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">expected_answer</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="n">do_question</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Does</span> <span class="n">Kansas</span> <span class="n">border</span> <span class="n">Colorado</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="s2">&quot;, &quot;</span><span class="n">y</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">How</span> <span class="n">many</span> <span class="n">countries</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">Europe</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="mi">50</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">In</span> <span class="n">which</span> <span class="n">state</span> <span class="n">can</span> <span class="n">you</span> <span class="n">find</span> <span class="n">the</span> <span class="n">Grand</span> <span class="n">Canyon</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="n">Arizona</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Which</span> <span class="n">North</span> <span class="n">American</span> <span class="n">city</span> <span class="n">has</span> <span class="n">a</span> <span class="n">larger</span> <span class="n">population</span><span class="p">:</span> <span class="n">Los</span> <span class="n">Angeles</span> <span class="ow">or</span> <span class="n">Mexico</span> <span class="n">City</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="n">Mexico</span> <span class="n">City</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Which</span> <span class="n">country</span> <span class="n">has</span> <span class="n">the</span> <span class="n">most</span> <span class="n">volcanoes</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="n">Indonesia</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[56], line 16</span>
+<span class="ansi-red-fg">    do_question(1, Does Kansas border Colorado? (y/n) &#34;, &#34;y&#34;)</span>
+                                                           ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> unterminated string literal (detected at line 16)
 </pre>
 </div>
 </div>
@@ -18694,53 +19323,75 @@ Outside after func: changed global
 </div>
 
 </div>
-<div id="cell-id=b5f801f9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0b3a3806" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This is better - the <code>roll</code> function is self-contained now, and very hard to misuse.</p>
-<p>On to our outer game loop:</p>
+<p>Do you notice how much easier it is to make improvements when we don't have duplicated code? We make the change once inside our function, and get the benefit everywhere that function is used.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=f9196123" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
+</div>
+<div id="cell-id=28438cf1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This is pretty good.</p>
+<p>Last thing - what if we wanted to make our answer checking fancier? For example, make it case-insensitive, or even allow close misspellings?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=bc0b9d33" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We haven't covered enough to actually do those things yet, but let's take the first step of <strong>factoring out</strong> the comparison logic.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=16c60061" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 9</span>
+<span class="k">def</span> <span class="nf">check_answer</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+    <span class="c1"># TODO: replace this with much fancier logic</span>
+    <span class="k">return</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expected</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the game!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 1, your money is divided by 2&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 2, 3, or 4, you gain the amount you rolled&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 5, you gain 10&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 6, your money is doubled&quot;</span><span class="p">)</span>
-
-<span class="n">roll_cost</span> <span class="o">=</span> <span class="mf">3.0</span>
-<span class="n">total_money</span> <span class="o">=</span> <span class="mf">10.0</span>
-<span class="n">roll_num</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">total_money</span> <span class="o">&lt;</span> <span class="n">roll_cost</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. This isn&#39;t enough to roll, game over!&quot;</span><span class="p">)</span>
-        <span class="k">break</span>
-        
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Would you like to roll? (y/n)&quot;</span><span class="p">)</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">answer</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
-        <span class="k">break</span>
+<span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">points</span>
+    <span class="k">global</span> <span class="n">incorrect</span>
+    <span class="k">if</span> <span class="n">incorrect</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span>
     
-    <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">-</span> <span class="mi">3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You paid $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">roll_cost</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; to roll, $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; left.&quot;</span><span class="p">)</span>
-    <span class="n">total_money</span> <span class="o">=</span> <span class="n">roll</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You ended the game with $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">))</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Question &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">question</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">check_answer</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Correct!&quot;</span><span class="p">)</span>
+        <span class="n">points</span> <span class="o">=</span> <span class="n">points</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Incorrect! The answer was &#39;&quot;</span> <span class="o">+</span> <span class="n">expected_answer</span> <span class="o">+</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+        <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
+        
+<span class="n">do_question</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Does</span> <span class="n">Kansas</span> <span class="n">border</span> <span class="n">Colorado</span><span class="err">?</span> <span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">n</span><span class="p">)</span> <span class="s2">&quot;, &quot;</span><span class="n">y</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">How</span> <span class="n">many</span> <span class="n">countries</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">Europe</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="mi">50</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">In</span> <span class="n">which</span> <span class="n">state</span> <span class="n">can</span> <span class="n">you</span> <span class="n">find</span> <span class="n">the</span> <span class="n">Grand</span> <span class="n">Canyon</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="n">Arizona</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">Which</span> <span class="n">North</span> <span class="n">American</span> <span class="n">city</span> <span class="n">has</span> <span class="n">a</span> <span class="n">larger</span> <span class="n">population</span><span class="p">:</span> <span class="n">Los</span> <span class="n">Angeles</span> <span class="ow">or</span> <span class="n">Mexico</span> <span class="n">City</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="n">Mexico</span> <span class="n">City</span><span class="s2">&quot;)</span>
+<span class="n">do_question</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">Which</span> <span class="n">country</span> <span class="n">has</span> <span class="n">the</span> <span class="n">most</span> <span class="n">volcanoes</span><span class="err">?</span> <span class="s2">&quot;, &quot;</span><span class="n">Indonesia</span><span class="s2">&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You earned &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; points!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -18748,97 +19399,58 @@ Outside after func: changed global
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div id="cell-id=b8fffcd3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Combining it all:</p>
 
-</div>
-</div>
-</div>
-</div><div id="cell-id=3b896e72" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %load ../../snippets/dice_game_lists.py</span>
-<span class="kn">import</span> <span class="nn">random</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to the game!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 1, your money is divided by 2&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 2, 3, or 4, you gain the amount you rolled&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 5, you gain 10&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;If you roll a 6, your money is doubled&quot;</span><span class="p">)</span>
-
-<span class="n">roll_cost</span> <span class="o">=</span> <span class="mf">3.0</span>
-<span class="n">total_money</span> <span class="o">=</span> <span class="mf">10.0</span>
-<span class="n">roll_num</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="k">def</span> <span class="nf">roll</span><span class="p">(</span><span class="n">total_money</span><span class="p">):</span>
-    <span class="n">roll</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">/</span> <span class="mi">2</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">roll</span> <span class="o">==</span> <span class="mi">4</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">+</span> <span class="n">roll</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">5</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">+</span> <span class="mi">10</span>
-
-    <span class="k">if</span><span class="p">(</span><span class="n">roll</span> <span class="o">==</span> <span class="mi">6</span><span class="p">):</span>
-      <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">*</span> <span class="mi">2</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled a &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">roll</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, and now have $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">total_money</span>
-
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">total_money</span> <span class="o">&lt;</span> <span class="n">roll_cost</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. This isn&#39;t enough to roll, game over!&quot;</span><span class="p">)</span>
-        <span class="k">break</span>
-        
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Would you like to roll? (y/n)&quot;</span><span class="p">)</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">answer</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
-        <span class="k">break</span>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
     
-    <span class="n">total_money</span> <span class="o">=</span> <span class="n">total_money</span> <span class="o">-</span> <span class="mi">3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You paid $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">roll_cost</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; to roll, $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; left.&quot;</span><span class="p">)</span>
-    <span class="n">total_money</span> <span class="o">=</span> <span class="n">roll</span><span class="p">(</span><span class="n">total_money</span><span class="p">)</span>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You ended the game with $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total_money</span><span class="p">))</span>
-</pre></div>
 
-     </div>
-</div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[57], line 20</span>
+<span class="ansi-red-fg">    do_question(1, Does Kansas border Colorado? (y/n) &#34;, &#34;y&#34;)</span>
+                                                           ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> unterminated string literal (detected at line 20)
+</pre>
 </div>
 </div>
 
 </div>
-<div id="cell-id=062f08e7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+
+</div>
+
+</div>
+<div id="cell-id=9a9a6589" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>These slides make this look easy, but even a relatively simple program like this took me several iterations to get working and presentable:</p>
+<p>We've created an isolated place for our comparison logic. We've <strong>encapsulated</strong> the logic in a function.</p>
+<p>This function is easy to test in isolation, and it keeps <code>do_question</code> simple even if we eventually have very complicated comparison logic.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=d36bcfc4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The slides made this all seem easy and straightforward, but even a relatively simple program like this took me a few iterations to get working and presentable:</p>
 <ul>
-<li>I moved <code>print</code>s around a <strong>lot</strong> - in and out of the roll function.<ul>
-<li>I originally had the roll function also take a <code>roll_num</code> argument so it could print out which roll you were on.</li>
+<li>It took a few tries to figure out how to best group the logic - my initial tries (not all shown) split the question asking and answer checking in different ways, before I finally settled on combining the logic into one function.</li>
+<li>There are multiple ways to handle the question numbering. I originally tried a global counter variable, rather than passing an argument to <code>do_question</code>.</li>
 </ul>
-</li>
-<li>I forgot a lot of <code>str</code> casts and only discovered them when my code produced errors.</li>
-<li>I started off with a hardcoded roll cost but then decided to make it a variable.</li>
-</ul>
-<p>... and I've been doing this professionally for 20 years.</p>
-<p>You rarely write working code on your first try, let alone clean or elegant code. Don't get discouraged, coding takes practice. The more practice you get, the more natural it will feel.</p>
+<p>... and I've been doing this professionally for ~20 years.</p>
+<p>You rarely write working code on your first try, let alone clean or elegant code. Don't get discouraged, coding takes practice. The more practice you get, the easier it will feel.</p>
 
 </div>
 </div>

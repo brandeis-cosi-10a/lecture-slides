@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>x_exceptions</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
-<title>3_conditionals slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
-<!-- General and theme style sheets -->
-<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/reveal.css">
-
-<!-- If the query includes 'print-pdf', include the PDF print sheet -->
-<script>
-if( window.location.search.match( /print-pdf/gi ) ) {
-        var link = document.createElement( 'link' );
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        document.getElementsByTagName( 'head' )[0].appendChild( link );
-}
-</script>
 
 <style type="text/css">
     pre { line-height: 125%; }
@@ -14982,145 +14968,103 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
+}
+
+/* Misc */
 a.anchor-link {
-   display: none;
-}
-.highlight  {
-    margin: 0.4em;
-}
-.jp-Notebook {
-    padding: 0;
-}
-:root {
-    --jp-ui-font-size1: 20px;       /* instead of 14px */
-    --jp-content-font-size1: 20px;  /* instead of 14px */
-    --jp-code-font-size: 19px;      /* instead of 13px */
-    --jp-cell-prompt-width: 110px;  /* instead of 64px */
-}
-@media print {
-  body {
-    margin: 0;
-  }
-}
-</style>
-
-<style type="text/css">
-/* Overrides of notebook CSS for static HTML export */
-.reveal {
-  font-size: 160%;
-}
-.reveal table {
-  font-size: var(--jp-ui-font-size1);
-}
-.reveal pre {
-  width: inherit;
-  padding: 0.4em;
-  margin: 0px;
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-}
-.reveal pre code {
-  padding: 0px;
-}
-.reveal section img {
-  border: 0px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal .slides {
-  text-align: left;
-}
-.reveal.fade {
-  opacity: 1;
-}
-.reveal .progress {
-  position: static;
+  display: none;
 }
 
-div.jp-InputArea-editor {
-  padding: 0.06em;
+/* Input area styling */
+.jp-InputArea {
+  overflow: hidden;
 }
 
-div.code_cell {
-  background-color: transparent;
+.jp-InputArea-editor {
+  overflow: hidden;
 }
 
-div.output_area pre {
-  font-family: monospace, sans-serif;
-  font-size: 80%;
-}
-
-div.jp-OutputPrompt {
-  /* 5px right shift to account for margin in parent container */
-  margin: 5px 5px 0 0;
-}
-
-.reveal div.highlight {
+.CodeMirror.cm-s-jupyter .highlight pre {
+/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
+  padding: var(--jp-code-padding) 4px;
   margin: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
 }
 
-.reveal div.highlight > pre {
-  margin: 0;
+.jp-OutputArea-output pre {
+  line-height: inherit;
+  font-family: inherit;
+}
+
+.jp-RenderedText pre {
+  color: var(--jp-content-font-color1);
+  font-size: var(--jp-code-font-size);
+}
+
+/* Using table instead of flexbox so that we can use break-inside property */
+/* CSS rules under this comment should not be required anymore after we move to the JupyterLab 4.0 CSS */
+
+
+.jp-CodeCell.jp-mod-outputsScrolled .jp-OutputArea-prompt {
+  min-width: calc(
+    var(--jp-cell-prompt-width) - var(--jp-private-cell-scrolling-output-offset)
+  );
+}
+
+.jp-OutputArea-child {
+  display: table;
   width: 100%;
-  font-size: var(--jp-code-font-size);
 }
 
-.reveal div.jp-OutputArea-output > pre {
-  margin: 0;
-  width: 90%;
-  font-size: var(--jp-code-font-size);
-  box-shadow: none;
+.jp-OutputPrompt {
+  display: table-cell;
+  vertical-align: top;
+  min-width: var(--jp-cell-prompt-width);
 }
 
-/* Reveal navigation controls */
-
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-left.enabled {
-  border-right-color: #727272;
-}
-.reveal .controls .navigate-left.enabled:hover,
-.reveal .controls .navigate-left.enabled.enabled:hover {
-  border-right-color: #dfdfdf;
-}
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-right.enabled {
-  border-left-color: #727272;
-}
-.reveal .controls .navigate-right.enabled:hover,
-.reveal .controls .navigate-right.enabled.enabled:hover {
-  border-left-color: #dfdfdf;
-}
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-up.enabled {
-  border-bottom-color: #727272;
-}
-.reveal .controls .navigate-up.enabled:hover,
-.reveal .controls .navigate-up.enabled.enabled:hover {
-  border-bottom-color: #dfdfdf;
-}
-.reveal .controls .navigate-down,
-.reveal .controls .navigate-down.enabled {
-  border-top-color: #727272;
-}
-.reveal .controls .navigate-down.enabled:hover,
-.reveal .controls .navigate-down.enabled.enabled:hover {
-  border-top-color: #dfdfdf;
-}
-.reveal .progress span {
-  background: #727272;
+body[data-format='mobile'] .jp-OutputPrompt {
+  display: table-row;
 }
 
-/* Scrollbars */
+.jp-OutputArea-output {
+  display: table-cell;
+  width: 100%;
+}
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
+  display: table-row;
 }
-::-webkit-scrollbar * {
-  background: transparent;
+
+.jp-OutputArea-output.jp-OutputArea-executeResult {
+  width: 100%;
 }
-::-webkit-scrollbar-thumb {
-  background: #727272 !important;
+
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
+}
+
+@page {
+    margin: 0.5in; /* Margin for each printed piece of paper */
+}
+
+@media print {
+  .jp-Cell-inputWrapper,
+  .jp-Cell-outputWrapper {
+    display: block;
+  }
+
+  .jp-OutputArea-child {
+    break-inside: avoid-page;
+  }
 }
 </style>
 
@@ -15157,63 +15101,39 @@ div.jp-OutputPrompt {
     }
     init_mathjax();
     </script>
-    <!-- End of mathjax configuration --><!-- Reveal Theme -->
-<link rel="stylesheet" href="https://unpkg.com/reveal.js@4.0.2/dist/theme/simple.css" id="theme">
-
-</head>
-
+    <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
-<div class="reveal">
-<div class="slides"><section ><section >
 <div id="cell-id=1ee8a1d2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals">&#182;</a></h1><style>
+<h1 id="Exceptions">Exceptions<a class="anchor-link" href="#Exceptions">&#182;</a></h1><style>
 section.present > section.present { 
-    max-height: 100%; 
+    max-height: 90%; 
     overflow-y: scroll;
 }
 </style>
-<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/3_conditionals.ipynb">Link to interactive slides on Google Colab</a></small></p>
+<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/x_exceptions.ipynb">Link to interactive slides on Google Colab</a></small></p>
 
 </div>
 </div>
 </div>
-</div></section><section >
-<div id="cell-id=8ff5e354" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div id="cell-id=f3cea000" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Movie-scripts-vs.-Choose-Your-Own-Adventure">Movie scripts vs. Choose Your Own Adventure<a class="anchor-link" href="#Movie-scripts-vs.-Choose-Your-Own-Adventure">&#182;</a></h1><p>So far, we've been writing programs that resemble scripts for movies: we define a set of steps to take, and then we walk through them one by one, with the same path and outcome each time.</p>
-<p>Today, we'll look at <strong>conditional execution</strong>, which will let us write programs that don't always take the same path - kind of like a Choose Your Own Adventure book.</p>
-<p><br/><br/></p>
-<img src="./images/choose-your-own-adventure.gif" style="display:block; margin:auto; width: 50%;"/>
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Write a function that checks whether a string variable can be converted to an float</p>
 
 </div>
 </div>
 </div>
-</div></section></section><section ><section >
-<div id="cell-id=e4f0420f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="if-statements"><code>if</code> statements<a class="anchor-link" href="#if-statements">&#182;</a></h1><p>An <code>if</code> statement is the most basic conditional statement in Python. It looks like this:</p>
-<pre><code>if &lt;test&gt;:
-    statement(s)
-</code></pre>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=e134df66" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=31088917" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15221,9 +15141,10 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This print executes when x is greater than 5&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># attempt 1</span>
+<span class="k">def</span> <span class="nf">is_valid_float</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="c1"># isdigit() is a string method that returns True if all characters in the string are digits</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15231,28 +15152,7 @@ section.present > section.present {
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>This print executes when x is greater than 5
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section ><div id="cell-id=1f8e2b4a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=7367a943" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15260,643 +15160,7 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This print executes when x is greater than 5&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>This print executes when x is greater than 5
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=597f3f4c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<ul>
-<li><p><code>x &gt; 5</code> is the <strong>test</strong>. It must be a <strong>boolean expression</strong>.</p>
-<ul>
-<li>A <strong>boolean expression</strong> is any expression that evaluates to <code>True</code> or <code>False</code></li>
-</ul>
-</li>
-<li><p><code>print(&quot;This print executes when x is greater than 5&quot;)</code> is a statement &quot;inside&quot; the if.</p>
-<ul>
-<li>It is <strong>conditionally executed</strong>.</li>
-<li>i.e. It is executed if the test <code>x &gt; 5</code> evaluates to <code>True</code>.</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div id="cell-id=c2efe8b6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Indentation-matters">Indentation matters<a class="anchor-link" href="#Indentation-matters">&#182;</a></h2><p>The lines that are indented after the <code>if &lt;test&gt;:</code> line are the lines that are conditionally executed.</p>
-<p>The conditional execution stops when the indentation stops.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=d421b12c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This prints if x is greater than 5&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This also prints when x is greater than 5&quot;</span><span class="p">)</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This always prints&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>This prints if x is greater than 5
-This also prints when x is greater than 5
-This always prints
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=9235e7c2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>print(&quot;This always prints&quot;)</code> is always executed</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=095b7716" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Relational-operators">Relational operators<a class="anchor-link" href="#Relational-operators">&#182;</a></h1><table>
-<thead>
-<tr>
-  <th>Operator</th>
-  <th>Meaning</th>
-  <th>Example</th>
-  <th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>==</td>
-  <td>equal</td>
-  <td>1 + 1 == 2</td>
-  <td>True</td>
-</tr>
-<tr>
-  <td>!=</td>
-  <td>not equal</td>
-  <td>2 + 3 != 4</td>
-  <td>True</td>
-</tr>
-<tr>
-  <td>&lt;</td>
-  <td>less than</td>
-  <td>10 &lt; 5</td>
-  <td>False</td>
-</tr>
-<tr>
-  <td>&gt;</td>
-  <td>greater than</td>
-  <td>10 &gt; 5</td>
-  <td>True</td>
-</tr>
-<tr>
-  <td>&lt;=</td>
-  <td>less than or equal to</td>
-  <td>1 + 1 &lt;= 2</td>
-  <td>True</td>
-</tr>
-<tr>
-  <td>&gt;=</td>
-  <td>greater than or equal to</td>
-  <td>3 + 4 &gt;= 6</td>
-  <td>False</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=29c79a9e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="if/else-statements"><code>if/else</code> statements<a class="anchor-link" href="#if/else-statements">&#182;</a></h1><p>You can add an <code>else</code> clause to an <code>if</code> statement. The <code>else</code> clause will execute if the test evaluates to <code>False</code></p>
-<pre><code>if &lt;test&gt;:
-    statement(s)
-else:
-    statement(s)
-</code></pre>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=bf00f69c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is big!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is small!&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x is small!
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section ><section >
-<div id="cell-id=07c5be4b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="if/elif/else-statements"><code>if/elif/else</code> statements<a class="anchor-link" href="#if/elif/else-statements">&#182;</a></h1><p>The last variation is &quot;if/else-if/else&quot;.</p>
-<pre><code>if &lt;test1&gt;:
-    statement(s)
-elif &lt;test2&gt;:
-    statement(s)
-else:
-    statement(s)
-</code></pre>
-<p>You can have as many <code>elif</code> clauses as you want. You can also omit the <code>else</code> clause.</p>
-<p>Each <code>elif</code> test is only performed if all the tests before it evaluate to <code>False</code>.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=6b646575" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is really big!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is kinda big&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x is small!&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>x is small!
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section></section><section ><section >
-<div id="cell-id=3db8dc32" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Logic">Logic<a class="anchor-link" href="#Logic">&#182;</a></h1><p>There are many different ways to structure conditional execution logic. Learning to choose the best one takes practice. Let's look at a few examples.</p>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div id="cell-id=4264b195" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Example-1:-Grade-buckets">Example 1: Grade buckets<a class="anchor-link" href="#Example-1:-Grade-buckets">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div id="cell-id=5a6bdea9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 1</span>
-<span class="n">grade</span> <span class="o">=</span> <span class="mi">81</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">72</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">79</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">89</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>D
-C
-B
-F
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="fragment" >
-<div id="cell-id=158197b9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This logic is incorrect - each <code>if</code> is evaluated independently. This code allows a number grade to be categorized under multiple letter grades.</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section ><div id="cell-id=784109b6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 2</span>
-<span class="n">grade</span> <span class="o">=</span> <span class="mi">81</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">72</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">79</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">89</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>D
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="fragment" >
-<div id="cell-id=ed2dadae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Still incorrect - by using <code>if/elif/else</code> we now get a single letter grade, but the order of our tests leads to an incorrect answer.</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section ><div id="cell-id=030e9684" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 3</span>
-<span class="n">grade</span> <span class="o">=</span> <span class="mi">81</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">89</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">79</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">72</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">grade</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>B
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="fragment" >
-<div id="cell-id=520feac8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Now we get a correct answer!</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section >
-<div id="cell-id=022cefb1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="More-than-one-way-to-skin-a-cat">More than one way to skin a cat<a class="anchor-link" href="#More-than-one-way-to-skin-a-cat">&#182;</a></h2><p>Is this different from the last attempt?</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=cf96a41c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 4</span>
-<span class="n">grade</span> <span class="o">=</span> <span class="mi">81</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="mi">65</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">66</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="mi">72</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">73</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="mi">79</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">80</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="mi">89</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">90</span> <span class="ow">and</span> <span class="n">grade</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>B
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=77a97d35" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="More-than-one-way-to-skin-a-cat">More than one way to skin a cat<a class="anchor-link" href="#More-than-one-way-to-skin-a-cat">&#182;</a></h2><ul>
-<li>Attempt 4 (if/if/if) and Attempt 3 (if/elif/else) have almost identical logic.</li>
-<li>Both are correct for the purposes of this exercise.<ul>
-<li>What happens with each if we have a grade &lt; 0 or &gt; 100?</li>
-</ul>
-</li>
-<li>Attempt 3 (if/elif/else) is slightly better style.<ul>
-<li>An if/elif/else is guaranteed to execute exactly one case, which makes sense for bucketing a grade.</li>
-<li>Attempt 4 also has some logic duplicated - the upper and lower bounds are specified for each grade band. If the bands change, the code needs to be updated in 2 places.</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div id="cell-id=b875f3a6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Brief-detour:-Boolean-operators">Brief detour: Boolean operators<a class="anchor-link" href="#Brief-detour:-Boolean-operators">&#182;</a></h2><p>From highest to lowest precedence:</p>
-<table>
-<thead>
-<tr>
-  <th>Operation</th>
-  <th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><code>x or y</code></td>
-  <td><code>True</code> if <code>x</code> is <code>True</code> OR <code>y</code> is <code>True</code></td>
-</tr>
-<tr>
-  <td><code>x and y</code></td>
-  <td><code>True</code> if <code>x</code> is <code>True</code> AND <code>y</code> is <code>True</code></td>
-</tr>
-<tr>
-  <td><code>not x</code></td>
-  <td><code>True</code> if <code>x</code> is <code>False</code>, <code>False</code> if <code>x</code> is <code>True</code></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=e30d45d2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15912,7 +15176,7 @@ F
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
@@ -15927,7 +15191,371 @@ F
 
 </div>
 
-</div><div id="cell-id=28b1580b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=082048c8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=a6922052" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># attempt 2</span>
+<span class="k">def</span> <span class="nf">is_valid_float</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">char</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">):</span>
+            <span class="c1"># isdigit() is a string method that returns True if all characters in the string are digits</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=7b6fc5ae" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=44a18448" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=80f5dc82" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>But wait...</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=c72a4f92" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;-1.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=9a5dab19" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=97c6e1c6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We could keep going, but there's an easier way...</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=35e21c4f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Exceptions">Exceptions<a class="anchor-link" href="#Exceptions">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div><div id="cell-id=04bfe926" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[9], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg" style="color: rgb(0,135,0)">float</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">abc</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg">ValueError</span>: could not convert string to float: &#39;abc&#39;</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=ccdc344e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This code raises a <code>ValueError</code>, which is an <strong>exception</strong>. There are many types of exceptions.</p>
+<p>An <strong>exception</strong> is the result of an error detected while a program is running.</p>
+<p>We say an exception is <strong>raised</strong> when an error occurs.</p>
+<p>Exceptions can be <strong>handled</strong>, or <strong>caught</strong>.</p>
+<p><strong>Unhandled</strong> exceptions will terminate the program.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=d10ca8b8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Handling-exceptions">Handling exceptions<a class="anchor-link" href="#Handling-exceptions">&#182;</a></h2><p>You can use the <code>try</code> and <code>except</code> keywords in Python to catch exceptions.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=e2706fcb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t convert!&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1.0
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=6a5d8d42" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15935,7 +15563,12 @@ F
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t convert!&quot;</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15949,15 +15582,16 @@ F
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputArea-child">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>False</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Couldn&#39;t convert!
+None
+</pre>
+</div>
 </div>
 
 </div>
@@ -15965,8 +15599,18 @@ F
 </div>
 
 </div>
+<div id="cell-id=688b0c19" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So, returning to our invalid float detector... We can rely on all the checking that the conversion already does for us by just catching the exception!</p>
 
-</div><div id="cell-id=117727f9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+</div>
+</div>
+</div><div id="cell-id=62cd6e89" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15974,7 +15618,28 @@ F
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_valid_float</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=ac3db781" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15990,7 +15655,124 @@ F
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=d2e282f4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=dc335c11" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;-1.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=6dfa5228" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">is_valid_float</span><span class="p">(</span><span class="s2">&quot;1.0.0&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 
 
 
@@ -16005,282 +15787,36 @@ F
 
 </div>
 
-</div></section><section >
-<div id="cell-id=38a9ea06" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div id="cell-id=45dd00a0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Example-2:-Allergies">Example 2: Allergies<a class="anchor-link" href="#Example-2:-Allergies">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div id="cell-id=ad6096d9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 1</span>
-
-<span class="n">nuts</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
-<span class="n">shellfish</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
-<span class="n">gluten</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
-<span class="n">pollen</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t feed me the following types of food: &quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">nuts</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nuts&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">shellfish</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shellfish&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">gluten</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gluten&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pollen&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Don&#39;t feed me the following types of food: 
-shellfish
-</pre>
-</div>
-</div>
+<p>There are many possible variations of try/except blocks. We're only going to cover the most basic form:</p>
+<pre><code>try:
+  &lt;statements&gt;
+except &lt;error type&gt;:
+  &lt;statements&gt;
+</code></pre>
 
 </div>
-
 </div>
-
-</div><div class="fragment" >
-<div id="cell-id=138578b1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+</div>
+<div id="cell-id=7bf141be" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Looks ok... but wait...</p>
+<p>The <code>error type</code> in the <code>except</code> clause specifies what kind of error to catch. Other types of errors are not caught.</p>
 
 </div>
 </div>
 </div>
-</div></div><div class="fragment" >
-<div id="cell-id=a6545175" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This code is not correct with more than one allergy.</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section ><div id="cell-id=9e9699c8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 1</span>
-
-<span class="n">nuts</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
-<span class="n">shellfish</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
-<span class="n">gluten</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
-<span class="n">pollen</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t feed me the following types of food: &quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">nuts</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nuts&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">shellfish</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shellfish&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">gluten</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gluten&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pollen&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Don&#39;t feed me the following types of food: 
-nuts
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="fragment" >
-<div id="cell-id=976565c1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The if/elif/else structure here doesn't make sense. If more than one allergy is present, the code will need to execute more than one of the cases.</p>
-
-</div>
-</div>
-</div>
-</div></div></section><section ><div id="cell-id=6c0d923a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 2</span>
-
-<span class="n">nuts</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
-<span class="n">shellfish</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
-<span class="n">gluten</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
-<span class="n">pollen</span> <span class="o">=</span> <span class="s2">&quot;n&quot;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Don&#39;t feed me the following types of food: &quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">nuts</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nuts&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">shellfish</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shellfish&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">gluten</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;gluten&quot;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">pollen</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pollen&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Don&#39;t feed me the following types of food: 
-nuts
-gluten
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div id="cell-id=fc2a7f0c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this case, each test is independent. if/if/if makes sense.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=bfc04716" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise:-Fizzbuzz">Exercise: Fizzbuzz<a class="anchor-link" href="#Exercise:-Fizzbuzz">&#182;</a></h1><ul>
-<li>Write a program that prompts the user for a number, and prints it.</li>
-<li>If the number is divisible by 3, print &quot;FIZZ&quot; instead of the number.</li>
-<li>If the number is divisible by 5, print &quot;BUZZ&quot; instead of the number.</li>
-<li>If the number is divisible by 3 AND 5, print &quot;FIZZBUZZ&quot; instead of the number.</li>
-</ul>
-<p>repl.it: <a href="https://replit.com/@cosi-10a-fall23/Fizzbuzz">Lecture 3 (Conditionals) exercises: FizzBuzz</a></p>
-<p>If you solve this, you've just passed a first round screening question for many software engineering jobs!</p>
-
-</div>
-</div>
-</div>
-</div></section><section ><div id="cell-id=cf526794" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs   celltag_remove-output">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># %load ../../snippets/fizzbuzz.py</span>
-<span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your number? &quot;</span><span class="p">))</span>
-
-<span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FIZZBUZZ&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;FIZZ&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BUZZ&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section><section >
-<div id="cell-id=9529f0d3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Example-3:-Long-jump">Example 3: Long jump<a class="anchor-link" href="#Example-3:-Long-jump">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div id="cell-id=7d473b92" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=488618c6" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16288,17 +15824,12 @@ gluten
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 1</span>
-<span class="n">world_record</span> <span class="o">=</span> <span class="mf">8.95</span>
-<span class="n">jump_distance</span> <span class="o">=</span> <span class="mf">9.01</span>
-<span class="n">officially_verified</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
-
-<span class="k">if</span> <span class="n">jump_distance</span> <span class="o">&gt;</span> <span class="n">world_record</span> <span class="ow">and</span> <span class="n">officially_verified</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Congratulations, you just set a new world long jump record!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">jump_distance</span> <span class="o">&gt;</span> <span class="n">world_record</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great jump, but it&#39;s not a record without verification.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good try, but not a record&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;1.0&quot;</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Couldn&#39;t convert!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x = &quot;</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16317,9 +15848,18 @@ gluten
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Congratulations, you just set a new world long jump record!
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ZeroDivisionError</span>                         Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[17], line 3</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">try</span>:
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     x <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">float</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">1.0</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">----&gt; 3</span>     y <span style="color: rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">x</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">/</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">0</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">except</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>:
+<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Couldn</span><span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">t convert!</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-fg">ZeroDivisionError</span>: float division by zero</pre>
 </div>
 </div>
 
@@ -16327,30 +15867,20 @@ gluten
 
 </div>
 
-</div><div class="fragment" >
-<div id="cell-id=eb58b6ae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+<div id="cell-id=49947dea" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This code is correct. However, there is a more readable way to structure it.</p>
+<h2 id="Raising-exceptions">Raising exceptions<a class="anchor-link" href="#Raising-exceptions">&#182;</a></h2><p>You can raise your own exceptions with the <code>raise</code> keyword.</p>
+<p>You can raise a generic <code>Exception</code>, a more specific type of exception (<a href="https://docs.python.org/3/library/exceptions.html#concrete-exceptions">built in exception type documentation</a>), or even an exception type you define yourself (although we won't cover this).</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=c66aea9a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Yet-another-way-to-skin-a-cat">Yet another way to skin a cat<a class="anchor-link" href="#Yet-another-way-to-skin-a-cat">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div><div id="cell-id=473d9e91" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=618bc077" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16358,17 +15888,12 @@ gluten
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">world_record</span> <span class="o">=</span> <span class="mf">8.95</span>
-<span class="n">jump_distance</span> <span class="o">=</span> <span class="mf">9.01</span>
-<span class="n">officially_verified</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">be_exceptional</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;before exception&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;this is a description&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;after exception&quot;</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">jump_distance</span> <span class="o">&gt;</span> <span class="n">world_record</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">officially_verified</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Congratulations, you just set a new world long jump record!&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Great jump, but it&#39;s not a record without verification.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good try, but not a record&quot;</span><span class="p">)</span>
+<span class="n">be_exceptional</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16388,133 +15913,53 @@ gluten
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Congratulations, you just set a new world long jump record!
+<pre>before exception
 </pre>
 </div>
 </div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">Exception</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[18], line 6</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">this is a description</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">after exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">----&gt; 6</span> <span class="ansi-yellow-bg">be_exceptional</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg">In[18], line 3</span>, in <span class="ansi-cyan-fg">be_exceptional</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">be_exceptional</span>():
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">before exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">----&gt; 3</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">this is a description</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">after exception</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-fg">Exception</span>: this is a description</pre>
+</div>
 </div>
 
 </div>
 
-</div></div><div class="fragment" >
-<div id="cell-id=b9461431" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div>
+
+</div>
+<div id="cell-id=a226df11" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Conditional statements can be &quot;nested&quot; inside one another. For each level of nesting, the indentation level increases.</p>
+<h2 id="%22Bubbling-up%22">"Bubbling up"<a class="anchor-link" href="#%22Bubbling-up%22">&#182;</a></h2><p>Recall the &quot;call stack&quot; from the Functions lecture: the chain of function calls that leads to the current line of code is called the &quot;call stack&quot;.</p>
+<p>Exceptions &quot;bubble up&quot; the call stack - they interrupt execution of each function in the call stack until they are handled, or reach the top (and terminate the program).</p>
+<p>Once a function is interrupted by an exception, the rest of it is skipped, even if a function higher in the call stack handles the exception.</p>
 
 </div>
 </div>
 </div>
-</div></div></section><section >
-<div id="cell-id=6e57798e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Code-style">Code style<a class="anchor-link" href="#Code-style">&#182;</a></h1><p>With complex conditionals, there are often many different ways to represent the same logic. Try to pick a structure that maps correctly to the logic you need, but is also easy (for you and someone else) to understand. The shortest code is not always the best.</p>
-<p>As you gain more coding experience, your ability to balance conciseness, readability, and simplicity will improve.</p>
-
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=9abfa128" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise---Progressive-income-tax-calculator">Exercise - Progressive income tax calculator<a class="anchor-link" href="#Exercise---Progressive-income-tax-calculator">&#182;</a></h1><p>In a progressive tax, different portions of income are taxed at different rates:</p>
-<table>
-<thead>
-<tr>
-  <th>Tax rate</th>
-  <th>Income amounts</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>10%</td>
-  <td>\$0 to \$10,275</td>
-</tr>
-<tr>
-  <td>12%</td>
-  <td>\$10,276 to \$41,775</td>
-</tr>
-<tr>
-  <td>22%</td>
-  <td>\$41,776 to \$89,075</td>
-</tr>
-<tr>
-  <td>24%</td>
-  <td>\$89,076 to \$170,050</td>
-</tr>
-<tr>
-  <td>32%</td>
-  <td>\$170,051 to \$215,950</td>
-</tr>
-<tr>
-  <td>35%</td>
-  <td>\$215,951 to \$539,900</td>
-</tr>
-<tr>
-  <td>37%</td>
-  <td>\$539,901 or more</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div></section><section >
-<div id="cell-id=bdb86372" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise---Progressive-income-tax-calculator">Exercise - Progressive income tax calculator<a class="anchor-link" href="#Exercise---Progressive-income-tax-calculator">&#182;</a></h1><p>e.g. an income of \$90,000 would be taxed:</p>
-<table>
-<thead>
-<tr>
-  <th>Bracket</th>
-  <th>Tax amount</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>10% for the first \$10,275</td>
-  <td>\$1027.5</td>
-</tr>
-<tr>
-  <td>12% of \$10,276 to \$41,775</td>
-  <td>\$3780</td>
-</tr>
-<tr>
-  <td>22% of \$41,776 to \$89,075</td>
-  <td>\$10405.78</td>
-</tr>
-<tr>
-  <td>24% of \$89,076 to \$90,000</td>
-  <td>\$221.76</td>
-</tr>
-<tr>
-  <td>Total</td>
-  <td>\$15434.92</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div></section><section ><div id="cell-id=bf81fb25" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=a093677f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16522,52 +15967,21 @@ gluten
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a1&quot;</span><span class="p">)</span>
+    <span class="n">b</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a2&quot;</span><span class="p">)</span>
 
-<span class="n">income</span> <span class="o">=</span> <span class="mi">390101</span>
-<span class="n">tax</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">if</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">10275</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">income</span> <span class="o">*</span> <span class="mf">.1</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">41775</span><span class="p">:</span>
-    <span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-    <span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">89075</span><span class="p">:</span>
-    <span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-    <span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">41775</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-    <span class="n">bracket3</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">170050</span><span class="p">:</span>
-    <span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-    <span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">41775</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-    <span class="n">bracket3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">89075</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-    <span class="n">bracket4</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">215950</span><span class="p">:</span>
-    <span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-    <span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">41775</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-    <span class="n">bracket3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">89075</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-    <span class="n">bracket4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">170050</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-    <span class="n">bracket5</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">170050</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.32</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="n">bracket5</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">539900</span><span class="p">:</span>
-    <span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-    <span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">41775</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-    <span class="n">bracket3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">89075</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-    <span class="n">bracket4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">170050</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-    <span class="n">bracket5</span> <span class="o">=</span> <span class="p">(</span><span class="mi">215950</span> <span class="o">-</span> <span class="mi">170050</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.32</span>
-    <span class="n">bracket6</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">215950</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.35</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="n">bracket5</span> <span class="o">+</span> <span class="n">bracket6</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-    <span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">41775</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-    <span class="n">bracket3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">89075</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-    <span class="n">bracket4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">170050</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-    <span class="n">bracket5</span> <span class="o">=</span> <span class="p">(</span><span class="mi">215950</span> <span class="o">-</span> <span class="mi">170050</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.32</span>
-    <span class="n">bracket6</span> <span class="o">=</span> <span class="p">(</span><span class="mi">539900</span> <span class="o">-</span> <span class="mi">215950</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.35</span>
-    <span class="n">bracket7</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">539900</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.37</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="n">bracket5</span> <span class="o">+</span> <span class="n">bracket6</span> <span class="o">+</span> <span class="n">bracket7</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You owe $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tax</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; on income of $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">income</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Your tax rate is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tax</span> <span class="o">/</span> <span class="n">income</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b1&quot;</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b2&quot;</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">c</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c1&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c2&quot;</span><span class="p">)</span>
+
+<span class="n">a</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16587,7 +16001,12 @@ gluten
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>You owe $110288.35 on income of $390101. Your tax rate is 0.28271742446187015%.
+<pre>a1
+b1
+c1
+c2
+b2
+a2
 </pre>
 </div>
 </div>
@@ -16596,19 +16015,7 @@ gluten
 
 </div>
 
-</div>
-<div id="cell-id=172ecf61" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Factoring-out-common-code">Factoring out common code<a class="anchor-link" href="#Factoring-out-common-code">&#182;</a></h2><p>In the previous example, there was a lot of duplicated code. We can &quot;factor&quot; that code out so it isn't repeated.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=70f4a779" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=953fa46b" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16616,40 +16023,22 @@ gluten
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 2</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a1&quot;</span><span class="p">)</span>
+    <span class="n">b</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a2&quot;</span><span class="p">)</span>
 
-<span class="n">income</span> <span class="o">=</span> <span class="mi">390101</span>
-<span class="n">tax</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b1&quot;</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b2&quot;</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">c</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c1&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c2&quot;</span><span class="p">)</span>
 
-<span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-<span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">41775</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-<span class="n">bracket3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">89075</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-<span class="n">bracket4</span> <span class="o">=</span> <span class="p">(</span><span class="mi">170050</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-<span class="n">bracket5</span> <span class="o">=</span> <span class="p">(</span><span class="mi">215950</span> <span class="o">-</span> <span class="mi">170050</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.32</span>
-<span class="n">bracket6</span> <span class="o">=</span> <span class="p">(</span><span class="mi">539900</span> <span class="o">-</span> <span class="mi">215950</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.35</span>
-
-<span class="k">if</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">10275</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">income</span> <span class="o">*</span> <span class="mf">.1</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">41775</span><span class="p">:</span>
-    <span class="n">bracket2</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">89075</span><span class="p">:</span>
-    <span class="n">bracket3</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">170050</span><span class="p">:</span>
-    <span class="n">bracket4</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">215950</span><span class="p">:</span>
-    <span class="n">bracket5</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">170050</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.32</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="n">bracket5</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">539900</span><span class="p">:</span>
-    <span class="n">bracket6</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">215950</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.35</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="n">bracket5</span> <span class="o">+</span> <span class="n">bracket6</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">bracket7</span> <span class="o">=</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">539900</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.37</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="n">bracket5</span> <span class="o">+</span> <span class="n">bracket6</span> <span class="o">+</span> <span class="n">bracket7</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You owe $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tax</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; on income of $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">income</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Your tax rate is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tax</span> <span class="o">/</span> <span class="n">income</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16669,27 +16058,53 @@ gluten
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>You owe $110288.35 on income of $390101. Your tax rate is 0.28271742446187015%.
+<pre>a1
+b1
+c1
 </pre>
 </div>
 </div>
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[20], line 16</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">c2</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">---&gt; 16</span> <span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg">In[20], line 3</span>, in <span class="ansi-cyan-fg">a</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">a</span>():
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">a1</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">----&gt; 3</span>     <span class="ansi-yellow-bg">b</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">a2</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+Cell <span class="ansi-green-fg">In[20], line 8</span>, in <span class="ansi-cyan-fg">b</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">b</span>():
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">b1</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">----&gt; 8</span>     <span class="ansi-yellow-bg">c</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">b2</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+Cell <span class="ansi-green-fg">In[20], line 13</span>, in <span class="ansi-cyan-fg">c</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">c</span>():
+<span class="ansi-green-intense-fg ansi-bold">     12</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">c1</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-fg">---&gt; 13</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">ValueError</span>
+<span class="ansi-green-intense-fg ansi-bold">     14</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">c2</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-fg">ValueError</span>: </pre>
+</div>
+</div>
 
 </div>
 
 </div>
 
-</div>
-<div id="cell-id=595235d6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="One-more-refinement">One more refinement<a class="anchor-link" href="#One-more-refinement">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div><div id="cell-id=b735ffeb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=8d0e3995" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16697,34 +16112,25 @@ gluten
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a1&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">b</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;caught ValueError&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a2&quot;</span><span class="p">)</span>
 
-<span class="n">income</span> <span class="o">=</span> <span class="mi">390101</span>
-<span class="n">tax</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b1&quot;</span><span class="p">)</span>
+    <span class="n">c</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b2&quot;</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">c</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c1&quot;</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;c2&quot;</span><span class="p">)</span>
 
-<span class="n">bracket1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10275</span> <span class="o">*</span> <span class="mf">.1</span><span class="p">)</span>
-<span class="n">bracket2</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">41775</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-<span class="n">bracket3</span> <span class="o">=</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="p">(</span><span class="mi">89075</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-<span class="n">bracket4</span> <span class="o">=</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="p">(</span><span class="mi">170050</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-<span class="n">bracket5</span> <span class="o">=</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="p">(</span><span class="mi">215950</span> <span class="o">-</span> <span class="mi">170050</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.32</span>
-<span class="n">bracket6</span> <span class="o">=</span> <span class="n">bracket5</span> <span class="o">+</span> <span class="p">(</span><span class="mi">539900</span> <span class="o">-</span> <span class="mi">215950</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.35</span>
-
-<span class="k">if</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">10275</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">income</span> <span class="o">*</span> <span class="mf">.1</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">41775</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket1</span> <span class="o">+</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">10275</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.12</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">89075</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket2</span> <span class="o">+</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">41775</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.22</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">170050</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket3</span> <span class="o">+</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">89075</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.24</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;=</span> <span class="mi">215950</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket4</span> <span class="o">+</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">170050</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.32</span>
-<span class="k">elif</span> <span class="n">income</span> <span class="o">&lt;</span> <span class="mi">539900</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket5</span> <span class="o">+</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">215950</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.35</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">tax</span> <span class="o">=</span> <span class="n">bracket6</span> <span class="o">+</span> <span class="p">(</span><span class="n">income</span> <span class="o">-</span> <span class="mi">539900</span><span class="p">)</span> <span class="o">*</span> <span class="mf">.37</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You owe $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tax</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; on income of $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">income</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;. Your tax rate is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tax</span> <span class="o">/</span> <span class="n">income</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%.&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16744,7 +16150,11 @@ gluten
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>You owe $110288.35 on income of $390101. Your tax rate is 0.28271742446187015%.
+<pre>a1
+b1
+c1
+caught ValueError
+a2
 </pre>
 </div>
 </div>
@@ -16753,7 +16163,44 @@ gluten
 
 </div>
 
-</div></section></section>
+</div>
+<div id="cell-id=b6bda366" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Step-thru-debugging">Step thru debugging<a class="anchor-link" href="#Step-thru-debugging">&#182;</a></h2><p>Let's try step through debugging on this: <a href="https://replit.com/@cosi-10a-fall23/Call-stacks-exceptions#main.py">repl.it: Call stacks - exceptions</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=628052ad" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Exceptions-Best-Practices">Exceptions Best Practices<a class="anchor-link" href="#Exceptions-Best-Practices">&#182;</a></h1><p>Some tips for using exceptions safely and effectively:</p>
+<ul>
+<li>Put the least possible code in your <code>try/except</code> blocks.<ul>
+<li>If you wrap large portions of code in a <code>try/except</code> block, you won't know where the errors are coming from, and may mishandle them.</li>
+</ul>
+</li>
+<li>Don't blindly &quot;swallow&quot; exceptions.<ul>
+<li>If your code can't recover from the error you're catching, it's better to have your program error out than continue on to do something unexpected.</li>
+</ul>
+</li>
+<li>Be cautious using <code>except Exception</code><ul>
+<li><code>Exception</code> is actually a general type that matches (almost) all other exception types. If you use this, you may catch and swallow errors that you can't actually recover from.</li>
+<li>When possible, catch the most specific type of exception you can.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
 </div>
 </div>
 </body>
@@ -16763,56 +16210,5 @@ gluten
 
 
 
-
-<script>
-require(
-    {
-      // it makes sense to wait a little bit when you are loading
-      // reveal from a cdn in a slow connection environment
-      waitSeconds: 15
-    },
-    [
-      "https://unpkg.com/reveal.js@4.0.2/dist/reveal.js",
-      "https://unpkg.com/reveal.js@4.0.2/plugin/notes/notes.js"
-    ],
-
-    function(Reveal, RevealNotes){
-        // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-            transition: "slide",
-            slideNumber: "",
-            plugins: [RevealNotes]
-        });
-
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
-        function setScrollingSlide() {
-            var scroll = true
-            if (scroll === true) {
-              var h = $('.reveal').height() * 0.95;
-              $('section.present').find('section')
-                .filter(function() {
-                  return $(this).height() > h;
-                })
-                .css('height', 'calc(95vh)')
-                .css('overflow-y', 'scroll')
-                .css('margin-top', '20px');
-            }
-        }
-
-        // check and set the scrolling slide every time the slide change
-        Reveal.addEventListener('slidechanged', setScrollingSlide);
-    }
-);
-</script>
 
 </html>
