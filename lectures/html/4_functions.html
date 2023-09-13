@@ -15238,7 +15238,7 @@ And the green grass grew all around, all around, and the green grass grew all ar
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And on that limb&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There was a branch&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The prettiest branch&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That you ever did see&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That you ever did see&quot;</span><span class="p">)</span>  
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And the branch was on the limb,&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And the limb was on the tree,&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And the tree was in the ground&quot;</span><span class="p">)</span>
@@ -16632,13 +16632,13 @@ And the green grass grew all around, all around, and the green grass grew all ar
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">verse</span><span class="p">(</span><span class="n">first_thing</span><span class="p">,</span> <span class="n">second_thing</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;on&quot;</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">verse</span><span class="p">(</span><span class="n">first_thing</span><span class="o">=</span><span class="s2">&quot;branch&quot;</span><span class="p">,</span> <span class="n">second_thing</span><span class="o">=</span><span class="s2">&quot;limb&quot;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;on&quot;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;And &quot;</span> <span class="o">+</span> <span class="n">orientation</span> <span class="o">+</span> <span class="s2">&quot; that &quot;</span> <span class="o">+</span> <span class="n">first_thing</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There was a &quot;</span> <span class="o">+</span> <span class="n">second_thing</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The prettiest &quot;</span> <span class="o">+</span> <span class="n">second_thing</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That you ever did see&quot;</span><span class="p">)</span>
     
-<span class="n">verse</span><span class="p">(</span><span class="s2">&quot;branch&quot;</span><span class="p">,</span> <span class="s2">&quot;limb&quot;</span><span class="p">)</span>
+<span class="n">verse</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="n">verse</span><span class="p">(</span><span class="s2">&quot;nest&quot;</span><span class="p">,</span> <span class="s2">&quot;egg&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">)</span>
 </pre></div>
@@ -17021,7 +17021,7 @@ Dessert: 1 full pint of Ben &amp; Jerry&#39;s
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">menu</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">menu</span><span class="p">()</span> 
 </pre></div>
 
      </div>
@@ -17045,7 +17045,7 @@ Dessert: 1 full pint of Ben &amp; Jerry&#39;s
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
 Cell <span class="ansi-green-fg">In[25], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">menu</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">menu</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span> 
 
 <span class="ansi-red-fg">TypeError</span>: menu() missing 1 required positional argument: &#39;breakfast&#39;</pre>
 </div>
@@ -17467,7 +17467,8 @@ And the green grass grew all around, all around, and the green grass grew all ar
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-<span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -17481,17 +17482,15 @@ And the green grass grew all around, all around, and the green grass grew all ar
 
 
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputArea-child">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>3</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>3
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -17947,6 +17946,251 @@ None
 </div>
 </div>
 </div>
+<div id="cell-id=8e9d4623" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Functions-Part-II">Functions Part II<a class="anchor-link" href="#Functions-Part-II">&#182;</a></h1><style>
+section.present > section.present { 
+    max-height: 90%; 
+    overflow-y: scroll;
+}
+</style>
+<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/4_functions.ipynb">Link to interactive slides on Google Colab</a></small></p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=59d27670" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Return-values-revisited">Return values revisited<a class="anchor-link" href="#Return-values-revisited">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div id="cell-id=6c916954" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_boo</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="s2">&quot;... BOOO :(&quot;</span>
+
+<span class="k">def</span> <span class="nf">add_hooray</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="s2">&quot;... hooray!&quot;</span>
+
+<span class="n">bad</span> <span class="o">=</span> <span class="s2">&quot;My water bottle was stolen&quot;</span>
+<span class="n">good</span> <span class="o">=</span> <span class="s2">&quot;I found $20&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">add_boo</span><span class="p">(</span><span class="n">bad</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add_hooray</span><span class="p">(</span><span class="n">good</span><span class="p">))</span>
+
+<span class="n">worst</span> <span class="o">=</span> <span class="n">add_boo</span><span class="p">(</span><span class="s2">&quot;My car was stolen&quot;</span><span class="p">)</span>
+<span class="n">best</span> <span class="o">=</span> <span class="n">add_hooray</span><span class="p">(</span><span class="s2">&quot;I won the lottery&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">worst</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>My water bottle was stolen... BOOO :(
+I found $20... hooray!
+My car was stolen... BOOO :(
+I won the lottery... hooray!
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=0545f9b4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="What-do-these-functions-return?">What do these functions return?<a class="anchor-link" href="#What-do-these-functions-return?">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div><div id="cell-id=b7d5f198" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">append_number</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">add_one_and_double</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">add_one_to_str</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=d0663f10" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>What does this code do?</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=a9abed56" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one_and_print</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=19636d5b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">add_one_and_print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[44], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> num <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(98,98,98)">1</span>
+<span class="ansi-green-fg">----&gt; 2</span> add_one_and_print(<span class="ansi-yellow-bg">number</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;number&#39; is not defined</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=95cb0c67" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">a</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=9edef828" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>repl.it: <a href="https://replit.com/team/cosi-10a-fall23/Functions-practice-definition">Lecture 4 (functions) exercises: functions practice - definition</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=8f50bbe3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>repl.it: <a href="https://replit.com/team/cosi-10a-fall23/Functions-practice-composition">Lecture 4 (functions) exercises: functions practice - composition</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=db45d111" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>repl.it: <a href="https://replit.com/@cosi-10a-fall23/Functions-practice-decomposition#main.py">Lecture 4 (functions) exercises: functions practice - decomposition</a></p>
+
+</div>
+</div>
+</div>
+</div>
 <div id="cell-id=614b4478" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17967,7 +18211,7 @@ None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">house</span><span class="p">():</span>
@@ -18008,7 +18252,7 @@ None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">house</span><span class="p">():</span>
@@ -18037,7 +18281,7 @@ None
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[42], line 4</span>
+Cell <span class="ansi-green-fg">In[47], line 4</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     furniture <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">couch</span><span style="color: rgb(175,0,0)">&#34;</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span>     <span style="color: rgb(0,135,0)">print</span>(furniture)
 <span class="ansi-green-fg">----&gt; 4</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">furniture</span>)
@@ -18096,7 +18340,7 @@ Cell <span class="ansi-green-fg">In[42], line 4</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">global_var</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
@@ -18139,7 +18383,7 @@ Cell <span class="ansi-green-fg">In[42], line 4</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">global_var</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
@@ -18184,7 +18428,7 @@ Cell <span class="ansi-green-fg">In[42], line 4</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">global_var</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
@@ -18217,7 +18461,7 @@ Cell <span class="ansi-green-fg">In[42], line 4</span>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[45], line 7</span>
+Cell <span class="ansi-green-fg">In[50], line 7</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(98,98,98)">2</span> <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">1</span>:
 <span class="ansi-green-intense-fg ansi-bold">      5</span>         inner_var <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">inner</span><span style="color: rgb(175,0,0)">&#34;</span>
 <span class="ansi-green-fg">----&gt; 7</span> <span style="color: rgb(0,135,0)">print</span>(global_var, <span class="ansi-yellow-bg">func_var</span>, inner_var)
@@ -18248,7 +18492,7 @@ Cell <span class="ansi-green-fg">In[45], line 7</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">global_var</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
@@ -18315,7 +18559,7 @@ Outside after func: global
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">global_var</span> <span class="o">=</span> <span class="s2">&quot;global&quot;</span>
@@ -18993,7 +19237,7 @@ Outside after func: changed global
 </div>
 </div>
 </div>
-<div id="cell-id=5c04f58c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=68a84f47" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
