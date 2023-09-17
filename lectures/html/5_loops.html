@@ -16052,12 +16052,12 @@ section.present > section.present {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">answer</span> <span class="o">=</span> <span class="s2">&quot;dummy&quot;</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="s2">&quot;n/a&quot;</span>
 
 <span class="k">while</span> <span class="n">answer</span> <span class="o">!=</span> <span class="s2">&quot;quit&quot;</span><span class="p">:</span>
     <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Type a number, or &#39;quit&#39; to stop: &quot;</span><span class="p">)</span>
     <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum so far:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum so far: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sum: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
 </pre></div>
@@ -16264,7 +16264,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
+<pre>False</pre>
 </div>
 
 </div>
@@ -16324,7 +16324,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 996/10000 times
+<pre>Rolled a 7 1026/10000 times
 Expected number of 7s is ~6513
 </pre>
 </div>
@@ -16405,7 +16405,7 @@ Expected number of 7s is ~6513
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 6462/10000 times
+<pre>Rolled a 7 6531/10000 times
 Expected number of 7s is ~6513
 </pre>
 </div>
@@ -16584,8 +16584,8 @@ Expected number of 7s is ~6513
 <h3 id="This-is-more-complex-than-our-other-exercises.">This is more complex than our other exercises.<a class="anchor-link" href="#This-is-more-complex-than-our-other-exercises.">&#182;</a></h3><p>Let's break it down (functional decomposition):</p>
 <ul>
 <li>There are 2 major parts to our program:<ul>
-<li>Outer game loop: let the player take a turn, track score, end the game after incorrect answers</li>
 <li>Handling a single problem: generate a problem, present it, check the answer, report correctness</li>
+<li>Outer game loop: let the player take a turn, track score, end the game after incorrect answers</li>
 </ul>
 </li>
 <li>We could decompose this further - each of the things listed on those lines could be its own function.<ul>
@@ -16652,7 +16652,7 @@ Expected number of 7s is ~6513
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>10 + 10 + 13 + 11 + 19 +  = 
+<pre>8 + 18 + 1 +  = 
 </pre>
 </div>
 </div>
@@ -16757,7 +16757,7 @@ Expected number of 7s is ~6513
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>16 + 19 = 
+<pre>14 + 20 + 20 + 20 = 
 </pre>
 </div>
 </div>
