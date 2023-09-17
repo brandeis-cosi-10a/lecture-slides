@@ -15128,10 +15128,22 @@ section.present > section.present {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="(Unit)-Testing">(Unit) Testing<a class="anchor-link" href="#(Unit)-Testing">&#182;</a></h1><p>Testing code is really important.</p>
+<h1 id="Testing-Code">Testing Code<a class="anchor-link" href="#Testing-Code">&#182;</a></h1><p>Testing code is really important. You virtually never get it right the first time.</p>
 <p>Testing code manually is tedious and error prone.</p>
-<p>Luckily, you can use code to validate your code! We saw an example of this before, when we tested our random number generator.</p>
-<p>There are many types of testing that can be used when writing code and building software. &quot;Unit&quot; tests are a the smallest, narrowest type of testing - they test small pieces of code (e.g. a single function) in isolation.</p>
+<p>Luckily, you can use code to validate your code!</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=055f879f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Unit-Testing">Unit Testing<a class="anchor-link" href="#Unit-Testing">&#182;</a></h1><p>There are many types of testing that can be employed when writing code and building software.</p>
+<p>&quot;Unit&quot; tests are a the smallest, narrowest type of testing - they test small pieces of code (e.g. a single function) in isolation.</p>
 <p>Other common types of testing (which we won't cover here) are &quot;integration tests&quot;, &quot;end-to-end tests&quot;, &quot;functional tests&quot;, and &quot;acceptance tests&quot;.</p>
 
 </div>
@@ -15158,7 +15170,7 @@ section.present > section.present {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Writing-tests">Writing tests<a class="anchor-link" href="#Writing-tests">&#182;</a></h2><p>A unit test typically runs some of your code, and then makes <strong>assertions</strong> about what your code did using the <code>assert</code> keyword.</p>
+<h2 id="Writing-tests">Writing tests<a class="anchor-link" href="#Writing-tests">&#182;</a></h2><p>A unit test typically runs some of your code, and then makes <strong>assertions</strong> about what your code should do using the <code>assert</code> keyword.</p>
 
 </div>
 </div>
@@ -15178,6 +15190,7 @@ section.present > section.present {
     <span class="k">assert</span> <span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
     
 <span class="n">test_add</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It passed!&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15204,6 +15217,7 @@ Cell <span class="ansi-green-fg">In[1], line 7</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">test_add</span>():
 <span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">assert</span> add(<span style="color: rgb(98,98,98)">1</span>, <span style="color: rgb(98,98,98)">1</span>) <span style="color: rgb(98,98,98)">==</span> <span style="color: rgb(98,98,98)">2</span>
 <span class="ansi-green-fg">----&gt; 7</span> <span class="ansi-yellow-bg">test_add</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">It passed!</span><span style="color: rgb(175,0,0)">&#34;</span>)
 
 Cell <span class="ansi-green-fg">In[1], line 5</span>, in <span class="ansi-cyan-fg">test_add</span><span class="ansi-blue-fg">()</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">test_add</span>():
@@ -15218,16 +15232,17 @@ Cell <span class="ansi-green-fg">In[1], line 5</span>, in <span class="ansi-cyan
 </div>
 
 </div>
-<div id="cell-id=af1fc7d9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6f9c034e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Unit-testing-best-practices">Unit testing best practices<a class="anchor-link" href="#Unit-testing-best-practices">&#182;</a></h2><p>You can structure your tests however you want - have multiple assertions, invoke your code multiple times, etc</p>
-<p>However, the best practice for unit tests is to make each test very focused. If each test tests a single thing, then you can easily see what is wrong when it fails.</p>
-<p>Conversely, if a single test is testing many things, it can be harder to see what's wrong just from a failure, and one error might mask other errors.</p>
-<p>Unit tests are very useful for testing <strong>boundary conditions</strong>, or <strong>edge cases</strong>. These are situations where you have valid, but non-typical input - e.g. an empty string, or a negative number, or 0, or an empty list (once we get to lists). It's common for code to fail to handle these cases correctly at first. Adding tests for them will help catch them. Think explicitly about <strong>boundary conditions</strong> when coming up with test cases.</p>
+<h2 id="Assertions">Assertions<a class="anchor-link" href="#Assertions">&#182;</a></h2><p>An <code>assert</code> statement should be followed by a boolean expression.</p>
+<ul>
+<li>If that expressions evaluates to <code>True</code>, the assert &quot;passes&quot;, and the test continues.</li>
+<li>Otherwise, it generates an error, and the test fails.</li>
+</ul>
 
 </div>
 </div>
@@ -15239,14 +15254,21 @@ Cell <span class="ansi-green-fg">In[1], line 5</span>, in <span class="ansi-cyan
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="pytest">pytest<a class="anchor-link" href="#pytest">&#182;</a></h2><p><code>pytest</code> is a framework - a collection of tools and conventions - that make writing and running unit tests easy. It is very powerful, and has many features. We'll only cover the basics, but it has <a href="https://docs.pytest.org/en/7.3.x/how-to/index.html#how-to">extensive documentation with lots of specific examples</a>.</p>
-<ul>
+<h2 id="pytest">pytest<a class="anchor-link" href="#pytest">&#182;</a></h2><p><code>pytest</code> is a framework - a collection of code, tools, and conventions - that make writing and running unit tests easy. It is very powerful, and has many features.</p>
+<p>We'll only cover the basics, but it has <a href="https://docs.pytest.org/en/7.3.x/how-to/index.html#how-to">extensive documentation with lots of specific examples</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=3126f890" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="pytest---Running-tests">pytest - Running tests<a class="anchor-link" href="#pytest---Running-tests">&#182;</a></h2><ul>
 <li>To run tests, type <code>pytest</code> on the command line (in repl.it: the &quot;Shell&quot; tab)</li>
-<li>To define a test, create a function whose name starts with <code>test_</code> in a file whose name starts with <code>test_</code>.<ul>
-<li>e.g. <code>test_add()</code> could go in a file named <code>test_math_stuff.py</code></li>
-<li>The <code>pytest</code> program will &quot;magically&quot; find and run any functions that are named like this.</li>
-</ul>
-</li>
 <li>You can add <code>-v</code> or <code>-vv</code> to the <code>pytest</code> command (e.g. <code>pytest -vv</code>) to get more verbose output when diagnosing failures.</li>
 <li>To run a single test by itself, you can add <code>-k &lt;test name&gt;</code>, e.g. <code>pytest -k test_add</code>.<ul>
 <li>This can be useful when you have multiple failures but want to work on one at a time.</li>
@@ -15258,15 +15280,19 @@ Cell <span class="ansi-green-fg">In[1], line 5</span>, in <span class="ansi-cyan
 </div>
 </div>
 </div>
-<div id="cell-id=df4777b6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c076bf38" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Assertions">Assertions<a class="anchor-link" href="#Assertions">&#182;</a></h2><p>An <strong>assertion</strong> is something that should be true. If an <code>assert</code>'s expression evaluates to <code>False</code>, the assert fails, and raises an exception.</p>
-<p><code>pytest</code> works some magic on asserts. When using <code>pytest</code>, an assertion failure will produce a test failure and nice error message, instead of the ugly exception ouput we saw above.</p>
-<p>Side note: you can also use <code>asserts</code> in non-test code to document assumptions your code is making (e.g. <code>assert</code>ing that the type of a variable is <code>int</code> or that a string is not empty). They should not be used to check for &quot;expected&quot; or recoverable errors though - an assertion failure should indicate a bug in the code, rather than something like invalid user input.</p>
+<h2 id="pytest---Defining-tests">pytest - Defining tests<a class="anchor-link" href="#pytest---Defining-tests">&#182;</a></h2><ul>
+<li>To define a test, create a function whose name starts with <code>test_</code> in a file whose name starts with <code>test_</code>.<ul>
+<li>e.g. <code>test_add()</code> could go in a file named <code>test_math_stuff.py</code></li>
+<li>The <code>pytest</code> program will &quot;magically&quot; find and run any functions that are named like this.</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>
@@ -15291,9 +15317,50 @@ Cell <span class="ansi-green-fg">In[1], line 5</span>, in <span class="ansi-cyan
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Unit-testing---do-it!">Unit testing - do it!<a class="anchor-link" href="#Unit-testing---do-it!">&#182;</a></h1><p>Writing unit tests might seem tedious or not worth it, especially for an assignment you'll hand in and then never touch again.</p>
-<p>&quot;I just need to check this one more time then I'm done, I'll do it by hand.&quot; - every programmer ever</p>
-<p>They are almost always worth it. You <strong>always</strong> end up needing to run the tests more than you think, and writing tests as you go will leave you with confidence that your changes haven't broken seemingly unrelated parts of your code. It is an investment that will pay off. Explicitly thinking about which test cases to write will also help you catch edge cases that your code might not handle properly.</p>
-<p>Some people even write their tests <strong>before</strong> their code - this is called Test Driven Development. Documenting the expected behavior of your function with tests before you implement it can make it easier and faster to write correct code. (I personally don't prefer this style, but many swear by it, try it before you dismiss it!)</p>
+<p>&quot;I just need to check this one more time, then I'm done... I'll just test it manually.&quot; - every programmer ever</p>
+<p>Writing unit tests is almost always worth it. They'll save you time, and just the process of thinking about which cases to test often helps you uncover bugs.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=af1fc7d9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Unit-testing-best-practices">Unit testing best practices<a class="anchor-link" href="#Unit-testing-best-practices">&#182;</a></h2><p>You can structure your tests however you want - each test could have multiple assertions, invoke your code multiple times, etc.</p>
+<p>However, the best practice for unit tests is to make each test case very focused. When each test validates a single thing, you can easily see what is wrong when it fails.</p>
+<p>Conversely, if a single test is testing many things, it can be harder to determine what's wrong just from a failure, and one error might mask other errors in the same test.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=32af544c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Unit-testing-best-practices">Unit testing best practices<a class="anchor-link" href="#Unit-testing-best-practices">&#182;</a></h2><p>Unit tests are very useful for testing <strong>boundary conditions</strong>, or <strong>edge cases</strong>.</p>
+<p>These are situations where your test sends valid, but non-typical input - e.g. an empty string, or a negative number, or 0. It's common for code to handle these cases incorrectly. Adding tests for them will help catch bugs.</p>
+<p>Think explicitly about <strong>boundary conditions</strong> when coming up with test cases.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=999ac963" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Test-driven-development">Test driven development<a class="anchor-link" href="#Test-driven-development">&#182;</a></h2><p>Some people even write their tests <strong>before</strong> their code - this is called Test Driven Development.</p>
+<p>Documenting the expected behavior of your function with tests before you implement it can make it easier and faster to write correct code.</p>
+<p>(I personally don't prefer this style, but many swear by it, try it before you dismiss it!)</p>
 
 </div>
 </div>
@@ -15308,6 +15375,17 @@ Cell <span class="ansi-green-fg">In[1], line 5</span>, in <span class="ansi-cyan
 <h1 id="Unit-testing-and-coding-assignments">Unit testing and coding assignments<a class="anchor-link" href="#Unit-testing-and-coding-assignments">&#182;</a></h1><p>Most assignments from now on will use <code>pytest</code> for automated testing. Any failing tests will mean you won't pass at least one skill for the assignment, so be sure to run them just before submission.</p>
 <p>Please don't modify provided test cases. But feel free to add your own - in many cases the provided tests are not exhaustive, so a clean test run does not automatically mean your code is perfect!</p>
 
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=8b4fc720" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Slido"><a href="https://wall.sli.do/event/rhWofqy2rA6owpfRVDAfTU?section=67f9f1ad-d326-48e7-87d1-97ff0da51dcc">Slido</a><a class="anchor-link" href="#Slido">&#182;</a></h1>
 </div>
 </div>
 </div>

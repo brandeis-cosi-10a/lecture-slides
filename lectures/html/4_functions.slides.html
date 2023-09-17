@@ -18025,7 +18025,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section ><section >
 <div id="cell-id=161f4df5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -18060,6 +18060,7 @@ section.present > section.present {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_boo</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="s2">&quot;... BOOO :(&quot;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">value</span> <span class="o">+</span> <span class="s2">&quot;... BOOO :(&quot;</span>
 
 <span class="k">def</span> <span class="nf">add_hooray</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -18068,14 +18069,15 @@ section.present > section.present {
 <span class="n">bad</span> <span class="o">=</span> <span class="s2">&quot;My water bottle was stolen&quot;</span>
 <span class="n">good</span> <span class="o">=</span> <span class="s2">&quot;I found $20&quot;</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">add_boo</span><span class="p">(</span><span class="n">bad</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">add_hooray</span><span class="p">(</span><span class="n">good</span><span class="p">))</span>
+<span class="c1">#print(add_boo(bad))</span>
+<span class="c1">#print(add_hooray(good))</span>
 
 <span class="n">worst</span> <span class="o">=</span> <span class="n">add_boo</span><span class="p">(</span><span class="s2">&quot;My car was stolen&quot;</span><span class="p">)</span>
-<span class="n">best</span> <span class="o">=</span> <span class="n">add_hooray</span><span class="p">(</span><span class="s2">&quot;I won the lottery&quot;</span><span class="p">)</span>
+<span class="n">worst</span> <span class="o">=</span> <span class="s2">&quot;My car was stolen&quot;</span> <span class="o">+</span> <span class="s2">&quot;... BOOO :(&quot;</span>
+<span class="c1">#best = add_hooray(&quot;I won the lottery&quot;)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">worst</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">best</span><span class="p">)</span>
+<span class="c1">#print(worst)</span>
+<span class="c1">#print(best)</span>
 </pre></div>
 
      </div>
@@ -18095,10 +18097,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>My water bottle was stolen... BOOO :(
-I found $20... hooray!
-My car was stolen... BOOO :(
-I won the lottery... hooray!
+<pre>My car was stolen... BOOO :(
 </pre>
 </div>
 </div>
@@ -18163,6 +18162,7 @@ I won the lottery... hooray!
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one_and_print</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="kc">None</span>
 </pre></div>
 
      </div>
@@ -19362,10 +19362,11 @@ Outside after func: changed global
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The slides might have made this all seem easy and straightforward, but even a relatively simple program like this took me a few iterations to get working and presentable:</p>
+<p>The slides <strong>might</strong> have made this process seem straightforward, but even a relatively simple program like this took me a few iterations to get working and presentable:</p>
 <ul>
 <li>It took a few tries to figure out how to best group the logic - my initial tries (not all shown) split the question asking and answer checking in different ways, before I finally settled on combining the logic into one function.</li>
 <li>There are multiple ways to handle the question numbering. I originally tried a global counter variable, rather than passing an argument to <code>do_question</code>.</li>
+<li>I got tripped up with whether/how to use globals to track the points and incorrect answers.</li>
 </ul>
 <p>... and I've been doing this professionally for ~20 years.</p>
 <p>You rarely write working code on your first try, let alone clean or elegant code. Don't get discouraged, coding takes practice. The more practice you get, the easier it will feel.</p>
@@ -19380,7 +19381,7 @@ Outside after func: changed global
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Slido"><a href="https://wall.sli.do/event/bfc9CVp9MUu9HwQv5dwtzV?section=be73e7d2-879c-475a-aab4-7dcd7eafef79">Slido</a><a class="anchor-link" href="#Slido">&#182;</a></h2>
+<h2 id="Slido"><a href="https://wall.sli.do/event/rhWofqy2rA6owpfRVDAfTU?section=67f9f1ad-d326-48e7-87d1-97ff0da51dcc">Slido</a><a class="anchor-link" href="#Slido">&#182;</a></h2>
 </div>
 </div>
 </div>
