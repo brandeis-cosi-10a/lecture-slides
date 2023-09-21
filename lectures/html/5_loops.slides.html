@@ -16018,6 +16018,17 @@ section.present > section.present {
 
 </div>
 
+</div>
+<div id="cell-id=bc602ceb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Slido"><a href="https://wall.sli.do/event/6mJzAtP2WJqqWzchKFmsnS?section=9c32faee-d1a9-454f-83b6-5a45dd9363ef">Slido</a><a class="anchor-link" href="#Slido">&#182;</a></h1>
+</div>
+</div>
+</div>
 </div></section></section><section ><section >
 <div id="cell-id=f345e50f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -16261,7 +16272,7 @@ section.present > section.present {
 <h2 id="Side-note:-generating-random-numbers">Side note: generating random numbers<a class="anchor-link" href="#Side-note:-generating-random-numbers">&#182;</a></h2><p>You can generate random integers with the function:</p>
 <p><code>random.randint(a, b)</code></p>
 <ul>
-<li>This returns a random integer N such that <code>a &lt;= N &lt;= b</code>.</li>
+<li>This returns a (pseudo)random integer N such that <code>a &lt;= N &lt;= b</code>.</li>
 <li>In order to use this, you must add <code>import random</code> at the top of your program.</li>
 <li>This makes the random <strong>module</strong> available for use.<ul>
 <li>A <strong>module</strong> is a collection of related functions.</li>
@@ -16362,7 +16373,7 @@ section.present > section.present {
 <span class="n">expected_sevens</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mf">0.9</span> <span class="o">**</span> <span class="mi">10</span><span class="p">))</span> <span class="o">*</span> <span class="n">iterations</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iterations</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">roll</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">roll</span><span class="p">():</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rolled a 7 &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">iterations</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; times&quot;</span><span class="p">)</span>
@@ -16386,7 +16397,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 1026/10000 times
+<pre>Rolled a 7 1064/10000 times
 Expected number of 7s is ~6513
 </pre>
 </div>
@@ -16467,7 +16478,7 @@ Expected number of 7s is ~6513
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Rolled a 7 6531/10000 times
+<pre>Rolled a 7 6492/10000 times
 Expected number of 7s is ~6513
 </pre>
 </div>
@@ -16548,7 +16559,8 @@ Expected number of 7s is ~6513
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>while True: ... break</code> is another common loop pattern.</p>
+<p><code>break</code> stops the loop and jumps to the code immediately after the loop.<br />
+<code>while True: ... break</code> is another common loop pattern.</p>
 
 </div>
 </div>
@@ -16617,6 +16629,17 @@ Expected number of 7s is ~6513
 </div>
 </div>
 
+</div>
+<div id="cell-id=9aab4f33" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Slido"><a href="https://wall.sli.do/event/6mJzAtP2WJqqWzchKFmsnS?section=9c32faee-d1a9-454f-83b6-5a45dd9363ef">Slido</a><a class="anchor-link" href="#Slido">&#182;</a></h1>
+</div>
+</div>
+</div>
 </div></section></section><section ><section >
 <div id="cell-id=ed7bc744" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -16714,7 +16737,7 @@ Expected number of 7s is ~6513
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>8 + 18 + 1 +  = 
+<pre>7 + 6 + 15 + 19 +  = 
 </pre>
 </div>
 </div>
@@ -16819,7 +16842,7 @@ Expected number of 7s is ~6513
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>14 + 20 + 20 + 20 = 
+<pre>6 + 20 = 
 </pre>
 </div>
 </div>
