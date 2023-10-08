@@ -15122,7 +15122,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-<div id="cell-id=2c58e0a7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9f7b999a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15165,7 +15165,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-<div id="cell-id=1f3fb4c2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a49f387d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15176,7 +15176,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-</div><div id="cell-id=70475620" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=2fc9d5a0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15223,7 +15223,7 @@ inside add_one: num=6
 </div>
 
 </div>
-<div id="cell-id=17212438" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=183e1d62" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15234,7 +15234,7 @@ inside add_one: num=6
 </div>
 </div>
 </div>
-</div><div id="cell-id=f2400b36" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=c1dcf74b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15281,28 +15281,13 @@ inside add_one: x=6
 </div>
 
 </div>
-<div id="cell-id=6fc09412" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d4f39a30" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>x</code> in the global scope is not the same as <code>x</code> in <code>add_one</code>.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=e5dce769" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Python-Tutor">Python Tutor<a class="anchor-link" href="#Python-Tutor">&#182;</a></h1><p>We're going to use a new, very useful tool to help us visualize variables, scope, and references (today's topic): <a href="http://pythontutor.com">Python Tutor</a></p>
-<p>Let's look at the last 2 examples in Python Tutor:</p>
-<p><a href="https://pythontutor.com/render.html#code=def%20add_one%28num%29%3A%0A%20%20%20%20num%20%3D%20num%20%2B%201%0A%20%20%20%20%0Ax%20%3D%205%0Aadd_one%28x%29%0Aadd_one%28x%29%0Aprint%28x%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">First example</a></p>
-<p><a href="https://pythontutor.com/render.html#code=def%20add_one%28x%29%3A%0A%20%20%20%20x%20%3D%20x%20%2B%201%0A%20%20%20%20%0Ax%20%3D%205%0Aadd_one%28x%29%0Aadd_one%28x%29%0Aprint%28x%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Second example</a></p>
+<p>The <code>x</code> in the global scope is not the same as the <code>x</code> in <code>add_one</code>.</p>
 
 </div>
 </div>
@@ -15314,12 +15299,90 @@ inside add_one: x=6
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="References">References<a class="anchor-link" href="#References">&#182;</a></h1><p>Confession time: I lied to you in lecture 2 when I explained that a variable was like a &quot;box&quot; which you can store a value in.</p>
+<h1 id="References">References<a class="anchor-link" href="#References">&#182;</a></h1><p>Confession time: I lied to you in lecture 2 when I explained that a variable was like a &quot;box&quot; in which you can store a value.</p>
 <p>In Python, a variable is actually a <strong>reference to</strong> a value.</p>
 
 </div>
 </div>
 </div>
+</div>
+<div id="cell-id=5f7264e5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Our-mental-model-so-far">Our mental model so far<a class="anchor-link" href="#Our-mental-model-so-far">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=0bbc8fb3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Drawing on the board: a box labeled <code>a</code>, with the value <code>&quot;Hello&quot;</code> in it</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=1a86af1d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=50b3364a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="The-way-things-actually-work">The way things actually work<a class="anchor-link" href="#The-way-things-actually-work">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=00112875" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Drawing on the board: 6 boxes, numbered 0 through 5. The value &quot;Hello&quot; in box 0. A separate box labeled <code>a</code>, with an arrow drawn to box 0.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=7e9f829e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;Hello&quot;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div id="cell-id=16d8452b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15341,13 +15404,252 @@ inside add_one: x=6
 </div>
 </div>
 </div>
-<div id="cell-id=58443d64" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0753ed51" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's look at one of those <code>add_num</code> examples one more time, except this time we'll have Python Tutor show the references:</p>
+<h1 id="2-Volunteers-needed">2 Volunteers needed<a class="anchor-link" href="#2-Volunteers-needed">&#182;</a></h1><p>You'll need to share your favorite colors, and hold an index card.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=ec789a02" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Get 2 volunteers to act as variables</li>
+<li>Ask first volunteer for their favorite color, add it as a string to the memory boxes, hand them an index card with the number of the box used.</li>
+<li>Repeat for volunteer 2, require a different color.</li>
+<li>When we encounter a print, ask each variable to read their value aloud.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=9ea1f283" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="s2">&quot;color1&quot;</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="s2">&quot;color2&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>color1 color2
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=ae5abf41" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Get a new color from the first person. Add it as a value to a new memory box, swap their index card.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=a5224eb3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="s2">&quot;color3&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>color3 color2
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=83631da1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Force second person to like first person's color. Give them an index card with the same number as first person.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=0b685eb4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name2</span> <span class="o">=</span> <span class="n">name1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>color3 color3
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=afeee7d0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Second person changes their color, add the value to the boxes and hand them a new index card.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=3328f668" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name2</span> <span class="o">=</span> <span class="s2">&quot;color4&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>color3 color4
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=5bc3fba8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Python-Tutor">Python Tutor<a class="anchor-link" href="#Python-Tutor">&#182;</a></h1><p>We're going to use a new, very useful tool to help us visualize variables, scope, and references (today's topic): <a href="http://pythontutor.com">Python Tutor</a></p>
+<p>Let's look at those 2 <code>add_num</code> examples in Python Tutor:</p>
+<p><a href="https://pythontutor.com/render.html#code=def%20add_one%28num%29%3A%0A%20%20%20%20num%20%3D%20num%20%2B%201%0A%20%20%20%20%0Ax%20%3D%205%0Aadd_one%28x%29%0Aadd_one%28x%29%0Aprint%28x%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">First example</a></p>
+<p><a href="https://pythontutor.com/render.html#code=def%20add_one%28x%29%3A%0A%20%20%20%20x%20%3D%20x%20%2B%201%0A%20%20%20%20%0Ax%20%3D%205%0Aadd_one%28x%29%0Aadd_one%28x%29%0Aprint%28x%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Second example</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=7214b152" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's look one more time, except this time we'll have Python Tutor show the references explicitly:</p>
 <p><a href="https://pythontutor.com/render.html#code=def%20add_one%28num%29%3A%0A%20%20%20%20num%20%3D%20num%20%2B%201%0A%20%20%20%20%0Ax%20%3D%205%0Aadd_one%28x%29%0Aadd_one%28x%29%0Aprint%28x%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=true&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">First example</a></p>
 
 </div>
@@ -15380,23 +15682,229 @@ inside add_one: x=6
 </div>
 </div>
 </div>
-<div id="cell-id=c1c12e65" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=206d97bd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Another-way-to-think-about-this">Another way to think about this<a class="anchor-link" href="#Another-way-to-think-about-this">&#182;</a></h1><p>If the relationship between &quot;variables&quot; and &quot;references&quot; is confusing, instead you can try thinking about &quot;names&quot; and &quot;objects&quot;.</p>
-<p>Assignment (<code>=</code>) associates a name with an object.</p>
-<p>Passing an argument into a function just associates the function's parameter name to the object passed into the function.</p>
-<p>One object might have multiple names at a time.</p>
-<p>When you assign (<code>=</code>), you don't copy the object, you just associate a new name with the object.</p>
+<h1 id="This-is-confusing,-why-do-we-care?">This is confusing, why do we care?<a class="anchor-link" href="#This-is-confusing,-why-do-we-care?">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=1478b801" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Clear out memory boxes, take back index cards.</li>
+<li>Ask first volunteer for their 2 favorite colors, add a list to a memory box, hand them an index card with the number of the box used.</li>
+<li>Repeat for volunteer 2, require different colors.</li>
+</ol>
 
 </div>
 </div>
 </div>
+</div><div id="cell-id=091d0014" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div id="cell-id=206d97bd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;color1&quot;</span><span class="p">,</span> <span class="s2">&quot;color2&quot;</span><span class="p">]</span>
+<span class="n">name2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;color3&quot;</span><span class="p">,</span> <span class="s2">&quot;color4&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;color1&#39;, &#39;color2&#39;] [&#39;color3&#39;, &#39;color4&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=e4ee9b24" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Make first person pick 2 new colors, create a new list in a new box, and swap their index card.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=47c65e7f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;color5&quot;</span><span class="p">,</span> <span class="s2">&quot;color6&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;color5&#39;, &#39;color6&#39;] [&#39;color3&#39;, &#39;color4&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=bb81e8ef" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Force second person to like first person's colors. Give them an index card with the same number as the first person.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=da512c23" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name2</span> <span class="o">=</span> <span class="n">name1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;color5&#39;, &#39;color6&#39;] [&#39;color5&#39;, &#39;color6&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=ef938438" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Update list in place, notice how both people's colors are updated.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=ad8d3c77" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">name2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;color7&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;color7&#39;, &#39;color6&#39;] [&#39;color7&#39;, &#39;color6&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=4e6a99b4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15412,7 +15920,7 @@ inside add_one: x=6
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -15452,7 +15960,7 @@ inside add_one: x=6
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -15504,7 +16012,7 @@ inside add_one: x=6
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -15548,7 +16056,7 @@ global scope a=1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -15628,7 +16136,7 @@ global scope a=[2]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's walk through a few examples and talk in detail about what is happening to references vs. values on each line.</p>
+<p>Let's walk through a few code examples and talk in detail about what is happening to references vs. values on each line.</p>
 
 </div>
 </div>
@@ -15638,7 +16146,7 @@ global scope a=[2]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -15658,9 +16166,9 @@ global scope a=[2]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>On line 1, we set <code>a</code> to refer to value <code>1</code>.</p>
-<p>On line 2, we set <code>b</code> to refer to value <code>1</code>.</p>
-<p>On line 3, we update <code>a</code> to refer to value <code>2</code> instead of referencing value <code>1</code>.</p>
+<p>On line 1, <code>a</code> refers to value <code>1</code>.</p>
+<p>On line 2, <code>b</code> refers to value <code>1</code>.</p>
+<p>On line 3, <code>a</code> is updated to refer to value <code>2</code>, instead of referring to value <code>1</code>.</p>
 <p>We <strong>didn't</strong> change the value <code>1</code> to <code>2</code>. We changed <code>a</code> to refer to a different value. <code>ints</code> are immutable, we can't change them.</p>
 <p><a href="https://pythontutor.com/render.html#code=a%20%3D%201%0Ab%20%3D%201%0Aa%20%3D%202&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=true&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Python Tutor link</a></p>
 
@@ -15672,7 +16180,7 @@ global scope a=[2]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -15714,22 +16222,22 @@ global scope a=[2]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>On line 1, we set <code>a</code> to refer to value <code>1</code>.</p>
-<p>On line 2, we set <code>b</code> to refer to the same value as <code>a</code>: <code>1</code>.</p>
+<p>On line 1, <code>a</code> refers to value <code>1</code>.</p>
+<p>On line 2, <code>b</code> refers to the same value as <code>a</code>: <code>1</code>.</p>
 <p><code>b</code> does <strong>not</strong> refer to <code>a</code>. It refers to the value <code>1</code>.</p>
-<p>On line 3, we change <code>a</code> to refer to the value <code>2</code>.</p>
+<p>On line 3, <code>a</code> is changed to refer to the value <code>2</code>.</p>
 <p>We didn't update the value <code>1</code>, we only updated <code>a</code>'s reference. <code>b</code> still refers to the value <code>1</code>.</p>
 <p><a href="https://pythontutor.com/render.html#code=a%20%3D%201%0Ab%20%3D%20a%0Aa%20%3D%20a%20%2B%201%0Aprint%28f%22%7Ba%3D%7D%20%7Bb%3D%7D%22%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=true&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Python Tutor link</a></p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=f1275450" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=2e3bf01c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
@@ -15765,7 +16273,7 @@ global scope a=[2]
 </div>
 
 </div>
-<div id="cell-id=81e5e6f4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0aa3f06e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15785,7 +16293,7 @@ global scope a=[2]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -15829,7 +16337,7 @@ global scope a=[2]
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Lists <strong>appear to</strong> behave differently. Lists are <strong>mutable</strong>. We can change the value of a list.</p>
 <p>On line 1, <code>a</code> refers to a list <code>[1,2,3]</code></p>
-<p>On line 2, we set <code>b</code> to refer to the same list which <code>a</code> refers to.</p>
+<p>On line 2, <code>b</code> refers to the same list which <code>a</code> refers to.</p>
 <p>On line 3, we modify the list itself! We're changing a value by assigning to an index in the list, we're not changing <code>a</code>'s reference.</p>
 <p>Since <code>a</code> and <code>b</code> refer to the same list value, and we modified that list value, both <code>a</code> and <code>b</code> will reflect the change made to the list.</p>
 <p><a href="https://pythontutor.com/visualize.html#code=a%20%3D%20%5B1,%202,%203%5D%0Ab%20%3D%20a%0Aa%5B0%5D%20%3D%204%0A&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=true&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Python Tutor link</a></p>
@@ -15837,12 +16345,12 @@ global scope a=[2]
 </div>
 </div>
 </div>
-</div><div id="cell-id=beb1ae7c" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=a3733299" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -15878,7 +16386,7 @@ global scope a=[2]
 </div>
 
 </div>
-<div id="cell-id=af18bb8b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7ee0ec6c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15897,7 +16405,7 @@ global scope a=[2]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -15942,7 +16450,7 @@ global scope a=[2]
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>This example highlights the difference between changing a variable's reference, and mutating the value it refers to.</p>
 <p>On line 1, <code>a</code> refers to a list <code>[1,2,3]</code></p>
-<p>On line 2, we set <code>b</code> to refer to the same list which <code>a</code> refers to.</p>
+<p>On line 2, <code>b</code> refers to the same list which <code>a</code> refers to.</p>
 <p>On line 3, we change <code>a</code> to refer to a new list <code>[4,5,6]</code> by assigning to <code>a</code>. We have not modified the original list value that <code>a</code> referred to. <code>a</code> and <code>b</code> now refer to different lists.</p>
 <p>On line 4, we modify the list value that <code>a</code> refers to. <code>b</code>'s list is unchanged.</p>
 <p><a href="https://pythontutor.com/visualize.html#code=a%20%3D%20%5B1,%202,%203%5D%0Ab%20%3D%20a%0Aa%20%3D%20%5B4,%205,%206%5D%0Aa%5B0%5D%20%3D%209&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=true&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Python tutor link</a></p>
@@ -15950,12 +16458,12 @@ global scope a=[2]
 </div>
 </div>
 </div>
-</div><div id="cell-id=078c1b2b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=308e1d4a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -15992,7 +16500,7 @@ global scope a=[2]
 </div>
 
 </div>
-<div id="cell-id=a005b7c5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=af46dc8e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16023,7 +16531,7 @@ global scope a=[2]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -16071,18 +16579,18 @@ global scope a=1
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>When the code reaches line 2, <code>a</code> is a reference to value <code>1</code>, and <code>num</code> is also a reference to the value <code>1</code>.</p>
 <p>Other than referring to the same value, <code>a</code> and <code>num</code> are not connected.</p>
-<p>After line 2 executes, <code>num</code> is updated to refer to value <code>2</code>, and <code>a</code>s reference remains unchanged.</p>
+<p>After line 2 executes, <code>num</code> is updated to refer to value <code>2</code>, and <code>a</code> continues to refer to value <code>1</code>.</p>
 <p><a href="https://pythontutor.com/visualize.html#code=def%20add_one%28num%29%3A%0A%20%20%20%20num%20%3D%20num%20%2B%201%0A%20%20%20%20print%28%22inside%20add_one%3A%20%22%20%2B%20str%28num%29%29%0A%0Aa%20%3D%201%0Aadd_one%28a%29%0Aprint%28f%22global%20scope%3A%20%22%20%2B%20str%28a%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=true&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Python tutor link</a></p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=00202327" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=b3e29588" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -16122,7 +16630,7 @@ global scope a=1
 </div>
 
 </div>
-<div id="cell-id=8e2c4fff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=58eacfde" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16152,7 +16660,7 @@ global scope a=1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -16205,12 +16713,12 @@ global scope a=[2]
 </div>
 </div>
 </div>
-</div><div id="cell-id=908ef083" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=9a64be84" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -16250,7 +16758,7 @@ global scope a=[2]
 </div>
 
 </div>
-<div id="cell-id=078e4dc1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=a8d40279" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16258,6 +16766,22 @@ global scope a=[2]
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Or,-another-way:">Or, another way:<a class="anchor-link" href="#Or,-another-way:">&#182;</a></h2><p>When the code reaches line 2, both <code>a</code> and <code>nums</code> are names for the same object - the list <code>[0]</code>.</p>
 <p>After line 2 executes, the list value has changed. Because <code>a</code> and <code>nums</code> are both names for it, they both see the change.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=3a5a2a46" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Another-way-to-think-about-this">Another way to think about this<a class="anchor-link" href="#Another-way-to-think-about-this">&#182;</a></h1><p>If the word &quot;references&quot; is confusing, you can also think about a variable as a &quot;name&quot; for a value.</p>
+<p>Assignment (<code>=</code>) binds (or assigns) a name to a value.</p>
+<p>Passing an argument into a function also binds a name to a value. The name is the name of the function's parameter.</p>
+<p>One value might have multiple names at a time.</p>
+<p>When you assign (<code>=</code>), the value isn't copied. You've added a new name for the value.</p>
 
 </div>
 </div>
@@ -16284,7 +16808,7 @@ global scope a=[2]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">copy</span>
@@ -16321,7 +16845,7 @@ global scope a=[2]
 </div>
 
 </div>
-<div id="cell-id=b9777460" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0fcf458b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16349,7 +16873,7 @@ global scope a=[2]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
@@ -16390,13 +16914,25 @@ global scope a=[2]
 </div>
 
 </div>
-<div id="cell-id=64411e34" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=edf61d6a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><a href="https://pythontutor.com/render.html#code=import%20copy%0Adef%20add_one%28nums%29%3A%0A%20%20%20%20newlist%20%3D%20copy.copy%28nums%29%0A%20%20%20%20for%20i%20in%20range%28len%28newlist%29%29%3A%0A%20%20%20%20%20%20%20%20newlist%5Bi%5D%20%3D%20newlist%5Bi%5D%20%2B%201%0A%20%20%20%20return%20newlist%0A%0Aa%20%3D%20%5B1,2,3%5D%0Ab%20%3D%20add_one%28a%29%0Aprint%28f%22%7Ba%3D%7D%20%7Bb%3D%7D%22%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=true&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Python Tutor link</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=4e1f12e1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Puzzles">Puzzles<a class="anchor-link" href="#Puzzles">&#182;</a></h1><p><a href="https://replit.com/team/cosi-10a-fall23/Reference-puzzles">&quot;Reference puzzles&quot; on repl.it</a></p>
 
 </div>
 </div>
