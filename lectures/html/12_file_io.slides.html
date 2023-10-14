@@ -15172,25 +15172,13 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="File-Input/Output,-JSON,-CSVs">File Input/Output, JSON, CSVs<a class="anchor-link" href="#File-Input/Output,-JSON,-CSVs">&#182;</a></h1><style>
+<h1 id="File-Input/Output,-CSVs">File Input/Output, CSVs<a class="anchor-link" href="#File-Input/Output,-CSVs">&#182;</a></h1><style>
 section.present > section.present { 
     max-height: 90%; 
     overflow-y: scroll;
 }
 </style>
 <p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/12_file_io.ipynb">Link to interactive slides on Google Colab</a></small></p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=91487a63" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To add: file path overview (at least cover <code>/</code> and <code>..</code>)</p>
 
 </div>
 </div>
@@ -15251,6 +15239,142 @@ Snape
 
 </div>
 
+</div></section></section><section ><section >
+<div id="cell-id=ad1f2a3e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="But-first:-Understanding-file-paths">But first: Understanding file paths<a class="anchor-link" href="#But-first:-Understanding-file-paths">&#182;</a></h1><p>Files are stored in a big tree of nested directories, each of which can contain files and/or other directories.</p>
+<p>A directory that contains another directory is called a &quot;parent&quot; directory.</p>
+<p>The &quot;root&quot; directory is the (eventual) parent of all files and directories.</p>
+<p>The &quot;working&quot; directory is the directory you are currently working in. Every program or command that runs has a &quot;working&quot; directory.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=44fd0d12" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="File-path-syntax">File path syntax<a class="anchor-link" href="#File-path-syntax">&#182;</a></h2><p>Special characters:</p>
+<ul>
+<li><code>/</code>: directory separator</li>
+<li><code>..</code>: parent directory</li>
+<li><code>.</code>: current directory</li>
+<li><code>~</code>: your home directory</li>
+<li><code>*</code>: wildcard, match any characters</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=3b3ca8cc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Absolute-vs.-relative-file-paths">Absolute vs. relative file paths<a class="anchor-link" href="#Absolute-vs.-relative-file-paths">&#182;</a></h2><p>File paths that start with <code>/</code> are &quot;absolute&quot;, meaning they are interpreted relative to the root directory.</p>
+<p>File paths that do not start with <code>/</code> are &quot;relative&quot;, and are interpreted relative to you current working directory.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=4e4e5803" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2><ul>
+<li><code>/Users/jdelfino/stuff/smile.txt</code><ul>
+<li>the file <code>smile.txt</code> found in the directory <code>/Users/jdelfino/stuff</code></li>
+</ul>
+</li>
+<li><code>stuff/smile.txt</code><ul>
+<li>the file <code>smile.txt</code>, in the <code>stuff</code> directory, in the current working directory</li>
+</ul>
+</li>
+<li><code>../smile.txt</code><ul>
+<li>the file <code>smile.txt</code> found in the parent directory of the current working directory</li>
+</ul>
+</li>
+<li><code>./*.txt</code> or <code>*.txt</code><ul>
+<li>all files with the <code>.txt</code> extension in the current working directory</li>
+</ul>
+</li>
+<li><code>../*.txt</code><ul>
+<li>all files with the <code>.txt</code> extension found in the parent directory of the current working directory</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=a466138e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Reading-files">Reading files<a class="anchor-link" href="#Reading-files">&#182;</a></h1><p>Python allows you to read the contents of files:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=444e4d6f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/names.txt&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Harry
+Hermione
+Ron
+Ginny
+Dumbledore
+Snape
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div></section><section >
 <div id="cell-id=14a564ba" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15268,7 +15392,7 @@ Snape
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/names.txt&#39;</span><span class="p">)</span>
@@ -15314,7 +15438,9 @@ Snape
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note the <code>end=''</code> for the <code>print</code>. When reading a file, the newlines from the file are returned. You can strip them out with the <code>strip()</code> string method, depending on how you want to use the data.</p>
+<p>Note the <code>end=''</code> for the <code>print</code>.</p>
+<p>When reading a file, the newlines from the file are returned as part of each line.</p>
+<p>You can strip them out with the <code>strip()</code> string method, depending on how you want to use the data.</p>
 
 </div>
 </div>
@@ -15324,7 +15450,7 @@ Snape
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/names.txt&#39;</span><span class="p">)</span>
@@ -15363,26 +15489,26 @@ Name: Snape
 
 </div>
 
-</div>
+</div></section><section >
 <div id="cell-id=4a1128bc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="File-objects">File objects<a class="anchor-link" href="#File-objects">&#182;</a></h2><p><code>open()</code> returns a file object. File objects have a number of methods, and are also <strong>iterables</strong>, as we just saw.</p>
+<h2 id="File-objects">File objects<a class="anchor-link" href="#File-objects">&#182;</a></h2><p><code>open()</code> returns a &quot;file object&quot;. File objects have a number of methods, and are also <strong>iterables</strong> - that's why we were able to use a for loop on them.</p>
 
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section ><section >
 <div id="cell-id=3a8ef820" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Writing-Files">Writing Files<a class="anchor-link" href="#Writing-Files">&#182;</a></h1><p>You can write strings to files also:</p>
+<h1 id="Writing-Files">Writing Files<a class="anchor-link" href="#Writing-Files">&#182;</a></h1><p>You can write strings to files:</p>
 
 </div>
 </div>
@@ -15392,7 +15518,7 @@ Name: Snape
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
@@ -15429,6 +15555,18 @@ Name: Snape
 
 </div>
 
+</div>
+<div id="cell-id=95f0453c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note the call to <code>close()</code> - files must be closed after writing to them.</p>
+
+</div>
+</div>
+</div>
 </div></section><section >
 <div id="cell-id=9384b03b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15486,7 +15624,7 @@ vs.<br />
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
@@ -15539,7 +15677,7 @@ vs.<br />
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/names.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -15614,6 +15752,2453 @@ File closed at end? True
 </div>
 </div>
 </div></section></section><section ><section >
+<div id="cell-id=302725d4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Read in two files, <code>../../snippets/hamlet.txt</code> and <code>../../snippets/macbeth.txt</code> and print out all the lines that are found in both files.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=134e4057" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">macbeth</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">hamlet</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/hamlet.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">hamlet</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/macbeth.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">macbeth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">hamlet</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">macbeth</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>by William Shakespeare
+Edited by Barbara A. Mowat and Paul Werstine
+with Michael Poston and Rebecca Niles
+Folger Shakespeare Library
+Created on Jul 31, 2015, from FDT version 0.9.2
+
+Characters in the Play
+======================
+
+
+ACT 1
+=====
+
+Scene 1
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Enter Ghost.]
+
+
+
+
+
+
+
+
+
+speak.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Enter Ghost.]
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 2
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[He exits.]
+
+Scene 3
+=======
+
+
+
+
+
+
+
+
+
+
+
+thee.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 4
+=======
+
+
+
+
+
+
+
+
+
+
+
+[Enter Ghost.]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 5
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+
+ACT 2
+=====
+
+Scene 1
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 2
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lord?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+speak.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[He exits.]
+
+
+ACT 3
+=====
+
+Scene 1
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 2
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+affair.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[He exits.]
+
+Scene 3
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[He exits.]
+
+Scene 4
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Enter Ghost.]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACT 4
+=====
+
+Scene 1
+=======
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 2
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 3
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[He exits.]
+
+Scene 4
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+CAPTAIN
+
+
+CAPTAIN
+
+
+CAPTAIN
+
+
+
+
+[He exits.]
+
+Scene 5
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[Enter a Messenger.]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 6
+=======
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 7
+=======
+
+
+
+
+
+
+
+
+
+
+
+MESSENGER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+him
+
+
+
+
+
+them.
+
+
+
+
+[They exit.]
+
+
+ACT 5
+=====
+
+Scene 1
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DOCTOR
+her.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[They exit.]
+
+Scene 2
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=380b60a1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Looks like we need to handle duplicates...</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" ><div id="cell-id=eabc8fe7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">macbeth</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">hamlet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/hamlet.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">hamlet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/macbeth.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">macbeth</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hamlet</span> <span class="o">&amp;</span> <span class="n">macbeth</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;&#39;, &#39;thee.&#39;, &#39;Scene 5&#39;, &#39;[He exits.]&#39;, &#39;ACT 2&#39;, &#39;Scene 4&#39;, &#39;lord?&#39;, &#39;speak.&#39;, &#39;Created on Jul 31, 2015, from FDT version 0.9.2&#39;, &#39;[Enter a Messenger.]&#39;, &#39;her.&#39;, &#39;affair.&#39;, &#39;ACT 1&#39;, &#39;ACT 4&#39;, &#39;ACT 5&#39;, &#39;DOCTOR&#39;, &#39;Scene 2&#39;, &#39;=======&#39;, &#39;=====&#39;, &#39;MESSENGER&#39;, &#39;Edited by Barbara A. Mowat and Paul Werstine&#39;, &#39;Scene 1&#39;, &#39;ACT 3&#39;, &#39;======================&#39;, &#39;by William Shakespeare&#39;, &#39;[Enter Ghost.]&#39;, &#39;Scene 7&#39;, &#39;Scene 3&#39;, &#39;Scene 6&#39;, &#39;Characters in the Play&#39;, &#39;him&#39;, &#39;with Michael Poston and Rebecca Niles&#39;, &#39;[They exit.]&#39;, &#39;Folger Shakespeare Library&#39;, &#39;them.&#39;, &#39;CAPTAIN&#39;}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></div></section><section >
+<div id="cell-id=be2707aa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can make the output a little prettier</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=3f1b43a0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">macbeth</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">hamlet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/hamlet.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">hamlet</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/macbeth.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">macbeth</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="n">overlapping</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">macbeth</span> <span class="o">&amp;</span> <span class="n">hamlet</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">overlapping</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>
+=====
+=======
+======================
+ACT 1
+ACT 2
+ACT 3
+ACT 4
+ACT 5
+CAPTAIN
+Characters in the Play
+Created on Jul 31, 2015, from FDT version 0.9.2
+DOCTOR
+Edited by Barbara A. Mowat and Paul Werstine
+Folger Shakespeare Library
+MESSENGER
+Scene 1
+Scene 2
+Scene 3
+Scene 4
+Scene 5
+Scene 6
+Scene 7
+[Enter Ghost.]
+[Enter a Messenger.]
+[He exits.]
+[They exit.]
+affair.
+by William Shakespeare
+her.
+him
+lord?
+speak.
+thee.
+them.
+with Michael Poston and Rebecca Niles
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section ><section >
+<div id="cell-id=97471c68" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise-2">Exercise 2<a class="anchor-link" href="#Exercise-2">&#182;</a></h2><p>Do the same thing for all of Shakespeare's plays at once.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=90939f8d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">macbeth</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">hamlet</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">othello</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">henry_iv_part1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="n">henry_iv_part2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="c1"># ...</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="fragment" >
+<div id="cell-id=b471ed9e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>There must be an easier way.</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section >
+<div id="cell-id=83291360" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can use <code>os.listdir()</code> to get everything in a directory.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=3966481d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">play_files</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/&#39;</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">play_files</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">play_files</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;julius-caesar.txt&#39;, &#39;cymbeline.txt&#39;, &#39;coriolanus.txt&#39;, &#39;the-two-gentlemen-of-verona.txt&#39;, &#39;henry-v.txt&#39;, &#39;the-tempest.txt&#39;, &#39;henry-iv-part-1.txt&#39;, &#39;twelfth-night.txt&#39;, &#39;titus-andronicus.txt&#39;, &#39;much-ado-about-nothing.txt&#39;, &#39;movies.json&#39;, &#39;antony-and-cleopatra.txt&#39;, &#39;henry-iv-part-2.txt&#39;, &#39;the-taming-of-the-shrew.txt&#39;, &#39;pericles.txt&#39;, &#39;alls-well-that-ends-well.txt&#39;, &#39;the-winters-tale.txt&#39;, &#39;the-merry-wives-of-windsor.txt&#39;, &#39;richard-iii.txt&#39;, &#39;othello.txt&#39;, &#39;the-merchant-of-venice.txt&#39;, &#39;troilus-and-cressida.txt&#39;, &#39;henry-viii.txt&#39;, &#39;king-john.txt&#39;, &#39;venus-and-adonis.txt&#39;, &#39;henry-vi-part-1.txt&#39;, &#39;measure-for-measure.txt&#39;, &#39;henry-vi-part-2.txt&#39;, &#39;richard-ii.txt&#39;, &#39;henry-vi-part-3.txt&#39;, &#39;king-lear.txt&#39;, &#39;romeo-and-juliet.txt&#39;, &#39;a-midsummer-nights-dream.txt&#39;, &#39;timon-of-athens.txt&#39;, &#39;shakespeares-sonnets.txt&#39;, &#39;the-two-noble-kinsmen.txt&#39;, &#39;as-you-like-it.txt&#39;, &#39;lucrece.txt&#39;, &#39;loves-labors-lost.txt&#39;, &#39;macbeth.txt&#39;, &#39;hamlet.txt&#39;, &#39;the-comedy-of-errors.txt&#39;]
+42
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=18d559f1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Next problem, how do we avoid writing 41 for loops?</p>
+<p>Let's functionally decompose, 2 steps:</p>
+<ol>
+<li>Find all file names and load the lines from each file into a set</li>
+<li>Find the intersection between the lines from each file</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=2c5ece84" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol>
+<li>Find all file names and load the lines from each file into a set</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=f6373c39" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">load_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+        <span class="n">play_lines</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">directory</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">play_lines</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="n">all_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">play_lines</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">all_data</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section >
+<div id="cell-id=0c88398f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's make this more readable - split out the code to process a single file</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=c6d0fc0d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="n">play_lines</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">play_lines</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">play_lines</span>
+
+<span class="k">def</span> <span class="nf">load_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+        <span class="n">all_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">load_file</span><span class="p">(</span><span class="n">directory</span> <span class="o">+</span> <span class="n">filename</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">all_data</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section ><div id="cell-id=370c770b" class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_raises-exception">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_lines</span> <span class="o">=</span> <span class="n">load_files</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_lines</span><span class="p">)</span><span class="si">}</span><span class="s2"> files&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">play</span> <span class="ow">in</span> <span class="n">all_lines</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unique lines: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">play</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Loaded 42 files
+Unique lines: 2894
+Unique lines: 4062
+Unique lines: 4181
+Unique lines: 2448
+Unique lines: 3592
+Unique lines: 2541
+Unique lines: 3344
+Unique lines: 2767
+Unique lines: 2858
+Unique lines: 2923
+Unique lines: 168920
+Unique lines: 3928
+Unique lines: 3655
+Unique lines: 2987
+Unique lines: 2735
+Unique lines: 3244
+Unique lines: 3637
+Unique lines: 3084
+Unique lines: 4122
+Unique lines: 3850
+Unique lines: 2899
+Unique lines: 3865
+Unique lines: 3619
+Unique lines: 2903
+Unique lines: 1221
+Unique lines: 3113
+Unique lines: 3142
+Unique lines: 3622
+Unique lines: 3122
+Unique lines: 3335
+Unique lines: 3882
+Unique lines: 3410
+Unique lines: 2415
+Unique lines: 2782
+Unique lines: 2340
+Unique lines: 3646
+Unique lines: 3019
+Unique lines: 1914
+Unique lines: 3071
+Unique lines: 2660
+Unique lines: 4375
+Unique lines: 2072
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=0857904d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ol start="2">
+<li>Find the intersection between the lines from each file</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=87bf4b83" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">common_lines</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">play</span> <span class="ow">in</span> <span class="n">all_lines</span><span class="p">:</span>
+    <span class="n">common_lines</span> <span class="o">=</span> <span class="n">common_lines</span> <span class="o">&amp;</span> <span class="n">play</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">common_lines</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>set()
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="fragment" >
+<div id="cell-id=f3ed331b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Seems suspicious... let's debug</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section ><div id="cell-id=5a07aa24" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">common_lines</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">play</span> <span class="ow">in</span> <span class="n">all_lines</span><span class="p">:</span>
+    <span class="n">common_lines</span> <span class="o">=</span> <span class="n">common_lines</span> <span class="o">&amp;</span> <span class="n">play</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lines after intersection: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">common_lines</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">common_lines</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+set()
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=3b9cd628" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Oh, we start with an empty set. An empty set intersected with anything is... an empty set. Start with the first play instead.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=0b1ee810" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">common_lines</span> <span class="o">=</span> <span class="n">all_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">play</span> <span class="ow">in</span> <span class="n">all_lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+    <span class="n">common_lines</span> <span class="o">=</span> <span class="n">common_lines</span> <span class="o">&amp;</span> <span class="n">play</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lines after intersection: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">common_lines</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">common_lines</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Lines after intersection: 27
+Lines after intersection: 23
+Lines after intersection: 21
+Lines after intersection: 21
+Lines after intersection: 19
+Lines after intersection: 19
+Lines after intersection: 19
+Lines after intersection: 19
+Lines after intersection: 19
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+Lines after intersection: 0
+set()
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section ><section >
+<div id="cell-id=4aa111a0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="CSV-files">CSV files<a class="anchor-link" href="#CSV-files">&#182;</a></h1><p>CSV stands for &quot;character separated values&quot;.</p>
+<p>In CSV files, rows of data are represented by lines in a file, and columns of data are separated by a specific character, called a <strong>delimiter</strong>. Commas (<code>,</code>) are commonly used as a delimiter, but any character can be a delimiter.</p>
+<p>CSV files are another common way to store structured data, especially if the data is tabular (like a spreadsheet).</p>
+<p>Here's an example of CSV data. Each line contains 4 fields: <code>id</code>, <code>name</code>, <code>house</code>, <code>hair color</code>:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=5fe876c9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>11,Harry,Gryffindor,Brown
+18,Draco,Slytherin,Blonde
+22,Cho,Ravenclaw,Black
+28,Ron,Gryffindor,Red
+47,Hermione,Gryffindor,Brown
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=ac58d7aa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Reading-CSVs">Reading CSVs<a class="anchor-link" href="#Reading-CSVs">&#182;</a></h2><p>We could just use <code>.split(',')</code> to split each line into a list. But Python provides some nice CSV utilities in the <code>csv</code> module.</p>
+<p><code>csv.reader()</code> creates an iterable object that produces each line as a list.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=7ae5a1e0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;11&#39;, &#39;Harry&#39;, &#39;Gryffindor&#39;, &#39;Brown&#39;]
+[&#39;18&#39;, &#39;Draco&#39;, &#39;Slytherin&#39;, &#39;Blonde&#39;]
+[&#39;22&#39;, &#39;Cho&#39;, &#39;Ravenclaw&#39;, &#39;Black&#39;]
+[&#39;28&#39;, &#39;Ron&#39;, &#39;Gryffindor&#39;, &#39;Red&#39;]
+[&#39;47&#39;, &#39;Hermione&#39;, &#39;Gryffindor&#39;, &#39;Brown&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=19f39836" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Writing-CSVs">Writing CSVs<a class="anchor-link" href="#Writing-CSVs">&#182;</a></h2><p><code>csv.writer()</code> creates an object with a <code>writerow</code> method, which takes a <code>list</code> and writes it out as a single CSV row.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=db79160a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;18&#39;</span><span class="p">,</span> <span class="s1">&#39;Draco&#39;</span><span class="p">,</span> <span class="s1">&#39;Slytherin&#39;</span><span class="p">,</span> <span class="s1">&#39;Blonde&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;Cho&#39;</span><span class="p">,</span> <span class="s1">&#39;Ravenclaw&#39;</span><span class="p">,</span> <span class="s1">&#39;Black&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;28&#39;</span><span class="p">,</span> <span class="s1">&#39;Ron&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;47&#39;</span><span class="p">,</span> <span class="s1">&#39;Hermione&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">]]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>11|Harry|Gryffindor|Brown
+18|Draco|Slytherin|Blonde
+22|Cho|Ravenclaw|Black
+28|Ron|Gryffindor|Red
+47|Hermione|Gryffindor|Brown
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=f79043f9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="How-useful-is-this,-really?">How useful is this, really?<a class="anchor-link" href="#How-useful-is-this,-really?">&#182;</a></h2><p>Why use the <code>csv</code> module, when <code>split()</code> and <code>join()</code> calls are so easy?</p>
+<p>Well, it handles a lot of edge cases - for example, escaped delimiters within fields.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=da013658" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Here's an example using <code>split()</code> and <code>join()</code></p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=029d85ca" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown,mostly&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;18&#39;</span><span class="p">,</span> <span class="s1">&#39;Draco&#39;</span><span class="p">,</span> <span class="s1">&#39;Slytherin&#39;</span><span class="p">,</span> <span class="s1">&#39;Blonde,mostly&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;Cho&#39;</span><span class="p">,</span> <span class="s1">&#39;Ravenclaw&#39;</span><span class="p">,</span> <span class="s1">&#39;Black,really&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;28&#39;</span><span class="p">,</span> <span class="s1">&#39;Ron&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Red,very&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;47&#39;</span><span class="p">,</span> <span class="s1">&#39;Hermione&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">]]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;11&#39;, &#39;Harry&#39;, &#39;Gryffindor&#39;, &#39;Brown&#39;, &#39;mostly&#39;]
+[&#39;18&#39;, &#39;Draco&#39;, &#39;Slytherin&#39;, &#39;Blonde&#39;, &#39;mostly&#39;]
+[&#39;22&#39;, &#39;Cho&#39;, &#39;Ravenclaw&#39;, &#39;Black&#39;, &#39;really&#39;]
+[&#39;28&#39;, &#39;Ron&#39;, &#39;Gryffindor&#39;, &#39;Red&#39;, &#39;very&#39;]
+[&#39;47&#39;, &#39;Hermione&#39;, &#39;Gryffindor&#39;, &#39;Brown&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=08098063" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Here's the same example using the <code>csv</code> module</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=7e06e2af" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown,mostly&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;18&#39;</span><span class="p">,</span> <span class="s1">&#39;Draco&#39;</span><span class="p">,</span> <span class="s1">&#39;Slytherin&#39;</span><span class="p">,</span> <span class="s1">&#39;Blonde,mostly&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;Cho&#39;</span><span class="p">,</span> <span class="s1">&#39;Ravenclaw&#39;</span><span class="p">,</span> <span class="s1">&#39;Black,really&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;28&#39;</span><span class="p">,</span> <span class="s1">&#39;Ron&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Red,very&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;47&#39;</span><span class="p">,</span> <span class="s1">&#39;Hermione&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">]]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+        
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>[&#39;11&#39;, &#39;Harry&#39;, &#39;Gryffindor&#39;, &#39;Brown,mostly&#39;]
+[&#39;18&#39;, &#39;Draco&#39;, &#39;Slytherin&#39;, &#39;Blonde,mostly&#39;]
+[&#39;22&#39;, &#39;Cho&#39;, &#39;Ravenclaw&#39;, &#39;Black,really&#39;]
+[&#39;28&#39;, &#39;Ron&#39;, &#39;Gryffindor&#39;, &#39;Red,very&#39;]
+[&#39;47&#39;, &#39;Hermione&#39;, &#39;Gryffindor&#39;, &#39;Brown&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section ><section >
 <div id="cell-id=0f001354" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15621,9 +18206,121 @@ File closed at end? True
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="JSON">JSON<a class="anchor-link" href="#JSON">&#182;</a></h1><p>We know how to read and write strings, but what about other types - ints, floats, lists, dictionaries?</p>
-<p>Python has the <code>json</code> package, which contains utilities for reading and writing <strong>JSON</strong>.</p>
-<p>JSON stands for &quot;JavaScript Object Notation&quot;. It is a very popular, widely used data exchange format. If you need to store structured data, it's a good default choice.</p>
-<p>JSON can represent strings, ints, floats, booleans, lists, dictionaries, and <code>None</code>.</p>
+<p>Enter <strong>JSON</strong>: &quot;<strong>J</strong>ava<strong>s</strong>cript <strong>O</strong>bject <strong>N</strong>otation&quot;.</p>
+<p>JSON is a <strong>data exchange format</strong>: a method of representing data as sequences of characters (strings) which can be interpreted by many programming languages.</p>
+<p>The JSON format can represent strings, ints, floats, booleans, lists, dictionaries, and <code>None</code>.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=ed66a45f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A Python data structure:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=e2113a0e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;candy_preferences&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Reese&#39;s&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Snickers&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=52c3b9ca" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This data structure can be represented as a string in JSON format (or: a &quot;JSON string&quot;):</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=fcab7765" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, candy_preferences:[&quot;Reese</span><span class="se">\&#39;</span><span class="s1">s&quot;, &quot;Snickers&quot;]}&#39;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&#39;{&#34;name&#34;:&#34;John&#34;, &#34;age&#34;:30, candy_preferences:[&#34;Reese\&#39;s&#34;, &#34;Snickers&#34;]}&#39;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=81cd070f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Why?">Why?<a class="anchor-link" href="#Why?">&#182;</a></h2><p>This looks very similar to the way that Python prints data structures... why is this useful?</p>
+<p>JSON is not Python-specific. If you use a Python program to create a JSON string, it will be readable by many other programming languages.</p>
+<p>It's a <strong>data exchange format</strong>, and it's very commonly used.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=355885ab" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="JSON-in-Python">JSON in Python<a class="anchor-link" href="#JSON-in-Python">&#182;</a></h1><p>Python has the <code>json</code> package, which contains utilities for reading and writing JSON.</p>
 
 </div>
 </div>
@@ -15633,7 +18330,7 @@ File closed at end? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -15658,7 +18355,7 @@ File closed at end? True
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
 
 
@@ -15708,7 +18405,7 @@ File closed at end? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -15782,7 +18479,7 @@ File closed at end? True
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
@@ -15827,31 +18524,28 @@ File closed at end? True
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=4aa111a0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=38c0acdc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="CSV-files">CSV files<a class="anchor-link" href="#CSV-files">&#182;</a></h1><p>CSV stands for &quot;character separated values&quot;.</p>
-<p>In CSV files, rows of data are represented by lines in a file, and columns of data are separated by a specific character, called a <strong>delimiter</strong>. Commas (<code>,</code>) are commonly used as a delimiter, but any character can be a delimiter.</p>
-<p>CSV files are another common way to store structured data, especially if the data is tabular (like a spreadsheet).</p>
-<p>Here's an example of CSV data. Each line contains 4 fields: <code>id</code>, <code>name</code>, <code>house</code>, <code>hair color</code>:</p>
+<h2 id="Exercise:-Let's-play-around-with-some-movie-data">Exercise: Let's play around with some movie data<a class="anchor-link" href="#Exercise:-Let's-play-around-with-some-movie-data">&#182;</a></h2><p>You can grab data scraped from Wikipedia on movies, in JSON format, here: <a href="https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json">https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json</a></p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=5fe876c9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></section><section ><div id="cell-id=05b1053b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/movie_data.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json_movies</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loaded </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">json_movies</span><span class="p">)</span><span class="si">}</span><span class="s2"> movies&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15871,11 +18565,7 @@ File closed at end? True
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>11,Harry,Gryffindor,Brown
-18,Draco,Slytherin,Blonde
-22,Cho,Ravenclaw,Black
-28,Ron,Gryffindor,Red
-47,Hermione,Gryffindor,Brown
+<pre>Loaded 36273 movies
 </pre>
 </div>
 </div>
@@ -15884,32 +18574,15 @@ File closed at end? True
 
 </div>
 
-</div></section><section >
-<div id="cell-id=ac58d7aa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Reading-CSVs">Reading CSVs<a class="anchor-link" href="#Reading-CSVs">&#182;</a></h2><p>We could just use <code>.split(',')</code> to split each line into a list. But Python provides some nice CSV utilities in the <code>csv</code> module.</p>
-<p><code>csv.reader()</code> creates an iterable object that produces each line as a list.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=7ae5a1e0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=f1e02e03" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">json_movies</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
      </div>
@@ -15929,11 +18602,64 @@ File closed at end? True
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;11&#39;, &#39;Harry&#39;, &#39;Gryffindor&#39;, &#39;Brown&#39;]
-[&#39;18&#39;, &#39;Draco&#39;, &#39;Slytherin&#39;, &#39;Blonde&#39;]
-[&#39;22&#39;, &#39;Cho&#39;, &#39;Ravenclaw&#39;, &#39;Black&#39;]
-[&#39;28&#39;, &#39;Ron&#39;, &#39;Gryffindor&#39;, &#39;Red&#39;]
-[&#39;47&#39;, &#39;Hermione&#39;, &#39;Gryffindor&#39;, &#39;Brown&#39;]
+<pre>{&#39;title&#39;: &#39;After Dark in Central Park&#39;, &#39;year&#39;: 1900, &#39;cast&#39;: [], &#39;genres&#39;: [], &#39;href&#39;: None}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=39698f77" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_movies</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{
+  &#34;title&#34;: &#34;A Tourist&#39;s Guide to Love&#34;,
+  &#34;year&#34;: 2023,
+  &#34;cast&#34;: [
+    &#34;Rachael Leigh Cook&#34;,
+    &#34;Scott Ly&#34;,
+    &#34;Missi Pyle&#34;,
+    &#34;Ben Feldman&#34;,
+    &#34;Nondumiso Tembe&#34;,
+    &#34;Andrew Barth Feldman&#34;
+  ],
+  &#34;genres&#34;: [
+    &#34;Comedy&#34;,
+    &#34;Romance&#34;
+  ],
+  &#34;href&#34;: &#34;A_Tourist%27s_Guide_to_Love&#34;,
+  &#34;extract&#34;: &#34;A Tourist&#39;s Guide to Love is an upcoming romantic comedy film directed by Steven K. Tsuchida and written by Eirene Donohue. It stars Rachael Leigh Cook, Scott Ly, Missi Pyle, Ben Feldman, Nondumiso Tembe and Andrew Barth Feldman.&#34;,
+  &#34;thumbnail&#34;: &#34;https://upload.wikimedia.org/wikipedia/en/6/63/A-Tourists-Guide-To-Love.png&#34;,
+  &#34;thumbnail_width&#34;: 255,
+  &#34;thumbnail_height&#34;: 378
+}
 </pre>
 </div>
 </div>
@@ -15943,41 +18669,864 @@ File closed at end? True
 </div>
 
 </div></section><section >
-<div id="cell-id=19f39836" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f09b9fe9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Writing-CSVs">Writing CSVs<a class="anchor-link" href="#Writing-CSVs">&#182;</a></h2><p><code>csv.writer()</code> creates an object with a <code>writerow</code> method, which takes a <code>list</code> and writes it out as a single CSV row.</p>
+<p>Cool! Let's print all the movies from a given year.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=db79160a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e9864e99" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;18&#39;</span><span class="p">,</span> <span class="s1">&#39;Draco&#39;</span><span class="p">,</span> <span class="s1">&#39;Slytherin&#39;</span><span class="p">,</span> <span class="s1">&#39;Blonde&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;Cho&#39;</span><span class="p">,</span> <span class="s1">&#39;Ravenclaw&#39;</span><span class="p">,</span> <span class="s1">&#39;Black&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;28&#39;</span><span class="p">,</span> <span class="s1">&#39;Ron&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Red&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;47&#39;</span><span class="p">,</span> <span class="s1">&#39;Hermione&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2013</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+</pre></div>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Crawlspace
+A Dark Truth
+Table No. 21
+Texas Chainsaw 3D
+The Grandmaster
+The Baytown Outlaws
+Freeloaders
+Gangster Squad
+A Haunted House
+Horrid Henry: The Movie
+Matru Ki Bijlee Ka Mandola
+Struck by Lightning
+Broken City
+The Last Stand
+Luv
+Mama
+Officer Down
+Hansel &amp; Gretel: Witch Hunters
+Happy People: A Year in the Taiga
+John Dies at the End
+Knife Fight
+Movie 43
+Parker
+Supporting Characters
+The Taste of Money
+Television
+Yossi
+As Luck Would Have It
+Bullet to the Head
+The Haunting in Connecticut 2: Ghosts of Georgia
+Sound City
+Stand Up Guys
+Warm Bodies
+A Glimpse Inside the Mind of Charles Swan III
+I Give It a Year
+Identity Thief
+Side Effects
+Special 26
+Top Gun 3D
+Journey to the West: Conquering the Demons
+Beautiful Creatures
+A Good Day to Die Hard
+Safe Haven
+Escape from Planet Earth
+Bless Me, Ultima
+Dark Skies
+Kai Po Che!
+Snitch
+To the Wonder
+21 &amp; Over
+The Attacks of 26/11
+I, Me Aur Main
+Jack the Giant Slayer
+The Last Exorcism Part II
+Phantom
+Stoker
+Dead Man Down
+Emperor
+I&#39;m So Excited
+Oz the Great and Powerful
+The Knight
+Goddess
+The Call
+The Incredible Burt Wonderstone
+Spring Breakers
+Welcome to the Punch
+Admission
+The Croods
+Inappropriate Comedy
+Love and Honor
+Olympus Has Fallen
+Phil Spector
+Trance
+G.I. Joe: Retaliation
+Himmatwala
+The Host
+The Place Beyond the Pines
+Temptation: Confessions of a Marriage Counselor
+Wrong
+Dragon Ball Z: Battle of Gods
+Baadshah
+The Brass Teapot
+Evil Dead
+Jurassic Park 3D
+Settai
+Upstream Color
+Fists of Legend
+42
+Disconnect
+It&#39;s a Disaster
+Scary Movie 5
+Java Heat
+Home Run
+The Lords of Salem
+Oblivion
+At Any Price
+Arthur Newman
+The Big Wedding
+The Look of Love
+Mud
+Pain &amp; Gain
+So Young
+Iron Man 3
+Bombay Talkies
+Greetings from Tim Buckley
+The Iceman
+Kiss of the Damned
+Shootout at Wadala
+What Maisie Knew
+Aftershock
+Go Goa Gone
+The Great Gatsby
+He&#39;s Way More Famous Than You
+No One Lives
+Peeples
+Star Trek Into Darkness
+Aurangzeb
+Black Rock
+The English Teacher
+Frances Ha
+The Reluctant Fundamentalist
+The Hangover Part III
+Before Midnight
+Epic
+Fast &amp; Furious 6
+Behind the Candelabra
+Only God Forgives
+After Earth
+Byzantium
+The East
+The Kings of Summer
+Now You See Me
+Yeh Jawaani Hai Deewani
+Hello Herman
+The Internship
+Much Ado About Nothing
+The Purge
+Tiger Eyes
+Violet &amp; Daisy
+This Is the End
+The Bling Ring
+Fukrey
+Hatchet III
+Man of Steel
+My Little Pony: Equestria Girls
+Monsters University
+This Is Martin Bonner
+World War Z
+How to Make Money Selling Drugs
+100 Bloody Acres
+Copperhead
+The Heat
+Redemption
+Some Girl(s)
+White House Down
+Despicable Me 2
+Kevin Hart: Let Me Explain
+The Lone Ranger
+Bad Words
+Hammer of the Gods
+Lootera
+Stuck in Love
+The Way Way Back
+Bhaag Milkha Bhaag
+Dealin&#39; with Idiots
+Fruitvale Station
+Grown Ups 2
+Killing Season
+Pacific Rim
+V/H/S/2
+Pokémon the Movie: Genesect and the Legend Awakened
+Turbo
+The Conjuring
+D-Day
+Girl Most Likely
+R.I.P.D.
+RED 2
+The World&#39;s End
+Blue Jasmine
+Romeo and Juliet
+The To Do List
+The Wolverine
+The Smurfs 2
+2 Guns
+The Canyons
+Europa Report
+The Spectacular Now
+Percy Jackson: Sea of Monsters
+We&#39;re the Millers
+Attarintiki Daredi
+Chennai Express
+Elysium
+Planes
+Thalaivaa
+Clear History
+Ain&#39;t Them Bodies Saints
+The Butler
+Jobs
+Kick-Ass 2
+Paranoia
+The Mortal Instruments: City of Bones
+Drinking Buddies
+Scenic Route
+Short Term 12
+You&#39;re Next
+Closed Circuit
+Getaway
+The Lifeguard
+The Zero Theorem
+Hell Baby
+Riddick
+Shuddh Desi Romance
+Touchy Feely
+August: Osage County
+The Family
+Insidious: Chapter 2
+Dick Figures: The Movie
+Battle of the Year
+Enough Said
+Prisoners
+Sunshine on Leith
+The Wizard of Oz 3D
+Baggage Claim
+Cloudy with a Chance of Meatballs 2
+Don Jon
+Metallica Through the Never
+Ramayya Vasthavayya
+Rush
+1
+Grace Unplugged
+Gravity
+Runner Runner
+Captain Phillips
+The Devil&#39;s Rapture
+Machete Kills
+12 Years a Slave
+Escape Plan
+Carrie
+The Fifth Estate
+I&#39;m in Love with a Church Girl
+Bastards
+Blue Is the Warmest Colour
+The Counselor
+Jackass Presents: Bad Grandpa
+Spinning Plates
+About Time
+Dallas Buyers Club
+Ender&#39;s Game
+Free Birds
+Last Vegas
+The Book Thief
+Thor: The Dark World
+The Best Man Holiday
+The Christmas Candle
+Contracted
+Delivery Man
+The Hunger Games: Catching Fire
+Nebraska
+Philomena
+Black Nativity
+Frozen
+Grace of Monaco
+Homefront
+Oldboy
+Mandela: Long Walk to Freedom
+Commitment
+Crave
+Inside Llewyn Davis
+The Last Days on Mars
+Out of the Furnace
+Swerve
+American Hustle
+The Hobbit: The Desolation of Smaug
+A Madea Christmas
+Saving Mr. Banks
+Anchorman 2: The Legend Continues
+Her
+The Harry Hill Movie
+Walking with Dinosaurs
+47 Ronin
+Grudge Match
+Lone Survivor
+The Secret Life of Walter Mitty
+The Wolf of Wall Street
+Labor Day
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=f7abe359" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>How about searching based on title?</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=3709b5f6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">search_string</span> <span class="o">=</span> <span class="s2">&quot;Freedom&quot;</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">search_string</span> <span class="ow">in</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>The Fight for Freedom (1908)
+The Dawn of Freedom (1916)
+For the Freedom of the World (1917)
+For Freedom (1918)
+For the Freedom of the East (1918)
+Freedom of the Press (1928)
+Let Freedom Ring (1939)
+Flight for Freedom (1943)
+Cry Freedom (1987)
+Freedomland (2006)
+Freedom Writers (2007)
+Mandela: Long Walk to Freedom (2013)
+Freedom&#39;s Path (2023)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=890ee938" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ok how about a cast search? Find every movie that had certain cast member.</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment" >
+<div id="cell-id=39942316" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Hm... There's a lot of structured data, and we're performing operations on it... what if we introduced a class or 2?</p>
+
+</div>
+</div>
+</div>
+</div></div></section><section ><div id="cell-id=696f9c54" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Movie</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">genres</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cast</span> <span class="o">=</span> <span class="n">cast</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genres</span> <span class="o">=</span> <span class="n">genres</span>
+    
+<span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
+    <span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Movie</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=48df5c99" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;__main__.Movie object at 0x7f8f43351c90&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=cb938ba9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>That's not a helpful print.</p>
+<p>A nifty trick: If a method named <code>__str__</code> exists on a class, it will be used when converting class instances to strings.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=9ab60eee" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Movie</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">genres</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cast</span> <span class="o">=</span> <span class="n">cast</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genres</span> <span class="o">=</span> <span class="n">genres</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">)&quot;</span>
+
+<span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
+    <span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Movie</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=7dfffd43" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">movies</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>After Dark in Central Park (1900)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=2ebcf776" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Back to our problem - cast search. Let's add a method to <code>Movie</code> to check whether a person was in the cast:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=6e63262d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Movie</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">genres</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cast</span> <span class="o">=</span> <span class="n">cast</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genres</span> <span class="o">=</span> <span class="n">genres</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">)&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">cast_contained</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cast</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section >
+<div id="cell-id=e2902f04" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's test it!</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=5561c4d4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span>
+    <span class="s2">&quot;Best Movie&quot;</span><span class="p">,</span> 
+    <span class="mi">2023</span><span class="p">,</span> 
+    <span class="p">[</span><span class="s2">&quot;Joe Delfino&quot;</span><span class="p">,</span> <span class="s2">&quot;Spongebob Squarepants&quot;</span><span class="p">,</span> <span class="s2">&quot;Michael J. Fox&quot;</span><span class="p">],</span> 
+    <span class="p">[</span><span class="s2">&quot;genre1&quot;</span><span class="p">,</span> <span class="s2">&quot;genre2&quot;</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="s2">&quot;Joe Delfino&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="s2">&quot;Christopher Walken&quot;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>True
+False
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=711f2c49" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now we can use that to build our cast search:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=6bda872e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
+    <span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Movie</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=396e60be" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;Christopher Walken&quot;</span>
+<span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">movies</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>The Anderson Tapes (1971)
+Next Stop, Greenwich Village (1976)
+Roseland (1977)
+The Deer Hunter (1978)
+The Dogs of War (1980)
+Heaven&#39;s Gate (1980)
+Brainstorm (1983)
+The Dead Zone (1983)
+A View to a Kill (1985)
+At Close Range (1986)
+Deadline (1987)
+Biloxi Blues (1988)
+Homeboy (1988)
+The Milagro Beanfield War (1988)
+Puss in Boots (1988)
+Communion (1989)
+King of New York (1990)
+McBain (1991)
+Batman Returns (1992)
+True Romance (1993)
+Wayne&#39;s World 2 (1993)
+Pulp Fiction (1994)
+The Addiction (1995)
+Nick of Time (1995)
+The Prophecy (1995)
+Things to Do in Denver When You&#39;re Dead (1995)
+Wild Side (1995)
+The Funeral (1996)
+Last Man Standing (1996)
+Excess Baggage (1997)
+MouseHunt (1997)
+Suicide Kings (1997)
+Touch (1997)
+Antz (1998)
+Illuminata (1998)
+New Rose Hotel (1998)
+The Prophecy II (1998)
+Blast from the Past (1999)
+Kiss Toledo Goodbye (1999)
+The Opportunists (2000)
+Scotland, PA (2001)
+Catch Me If You Can (2002)
+The Country Bears (2002)
+Gigli (2003)
+Kangaroo Jack (2003)
+The Rundown (2003)
+Man on Fire (2004)
+Envy (2004)
+The Stepford Wives (2004)
+Around the Bend (2004)
+Wedding Crashers (2005)
+Domino (2005)
+Click (2006)
+Man of the Year (2006)
+Hairspray (2007)
+Balls of Fury (2007)
+The Maiden Heist (2009)
+Seven Psychopaths (2012)
+A Late Quartet (2012)
+Stand Up Guys (2013)
+Jersey Boys (2014)
+Eddie the Eagle (2016)
+The Jungle Book (2016)
+Nine Lives (2016)
+Father Figures (2017)
+The War with Grandpa (2020)
+Wild Mountain Thyme (2020)
+Dune: Part Two (2023)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=f2e0c443" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>What about a container class to hold all our movies, and encapsulate some of these searching methods?</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=41aa35a8" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MovieCatalog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
         
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">add_movie</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">movie</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">cast_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person</span><span class="p">):</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+                <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">matches</span>
+    
+<span class="k">def</span> <span class="nf">load_movie_catalog</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json_movies</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">MovieCatalog</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">json_movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
+        <span class="n">cat</span><span class="o">.</span><span class="n">add_movie</span><span class="p">(</span><span class="n">Movie</span><span class="p">(</span><span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span> <span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">],</span> <span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">cat</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section ><div id="cell-id=90dcd8c3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">load_movie_catalog</span><span class="p">(</span><span class="s1">&#39;../../snippets/movie_data.json&#39;</span><span class="p">)</span>
+
+<span class="n">matches</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">cast_search</span><span class="p">(</span><span class="s2">&quot;Christopher Walken&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">match</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15997,11 +19546,74 @@ File closed at end? True
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>11|Harry|Gryffindor|Brown
-18|Draco|Slytherin|Blonde
-22|Cho|Ravenclaw|Black
-28|Ron|Gryffindor|Red
-47|Hermione|Gryffindor|Brown
+<pre>The Anderson Tapes (1971)
+Next Stop, Greenwich Village (1976)
+Roseland (1977)
+The Deer Hunter (1978)
+The Dogs of War (1980)
+Heaven&#39;s Gate (1980)
+Brainstorm (1983)
+The Dead Zone (1983)
+A View to a Kill (1985)
+At Close Range (1986)
+Deadline (1987)
+Biloxi Blues (1988)
+Homeboy (1988)
+The Milagro Beanfield War (1988)
+Puss in Boots (1988)
+Communion (1989)
+King of New York (1990)
+McBain (1991)
+Batman Returns (1992)
+True Romance (1993)
+Wayne&#39;s World 2 (1993)
+Pulp Fiction (1994)
+The Addiction (1995)
+Nick of Time (1995)
+The Prophecy (1995)
+Things to Do in Denver When You&#39;re Dead (1995)
+Wild Side (1995)
+The Funeral (1996)
+Last Man Standing (1996)
+Excess Baggage (1997)
+MouseHunt (1997)
+Suicide Kings (1997)
+Touch (1997)
+Antz (1998)
+Illuminata (1998)
+New Rose Hotel (1998)
+The Prophecy II (1998)
+Blast from the Past (1999)
+Kiss Toledo Goodbye (1999)
+The Opportunists (2000)
+Scotland, PA (2001)
+Catch Me If You Can (2002)
+The Country Bears (2002)
+Gigli (2003)
+Kangaroo Jack (2003)
+The Rundown (2003)
+Man on Fire (2004)
+Envy (2004)
+The Stepford Wives (2004)
+Around the Bend (2004)
+Wedding Crashers (2005)
+Domino (2005)
+Click (2006)
+Man of the Year (2006)
+Hairspray (2007)
+Balls of Fury (2007)
+The Maiden Heist (2009)
+Seven Psychopaths (2012)
+A Late Quartet (2012)
+Stand Up Guys (2013)
+Jersey Boys (2014)
+Eddie the Eagle (2016)
+The Jungle Book (2016)
+Nine Lives (2016)
+Father Figures (2017)
+The War with Grandpa (2020)
+Wild Mountain Thyme (2020)
+Dune: Part Two (2023)
 </pre>
 </div>
 </div>
@@ -16011,41 +19623,34 @@ File closed at end? True
 </div>
 
 </div></section><section >
-<div id="cell-id=f79043f9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=dce68622" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="How-useful-is-this,-really?">How useful is this, really?<a class="anchor-link" href="#How-useful-is-this,-really?">&#182;</a></h2><p>Why use the <code>csv</code> module, when <code>split()</code> and <code>join()</code> calls are so easy? It handles a lot of edge cases - for example, escaped delimiters within fields.</p>
+<p>We can re-write <code>cast_search</code> with a list comprehension:</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=029d85ca" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=63416119" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s1">&#39;11&#39;</span><span class="p">,</span> <span class="s1">&#39;Harry&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown,mostly&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;18&#39;</span><span class="p">,</span> <span class="s1">&#39;Draco&#39;</span><span class="p">,</span> <span class="s1">&#39;Slytherin&#39;</span><span class="p">,</span> <span class="s1">&#39;Blonde,mostly&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;22&#39;</span><span class="p">,</span> <span class="s1">&#39;Cho&#39;</span><span class="p">,</span> <span class="s1">&#39;Ravenclaw&#39;</span><span class="p">,</span> <span class="s1">&#39;Black,really&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;28&#39;</span><span class="p">,</span> <span class="s1">&#39;Ron&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Red,very&#39;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;47&#39;</span><span class="p">,</span> <span class="s1">&#39;Hermione&#39;</span><span class="p">,</span> <span class="s1">&#39;Gryffindor&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">]]</span>
-
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MovieCatalog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
         
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">add_movie</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">movie</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">cast_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person</span><span class="p">)]</span>    
 </pre></div>
 
      </div>
@@ -16053,46 +19658,85 @@ File closed at end? True
 </div>
 </div>
 
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>11,Harry,Gryffindor,&#34;Brown,mostly&#34;
-18,Draco,Slytherin,&#34;Blonde,mostly&#34;
-22,Cho,Ravenclaw,&#34;Black,really&#34;
-28,Ron,Gryffindor,&#34;Red,very&#34;
-47,Hermione,Gryffindor,Brown
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><aside class="notes">
-
-<div id="cell-id=a6d5d0cc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+</div></section><section >
+<div id="cell-id=470b20a7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Add exercises for reading simple data into a class</p>
+<h2 id="JSON-and-Classes:-Best-buds">JSON and Classes: Best buds<a class="anchor-link" href="#JSON-and-Classes:-Best-buds">&#182;</a></h2><p>JSON data and classes often go well together - classes can capture the structure of the data, and let you define operations to perform on it.</p>
 
 </div>
 </div>
 </div>
+</div></section><section >
+<div id="cell-id=e943b144" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</aside></section></section>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Final-movie-code">Final movie code<a class="anchor-link" href="#Final-movie-code">&#182;</a></h2><p>Including <code>MovieCatalog</code> methods for title/year search.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=25e9d31d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Movie</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">cast</span><span class="p">,</span> <span class="n">genres</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cast</span> <span class="o">=</span> <span class="n">cast</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">genres</span> <span class="o">=</span> <span class="n">genres</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">)&quot;</span>
+    
+    <span class="k">def</span> <span class="nf">cast_contained</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cast</span>
+    
+    
+<span class="k">class</span> <span class="nc">MovieCatalog</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="k">def</span> <span class="nf">add_movie</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">movie</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">cast_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person</span><span class="p">)]</span>    
+    
+    <span class="k">def</span> <span class="nf">title_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">m</span><span class="o">.</span><span class="n">title</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">year_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
+    
+    
+<span class="k">def</span> <span class="nf">load_movie_catalog</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json_movies</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="n">cat</span> <span class="o">=</span> <span class="n">MovieCatalog</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">json_movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
+        <span class="n">cat</span><span class="o">.</span><span class="n">add_movie</span><span class="p">(</span><span class="n">Movie</span><span class="p">(</span><span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span> <span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">],</span> <span class="n">json_movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">cat</span>    
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section></section>
 </div>
 </div>
 </body>
