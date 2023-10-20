@@ -15122,7 +15122,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-<div id="cell-id=c1709fcf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=84bdae82" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15131,6 +15131,10 @@ section.present > section.present {
 <h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h2><ul>
 <li>PS2 grades are in LATTE, reach out to me with questions</li>
 <li>PS3 due Sunday 11:59pm; don't count on availability of help over the weekend</li>
+<li>PS3 guidance: Read the instructions carefully! In some problems, <strong>especially Pig Latin</strong>, the provided test cases don't cover every possible situation.<ul>
+<li>You are required to add unit tests for Vowel Filter, but you are free to add them to other problems if it is helpful.</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -15775,6 +15779,7 @@ Cell <span class="ansi-green-fg">In[8], line 1</span>
     <span class="s2">&quot;one hundred&quot;</span><span class="p">:</span> <span class="mi">100</span>
 <span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;one&quot;</span> <span class="ow">in</span> <span class="n">number_words</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">number_words</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15795,6 +15800,7 @@ Cell <span class="ansi-green-fg">In[8], line 1</span>
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>True
+False
 </pre>
 </div>
 </div>
@@ -16115,8 +16121,11 @@ My dominant hand is left
     <span class="s2">&quot;eye color&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span>
     <span class="s2">&quot;dominant hand&quot;</span><span class="p">:</span> <span class="s2">&quot;left&quot;</span>
 <span class="p">}</span>
-<span class="k">for</span> <span class="n">statname</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">stats</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">statname</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">#print(list(stats.items()))</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">stats</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;My </span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s2"> is </span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1">#for key in stats:</span>
+<span class="c1">#    print(f&quot;My {key} is {stats[key]}&quot;))</span>
 </pre></div>
 
      </div>
@@ -16383,8 +16392,13 @@ Cell <span class="ansi-green-fg">In[23], line 3</span>, in <span class="ansi-cya
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># attempt 2 (correct)</span>
 <span class="k">def</span> <span class="nf">record_attempt</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">new_score</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">new_score</span> <span class="o">&gt;</span> <span class="n">scores</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span>
         <span class="n">scores</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_score</span>
+    <span class="k">elif</span> <span class="n">scores</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">new_score</span><span class="p">:</span>
+        <span class="n">scores</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_score</span>
+        
+    <span class="c1">#if new_score &gt; scores.get(name, 0):</span>
+    <span class="c1">#    scores[name] = new_score</span>
 </pre></div>
 
      </div>
@@ -16476,7 +16490,7 @@ Cell <span class="ansi-green-fg">In[23], line 3</span>, in <span class="ansi-cya
 </div>
 
 </div>
-<div id="cell-id=ee86ca2a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d18e05aa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16593,7 +16607,7 @@ Cell <span class="ansi-green-fg">In[23], line 3</span>, in <span class="ansi-cya
     <span class="k">for</span> <span class="n">player</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
             <span class="n">best_score</span> <span class="o">=</span> <span class="n">score</span>
-            <span class="n">best_player</span> <span class="o">=</span> <span class="n">player</span>
+            <span class="n">best_player</span> <span class="o">=</span> <span class="n">player</span> 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Congratulations, </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2">, you win with </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2"> points!&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -16612,11 +16626,11 @@ Cell <span class="ansi-green-fg">In[23], line 3</span>, in <span class="ansi-cya
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">&quot;Batman&quot;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
-<span class="n">record_attempt</span><span class="p">(</span><span class="s2">&quot;Superman&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">&quot;Spongebob&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">&quot;Spiderman&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">&quot;Spiderman&quot;</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">&quot;Spiderman&quot;</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="n">record_attempt</span><span class="p">(</span><span class="s2">&quot;Superman&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 <span class="n">print_winner</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 </pre></div>
 
@@ -16637,7 +16651,7 @@ Cell <span class="ansi-green-fg">In[23], line 3</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Congratulations, Spiderman, you win with 110 points!
+<pre>Congratulations, Superman, you win with 10 points!
 </pre>
 </div>
 </div>
@@ -17023,7 +17037,15 @@ Cell <span class="ansi-green-fg">In[35], line 6</span>, in <span class="ansi-cya
     <span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
         <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">counts</span>
+    
+    <span class="n">sortable</span> <span class="o">=</span> <span class="p">[(</span><span class="n">freq</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+    <span class="n">sortable</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="n">final_answer</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="ow">in</span> <span class="n">sortable</span><span class="p">:</span>
+        <span class="n">final_answer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">final_answer</span>
 </pre></div>
 
      </div>
@@ -17061,16 +17083,16 @@ Cell <span class="ansi-green-fg">In[35], line 6</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;it&#39;: 4,
- &#39;was&#39;: 4,
- &#39;the&#39;: 4,
- &#39;best&#39;: 1,
- &#39;of&#39;: 4,
- &#39;times&#39;: 2,
- &#39;worst&#39;: 1,
- &#39;age&#39;: 2,
- &#39;wisdom&#39;: 1,
- &#39;foolishness&#39;: 1}</pre>
+<pre>[&#39;was&#39;,
+ &#39;the&#39;,
+ &#39;of&#39;,
+ &#39;it&#39;,
+ &#39;times&#39;,
+ &#39;age&#39;,
+ &#39;worst&#39;,
+ &#39;wisdom&#39;,
+ &#39;foolishness&#39;,
+ &#39;best&#39;]</pre>
 </div>
 
 </div>
@@ -17080,7 +17102,7 @@ Cell <span class="ansi-green-fg">In[35], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div>
-<div id="cell-id=c2bfbe94" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c120518c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17091,7 +17113,7 @@ Cell <span class="ansi-green-fg">In[35], line 6</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
-</div><div id="cell-id=3f9a0d28" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=33715770" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17130,7 +17152,7 @@ Cell <span class="ansi-green-fg">In[35], line 6</span>, in <span class="ansi-cya
 </div>
 
 </div>
-<div id="cell-id=6925b281" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=ba3c6bba" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17146,7 +17168,7 @@ or<br />
 </div>
 </div>
 </div>
-<div id="cell-id=4bee65de" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0bcbc960" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17157,7 +17179,7 @@ or<br />
 </div>
 </div>
 </div>
-</div><div id="cell-id=f3dde53d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=62add22b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17167,6 +17189,7 @@ or<br />
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="s1">&#39;aeiou&#39;</span><span class="p">:</span>
             <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -17178,7 +17201,7 @@ or<br />
 </div>
 </div>
 
-</div><div id="cell-id=1b142d8b" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=d85a9f71" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17218,7 +17241,7 @@ or<br />
 
 </div>
 
-</div><div id="cell-id=e0a88294" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=e6fc9cf1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17261,7 +17284,7 @@ or<br />
 </div>
 
 </div>
-<div id="cell-id=d375042d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0af6bad4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17272,7 +17295,7 @@ or<br />
 </div>
 </div>
 </div>
-</div><div id="cell-id=ca6ad29d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=83c26469" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17312,7 +17335,7 @@ or<br />
 
 </div>
 
-</div><div id="cell-id=71b3ac33" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=0788fa22" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17357,7 +17380,7 @@ or<br />
 </div>
 
 </div>
-<div id="cell-id=01c3b98e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=7619877e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17368,7 +17391,7 @@ or<br />
 </div>
 </div>
 </div>
-</div><div id="cell-id=7682d5d4" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=6381f692" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17399,7 +17422,7 @@ or<br />
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;cucumber&#39;: 1, &#39;tomato&#39;: 1, &#39;pepper&#39;: 3, &#39;carrot&#39;: 2}
+<pre>{&#39;cucumber&#39;: 1, &#39;tomato&#39;: 7, &#39;pepper&#39;: 9, &#39;carrot&#39;: 5}
 </pre>
 </div>
 </div>
@@ -17409,7 +17432,7 @@ or<br />
 </div>
 
 </div>
-<div id="cell-id=06b3eb99" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4bf44691" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17472,7 +17495,7 @@ or<br />
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Spiderman&#39;, &#39;Spongebob&#39;, &#39;Batman&#39;}
+<pre>{&#39;Spongebob&#39;, &#39;Batman&#39;, &#39;Spiderman&#39;}
 </pre>
 </div>
 </div>
@@ -17630,9 +17653,9 @@ or<br />
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Spiderman
-Spongebob
+<pre>Spongebob
 Batman
+Spiderman
 </pre>
 </div>
 </div>
@@ -17683,7 +17706,7 @@ Batman
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Spiderman&#39;, &#39;Peppa&#39;, &#39;Spongebob&#39;, &#39;Batman&#39;}
+<pre>{&#39;Spongebob&#39;, &#39;Batman&#39;, &#39;Spiderman&#39;, &#39;Peppa&#39;}
 </pre>
 </div>
 </div>
@@ -17722,7 +17745,7 @@ Batman
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Spiderman&#39;, &#39;Spongebob&#39;}
+<pre>{&#39;Spongebob&#39;, &#39;Spiderman&#39;}
 </pre>
 </div>
 </div>
@@ -17812,7 +17835,7 @@ Batman
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;Spongebob&#39;, &#39;Magneto&#39;, &#39;Spiderman&#39;, &#39;Batman&#39;, &#39;Wolverine&#39;}
+<pre>{&#39;Wolverine&#39;, &#39;Spongebob&#39;, &#39;Magneto&#39;, &#39;Batman&#39;, &#39;Spiderman&#39;}
 </pre>
 </div>
 </div>
@@ -18323,7 +18346,7 @@ Subset: a set is made up only of elements from another set</p>
 </div>
 
 </div>
-<div id="cell-id=6451bdfd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e6865d73" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
