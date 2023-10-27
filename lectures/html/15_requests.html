@@ -15116,7 +15116,7 @@ section.present > section.present {
     overflow-y: scroll;
 }
 </style>
-<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/15_reques.ipynb">Link to interactive slides on Google Colab</a></small></p>
+<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/15_requests.ipynb">Link to interactive slides on Google Colab</a></small></p>
 
 </div>
 </div>
@@ -15210,8 +15210,8 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;iss_position&#39;: {&#39;latitude&#39;: &#39;-36.9990&#39;, &#39;longitude&#39;: &#39;122.6810&#39;}, &#39;timestamp&#39;: 1698412309, &#39;message&#39;: &#39;success&#39;}
-The ISS is at lat: -36.9990, long: 122.6810
+<pre>{&#39;iss_position&#39;: {&#39;latitude&#39;: &#39;4.6769&#39;, &#39;longitude&#39;: &#39;-157.0694&#39;}, &#39;timestamp&#39;: 1698443633, &#39;message&#39;: &#39;success&#39;}
+The ISS is at lat: 4.6769, long: -157.0694
 </pre>
 </div>
 </div>
@@ -15229,6 +15229,31 @@ The ISS is at lat: -36.9990, long: 122.6810
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Networking-on-the-Internet">Networking on the Internet<a class="anchor-link" href="#Networking-on-the-Internet">&#182;</a></h2><p>Let's dig into what it means to &quot;send a request&quot; over the internet.</p>
 <p>This is a 30,000 foot overview - many details are glossed over.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=bea589fa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Mailing-letters">Mailing letters<a class="anchor-link" href="#Mailing-letters">&#182;</a></h2><p>We'll use an analogy: sending a request over the internet is like mailing someone a letter.</p>
+<p>A letter is sent to an address, and has contents inside an envelope.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=e8c6b0fb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The URL is like the address.</p>
 
 </div>
 </div>
@@ -15288,7 +15313,7 @@ The ISS is at lat: -36.9990, long: 122.6810
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="IP-Addresses-and-Domain-Names">IP Addresses and Domain Names<a class="anchor-link" href="#IP-Addresses-and-Domain-Names">&#182;</a></h2><p>Every computer connected to the internet has an IP address.</p>
+<h2 id="IP-Addresses-and-Domain-Names">IP Addresses and Domain Names<a class="anchor-link" href="#IP-Addresses-and-Domain-Names">&#182;</a></h2><p>Every computer connected to the internet has a unique IP address.</p>
 <p>Every domain name has one or more IP addresses associated with it.</p>
 <p>The first step of sending a request is to translate the domain to an IP address.</p>
 
@@ -15296,15 +15321,14 @@ The ISS is at lat: -36.9990, long: 122.6810
 </div>
 </div>
 </div>
-<div id="cell-id=bea589fa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=3bf3381b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Mailing-letters">Mailing letters<a class="anchor-link" href="#Mailing-letters">&#182;</a></h2><p>Let's use an analogy: sending a request over the internet is like mailing someone a letter.</p>
-<p>A domain is an address that you understand, like &quot;Joe's house&quot;.</p>
-<p>An IP address is like the actual address of my house, including all the necessary details, such as postal code.</p>
+<h2 id="Mailing-letters">Mailing letters<a class="anchor-link" href="#Mailing-letters">&#182;</a></h2><p>A domain is like the name of a location that you understand, like &quot;Joe's house&quot; or &quot;the park around the corner from my house&quot;.</p>
+<p>An IP address is like the actual address of the house or park, including all the necessary details, such as postal code.</p>
 
 </div>
 </div>
@@ -15318,7 +15342,7 @@ The ISS is at lat: -36.9990, long: 122.6810
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="DNS">DNS<a class="anchor-link" href="#DNS">&#182;</a></h2><p><strong>DNS</strong> (Domain Name System) is like a big dictionary that maps from domain name to IP address.</p>
 <p>The owner of a domain has the ability to specify which IP address(es) a domain maps to.</p>
-<p>DNS records are easily accessible: <a href="https://traceroute-online.com/check-dns-records/">https://traceroute-online.com/check-dns-records/</a></p>
+<p>DNS records are publicly accessible: <a href="https://traceroute-online.com/check-dns-records/">https://traceroute-online.com/check-dns-records/</a></p>
 <p>All routing of traffic on the internet is done using IP addresses.</p>
 
 </div>
@@ -15387,7 +15411,7 @@ The ISS is at lat: -36.9990, long: 122.6810
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Campus-mail-room">Campus mail room<a class="anchor-link" href="#Campus-mail-room">&#182;</a></h2><p>If you mail a letter to me at my campus address, the postal service delivers it to the mail room.</p>
-<p>Load balancing, and other routing that happens after delivery to a DNS-registered IP, is like the mail room staff on campus getting the letter to my personal mailbox.</p>
+<p>Load balancing, and other routing that happens after delivery to a DNS-registered IP, is like the mail room staff on campus who route the letter to my personal mailbox.</p>
 
 </div>
 </div>
@@ -15553,10 +15577,10 @@ access-control-allow-origin: *
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Letter-Responses">Letter Responses<a class="anchor-link" href="#Letter-Responses">&#182;</a></h2><ul>
-<li><code>200</code> is like receiving a letter back.</li>
-<li><code>301</code> / <code>302</code> are a bit like forwarding mail to another address - the postal service handles this for you, and most HTTP clients will also handle it</li>
+<li><code>200</code> is like successfully receiving a reply letter.</li>
+<li><code>301</code> / <code>302</code> are a bit like forwarding mail to another address - the postal service handles this for you; similarly most HTTP clients will also handle it for you.</li>
 <li><code>404</code> is like trying to send a letter to an unknown address, and having it returned</li>
-<li><code>500</code> is like the box of mail containing your letter fell off the truck and got lost</li>
+<li><code>500</code> is like the box of mail containing your letter falling off the truck and getting lost</li>
 </ul>
 <p>The body of the response is like the letter you receive in response to your inquiry.</p>
 
@@ -15624,9 +15648,9 @@ access-control-allow-origin: *
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>200
 
-{&#39;Server&#39;: &#39;nginx/1.10.3&#39;, &#39;Date&#39;: &#39;Fri, 27 Oct 2023 13:11:49 GMT&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;Content-Length&#39;: &#39;114&#39;, &#39;Connection&#39;: &#39;keep-alive&#39;, &#39;access-control-allow-origin&#39;: &#39;*&#39;}
+{&#39;Server&#39;: &#39;nginx/1.10.3&#39;, &#39;Date&#39;: &#39;Fri, 27 Oct 2023 21:53:54 GMT&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;Content-Length&#39;: &#39;113&#39;, &#39;Connection&#39;: &#39;keep-alive&#39;, &#39;access-control-allow-origin&#39;: &#39;*&#39;}
 
-{&#34;iss_position&#34;: {&#34;latitude&#34;: &#34;-36.9990&#34;, &#34;longitude&#34;: &#34;122.6810&#34;}, &#34;timestamp&#34;: 1698412309, &#34;message&#34;: &#34;success&#34;}
+{&#34;iss_position&#34;: {&#34;latitude&#34;: &#34;4.6769&#34;, &#34;longitude&#34;: &#34;-157.0694&#34;}, &#34;timestamp&#34;: 1698443633, &#34;message&#34;: &#34;success&#34;}
 </pre>
 </div>
 </div>
@@ -15677,7 +15701,7 @@ access-control-allow-origin: *
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>&lt;class &#39;dict&#39;&gt;
-{&#39;iss_position&#39;: {&#39;latitude&#39;: &#39;-36.9990&#39;, &#39;longitude&#39;: &#39;122.6810&#39;}, &#39;timestamp&#39;: 1698412309, &#39;message&#39;: &#39;success&#39;}
+{&#39;iss_position&#39;: {&#39;latitude&#39;: &#39;4.6769&#39;, &#39;longitude&#39;: &#39;-157.0694&#39;}, &#39;timestamp&#39;: 1698443633, &#39;message&#39;: &#39;success&#39;}
 </pre>
 </div>
 </div>
@@ -15763,9 +15787,9 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Reverse geocoding: pos={&#39;latitude&#39;: &#39;-36.9786&#39;, &#39;longitude&#39;: &#39;122.7104&#39;} with geocode_url=&#39;https://geocode.xyz/-36.9786,122.7104?json=1&#39;
+<pre>Reverse geocoding: pos={&#39;latitude&#39;: &#39;4.6516&#39;, &#39;longitude&#39;: &#39;-157.0513&#39;} with geocode_url=&#39;https://geocode.xyz/4.6516,-157.0513?json=1&#39;
 200
-{&#39;geonumber&#39;: &#39;5206448326932&#39;, &#39;longt&#39;: &#39;0.00000&#39;, &#39;matches&#39;: None, &#39;error&#39;: {&#39;description&#39;: &#39;23. Your request did not produce any results.&#39;, &#39;code&#39;: &#39;008&#39;}, &#39;suggestion&#39;: {&#39;south&#39;: {&#39;longt&#39;: &#39;123.133523229299&#39;, &#39;prov&#39;: &#39;WA AU&#39;, &#39;city&#39;: &#39;MIDDLESEX&#39;, &#39;distance&#39;: &#39;115&#39;, &#39;latt&#39;: &#39;-35.9950951592357&#39;}, &#39;territory&#39;: {}, &#39;altname&#39;: {}, &#39;region&#39;: &#39;Great Australian Bight&#39;, &#39;subregion&#39;: &#39;High seas of the Great Australian Bight&#39;, &#39;north&#39;: {&#39;longt&#39;: {}, &#39;prov&#39;: {}, &#39;city&#39;: {}, &#39;distance&#39;: {}, &#39;latt&#39;: {}}, &#39;iso&#39;: {}, &#39;eez&#39;: {}}, &#39;latt&#39;: &#39;0.00000&#39;}
+{&#39;geonumber&#39;: &#39;1071355039429&#39;, &#39;longt&#39;: &#39;0.00000&#39;, &#39;matches&#39;: None, &#39;error&#39;: {&#39;description&#39;: &#39;23. Your request did not produce any results.&#39;, &#39;code&#39;: &#39;008&#39;}, &#39;suggestion&#39;: {&#39;south&#39;: {&#39;longt&#39;: {}, &#39;prov&#39;: {}, &#39;city&#39;: {}, &#39;distance&#39;: {}, &#39;latt&#39;: {}}, &#39;territory&#39;: &#39;Line Group&#39;, &#39;altname&#39;: &#39;Kiribati&#39;, &#39;region&#39;: &#39;North Pacific Ocean&#39;, &#39;subregion&#39;: &#39;Kiribati (Line Islands) part of the North Pacific Ocean&#39;, &#39;north&#39;: {&#39;longt&#39;: &#39;-158&#39;, &#39;prov&#39;: &#39; KI&#39;, &#39;city&#39;: &#39;Minneapolis Ridge&#39;, &#39;distance&#39;: &#39;135&#39;, &#39;latt&#39;: &#39;5.416667&#39;}, &#39;iso&#39;: &#39;KIR&#39;, &#39;eez&#39;: &#39;Kiribati Exclusive Economic Zone (Line Islands)&#39;}, &#39;latt&#39;: &#39;0.00000&#39;}
 </pre>
 </div>
 </div>
@@ -15774,7 +15798,502 @@ access-control-allow-origin: *
 
 </div>
 
-</div><div id="cell-id=3c4b59f3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div id="cell-id=859df6cf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Meteorites">Meteorites<a class="anchor-link" href="#Meteorites">&#182;</a></h2><p><a href="https://data.nasa.gov/resource/y77d-th95.json">JSON Meteorite data from NASA</a></p>
+<p><a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">Dataset description on NASA's Open Data Portal</a></p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=f1b3d5bb" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">meteorites</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://data.nasa.gov/resource/gh4g-9sfh.json?&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;list&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=dec4582d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1000
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=37890aef" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Hm, exactly 1000. Seems suspicious - maybe we aren't getting all the data.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=dd4974a9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's look closer at the page describing the data: <a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">Dataset description on NASA's Open Data Portal</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=06a140e5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Looks like this data set is served by something called the &quot;Socrata Data API&quot;.</p>
+<p>A little Google searching unearths this documentation about how to ask for more results:
+<a href="https://dev.socrata.com/docs/paging.html">Information on paging with Socrata Data API</a></p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=969b87b1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">meteorites</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://data.nasa.gov/resource/gh4g-9sfh.json?$limit=50000&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;class &#39;list&#39;&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=06cde934" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>45716
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=4ccc35b2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">meteorites</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;name&#39;: &#39;Aachen&#39;, &#39;id&#39;: &#39;1&#39;, &#39;nametype&#39;: &#39;Valid&#39;, &#39;recclass&#39;: &#39;L5&#39;, &#39;mass&#39;: &#39;21&#39;, &#39;fall&#39;: &#39;Fell&#39;, &#39;year&#39;: &#39;1880-01-01T00:00:00.000&#39;, &#39;reclat&#39;: &#39;50.775000&#39;, &#39;reclong&#39;: &#39;6.083330&#39;, &#39;geolocation&#39;: {&#39;latitude&#39;: &#39;50.775&#39;, &#39;longitude&#39;: &#39;6.08333&#39;}}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=20892836" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">meteorites</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>{&#39;name&#39;: &#39;Aachen&#39;, &#39;id&#39;: &#39;1&#39;, &#39;nametype&#39;: &#39;Valid&#39;, &#39;recclass&#39;: &#39;L5&#39;, &#39;mass&#39;: &#39;21&#39;, &#39;fall&#39;: &#39;Fell&#39;, &#39;year&#39;: &#39;1880-01-01T00:00:00.000&#39;, &#39;reclat&#39;: &#39;50.775000&#39;, &#39;reclong&#39;: &#39;6.083330&#39;, &#39;geolocation&#39;: {&#39;latitude&#39;: &#39;50.775&#39;, &#39;longitude&#39;: &#39;6.08333&#39;}}
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=712358df" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>What can we do with this data? Any ideas?</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=79577077" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Count</span> <span class="n">meteorites</span> <span class="n">by</span> <span class="n">year</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[11], line 1</span>
+<span class="ansi-red-fg">    Count meteorites by year</span>
+          ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=2f72991a" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">meteorites</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s1">&#39;year&#39;</span> <span class="ow">in</span> <span class="n">m</span> <span class="ow">and</span> <span class="s1">&#39;mass&#39;</span> <span class="ow">in</span> <span class="n">m</span> <span class="ow">and</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">:</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">][:</span><span class="mi">4</span><span class="p">])</span>
+        <span class="n">years</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="n">years</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">sortable</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">years</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">sortable</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">year</span><span class="p">,</span> <span class="n">years</span><span class="p">[</span><span class="n">year</span><span class="p">]))</span>
+<span class="n">sortable</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">sortable</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1804: 2
+1810: 2
+1836: 2
+1837: 2
+1840: 2
+1850: 2
+1854: 2
+1858: 2
+1860: 2
+1863: 2
+1866: 3
+1868: 2
+1869: 2
+1873: 2
+1875: 3
+1879: 2
+1882: 2
+1883: 3
+1884: 4
+1887: 2
+1889: 3
+1890: 5
+1891: 2
+1903: 4
+1906: 2
+1907: 2
+1909: 3
+1912: 3
+1913: 3
+1914: 2
+1917: 4
+1918: 4
+1921: 3
+1923: 2
+1924: 2
+1927: 3
+1929: 2
+1930: 3
+1937: 6
+1938: 3
+1941: 2
+1942: 2
+1947: 2
+1948: 3
+1951: 2
+1952: 3
+1954: 3
+1956: 3
+1957: 3
+1958: 2
+1959: 2
+1960: 2
+1964: 2
+1965: 2
+1966: 2
+1967: 5
+1968: 4
+1969: 2
+1973: 3
+1976: 3
+1978: 3
+1981: 3
+1990: 2
+1991: 2
+1992: 4
+1995: 3
+1997: 2
+1998: 2
+2000: 8
+2001: 2
+2002: 2
+2004: 2
+2005: 3
+2006: 5
+2008: 2
+2009: 2
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=adb789b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="We-keep-doing-similar-operations,-let's-turn-them-into-functions.">We keep doing similar operations, let's turn them into functions.<a class="anchor-link" href="#We-keep-doing-similar-operations,-let's-turn-them-into-functions.">&#182;</a></h2><ul>
+<li>sort by year -&gt; sort by key</li>
+<li>sort by count -&gt; sort by value</li>
+<li>clean data</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=36e3abdf" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Notes:</p>
+<ol>
+<li>Walk through data cleaning, turn into function</li>
+<li>Do some different filtering, turn into function</li>
+<li>Do some different sorting, turn into function</li>
+<li>Maybe generalize sorting to sort by key/value</li>
+<li>Bring in geocoding?</li>
+<li>Historical events, join with meteorites?</li>
+<li>Pick your own from the list, fetch data, do something with it - count, aggregate, filter<ul>
+<li>Do during recitation, and walk through next day in lecture?</li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=ea1f94b3" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
