@@ -11,10 +11,12 @@ let lectures = [
     "9_advanced_lists",
     "x_exceptions",
     "10_dictionaries_sets",
+    "x_modules",
     "11_classes",
     "12_file_io",
     "13_class_design",
-    "x_modules",
+    "14_functions_as_objects",
+    "15_requests"
 ];
 https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/2_datatypes_expressions_variables.ipynb
 

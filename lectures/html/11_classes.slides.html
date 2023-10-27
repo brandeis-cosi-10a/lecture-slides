@@ -15166,7 +15166,7 @@ div.jp-OutputPrompt {
 
 <div class="reveal">
 <div class="slides"><section ><section >
-<div id="cell-id=1ee8a1d2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=30364089" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15179,6 +15179,22 @@ section.present > section.present {
 }
 </style>
 <p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/11_classes.ipynb">Link to interactive slides on Google Colab</a></small></p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=2ffa33c2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h1><ul>
+<li>Sorry about quiz 6!</li>
+<li>Quiz next Wednesday on Dictionaries &amp; Sets</li>
+<li>PS4 is open, please start! Due Tuesday 11/7</li>
+</ul>
 
 </div>
 </div>
@@ -15209,7 +15225,7 @@ section.present > section.present {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We could achieve this with a data structure, and some related functions...</p>
+<p>Let's look at how we might do this with the things we already know.</p>
 
 </div>
 </div>
@@ -15285,7 +15301,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Balance = $31.5, latest transaction: $20.0 at Sun Oct 22 21:58:23 2023
+<pre>Balance = $31.5, latest transaction: $20.0 at Fri Oct 27 09:11:36 2023
 </pre>
 </div>
 </div>
@@ -15372,8 +15388,8 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>b: Balance: 100; b.transactions=[(100, 1698026303.701035)]
-c: Balance: 52.5; c.transactions=[(50, 1698026303.701076)]
+<pre>b: Balance: 100; b.transactions=[(100, 1698412296.056027)]
+c: Balance: 52.5; c.transactions=[(50, 1698412296.0560708)]
 </pre>
 </div>
 </div>
@@ -15783,8 +15799,12 @@ c: Balance: 52.5; c.transactions=[(50, 1698026303.701076)]
         <span class="bp">self</span><span class="o">.</span><span class="n">balance</span> <span class="o">*=</span> <span class="mf">1.05</span>    
         
 <span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>
+
 <span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>    
+<span class="c1"># same as</span>
+<span class="n">BankAccount</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15804,7 +15824,7 @@ c: Balance: 52.5; c.transactions=[(50, 1698026303.701076)]
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>50
+<pre>0
 </pre>
 </div>
 </div>
@@ -15857,7 +15877,7 @@ c: Balance: 52.5; c.transactions=[(50, 1698026303.701076)]
         
 <span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">()</span>
 <span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>        
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="p">)</span>       
 </pre></div>
 
      </div>
@@ -15884,7 +15904,7 @@ Cell <span class="ansi-green-fg">In[12], line 11</span>
 <span class="ansi-green-intense-fg ansi-bold">      8</span>         <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>transactions<span style="color: rgb(98,98,98)">.</span>append((amount, time<span style="color: rgb(98,98,98)">.</span>time()))
 <span class="ansi-green-intense-fg ansi-bold">     10</span> b <span style="color: rgb(98,98,98)">=</span> BankAccount()
 <span class="ansi-green-fg">---&gt; 11</span> <span class="ansi-yellow-bg">b</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">deposit</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">50</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(0,135,0)">print</span>(b<span style="color: rgb(98,98,98)">.</span>balance)        
+<span class="ansi-green-intense-fg ansi-bold">     12</span> <span style="color: rgb(0,135,0)">print</span>(b<span style="color: rgb(98,98,98)">.</span>balance)       
 
 <span class="ansi-red-fg">TypeError</span>: BankAccount.deposit() takes 1 positional argument but 2 were given</pre>
 </div>
@@ -16069,6 +16089,18 @@ c.transactions=[]
 
 </div>
 
+</div>
+<div id="cell-id=32b31aa1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://pythontutor.com/render.html#code=%23%20example%20of%20the%20surprising%20behavior%20of%20class%20attributes%20%0A%0Aclass%20BankAccount%3A%0A%20%20%20%20%23%20A%20class%20variable%3B%20it%20is%20defined%20directly%20on%20the%20class.%20%0A%20%20%20%20%23%20You%20probably%20don%27t%20want%20to%20do%20this!%0A%20%20%20%20class_transactions%20%3D%20%5B%5D%0A%20%20%20%20%0A%20%20%20%20def%20__init__%28self,%20initial_balance%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%20initial_balance%0A%20%20%20%20%20%20%20%20%23%20An%20instance%20variable%20-%20it%20is%20assigned%20to%20in%20__init__%28%29%0A%20%20%20%20%20%20%20%20self.transactions%20%3D%20%5B%5D%0A%20%20%20%20%20%20%20%20%0Ab%20%3D%20BankAccount%28100%29%0Ac%20%3D%20BankAccount%28200%29%0A%0Ab.class_transactions.append%28%22class%20transaction%22%29%0Ab.transactions.append%28%22instance%20transaction%22%29%0A%0Aprint%28f%22%7Bb.class_transactions%3D%7D%5Cn%7Bc.class_transactions%3D%7D%5Cn%7Bb.transactions%3D%7D%5Cn%7Bc.transactions%3D%7D%22%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
+
+</div>
+</div>
+</div>
 </div></section></section><section ><section >
 <div id="cell-id=20c52701" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -16080,320 +16112,6 @@ c.transactions=[]
 </div>
 </div>
 </div>
-</div></section></section><section ><section >
-<div id="cell-id=c9b7b696" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2><p>Each class definition creates a new <strong>type</strong> - just like <code>int</code>, <code>str</code>, <code>list</code>, <code>dict</code>, etc are types.</p>
-<p>You can check the type of a variable with the built-in <code>isinstance()</code> function:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=afbd8fcc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=67c91f72" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=dc8e3640" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">BankAccount</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>True</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=67e9c15f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You can also get the type of an object with <code>type()</code>:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=d23af553" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>int</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=1718780d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>str</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div id="cell-id=663158bc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>__main__.BankAccount</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=5c77ebae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><p><a href="https://pythontutor.com/render.html#code=class%20BankAccount%3A%0A%20%20%20%20def%20__init__%28self,%20initial_balance%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%20initial_balance%0A%20%20%20%20%0A%20%20%20%20def%20deposit%28self,%20amount%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%2B%3D%20amount%0A%0Ab%20%3D%20BankAccount%28100%29%0Ac%20%3D%20b%0Ab.deposit%28200%29%0Aprint%28%22b%3A%20%22%20%2B%20str%28b.balance%29%29%0Aprint%28%22c%3A%20%22%20%2B%20str%28c.balance%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
-<p>Class instances behave just like lists, dictionaries, and other mutable objects. Variables <strong>refer</strong> to the instances, and any mutations of the instances will be seen by all variables referring to the same object.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=9ea1bd4d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
-<span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">balance</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>b.balance=300 c.balance=300
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div></section></section><section ><section >
 <div id="cell-id=07f16a03" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -16424,7 +16142,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
@@ -16450,7 +16168,7 @@ c.transactions=[]
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Looks like we need to store at least names and posts.</p>
+<p>It looks like we need to store at least names and posts.</p>
 
 </div>
 </div>
@@ -16473,7 +16191,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
@@ -16500,7 +16218,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
@@ -16559,7 +16277,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
@@ -16588,7 +16306,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
@@ -16646,7 +16364,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
@@ -16680,7 +16398,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
@@ -16739,7 +16457,7 @@ c.transactions=[]
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
@@ -16758,7 +16476,7 @@ c.transactions=[]
         <span class="n">all_posts</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">contents</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">user</span><span class="p">]:</span>
-                <span class="n">all_posts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">postnum</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Post #</span><span class="si">{</span><span class="n">postnum</span><span class="si">}</span><span class="s2">, by @</span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">contents</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+                <span class="n">all_posts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">postnum</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Post #</span><span class="si">{</span><span class="n">postnum</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">, by @</span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">contents</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
         <span class="n">all_posts</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         
         <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -16773,6 +16491,349 @@ c.transactions=[]
 </div>
 
 </div></section><section ><div id="cell-id=1e7bffb8" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">)</span>
+<span class="c1">#Social.add_user(twitter, &quot;Larry&quot;)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Moe&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;First!&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Anyone else here?&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">,</span> <span class="s2">&quot;This is lame.&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh hi Curly&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">twitter</span><span class="o">.</span><span class="n">get_feed</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Post #4, by @Larry: Oh hi Curly
+Post #3, by @Curly: This is lame.
+Post #2, by @Larry: Anyone else here?
+Post #1, by @Larry: First!
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=8552f33d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We've ended up with 3 related pieces of data for each post: a number, a creator, and the contents. Let's introduce a class for <code>Post</code>s.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=999969f1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Post</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">creator</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">creator</span> <span class="o">=</span> <span class="n">creator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">contents</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">postnum</span> <span class="o">=</span> <span class="n">postnum</span>
+        
+    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Post #</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">postnum</span><span class="si">}</span><span class="s2">, by @</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">creator</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section ><div id="cell-id=d8a82694" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">def</span> <span class="nf">add_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span> <span class="nf">create_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">username</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">all_posts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">user</span><span class="p">]:</span>
+                <span class="n">all_posts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">post</span><span class="o">.</span><span class="n">postnum</span><span class="p">,</span> <span class="n">post</span><span class="p">))</span>
+        <span class="n">all_posts</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">all_posts</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
+            <span class="n">final_feed</span> <span class="o">+=</span> <span class="n">post</span><span class="o">.</span><span class="n">format</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">final_feed</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section ><div id="cell-id=12bd5e49" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Moe&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;First!&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Anyone else here?&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">,</span> <span class="s2">&quot;This is lame.&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh hi Curly&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">twitter</span><span class="o">.</span><span class="n">get_feed</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Post #3, by @Larry: Oh hi Curly
+Post #2, by @Curly: This is lame.
+Post #1, by @Larry: Anyone else here?
+Post #0, by @Larry: First!
+
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=527e8bf8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://pythontutor.com/render.html#code=class%20Post%3A%0A%20%20%20%20def%20__init__%28self,%20postnum,%20creator,%20contents%29%3A%0A%20%20%20%20%20%20%20%20self.creator%20%3D%20creator%0A%20%20%20%20%20%20%20%20self.contents%20%3D%20contents%0A%20%20%20%20%20%20%20%20self.postnum%20%3D%20postnum%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20def%20format%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20f%22Post%20%23%7Bself.postnum%7D,%20by%20%40%7Bself.creator%7D%3A%20%7Bself.contents%7D%22%0A%20%20%20%20%20%20%20%20%0Aclass%20Social%3A%0A%20%20%20%20def%20__init__%28self%29%3A%0A%20%20%20%20%20%20%20%20self.users%20%3D%20%7B%7D%0A%20%20%20%20%20%20%20%20self.next_post_number%20%3D%200%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20def%20add_user%28self,%20name%29%3A%0A%20%20%20%20%20%20%20%20self.users%5Bname%5D%20%3D%20%5B%5D%0A%20%20%20%20%0A%20%20%20%20def%20create_post%28self,%20username,%20contents%29%3A%0A%20%20%20%20%20%20%20%20p%20%3D%20Post%28self.next_post_number,%20username,%20contents%29%0A%20%20%20%20%20%20%20%20self.users%5Busername%5D.append%28p%29%0A%20%20%20%20%20%20%20%20self.next_post_number%20%2B%3D%201%0A%20%20%20%20%0A%20%20%20%20def%20get_feed%28self%29%3A%0A%20%20%20%20%20%20%20%20all_posts%20%3D%20%5B%5D%0A%20%20%20%20%20%20%20%20for%20user%20in%20self.users%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20for%20post%20in%20self.users%5Buser%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20all_posts.append%28%28post.postnum,%20post%29%29%0A%20%20%20%20%20%20%20%20all_posts.sort%28reverse%3DTrue%29%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20final_feed%20%3D%20%22%22%0A%20%20%20%20%20%20%20%20for%20postnum,%20post%20in%20all_posts%5B%3A10%5D%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20final_feed%20%2B%3D%20post.format%28%29%20%2B%20%22%5Cn%22%0A%20%20%20%20%20%20%20%20return%20final_feed%20%0A%20%20%20%20%20%20%20%20%0Atwitter%20%3D%20Social%28%29%0Atwitter.add_user%28%22Larry%22%29%0Atwitter.add_user%28%22Moe%22%29%0Atwitter.add_user%28%22Curly%22%29%0Atwitter.create_post%28%22Larry%22,%20%22First!%22%29%0Atwitter.create_post%28%22Larry%22,%20%22Anyone%20else%20here%3F%22%29%0Atwitter.create_post%28%22Curly%22,%20%22This%20is%20lame.%22%29%0Atwitter.create_post%28%22Larry%22,%20%22Oh%20hi%20Curly%22%29%0A%0Aprint%28twitter.get_feed%28%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=04f6e3b3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's add a method to get all of a single user's posts:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=5193f311" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">=</span> <span class="mi">0</span>
+        
+    <span class="k">def</span> <span class="nf">add_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span> <span class="nf">create_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">username</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">get_user_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">username</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">all_posts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">user</span><span class="p">]:</span>
+                <span class="n">all_posts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">post</span><span class="o">.</span><span class="n">postnum</span><span class="p">,</span> <span class="n">post</span><span class="p">))</span>
+        <span class="n">all_posts</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">all_posts</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
+            <span class="n">final_feed</span> <span class="o">+=</span> <span class="n">post</span><span class="o">.</span><span class="n">format</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">final_feed</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section ><div id="cell-id=54796a97" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Moe&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;First!&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Anyone else here?&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">,</span> <span class="s2">&quot;This is lame.&quot;</span><span class="p">)</span>
+<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh hi Curly&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">twitter</span><span class="o">.</span><span class="n">get_user_posts</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>&lt;__main__.Post object at 0x7fe9b46b8a60&gt;
+&lt;__main__.Post object at 0x7fe9b53a1d50&gt;
+&lt;__main__.Post object at 0x7fe9b5329f90&gt;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=d8c2896d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A lot of our complication revolves around keeping track of the overall order of posts.</p>
+<p>What if we just kept a list of all the posts in order, rather than one list per user?</p>
+
+</div>
+</div>
+</div>
+</div></section><section ><div id="cell-id=dba80c13" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">posts</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span> <span class="nf">add_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="c1"># TODO: Raise an error if `name` already exists</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">create_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Post</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">),</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">))</span>
+    
+    <span class="k">def</span> <span class="nf">get_user_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+        <span class="n">user_posts</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">post</span><span class="o">.</span><span class="n">creator</span> <span class="o">==</span> <span class="n">username</span><span class="p">:</span>
+                <span class="n">user_posts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">user_posts</span>
+        <span class="c1">#return [p for p in self.posts if p.creator == username]</span>
+    
+    <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]:</span>
+            <span class="n">final_feed</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">post</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">final_feed</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div></section><section ><div id="cell-id=fe05e594" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16809,444 +16870,10 @@ c.transactions=[]
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Post #3, by @Larry: Oh hi Curly
-Post #2, by @Curly: This is lame.
-Post #1, by @Larry: Anyone else here?
-Post #0, by @Larry: First!
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=8552f33d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We've ended up with 3 related pieces of data for each post: a number, a creator, and the contents. Let's introduce a class for <code>Post</code>s.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=999969f1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Post</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">creator</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">creator</span> <span class="o">=</span> <span class="n">creator</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">contents</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postnum</span> <span class="o">=</span> <span class="n">postnum</span>
-        
-    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Post #</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">postnum</span><span class="si">}</span><span class="s2">, by @</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">creator</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="si">}</span><span class="s2">&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section><section ><div id="cell-id=d8a82694" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">=</span> <span class="mi">0</span>
-        
-    <span class="k">def</span> <span class="nf">add_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">def</span> <span class="nf">create_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">username</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">+=</span> <span class="mi">1</span>
-    
-    <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">all_posts</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">user</span><span class="p">]:</span>
-                <span class="n">all_posts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">post</span><span class="o">.</span><span class="n">postnum</span><span class="p">,</span> <span class="n">post</span><span class="p">))</span>
-        <span class="n">all_posts</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        
-        <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">all_posts</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
-            <span class="n">final_feed</span> <span class="o">+=</span> <span class="n">post</span><span class="o">.</span><span class="n">format</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="k">return</span> <span class="n">final_feed</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section><section ><div id="cell-id=12bd5e49" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Moe&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;First!&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Anyone else here?&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">,</span> <span class="s2">&quot;This is lame.&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh hi Curly&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">twitter</span><span class="o">.</span><span class="n">get_feed</span><span class="p">())</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Post #3, by @Larry: Oh hi Curly
-Post #2, by @Curly: This is lame.
-Post #1, by @Larry: Anyone else here?
-Post #0, by @Larry: First!
-
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=13438d35" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="__str__"><code>__str__</code><a class="anchor-link" href="#__str__">&#182;</a></h2><p>A class trick: if you add a <code>__str__()</code> method, Python will use it when converting your class to a string:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=4983c1f6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;__main__.Post object at 0x7f7b92cd3910&gt;
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section ><div id="cell-id=238dcf20" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Post</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">creator</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">creator</span> <span class="o">=</span> <span class="n">creator</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">contents</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">postnum</span> <span class="o">=</span> <span class="n">postnum</span>
-        
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Post #</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">postnum</span><span class="si">}</span><span class="s2">, by @</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">creator</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">contents</span><span class="si">}</span><span class="s2">&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div id="cell-id=432b0f8f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Post</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Post #1, by @Larry: Hi
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=04f6e3b3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's add a method to get all of a single user's posts:</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=5193f311" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">=</span> <span class="mi">0</span>
-        
-    <span class="k">def</span> <span class="nf">add_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">def</span> <span class="nf">create_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">username</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">))</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">next_post_number</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">def</span> <span class="nf">get_user_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">username</span><span class="p">]</span>
-    
-    <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">all_posts</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="p">[</span><span class="n">user</span><span class="p">]:</span>
-                <span class="n">all_posts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">post</span><span class="o">.</span><span class="n">postnum</span><span class="p">,</span> <span class="n">post</span><span class="p">))</span>
-        <span class="n">all_posts</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-        <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">postnum</span><span class="p">,</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">all_posts</span><span class="p">[:</span><span class="mi">10</span><span class="p">]:</span>
-            <span class="n">final_feed</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">post</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="k">return</span> <span class="n">final_feed</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section><section ><div id="cell-id=54796a97" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Moe&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;First!&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Anyone else here?&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">,</span> <span class="s2">&quot;This is lame.&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh hi Curly&quot;</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">twitter</span><span class="o">.</span><span class="n">get_user_posts</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Post #0, by @Larry: First!
-Post #1, by @Larry: Anyone else here?
-Post #3, by @Larry: Oh hi Curly
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></section><section >
-<div id="cell-id=d8c2896d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A lot of our complication revolves around keeping track of the overall order of posts.</p>
-<p>What if we just kept a list of all the posts in order, rather than one list per user?</p>
-
-</div>
-</div>
-</div>
-</div></section><section ><div id="cell-id=dba80c13" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">posts</span> <span class="o">=</span> <span class="p">[]</span>
-    
-    <span class="k">def</span> <span class="nf">add_user</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="c1"># TODO: Raise an error if `name` already exists</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">create_post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Post</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">),</span> <span class="n">username</span><span class="p">,</span> <span class="n">contents</span><span class="p">))</span>
-    
-    <span class="k">def</span> <span class="nf">get_user_posts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">creator</span> <span class="o">==</span> <span class="n">username</span><span class="p">]</span>
-    
-    <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]:</span>
-            <span class="n">final_feed</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">post</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="k">return</span> <span class="n">final_feed</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div></section><section ><div id="cell-id=fe05e594" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Moe&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">add_user</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;First!&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Anyone else here?&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Curly&quot;</span><span class="p">,</span> <span class="s2">&quot;This is lame.&quot;</span><span class="p">)</span>
-<span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh hi Curly&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">twitter</span><span class="o">.</span><span class="n">get_feed</span><span class="p">())</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Post #0, by @Larry: First!
-Post #1, by @Larry: Anyone else here?
-Post #2, by @Curly: This is lame.
-Post #3, by @Larry: Oh hi Curly
+<pre>&lt;__main__.Post object at 0x7fe9b46bb820&gt;
+&lt;__main__.Post object at 0x7fe9b46b8490&gt;
+&lt;__main__.Post object at 0x7fe9b46b8a60&gt;
+&lt;__main__.Post object at 0x7fe9b5188490&gt;
 
 </pre>
 </div>
@@ -17273,7 +16900,7 @@ Post #3, by @Larry: Oh hi Curly
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
@@ -17308,7 +16935,7 @@ Post #3, by @Larry: Oh hi Curly
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
@@ -17340,10 +16967,10 @@ Post #3, by @Larry: Oh hi Curly
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Post #3, by @Larry: Oh hi Curly
-Post #2, by @Curly: This is lame.
-Post #1, by @Larry: Anyone else here?
-Post #0, by @Larry: First!
+<pre>&lt;__main__.Post object at 0x7fe9b46b8a60&gt;
+&lt;__main__.Post object at 0x7fe9b46b9cc0&gt;
+&lt;__main__.Post object at 0x7fe9b5347340&gt;
+&lt;__main__.Post object at 0x7fe9b5344b50&gt;
 
 </pre>
 </div>
@@ -17370,7 +16997,7 @@ Post #0, by @Larry: First!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Social</span><span class="p">:</span>
@@ -17406,7 +17033,7 @@ Post #0, by @Larry: First!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">twitter</span> <span class="o">=</span> <span class="n">Social</span><span class="p">()</span>
@@ -17434,12 +17061,12 @@ Post #0, by @Larry: First!
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">Exception</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[46], line 3</span>
+Cell <span class="ansi-green-fg">In[36], line 3</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> twitter <span style="color: rgb(98,98,98)">=</span> Social()
 <span class="ansi-green-intense-fg ansi-bold">      2</span> twitter<span style="color: rgb(98,98,98)">.</span>add_user(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Larry</span><span style="color: rgb(175,0,0)">&#34;</span>)
 <span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-yellow-bg">twitter</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">add_user</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Larry</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
 
-Cell <span class="ansi-green-fg">In[45], line 8</span>, in <span class="ansi-cyan-fg">Social.add_user</span><span class="ansi-blue-fg">(self, name)</span>
+Cell <span class="ansi-green-fg">In[35], line 8</span>, in <span class="ansi-cyan-fg">Social.add_user</span><span class="ansi-blue-fg">(self, name)</span>
 <span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">add_user</span>(<span style="color: rgb(0,135,0)">self</span>, name):
 <span class="ansi-green-intense-fg ansi-bold">      7</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> name <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> <span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>users:
 <span class="ansi-green-fg">----&gt; 8</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">User already exists</span><span style="color: rgb(175,0,0)">&#34;</span>)
@@ -17474,6 +17101,481 @@ Cell <span class="ansi-green-fg">In[45], line 8</span>, in <span class="ansi-cya
 </div>
 </div>
 </div>
+</div></section></section><section ><section >
+<div id="cell-id=c6c4edd7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Slido"><a href="https://wall.sli.do/event/2vVHJVqjohN7C2MhtDsBu2?section=5479b0b9-d73e-437b-a6cc-1fc08c40b4d6">Slido</a><a class="anchor-link" href="#Slido">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=b030a1a6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise-repl.it">Exercise <a href="https://replit.com/team/cosi-10a-fall23/Class-practice">repl.it</a><a class="anchor-link" href="#Exercise-repl.it">&#182;</a></h2><p>Write a class to represent an animal.</p>
+<p>An animal has a species, a name (<code>str</code>), a weight in pounds (<code>int</code>), and a sound it makes (<code>str</code>). Your <code>__init__</code> method should take these values as parameters.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=82125f10" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method that returns a string describing the animal (include the species, name, and weight).</p>
+<p>Create an <code>Animal</code> instance, and test your method.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=dce26695" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method called <code>make_sound</code> that returns a string: <code>&lt;name&gt; the &lt;species&gt; says &quot;&lt;sound&gt;&quot;</code>. E.g. 'Bessie the cow says &quot;moo&quot;'.</p>
+<p>Test your method on your animal instance.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=9b5926da" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method <code>is_heavier(self, other_animal)</code> that returns <code>True</code> if <code>self</code>'s weight is greater than <code>other_animal</code>'s weight.</p>
+<p>Make a second <code>Animal</code> instance, test your method on each of the 2.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=fc7b8cb0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method <code>is_same_species(self, other_animal)</code> that returns <code>True</code> if <code>self</code> and <code>other_animal</code> are the same species.</p>
+<p>Make a couple more <code>Animal</code> instances - a few with the same species, a few with different species. Test your method on them.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=24d84819" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Make-a-Zoo">Make a Zoo<a class="anchor-link" href="#Make-a-Zoo">&#182;</a></h1><p>Make a <code>Zoo</code> class to hold your animals.</p>
+<p>What data structure could you use to hold them? Initialize one in your <code>__init__</code> method.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=a421f6ce" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method called <code>add_animal</code> that adds an animal to the zoo.</p>
+<p>Create a <code>Zoo</code> instance and add a few of your animals to it. Test it by printing out the data structure that holds your animals.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=6d83f20b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method <code>list_animals_of_species</code> that lists all the specific animals of a particular species.</p>
+<p>Test it on your <code>Zoo</code> instance.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=8c42aff5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method <code>list_species</code> that returns a list of all the species in the Zoo, with no repeats.</p>
+<p>Test it on your <code>Zoo</code> instance.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=9002d8ac" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Add a method <code>species_count</code> that returns a dictionary holding a count of each species in the zoo.</p>
+<p>e.g.:</p>
+<pre><code>{ 
+  'monkey': 3,
+  'giraffe': 2,
+  'lion': 1,
+  'snake': 10
+}
+</code></pre>
+<p>Create &amp; add enough Animal instances to your Zoo to make this interesting, then test it.</p>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=aaece120" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>What else could we add to our <code>Animal</code> or <code>Zoo</code>?</p>
+
+</div>
+</div>
+</div>
+</div></section></section><section ><section >
+<div id="cell-id=c9b7b696" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Types">Types<a class="anchor-link" href="#Types">&#182;</a></h2><p>Each class definition creates a new <strong>type</strong> - just like <code>int</code>, <code>str</code>, <code>list</code>, <code>dict</code>, etc are types.</p>
+<p>You can check the type of a variable with the built-in <code>isinstance()</code> function:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=afbd8fcc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=67c91f72" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=dc8e3640" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">BankAccount</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=67e9c15f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can also get the type of an object with <code>type()</code>:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=d23af553" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>int</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=1718780d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>str</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=663158bc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>__main__.BankAccount</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=5c77ebae" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2><p><a href="https://pythontutor.com/render.html#code=class%20BankAccount%3A%0A%20%20%20%20def%20__init__%28self,%20initial_balance%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%20initial_balance%0A%20%20%20%20%0A%20%20%20%20def%20deposit%28self,%20amount%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%2B%3D%20amount%0A%0Ab%20%3D%20BankAccount%28100%29%0Ac%20%3D%20b%0Ab.deposit%28200%29%0Aprint%28%22b%3A%20%22%20%2B%20str%28b.balance%29%29%0Aprint%28%22c%3A%20%22%20%2B%20str%28c.balance%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
+<p>Class instances behave just like lists, dictionaries, and other mutable objects. Variables <strong>refer</strong> to the instances, and any mutations of the instances will be seen by all variables referring to the same object.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=9ea1bd4d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">BankAccount</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">b</span><span class="o">.</span><span class="n">deposit</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">balance</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">balance</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>b.balance=300 c.balance=300
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div></section></section><section ><section >
 <div id="cell-id=5bb7ca70" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -17558,7 +17660,7 @@ Cell <span class="ansi-green-fg">In[45], line 8</span>, in <span class="ansi-cya
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># an inheritance examples:</span>
@@ -17597,7 +17699,7 @@ Cell <span class="ansi-green-fg">In[45], line 8</span>, in <span class="ansi-cya
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># non-inheritance alternative:</span>
@@ -17643,17 +17745,6 @@ Cell <span class="ansi-green-fg">In[45], line 8</span>, in <span class="ansi-cya
 </li>
 </ul>
 
-</div>
-</div>
-</div>
-</div></section></section><section ><section >
-<div id="cell-id=c6c4edd7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Slido"><a href="https://wall.sli.do/event/2vVHJVqjohN7C2MhtDsBu2?section=5479b0b9-d73e-437b-a6cc-1fc08c40b4d6">Slido</a><a class="anchor-link" href="#Slido">&#182;</a></h1>
 </div>
 </div>
 </div>
