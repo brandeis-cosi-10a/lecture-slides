@@ -15110,76 +15110,201 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Working-With-Data-From-the-Internet">Working With Data From the Internet<a class="anchor-link" href="#Working-With-Data-From-the-Internet">&#182;</a></h1><style>
+<h1 id="Sorting">Sorting<a class="anchor-link" href="#Sorting">&#182;</a></h1><style>
 section.present > section.present { 
     max-height: 90%; 
     overflow-y: scroll;
 }
 </style>
-<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/15_reques.ipynb">Link to interactive slides on Google Colab</a></small></p>
+<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/14_functions_as_objects.ipynb">Link to interactive slides on Google Colab</a></small></p>
 
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=323e5a69" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=601e8693" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Where-is-the-International-Space-Station?">Where is the International Space Station?<a class="anchor-link" href="#Where-is-the-International-Space-Station?">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=3a356bcb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Right-here"><a href="http://api.open-notify.org/iss-now.json">Right here</a><a class="anchor-link" href="#Right-here">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=3439a717" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Does that data format look familiar?</p>
+<h2 id="7-volunteers-needed">7 volunteers needed<a class="anchor-link" href="#7-volunteers-needed">&#182;</a></h2><p>You'll need to hold a piece of paper with a number on it, and stand at the front of the class for a few demonstrations.</p>
 
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=01a94f7b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=cdfcaecc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>It's JSON!</p>
-
+<h2 id="Please-sort-yourselves-by-the-order-of-your-numbers">Please sort yourselves by the order of your numbers<a class="anchor-link" href="#Please-sort-yourselves-by-the-order-of-your-numbers">&#182;</a></h2>
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=761936e1" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=e211c2db" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Requests-library">Requests library<a class="anchor-link" href="#Requests-library">&#182;</a></h2><p>We can fetch and work with this data from Python.</p>
+<h2 id="What-happened?-How-did-you-sort-yourselves?">What happened? How did you sort yourselves?<a class="anchor-link" href="#What-happened?-How-did-you-sort-yourselves?">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=7a0fa9fe" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Sort yourselves in the order of your numbers - lowest on stage right, highest on stage left.</p>
+<p>How did you do it?</p>
+<p>However you did - that's a sorting algorithm.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=571661ff" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=54248906" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You may think you surveyed multiple numbers at once, but you probably did them one at a time, quickly.</p>
+<p>Computers generally can't compare multiple things at once.</p>
+<p>Complex comparisons are made up of many smaller, individual comparisons.</p>
+<p>Sorting algorithms range from simple to complex, but at the end of the day they are all made up of a series of comparisons of 2 numbers.</p>
+<p>More complex sorting algorithms attempt to minimize the number of comparisons needed to sort a whole list.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=fb3ac9ca" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Sorting-algorithms">Sorting algorithms<a class="anchor-link" href="#Sorting-algorithms">&#182;</a></h2><p>Today we'll look at 2 of the simpler sorting algorithms:</p>
+<ul>
+<li>Bubble sort</li>
+<li>Insertion sort</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=2fb91a16" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Bubble-sort">Bubble sort<a class="anchor-link" href="#Bubble-sort">&#182;</a></h2><ol>
+<li>Compare the first 2 elements in the list.<ul>
+<li>If the right is larger than the left, swap them.</li>
+</ul>
+</li>
+<li>Repeat for each pair of elements in the list - (2 and 3), (3 and 4), (4 and 5), and so on.</li>
+<li>Repeat steps 1 and 2 until no swaps were made for the entire list.</li>
+</ol>
+<p>It's called &quot;bubble sort&quot; because the next largest item is &quot;bubbled up&quot; to the end of list on each pass.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=36b5c514" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Insertion-sort">Insertion sort<a class="anchor-link" href="#Insertion-sort">&#182;</a></h2><p>At a high level, the process is:</p>
+<ol>
+<li>Create a new list</li>
+<li>Insert the elements into it one at a time, putting them into their correct positions in the new list.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=2b8aac72" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Insertion-sort">Insertion sort<a class="anchor-link" href="#Insertion-sort">&#182;</a></h2><p>More specifically:</p>
+<ol>
+<li><p>Create a new list</p>
+</li>
+<li><p>Insert each element from the original list into the new list, using the following steps:<br />
+2a. Compare the new element to the first element in the new list.</p>
+<ul>
+<li>If the new element is smaller, insert it into the right of the first element.</li>
+<li>Otherwise, repeat step 2a with the next element in the new list.</li>
+</ul>
+<p>2b. If the new element is larger than all elements in the new list, insert it at the end.</p>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=6ff4e6a4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Thank-you-volunteers!">Thank you volunteers!<a class="anchor-link" href="#Thank-you-volunteers!">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=e850720d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Coding-bubble-sort">Coding bubble sort<a class="anchor-link" href="#Coding-bubble-sort">&#182;</a></h2><p>Let's write code for bubble sort!</p>
+<ol>
+<li>Compare the first 2 elements in the list.<ul>
+<li>If the right is larger than the left, swap them.</li>
+</ul>
+</li>
+<li>Repeat for each pair of elements in the list - (2 and 3), (3 and 4), (4 and 5), and so on.</li>
+<li>Repeat steps 1 and 2 until no swaps were made for the entire list.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=2b1d6a42" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>First, the core part: walk through the list, compare each consecutive pair of numbers, and swap them if the first is larger.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=e178316f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15187,10 +15312,15 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://api.open-notify.org/iss-now.json&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">56</span><span class="p">]</span>
+<span class="c1"># incorrect</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="c1"># swap?</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The ISS is at lat: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">][</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, long: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">][</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15210,8 +15340,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;iss_position&#39;: {&#39;latitude&#39;: &#39;5.5122&#39;, &#39;longitude&#39;: &#39;-157.6679&#39;}, &#39;timestamp&#39;: 1698443617, &#39;message&#39;: &#39;success&#39;}
-The ISS is at lat: 5.5122, long: -157.6679
+<pre>[36, 9, 9, 54, 20, 18, 18, 12, 12, 56]
 </pre>
 </div>
 </div>
@@ -15221,399 +15350,18 @@ The ISS is at lat: 5.5122, long: -157.6679
 </div>
 
 </div>
-<div id="cell-id=71c2e3a5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=d1bb2ae3" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Networking-on-the-Internet">Networking on the Internet<a class="anchor-link" href="#Networking-on-the-Internet">&#182;</a></h2><p>Let's dig into what it means to &quot;send a request&quot; over the internet.</p>
-<p>This is a 30,000 foot overview - many details are glossed over.</p>
+<p>We need to use an intermediate, temporary variable to swap.</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=bea589fa" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Mailing-letters">Mailing letters<a class="anchor-link" href="#Mailing-letters">&#182;</a></h2><p>We'll use an analogy: sending a request over the internet is like mailing someone a letter.</p>
-<p>A letter is sent to an address, and has contents inside an envelope.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=124d80bb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The URL is like the address.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=365bbbbd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Anatomy-of-a-URL">Anatomy of a URL<a class="anchor-link" href="#Anatomy-of-a-URL">&#182;</a></h2><p><code>http://video.google.com/videoplay?docid=1234&amp;hl=en</code></p>
-<ul>
-<li><code>http://</code>: The &quot;protocol&quot;, or &quot;scheme&quot;<ul>
-<li>This specifies the format of the request</li>
-</ul>
-</li>
-<li><code>video.google.com</code>: The &quot;domain name&quot;, or a unique name for a location on the internet<ul>
-<li>Starts after the protocol, and after <code>://</code></li>
-</ul>
-</li>
-<li><code>videoplay</code>: The &quot;path&quot;, or the name of the resource being accessed<ul>
-<li>Starts after the end of the domain, and after a <code>/</code></li>
-</ul>
-</li>
-<li><code>docid=1234&amp;hl=en</code>: The &quot;query&quot;, or parameters related to a request<ul>
-<li>Starts at the end of the path, and after a <code>?</code></li>
-<li><code>docid=1234</code> and <code>hl=en</code> are each individual &quot;parameters&quot;, and parameters are always separated by <code>&amp;</code></li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=240b3698" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Anatomy-of-our-URL">Anatomy of our URL<a class="anchor-link" href="#Anatomy-of-our-URL">&#182;</a></h2><p><code>http://api.open-notify.org/iss-now.json</code></p>
-<ul>
-<li><code>http://</code>: protocol</li>
-<li><code>api.open-notify.org</code>: domain</li>
-<li><code>iss-now.json</code>: path</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=146f507f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="IP-Addresses-and-Domain-Names">IP Addresses and Domain Names<a class="anchor-link" href="#IP-Addresses-and-Domain-Names">&#182;</a></h2><p>Every computer connected to the internet has a unique IP address.</p>
-<p>Every domain name has one or more IP addresses associated with it.</p>
-<p>The first step of sending a request is to translate the domain to an IP address.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=7c5cb3ea" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Mailing-letters">Mailing letters<a class="anchor-link" href="#Mailing-letters">&#182;</a></h2><p>A domain is like the name of a location that you understand, like &quot;Joe's house&quot; or &quot;the park around the corner from my house&quot;.</p>
-<p>An IP address is like the actual address of the house or park, including all the necessary details, such as postal code.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=8875c0de" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="DNS">DNS<a class="anchor-link" href="#DNS">&#182;</a></h2><p><strong>DNS</strong> (Domain Name System) is like a big dictionary that maps from domain name to IP address.</p>
-<p>The owner of a domain has the ability to specify which IP address(es) a domain maps to.</p>
-<p>DNS records are publicly accessible: <a href="https://traceroute-online.com/check-dns-records/">https://traceroute-online.com/check-dns-records/</a></p>
-<p>All routing of traffic on the internet is done using IP addresses.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=edc283b8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Address-books">Address books<a class="anchor-link" href="#Address-books">&#182;</a></h2><p>DNS is like your address book - it translates from a &quot;place name&quot; to a physical address that the postal service recognizes.</p>
-<p>You can't mail a letter to &quot;Joe's house&quot;, but you can mail a letter to &quot;123 Python Lane, Boston MA, 02118&quot; (not my real address).</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=e5897463" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="IP-Routing">IP Routing<a class="anchor-link" href="#IP-Routing">&#182;</a></h2><p>Routing traffic by IP address is beyond the scope of this lecture, but requests will typically be passed between many servers on the way to arriving at the specified IP address.</p>
-<p>Many tools allow you to trace the path of a request: <a href="https://traceroute-online.com/">https://traceroute-online.com/</a></p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=0eef0526" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Postal-network">Postal network<a class="anchor-link" href="#Postal-network">&#182;</a></h2><p>IP routing is like the network of trucks, planes, trains, etc that are used to get your letter to its final destination.</p>
-<p>Your letter might stop at multiple other post offices along the way.</p>
-<p>No one along the way knows or cares what is <strong>in</strong> your letter. They're just delivering an envelope.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=db7ec920" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Load-balancing">Load balancing<a class="anchor-link" href="#Load-balancing">&#182;</a></h2><p>Eventually, your request ends up at a server with the IP address associated with the domain you requested.</p>
-<p>Those first servers are often &quot;load balancers&quot;, which route requests to other servers, which can actually respond to the requests.</p>
-<p>This routing is different than IP routing, but we don't need to worry about the difference.</p>
-<p>Eventually, the request is routed to a server that can generate a response.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=d728cbff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Campus-mail-room">Campus mail room<a class="anchor-link" href="#Campus-mail-room">&#182;</a></h2><p>If you mail a letter to me at my campus address, the postal service delivers it to the mail room.</p>
-<p>Load balancing, and other routing that happens after delivery to a DNS-registered IP, is like the mail room staff on campus who route the letter to my personal mailbox.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=d622100f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="HTTP-Requests">HTTP Requests<a class="anchor-link" href="#HTTP-Requests">&#182;</a></h2><p>Our protocol is &quot;http&quot;, which means we are making an &quot;HTTP request&quot;</p>
-<p><strong>HTTP</strong> stands for &quot;HyperText Transport Protocol&quot;</p>
-<p>It is the protocol (agreed upon format) for the majority of requests on the internet.</p>
-<p>Other common protocols include:</p>
-<ul>
-<li><code>ftp</code> (file transfer)</li>
-<li><code>smtp</code> and <code>imap</code> (email)</li>
-<li><code>udp</code> (real time communication)</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=1eea5d80" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="The-Language-of-Your-Letter">The Language of Your Letter<a class="anchor-link" href="#The-Language-of-Your-Letter">&#182;</a></h2><p>HTTP is like the language the letter inside the envelope is written in.</p>
-<p>It doesn't have anything to do with how the letter is routed or handled by the postal service, but it is important that your recipient knows how to interpret the letter we wrote.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=5ef12740" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Anatomy-of-an-HTTP-Request">Anatomy of an HTTP Request<a class="anchor-link" href="#Anatomy-of-an-HTTP-Request">&#182;</a></h2><p>An HTTP request is just a blob of text describing our request.</p>
-<p>It consists of 3 parts:</p>
-<ol>
-<li>Request line<ul>
-<li>Specifies the HTTP method, and the resource being requested</li>
-</ul>
-</li>
-<li>Headers (Optional)<ul>
-<li>Directives on how to handle the request</li>
-</ul>
-</li>
-<li>Body (optional)<ul>
-<li>The payload of the message, if applicable</li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=825debc2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here's what our HTTP request looks like when sent from a browser. It has 8 headers and no body:</p>
-<pre><code>GET /iss-now.json HTTP/1.1
-Accept: text/html,application/xhtml+xml,[...]
-Accept-Encoding: gzip, deflate
-Accept-Language: en-US,en;q=0.9
-Cache-Control: max-age=0
-Connection: keep-alive
-Host: api.open-notify.org
-Upgrade-Insecure-Requests: 1
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) [...]
-</code></pre>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=3e296b98" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="HTTP-Methods">HTTP Methods<a class="anchor-link" href="#HTTP-Methods">&#182;</a></h2><p>HTTP requests always have a &quot;method&quot;.</p>
-<p>There are several methods, but the 2 most common are &quot;GET&quot; and &quot;POST&quot;.</p>
-<p><strong>GET</strong> requests are typically used to retrieve data.</p>
-<p><strong>POST</strong> requests are typically used to send data.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=aa0c87b9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Reading-and-Responding-to-the-Letter">Reading and Responding to the Letter<a class="anchor-link" href="#Reading-and-Responding-to-the-Letter">&#182;</a></h2><p>The letter has been delivered to a person who should be able to understand it.</p>
-<p>That person will know how to interpret the contents, and how to respond.</p>
-<p>That person might still call on other people (servers) to help create a response.</p>
-<p>The response will be returned in the same language and format (protocol) as the original letter.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=889d5a2a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="HTTP-Responses">HTTP Responses<a class="anchor-link" href="#HTTP-Responses">&#182;</a></h2><p>HTTP responses have status codes, headers, and bodies.</p>
-<p>Wikipedia has a <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">full list</a> of status codes. Common codes are:</p>
-<ul>
-<li><code>200</code> - success</li>
-<li><code>301</code> / <code>302</code> - permanent / temporary redirect</li>
-<li><code>404</code> - not found</li>
-<li><code>500</code> - server error</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=9a3da29b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here's what our HTTP response looks like when received in the browser. It has 6 headers and a body containing a JSON string:</p>
-<pre><code>HTTP/1.1 200 OK
-Server: nginx/1.10.3
-Date: Wed, 25 Oct 2023 03:10:09 GMT
-Content-Type: application/json
-Content-Length: 113
-Connection: keep-alive
-access-control-allow-origin: *
-
-{&quot;timestamp&quot;: 1698203409, &quot;iss_position&quot;: {&quot;latitude&quot;: &quot;35.2661&quot;, &quot;longitude&quot;: &quot;110.0297&quot;}, &quot;message&quot;: &quot;success&quot;}
-</code></pre>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=ee3e08b6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Letter-Responses">Letter Responses<a class="anchor-link" href="#Letter-Responses">&#182;</a></h2><ul>
-<li><code>200</code> is like successfully receiving a reply letter.</li>
-<li><code>301</code> / <code>302</code> are a bit like forwarding mail to another address - the postal service handles this for you; similarly most HTTP clients will also handle it for you.</li>
-<li><code>404</code> is like trying to send a letter to an unknown address, and having it returned</li>
-<li><code>500</code> is like the box of mail containing your letter falling off the truck and getting lost</li>
-</ul>
-<p>The body of the response is like the letter you receive in response to your inquiry.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=6cd3eda6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="All-the-terminology-together">All the terminology together<a class="anchor-link" href="#All-the-terminology-together">&#182;</a></h2><p><code>requests.get('http://api.open-notify.org/iss-now.json')</code></p>
-<p>We made an HTTP request to the domain <code>api.open-notify.org</code>, asking it to <code>GET</code> the data for the resource <code>iss-now.json</code>.</p>
-<p>It returned a response with a <code>200</code> (success) status code, and a JSON object in the body.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=722398e5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Back-to-the-requests-library...">Back to the <code>requests</code> library...<a class="anchor-link" href="#Back-to-the-requests-library...">&#182;</a></h2><p><code>requests.get()</code> returns a <code>Response</code> object, which has many fields: <a href="https://requests.readthedocs.io/en/latest/api/#requests.Response">Response</a></p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=8c62e1bc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=cac74a7e" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15621,12 +15369,15 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://api.open-notify.org/iss-now.json&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">56</span><span class="p">]</span>
+<span class="c1"># correct</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="nb">next</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">next</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15646,11 +15397,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>200
-
-{&#39;Server&#39;: &#39;nginx/1.10.3&#39;, &#39;Date&#39;: &#39;Fri, 27 Oct 2023 21:53:37 GMT&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;Content-Length&#39;: &#39;113&#39;, &#39;Connection&#39;: &#39;keep-alive&#39;, &#39;access-control-allow-origin&#39;: &#39;*&#39;}
-
-{&#34;iss_position&#34;: {&#34;latitude&#34;: &#34;5.5122&#34;, &#34;longitude&#34;: &#34;-157.6679&#34;}, &#34;timestamp&#34;: 1698443617, &#34;message&#34;: &#34;success&#34;}
+<pre>[36, 9, 54, 83, 20, 18, 84, 12, 56, 94]
 </pre>
 </div>
 </div>
@@ -15660,18 +15407,18 @@ access-control-allow-origin: *
 </div>
 
 </div>
-<div id="cell-id=60b04c87" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=4e6ab5c4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We can use the handy <code>json()</code> method, which attempts to parse the body of the response as JSON:</p>
+<p>Now we need to do those passes until no swaps happen:</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=c8973ea2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=584accef" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15679,8 +15426,19 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">56</span><span class="p">]</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">swapped</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="nb">next</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">next</span>
+            <span class="n">swapped</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">swapped</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15700,8 +15458,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;dict&#39;&gt;
-{&#39;iss_position&#39;: {&#39;latitude&#39;: &#39;5.5122&#39;, &#39;longitude&#39;: &#39;-157.6679&#39;}, &#39;timestamp&#39;: 1698443617, &#39;message&#39;: &#39;success&#39;}
+<pre>[9, 12, 18, 20, 36, 54, 56, 83, 84, 94]
 </pre>
 </div>
 </div>
@@ -15711,42 +15468,29 @@ access-control-allow-origin: *
 </div>
 
 </div>
-<div id="cell-id=39583d0c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=6c313e2b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="All-this-networking-stuff-is-great...">All this networking stuff is great...<a class="anchor-link" href="#All-this-networking-stuff-is-great...">&#182;</a></h2><p>But I really just want to know what part of the world the ISS is over, and I can't translate latitude/longitudes in my head.</p>
+<h2 id="Insertion-sort">Insertion sort<a class="anchor-link" href="#Insertion-sort">&#182;</a></h2><ol>
+<li><p>Create a new list</p>
+</li>
+<li><p>Insert each element from the original list into the new list, using the following steps:<br />
+2a. Compare the new element to the first element in the new list.</p>
+<ul>
+<li>If the new element is smaller, insert it into the right of the first element.</li>
+<li>Otherwise, repeat step 2a with the next element in the new list.</li>
+</ul>
+<p>2b. If the new element is larger than all elements in the new list, insert it at the end.</p>
+</li>
+</ol>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=1aca680a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's use another free service, <a href="http://geocode.xyz/api">geocode.xyz/api</a></p>
-
-</div>
-</div>
-</div>
-</div>
-<div id="cell-id=bf7b036f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>It has several options, but we want the simple one: turn a lat/long into an address.</p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=a81472fa" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=3eceddb7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15754,20 +15498,16 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://api.open-notify.org/iss-now.json&#39;</span><span class="p">)</span>
-<span class="n">response_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">36</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">94</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">56</span><span class="p">]</span>
+<span class="n">sorted_data</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="n">pos</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">]</span>
-<span class="n">geocode_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://geocode.xyz/</span><span class="si">{</span><span class="n">pos</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">pos</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">?json=1&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reverse geocoding: </span><span class="si">{</span><span class="n">pos</span><span class="si">=}</span><span class="s2"> with </span><span class="si">{</span><span class="n">geocode_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+    <span class="n">insertion_point</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">insertion_point</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">sorted_data</span><span class="p">)</span> <span class="ow">and</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="n">sorted_data</span><span class="p">[</span><span class="n">insertion_point</span><span class="p">]:</span>
+        <span class="n">insertion_point</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">sorted_data</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">insertion_point</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
 
-<span class="n">geolocate_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">geocode_url</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">geolocate_response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">geolocate_response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
-
-<span class="c1"># pretty print:</span>
-<span class="c1">#print(json.dumps(geolocate_response.json(), indent=2, ensure_ascii=False))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_data</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15787,9 +15527,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Reverse geocoding: pos={&#39;latitude&#39;: &#39;5.4869&#39;, &#39;longitude&#39;: &#39;-157.6497&#39;} with geocode_url=&#39;https://geocode.xyz/5.4869,-157.6497?json=1&#39;
-200
-{&#39;geonumber&#39;: &#39;1071627982532&#39;, &#39;longt&#39;: &#39;0.00000&#39;, &#39;matches&#39;: None, &#39;error&#39;: {&#39;description&#39;: &#39;23. Your request did not produce any results.&#39;, &#39;code&#39;: &#39;008&#39;}, &#39;suggestion&#39;: {&#39;south&#39;: {&#39;longt&#39;: &#39;-158&#39;, &#39;prov&#39;: &#39; KI&#39;, &#39;city&#39;: &#39;Minneapolis Ridge&#39;, &#39;distance&#39;: &#39;39&#39;, &#39;latt&#39;: &#39;5.416667&#39;}, &#39;territory&#39;: &#39;Line Group&#39;, &#39;altname&#39;: &#39;Kiribati&#39;, &#39;region&#39;: &#39;North Pacific Ocean&#39;, &#39;subregion&#39;: &#39;Kiribati (Line Islands) part of the North Pacific Ocean&#39;, &#39;north&#39;: {&#39;longt&#39;: {}, &#39;prov&#39;: {}, &#39;city&#39;: {}, &#39;distance&#39;: {}, &#39;latt&#39;: {}}, &#39;iso&#39;: &#39;KIR&#39;, &#39;eez&#39;: &#39;Kiribati Exclusive Economic Zone (Line Islands)&#39;}, &#39;latt&#39;: &#39;0.00000&#39;}
+<pre>[9, 12, 18, 20, 36, 54, 56, 83, 84, 94]
 </pre>
 </div>
 </div>
@@ -15799,19 +15537,34 @@ access-control-allow-origin: *
 </div>
 
 </div>
-<div id="cell-id=dcd3ba9b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=b32a6a22" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Meteorites">Meteorites<a class="anchor-link" href="#Meteorites">&#182;</a></h2><p><a href="https://data.nasa.gov/resource/y77d-th95.json">JSON Meteorite data from NASA</a></p>
-<p><a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">Dataset description on NASA's Open Data Portal</a></p>
+<h2 id="Sorting-efficiency">Sorting efficiency<a class="anchor-link" href="#Sorting-efficiency">&#182;</a></h2><p>Both of these sorts are relatively <strong>inefficient</strong>: they require a lot of comparisons in order to sort the list.</p>
+<p>The sorting algorithm used by <code>.sort()</code> and <code>sorted()</code> is called &quot;<a href="https://en.wikipedia.org/wiki/Timsort">Timsort</a>&quot; (named for Tim Peters, who wrote it for Python), and is significantly more efficient.</p>
+<p>The algorithm is relatively complex, and the theory behind why it is so efficient is even more complex.</p>
+<p>However, just like every other sorting algorithm, it's ultimately doing a series of comparisons of 2 values at a time.</p>
+<p>Luckily, we can use it without learning all those details.</p>
 
 </div>
 </div>
 </div>
-</div><div id="cell-id=d35cc520" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=574ccfb7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Back-to-using-sorts...">Back to using sorts...<a class="anchor-link" href="#Back-to-using-sorts...">&#182;</a></h2><h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Sort the words in a string alphabetically</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=b1872edc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15819,9 +15572,10 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">meteorites</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://data.nasa.gov/resource/gh4g-9sfh.json?&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15841,7 +15595,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;list&#39;&gt;
+<pre>American Bill Murray, This a about actor. famous is note
 </pre>
 </div>
 </div>
@@ -15850,7 +15604,19 @@ access-control-allow-origin: *
 
 </div>
 
-</div><div id="cell-id=9818b298" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=f6bb5ea4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Hmm... case matters. We could lowercase the whole string before splitting...</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=9ab560c2" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15858,7 +15624,11 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15878,7 +15648,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1000
+<pre>a about actor. american bill famous is murray, note this
 </pre>
 </div>
 </div>
@@ -15888,44 +15658,32 @@ access-control-allow-origin: *
 </div>
 
 </div>
-<div id="cell-id=00e9dde6" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=765845c0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Hm, exactly 1000. Seems suspicious - maybe we aren't getting all the data.</p>
+<p>But what if we want to preserve the original case in our resulting string?</p>
 
 </div>
 </div>
 </div>
 </div>
-<div id="cell-id=70dad147" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=aa22a86d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's look closer at the page describing the data: <a href="https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh">Dataset description on NASA's Open Data Portal</a></p>
+<h2 id="Telling-sort-how-to-sort">Telling <code>sort</code> how to sort<a class="anchor-link" href="#Telling-sort-how-to-sort">&#182;</a></h2><p>By default, <code>sort()</code> orders the values by... the values.</p>
+<p>We can tell it to order them by something else, using the <code>key</code> parameter.</p>
+<p>The <code>key</code> parameter should be a <strong>function</strong> that returns the sort key for a given value.</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=3227b8a5" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Looks like this data set is served by something called the &quot;Socrata Data API&quot;.</p>
-<p>A little Google searching unearths this documentation about how to ask for more results:
-<a href="https://dev.socrata.com/docs/paging.html">Information on paging with Socrata Data API</a></p>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=ff7eb768" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=551a4e97" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15933,9 +15691,14 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">meteorites</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://data.nasa.gov/resource/gh4g-9sfh.json?$limit=50000&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_lower</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">make_lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15955,7 +15718,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;list&#39;&gt;
+<pre>a about actor. American Bill famous is Murray, note This
 </pre>
 </div>
 </div>
@@ -15964,7 +15727,48 @@ access-control-allow-origin: *
 
 </div>
 
-</div><div id="cell-id=e5595a79" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=2916f884" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Wait, what? Did we just pass a function as a parameter?</p>
+<p>Yes, yes we did.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=09fa9930" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Functions-are-Objects">Functions are Objects<a class="anchor-link" href="#Functions-are-Objects">&#182;</a></h1><p>Python has <strong>first class functions</strong>.</p>
+<p>This means that functions are objects, just like other types: <code>int</code>, <code>str</code>, <code>list</code>, <code>dict</code>, <code>set</code>, etc.</p>
+<p>They can be passed as arguments to other functions, assigned to variables, returned by other functions, and even stored in lists, dictionaries, and sets.</p>
+<p>We'll only use this concept for this specific sorting technique, but it is quite powerful and widely used in advanced programming.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=21a2f80a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Back-to-sorting...">Back to sorting...<a class="anchor-link" href="#Back-to-sorting...">&#182;</a></h2><p>In this example, our final answer uses the original, capitalized values.</p>
+<p>But the comparisons used to determine the overall order were done with the lowercase values.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=ae390429" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15972,7 +15776,14 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">meteorites</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_lower</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">make_lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15992,7 +15803,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>45716
+<pre>a about actor. American Bill famous is Murray, note This
 </pre>
 </div>
 </div>
@@ -16001,7 +15812,19 @@ access-control-allow-origin: *
 
 </div>
 
-</div><div id="cell-id=a6743142" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=74235d69" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For another example, we'll sort the words by length:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=ae72fd08" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16009,7 +15832,14 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">meteorites</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_len</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_len</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -16029,7 +15859,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;name&#39;: &#39;Aachen&#39;, &#39;id&#39;: &#39;1&#39;, &#39;nametype&#39;: &#39;Valid&#39;, &#39;recclass&#39;: &#39;L5&#39;, &#39;mass&#39;: &#39;21&#39;, &#39;fall&#39;: &#39;Fell&#39;, &#39;year&#39;: &#39;1880-01-01T00:00:00.000&#39;, &#39;reclat&#39;: &#39;50.775000&#39;, &#39;reclong&#39;: &#39;6.083330&#39;, &#39;geolocation&#39;: {&#39;latitude&#39;: &#39;50.775&#39;, &#39;longitude&#39;: &#39;6.08333&#39;}}
+<pre>a is This note Bill about famous actor. Murray, American
 </pre>
 </div>
 </div>
@@ -16038,7 +15868,19 @@ access-control-allow-origin: *
 
 </div>
 
-</div><div id="cell-id=82bf660d" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div id="cell-id=ed21e420" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A little trick: because <code>len</code> is already a function, we actually don't need to define <code>get_len</code>, we can just use <code>len</code> directly:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=912108ba" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16046,20 +15888,11 @@ access-control-allow-origin: *
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">meteorites</span><span class="p">:</span>
-    <span class="k">if</span> <span class="s1">&#39;year&#39;</span> <span class="ow">in</span> <span class="n">m</span> <span class="ow">and</span> <span class="s1">&#39;mass&#39;</span> <span class="ow">in</span> <span class="n">m</span> <span class="ow">and</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">100000</span><span class="p">:</span>
-        <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">][:</span><span class="mi">4</span><span class="p">])</span>
-        <span class="n">years</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="n">years</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
-<span class="n">sortable</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">years</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">sortable</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">year</span><span class="p">,</span> <span class="n">years</span><span class="p">[</span><span class="n">year</span><span class="p">]))</span>
-<span class="n">sortable</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
-
-<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">sortable</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">year</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -16079,82 +15912,7 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1804: 2
-1810: 2
-1836: 2
-1837: 2
-1840: 2
-1850: 2
-1854: 2
-1858: 2
-1860: 2
-1863: 2
-1866: 3
-1868: 2
-1869: 2
-1873: 2
-1875: 3
-1879: 2
-1882: 2
-1883: 3
-1884: 4
-1887: 2
-1889: 3
-1890: 5
-1891: 2
-1903: 4
-1906: 2
-1907: 2
-1909: 3
-1912: 3
-1913: 3
-1914: 2
-1917: 4
-1918: 4
-1921: 3
-1923: 2
-1924: 2
-1927: 3
-1929: 2
-1930: 3
-1937: 6
-1938: 3
-1941: 2
-1942: 2
-1947: 2
-1948: 3
-1951: 2
-1952: 3
-1954: 3
-1956: 3
-1957: 3
-1958: 2
-1959: 2
-1960: 2
-1964: 2
-1965: 2
-1966: 2
-1967: 5
-1968: 4
-1969: 2
-1973: 3
-1976: 3
-1978: 3
-1981: 3
-1990: 2
-1991: 2
-1992: 4
-1995: 3
-1997: 2
-1998: 2
-2000: 8
-2001: 2
-2002: 2
-2004: 2
-2005: 3
-2006: 5
-2008: 2
-2009: 2
+<pre>a is This note Bill about famous actor. Murray, American
 </pre>
 </div>
 </div>
@@ -16164,59 +15922,353 @@ access-control-allow-origin: *
 </div>
 
 </div>
-<div id="cell-id=402dd4dd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=0767e7dd" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="We-keep-doing-similar-operations,-let's-turn-them-into-functions.">We keep doing similar operations, let's turn them into functions.<a class="anchor-link" href="#We-keep-doing-similar-operations,-let's-turn-them-into-functions.">&#182;</a></h2><ul>
-<li>sort by year -&gt; sort by key</li>
-<li>sort by count -&gt; sort by value</li>
-<li>clean data</li>
-</ul>
+<p>We could even sort by the 2nd letter of each word:</p>
 
 </div>
 </div>
 </div>
-</div>
-<div id="cell-id=4b0c93f4" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notes:</p>
-<ol>
-<li>Walk through data cleaning, turn into function</li>
-<li>Do some different filtering, turn into function</li>
-<li>Do some different sorting, turn into function</li>
-<li>Maybe generalize sorting to sort by key/value</li>
-<li>Bring in geocoding?</li>
-<li>Historical events, join with meteorites?</li>
-<li>Pick your own from the list, fetch data, do something with it - count, aggregate, filter<ul>
-<li>Do during recitation, and walk through next day in lecture?</li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div><div id="cell-id=b8729093" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=7f422bb5" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">second_letter</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">value</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
+<span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">second_letter</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>a famous about actor. This Bill American note is Murray,
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=a344c419" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Sorting-class-instances">Sorting class instances<a class="anchor-link" href="#Sorting-class-instances">&#182;</a></h1><p>We can use this new idea to easily sort class instances.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=9e6405ad" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Book</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">word_count</span><span class="p">,</span> <span class="n">author</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word_count</span> <span class="o">=</span> <span class="n">word_count</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+
+    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">word_count</span><span class="si">}</span><span class="s2"> words), by </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=e8182520" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;War and Peace&quot;</span><span class="p">,</span> <span class="mi">561304</span><span class="p">,</span> <span class="s2">&quot;Leo Tolstoy&quot;</span><span class="p">),</span>
+    <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;Harry Potter 1&quot;</span><span class="p">,</span> <span class="mi">77325</span><span class="p">,</span> <span class="s2">&quot;J. K. Rowling&quot;</span><span class="p">),</span>
+    <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;The Golden Compass&quot;</span><span class="p">,</span> <span class="mi">112815</span><span class="p">,</span> <span class="s2">&quot;Philip Pullman&quot;</span><span class="p">),</span>
+    <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;The Hobbit&quot;</span><span class="p">,</span> <span class="mi">95356</span><span class="p">,</span> <span class="s2">&quot;J. R. R. Tolkein&quot;</span><span class="p">),</span>
+    <span class="n">Book</span><span class="p">(</span><span class="s2">&quot;The Old Man and the Sea&quot;</span><span class="p">,</span> <span class="mi">26601</span><span class="p">,</span> <span class="s2">&quot;Ernest Hemingway&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=e114006e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Previously, when we've needed to sort like this, we've created a list of 2-tuples, containing the sort value first, and the actual value second, then sorted that list.</p>
+<p>Example of sorting books by their length, &quot;the hard way&quot;:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=369501e5" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sortable</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="n">sortable</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">book</span><span class="o">.</span><span class="n">word_count</span><span class="p">,</span> <span class="n">book</span><span class="p">))</span>
+<span class="n">sortable</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">sorted_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">sortable</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>War and Peace (561304 words), by Leo Tolstoy
+The Golden Compass (112815 words), by Philip Pullman
+The Hobbit (95356 words), by J. R. R. Tolkein
+Harry Potter 1 (77325 words), by J. K. Rowling
+The Old Man and the Sea (26601 words), by Ernest Hemingway
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=b64d4f01" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Instead, we can define a function that returns the word count for a book, and use that as a sort key.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=9e8fc309" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_wc</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">book</span><span class="o">.</span><span class="n">word_count</span>
+
+<span class="n">books</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">get_wc</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>War and Peace (561304 words), by Leo Tolstoy
+The Golden Compass (112815 words), by Philip Pullman
+The Hobbit (95356 words), by J. R. R. Tolkein
+Harry Potter 1 (77325 words), by J. K. Rowling
+The Old Man and the Sea (26601 words), by Ernest Hemingway
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=4ecb6d50" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Similarly, we can define a sort key to sort by author's name.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=451c523f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_author</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span>
+
+<span class="n">books</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_author</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>The Old Man and the Sea (26601 words), by Ernest Hemingway
+Harry Potter 1 (77325 words), by J. K. Rowling
+The Hobbit (95356 words), by J. R. R. Tolkein
+War and Peace (561304 words), by Leo Tolstoy
+The Golden Compass (112815 words), by Philip Pullman
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=311f5535" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We could even sort by author's last name:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=5f125211" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_author_last_name</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">books</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">get_author_last_name</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>The Old Man and the Sea (26601 words), by Ernest Hemingway
+The Golden Compass (112815 words), by Philip Pullman
+Harry Potter 1 (77325 words), by J. K. Rowling
+The Hobbit (95356 words), by J. R. R. Tolkein
+War and Peace (561304 words), by Leo Tolstoy
+</pre>
+</div>
+</div>
+
+</div>
+
 </div>
 
 </div>

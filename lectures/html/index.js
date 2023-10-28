@@ -15,7 +15,7 @@ let lectures = [
     "11_classes",
     "12_file_io",
     "13_class_design",
-    "14_functions_as_objects",
+    "14_sorting",
     "15_requests"
 ];
 https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/2_datatypes_expressions_variables.ipynb
