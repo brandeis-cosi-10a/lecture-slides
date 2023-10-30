@@ -18,7 +18,6 @@ let lectures = [
     "14_sorting",
     "15_requests"
 ];
-https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/2_datatypes_expressions_variables.ipynb
 
 (function() {
     const container = document.getElementById("container");
