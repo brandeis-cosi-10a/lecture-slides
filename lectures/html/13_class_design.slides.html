@@ -16757,7 +16757,7 @@ Zsa zsa Romans (90a81790-1dcf-4fa9-9499-50f77e7aa482)
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="We-need-to-deal-with-checkouts">We need to deal with checkouts<a class="anchor-link" href="#We-need-to-deal-with-checkouts">&#182;</a></h2><p>In order to list a patron's checked out books, we need to process <code>checkouts.json</code>.</p>
 <p>Checkouts are a relationship between a <code>Patron</code> and a <code>BookCopy</code>.</p>
-<p>It's not clear where to put the data for a checkout:</p>
+<p>It's not clear where to put the data for a checkout. We could:</p>
 <ul>
 <li>Give <code>Patron</code> a list of references to <code>BookCopy</code>s that are checked out</li>
 <li>Give <code>BookCopy</code> a reference to the <code>Patron</code> that has checked the copy out</li>
@@ -16939,7 +16939,7 @@ Zsa zsa Romans (90a81790-1dcf-4fa9-9499-50f77e7aa482)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="We-need-indices">We need indices<a class="anchor-link" href="#We-need-indices">&#182;</a></h2><p>We need to look up a <code>BookCopy</code> object by <code>copy_id</code>. We could iterate through each one to find it.</p>
+<h2 id="We-need-a-way-to-look-up-BookCopys-by-copy_id">We need a way to look up <code>BookCopy</code>s by <code>copy_id</code><a class="anchor-link" href="#We-need-a-way-to-look-up-BookCopys-by-copy_id">&#182;</a></h2><p>We could iterate through each one to find it.</p>
 <p>Or we could build an index: a dictionary mapping from <code>copy_id</code> to <code>BookCopy</code> instance.</p>
 <p>Let's update LibraryNetwork:</p>
 
@@ -17547,7 +17547,7 @@ Loaded 1000 patrons from ../../snippets/library/patrons.csv
 </div>
 </div>
 </div>
-</div>
+</div></section><section >
 <div id="cell-id=548dfd12" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17569,7 +17569,7 @@ Loaded 1000 patrons from ../../snippets/library/patrons.csv
 </div>
 </div>
 </div>
-</div>
+</div></section><section >
 <div id="cell-id=5bff2d96" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -17582,7 +17582,7 @@ Loaded 1000 patrons from ../../snippets/library/patrons.csv
 </div>
 </div>
 </div>
-</div>
+</div></section><section >
 <div id="cell-id=97b07f2f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
