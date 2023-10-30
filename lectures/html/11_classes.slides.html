@@ -15301,7 +15301,7 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Balance = $31.5, latest transaction: $20.0 at Sun Oct 29 21:19:54 2023
+<pre>Balance = $31.5, latest transaction: $20.0 at Sun Oct 29 23:40:12 2023
 </pre>
 </div>
 </div>
@@ -15388,8 +15388,8 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>b: Balance: 100; b.transactions=[(100, 1698628794.121323)]
-c: Balance: 52.5; c.transactions=[(50, 1698628794.121365)]
+<pre>b: Balance: 100; b.transactions=[(100, 1698637212.5617)]
+c: Balance: 52.5; c.transactions=[(50, 1698637212.561742)]
 </pre>
 </div>
 </div>
@@ -16749,7 +16749,7 @@ Post #0, by @Larry: First!
 <span class="n">twitter</span><span class="o">.</span><span class="n">create_post</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">,</span> <span class="s2">&quot;Oh hi Curly&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">twitter</span><span class="o">.</span><span class="n">get_user_posts</span><span class="p">(</span><span class="s2">&quot;Larry&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">post</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -16769,9 +16769,9 @@ Post #0, by @Larry: First!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;__main__.Post object at 0x7f82062e5990&gt;
-&lt;__main__.Post object at 0x7f82062e6d70&gt;
-&lt;__main__.Post object at 0x7f8206246530&gt;
+<pre>Post #0, by @Larry: First!
+Post #1, by @Larry: Anyone else here?
+Post #3, by @Larry: Oh hi Curly
 </pre>
 </div>
 </div>
@@ -16824,7 +16824,7 @@ Post #0, by @Larry: First!
     <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]:</span>
-            <span class="n">final_feed</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">post</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">final_feed</span> <span class="o">+=</span> <span class="n">post</span><span class="o">.</span><span class="n">format</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">final_feed</span>
 </pre></div>
 
@@ -16870,10 +16870,10 @@ Post #0, by @Larry: First!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;__main__.Post object at 0x7f82062e5990&gt;
-&lt;__main__.Post object at 0x7f82062d3430&gt;
-&lt;__main__.Post object at 0x7f82062e71c0&gt;
-&lt;__main__.Post object at 0x7f8205e30700&gt;
+<pre>Post #0, by @Larry: First!
+Post #1, by @Larry: Anyone else here?
+Post #2, by @Curly: This is lame.
+Post #3, by @Larry: Oh hi Curly
 
 </pre>
 </div>
@@ -16921,7 +16921,7 @@ Post #0, by @Larry: First!
     <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]):</span>
-            <span class="n">final_feed</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">post</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">final_feed</span> <span class="o">+=</span> <span class="n">post</span><span class="o">.</span><span class="n">format</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">final_feed</span>
 </pre></div>
 
@@ -16967,10 +16967,10 @@ Post #0, by @Larry: First!
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;__main__.Post object at 0x7f82062e71c0&gt;
-&lt;__main__.Post object at 0x7f82062e6d70&gt;
-&lt;__main__.Post object at 0x7f820610b5e0&gt;
-&lt;__main__.Post object at 0x7f82062d3430&gt;
+<pre>Post #3, by @Larry: Oh hi Curly
+Post #2, by @Curly: This is lame.
+Post #1, by @Larry: Anyone else here?
+Post #0, by @Larry: First!
 
 </pre>
 </div>
@@ -17019,7 +17019,7 @@ Post #0, by @Larry: First!
     <span class="k">def</span> <span class="nf">get_feed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">final_feed</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">posts</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]:</span>
-            <span class="n">final_feed</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">post</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">final_feed</span> <span class="o">+=</span> <span class="n">post</span><span class="o">.</span><span class="n">format</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
         <span class="k">return</span> <span class="n">final_feed</span>
 </pre></div>
 
