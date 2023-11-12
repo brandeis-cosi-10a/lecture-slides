@@ -15122,6 +15122,26 @@ section.present > section.present {
 </div>
 </div>
 </div>
+<div id="cell-id=69bb0aba" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h1><ul>
+<li>PS4 due tonight, 11:59pm</li>
+<li>PS5 will open Thursday after lecture - 1 (larger) problem using classes and file I/O.<ul>
+<li>Due Tuesday 11/21 11:59 pm</li>
+</ul>
+</li>
+<li>PS6 will be a smaller problem set, after Thanksgiving break, covering recursion, regular expressions, and some review</li>
+<li>Quiz 7 tomorrow on classes</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
 <div id="cell-id=5169b53d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15567,6 +15587,7 @@ vs.<br />
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, files!&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File contents: </span><span class="si">{</span><span class="n">g</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15589,7 +15610,7 @@ vs.<br />
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>File contents: 
+<pre>File contents: Hello, files!
 </pre>
 </div>
 </div>
@@ -15599,7 +15620,7 @@ vs.<br />
 </div>
 
 </div>
-<div id="cell-id=3ce398e8" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=c5255c02" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15610,7 +15631,7 @@ vs.<br />
 </div>
 </div>
 </div>
-</div><div id="cell-id=2710a486" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=81b8ca11" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15618,7 +15639,9 @@ vs.<br />
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">output_filename</span> <span class="o">=</span> <span class="s1">&#39;../../snippets/output.txt&#39;</span>
+<span class="n">output_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[Before writing to file] Is f closed? </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">closed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hello, files!&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[After writing to file] Is f closed? </span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="n">closed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -15646,13 +15669,17 @@ vs.<br />
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[Before writing to file] Is f closed? False
-[After writing to file] Is f closed? False
-[After closing] Is f closed? True
-File contents: Hello, files!
-[After reading file contents] Is g closed? False
-</pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[7], line 2</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> output_filename <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">../../snippets/output.txt</span><span style="color: rgb(175,0,0)">&#39;</span>
+<span class="ansi-green-fg">----&gt; 2</span> output_file <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(0,135,0)">open</span>(<span class="ansi-yellow-bg">filename</span>, <span style="color: rgb(175,0,0)">&#39;</span><span style="color: rgb(175,0,0)">w</span><span style="color: rgb(175,0,0)">&#39;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      4</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">[Before writing to file] Is f closed? </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>f<span style="color: rgb(98,98,98)">.</span>closed<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)">&#34;</span>)
+<span class="ansi-green-intense-fg ansi-bold">      5</span> f<span style="color: rgb(98,98,98)">.</span>write(<span style="color: rgb(175,0,0)">&#34;</span><span style="color: rgb(175,0,0)">Hello, files!</span><span style="color: rgb(175,0,0)">&#34;</span>)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;filename&#39; is not defined</pre>
 </div>
 </div>
 
@@ -15764,7 +15791,7 @@ Snape
 </div>
 </div>
 </div>
-<div id="cell-id=39668452" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=9d881c37" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15775,7 +15802,7 @@ Snape
 </div>
 </div>
 </div>
-</div><div id="cell-id=af4ee5a6" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=4032c36f" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15785,6 +15812,7 @@ Snape
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">macbeth</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/shakespeare/macbeth.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
         <span class="n">macbeth</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 
@@ -15819,7 +15847,8 @@ Snape
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Found 3821 total lines.
+<pre>&lt;class &#39;_io.TextIOWrapper&#39;&gt;
+Found 3821 total lines.
 
 First 10 lines:
 
@@ -15855,7 +15884,7 @@ The fit is momentary; upon a thought
 </div>
 
 </div>
-<div id="cell-id=561924ef" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=564065cb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17345,7 +17374,7 @@ Scene 2
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;&#39;, &#39;Scene 4&#39;, &#39;lord?&#39;, &#39;Scene 7&#39;, &#39;[They exit.]&#39;, &#39;MESSENGER&#39;, &#39;her.&#39;, &#39;[He exits.]&#39;, &#39;DOCTOR&#39;, &#39;[Enter a Messenger.]&#39;, &#39;Scene 6&#39;, &#39;speak.&#39;, &#39;ACT 1&#39;, &#39;ACT 2&#39;, &#39;by William Shakespeare&#39;, &#39;Scene 1&#39;, &#39;Created on Jul 31, 2015, from FDT version 0.9.2&#39;, &#39;======================&#39;, &#39;[Enter Ghost.]&#39;, &#39;Scene 2&#39;, &#39;thee.&#39;, &#39;Folger Shakespeare Library&#39;, &#39;Scene 3&#39;, &#39;ACT 4&#39;, &#39;Scene 5&#39;, &#39;Characters in the Play&#39;, &#39;them.&#39;, &#39;=======&#39;, &#39;CAPTAIN&#39;, &#39;ACT 5&#39;, &#39;with Michael Poston and Rebecca Niles&#39;, &#39;ACT 3&#39;, &#39;=====&#39;, &#39;affair.&#39;, &#39;him&#39;, &#39;Edited by Barbara A. Mowat and Paul Werstine&#39;}
+<pre>{&#39;&#39;, &#39;MESSENGER&#39;, &#39;DOCTOR&#39;, &#39;her.&#39;, &#39;Scene 7&#39;, &#39;Edited by Barbara A. Mowat and Paul Werstine&#39;, &#39;by William Shakespeare&#39;, &#39;=======&#39;, &#39;Scene 5&#39;, &#39;=====&#39;, &#39;Scene 3&#39;, &#39;him&#39;, &#39;affair.&#39;, &#39;ACT 1&#39;, &#39;thee.&#39;, &#39;ACT 2&#39;, &#39;ACT 5&#39;, &#39;ACT 3&#39;, &#39;Scene 1&#39;, &#39;======================&#39;, &#39;[Enter Ghost.]&#39;, &#39;Scene 6&#39;, &#39;Folger Shakespeare Library&#39;, &#39;Scene 2&#39;, &#39;[He exits.]&#39;, &#39;[They exit.]&#39;, &#39;[Enter a Messenger.]&#39;, &#39;them.&#39;, &#39;Created on Jul 31, 2015, from FDT version 0.9.2&#39;, &#39;Characters in the Play&#39;, &#39;with Michael Poston and Rebecca Niles&#39;, &#39;ACT 4&#39;, &#39;CAPTAIN&#39;, &#39;lord?&#39;, &#39;Scene 4&#39;, &#39;speak.&#39;}
 </pre>
 </div>
 </div>
@@ -17591,7 +17620,7 @@ with Michael Poston and Rebecca Niles
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">load_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
     <span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span> 
         <span class="n">play_lines</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">directory</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
@@ -17861,7 +17890,7 @@ unique lines: 2072 (the-comedy-of-errors.txt)
 </div>
 </div>
 </div>
-</div><div id="cell-id=5da28c0b" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div id="cell-id=3fed899e" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -18099,7 +18128,7 @@ Lines after intersection with loves-labors-lost.txt: 5
 Lines after intersection with macbeth.txt: 5
 Lines after intersection with hamlet.txt: 5
 Lines after intersection with the-comedy-of-errors.txt: 5
-{&#39;&#39;, &#39;with Michael Poston and Rebecca Niles&#39;, &#39;Folger Shakespeare Library&#39;, &#39;by William Shakespeare&#39;, &#39;Edited by Barbara A. Mowat and Paul Werstine&#39;}
+{&#39;&#39;, &#39;with Michael Poston and Rebecca Niles&#39;, &#39;Edited by Barbara A. Mowat and Paul Werstine&#39;, &#39;by William Shakespeare&#39;, &#39;Folger Shakespeare Library&#39;}
 </pre>
 </div>
 </div>
@@ -18133,7 +18162,7 @@ Lines after intersection with the-comedy-of-errors.txt: 5
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 </pre></div>
 
      </div>
@@ -18404,10 +18433,14 @@ Lines after intersection with the-comedy-of-errors.txt: 5
     <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
         <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
         
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/csv_example2.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>  
         <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 </pre></div>
 
@@ -18428,7 +18461,12 @@ Lines after intersection with the-comedy-of-errors.txt: 5
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>[&#39;11&#39;, &#39;Harry&#39;, &#39;Gryffindor&#39;, &#39;Brown,mostly&#39;]
+<pre>11,Harry,Gryffindor,&#34;Brown,mostly&#34;
+18,Draco,Slytherin,&#34;Blonde,mostly&#34;
+22,Cho,Ravenclaw,&#34;Black,really&#34;
+28,Ron,Gryffindor,&#34;Red,very&#34;
+47,Hermione,Gryffindor,Brown
+[&#39;11&#39;, &#39;Harry&#39;, &#39;Gryffindor&#39;, &#39;Brown,mostly&#39;]
 [&#39;18&#39;, &#39;Draco&#39;, &#39;Slytherin&#39;, &#39;Blonde,mostly&#39;]
 [&#39;22&#39;, &#39;Cho&#39;, &#39;Ravenclaw&#39;, &#39;Black,really&#39;]
 [&#39;28&#39;, &#39;Ron&#39;, &#39;Gryffindor&#39;, &#39;Red,very&#39;]
@@ -18552,6 +18590,20 @@ Lines after intersection with the-comedy-of-errors.txt: 5
 <h2 id="Why?">Why?<a class="anchor-link" href="#Why?">&#182;</a></h2><p>This looks very similar to the way that Python prints data structures... why is this useful?</p>
 <p>JSON is not Python-specific. If you use a Python program to create a JSON string, it will be readable by many other programming languages.</p>
 <p>It's a <strong>data exchange format</strong>, and it's very commonly used.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=c0dfb906" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">&#182;</a></h1><ul>
+<li>PS5 is open, due Tuesday 11/21 11:59pm</li>
+</ul>
 
 </div>
 </div>
@@ -18730,7 +18782,7 @@ Lines after intersection with the-comedy-of-errors.txt: 5
     <span class="s2">&quot;numbers&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
     <span class="s2">&quot;another number&quot;</span><span class="p">:</span> <span class="mf">2.75</span><span class="p">,</span>
     <span class="s2">&quot;more dictionaries&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}]</span>
-<span class="p">}</span>
+<span class="p">}</span> 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../../snippets/test.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">mydata</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 
@@ -18863,7 +18915,8 @@ Lines after intersection with the-comedy-of-errors.txt: 5
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_movies</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#print(json_movies[-100])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">json_movies</span><span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">],</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -18932,7 +18985,7 @@ Lines after intersection with the-comedy-of-errors.txt: 5
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2013</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">year</span> <span class="o">=</span> <span class="mi">2021</span>
 <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">year</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
@@ -18955,291 +19008,366 @@ Lines after intersection with the-comedy-of-errors.txt: 5
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Crawlspace
-A Dark Truth
-Table No. 21
-Texas Chainsaw 3D
-The Grandmaster
-The Baytown Outlaws
-Freeloaders
-Gangster Squad
-A Haunted House
-Horrid Henry: The Movie
-Matru Ki Bijlee Ka Mandola
-Struck by Lightning
-Broken City
-The Last Stand
-Luv
-Mama
-Officer Down
-Hansel &amp; Gretel: Witch Hunters
-Happy People: A Year in the Taiga
-John Dies at the End
-Knife Fight
-Movie 43
-Parker
-Supporting Characters
-The Taste of Money
-Television
-Yossi
-As Luck Would Have It
-Bullet to the Head
-The Haunting in Connecticut 2: Ghosts of Georgia
-Sound City
-Stand Up Guys
-Warm Bodies
-A Glimpse Inside the Mind of Charles Swan III
-I Give It a Year
-Identity Thief
-Side Effects
-Special 26
-Top Gun 3D
-Journey to the West: Conquering the Demons
-Beautiful Creatures
-A Good Day to Die Hard
-Safe Haven
-Escape from Planet Earth
-Bless Me, Ultima
-Dark Skies
-Kai Po Che!
-Snitch
-To the Wonder
-21 &amp; Over
-The Attacks of 26/11
-I, Me Aur Main
-Jack the Giant Slayer
-The Last Exorcism Part II
-Phantom
-Stoker
-Dead Man Down
-Emperor
-I&#39;m So Excited
-Oz the Great and Powerful
-The Knight
-Goddess
-The Call
-The Incredible Burt Wonderstone
-Spring Breakers
-Welcome to the Punch
-Admission
-The Croods
-Inappropriate Comedy
-Love and Honor
-Olympus Has Fallen
-Phil Spector
-Trance
-G.I. Joe: Retaliation
-Himmatwala
-The Host
-The Place Beyond the Pines
-Temptation: Confessions of a Marriage Counselor
-Wrong
-Dragon Ball Z: Battle of Gods
-Baadshah
-The Brass Teapot
-Evil Dead
-Jurassic Park 3D
-Settai
-Upstream Color
-Fists of Legend
-42
-Disconnect
-It&#39;s a Disaster
-Scary Movie 5
-Java Heat
-Home Run
-The Lords of Salem
-Oblivion
-At Any Price
-Arthur Newman
-The Big Wedding
-The Look of Love
-Mud
-Pain &amp; Gain
-So Young
-Iron Man 3
-Bombay Talkies
-Greetings from Tim Buckley
-The Iceman
-Kiss of the Damned
-Shootout at Wadala
-What Maisie Knew
-Aftershock
-Go Goa Gone
-The Great Gatsby
-He&#39;s Way More Famous Than You
-No One Lives
-Peeples
-Star Trek Into Darkness
-Aurangzeb
-Black Rock
-The English Teacher
-Frances Ha
-The Reluctant Fundamentalist
-The Hangover Part III
-Before Midnight
-Epic
-Fast &amp; Furious 6
-Behind the Candelabra
-Only God Forgives
-After Earth
-Byzantium
-The East
-The Kings of Summer
-Now You See Me
-Yeh Jawaani Hai Deewani
-Hello Herman
-The Internship
-Much Ado About Nothing
-The Purge
-Tiger Eyes
-Violet &amp; Daisy
-This Is the End
-The Bling Ring
-Fukrey
-Hatchet III
-Man of Steel
-My Little Pony: Equestria Girls
-Monsters University
-This Is Martin Bonner
-World War Z
-How to Make Money Selling Drugs
-100 Bloody Acres
-Copperhead
-The Heat
-Redemption
-Some Girl(s)
-White House Down
-Despicable Me 2
-Kevin Hart: Let Me Explain
-The Lone Ranger
-Bad Words
-Hammer of the Gods
-Lootera
-Stuck in Love
-The Way Way Back
-Bhaag Milkha Bhaag
-Dealin&#39; with Idiots
-Fruitvale Station
-Grown Ups 2
-Killing Season
-Pacific Rim
-V/H/S/2
-Pokémon the Movie: Genesect and the Legend Awakened
-Turbo
-The Conjuring
-D-Day
-Girl Most Likely
-R.I.P.D.
-RED 2
-The World&#39;s End
-Blue Jasmine
-Romeo and Juliet
-The To Do List
-The Wolverine
-The Smurfs 2
-2 Guns
-The Canyons
-Europa Report
-The Spectacular Now
-Percy Jackson: Sea of Monsters
-We&#39;re the Millers
-Attarintiki Daredi
-Chennai Express
-Elysium
-Planes
-Thalaivaa
-Clear History
-Ain&#39;t Them Bodies Saints
-The Butler
-Jobs
-Kick-Ass 2
-Paranoia
-The Mortal Instruments: City of Bones
-Drinking Buddies
-Scenic Route
-Short Term 12
-You&#39;re Next
-Closed Circuit
-Getaway
-The Lifeguard
-The Zero Theorem
-Hell Baby
-Riddick
-Shuddh Desi Romance
-Touchy Feely
-August: Osage County
-The Family
-Insidious: Chapter 2
-Dick Figures: The Movie
-Battle of the Year
-Enough Said
-Prisoners
-Sunshine on Leith
-The Wizard of Oz 3D
-Baggage Claim
-Cloudy with a Chance of Meatballs 2
-Don Jon
-Metallica Through the Never
-Ramayya Vasthavayya
-Rush
-1
-Grace Unplugged
-Gravity
-Runner Runner
-Captain Phillips
-The Devil&#39;s Rapture
-Machete Kills
-12 Years a Slave
-Escape Plan
-Carrie
-The Fifth Estate
-I&#39;m in Love with a Church Girl
-Bastards
-Blue Is the Warmest Colour
-The Counselor
-Jackass Presents: Bad Grandpa
-Spinning Plates
-About Time
-Dallas Buyers Club
-Ender&#39;s Game
-Free Birds
-Last Vegas
-The Book Thief
-Thor: The Dark World
-The Best Man Holiday
-The Christmas Candle
-Contracted
-Delivery Man
-The Hunger Games: Catching Fire
-Nebraska
-Philomena
-Black Nativity
-Frozen
-Grace of Monaco
-Homefront
-Oldboy
-Mandela: Long Walk to Freedom
-Commitment
-Crave
-Inside Llewyn Davis
-The Last Days on Mars
-Out of the Furnace
-Swerve
-American Hustle
-The Hobbit: The Desolation of Smaug
-A Madea Christmas
-Saving Mr. Banks
-Anchorman 2: The Legend Continues
-Her
-The Harry Hill Movie
-Walking with Dinosaurs
-47 Ronin
-Grudge Match
-Lone Survivor
-The Secret Life of Walter Mitty
-The Wolf of Wall Street
-Labor Day
+<pre>Shadow in the Cloud
+The White Tiger
+Locked Down
+The Dig
+Outside the Wire
+The Marksman
+The Ultimate Playlist of Noise
+American Skin
+Don&#39;t Tell a Soul
+Our Friend
+No Man&#39;s Land
+Born a Champion
+Wrong Turn
+Penguin Bloom
+The Little Things
+Finding ʻOhana
+Nomadland
+Malcolm &amp; Marie
+Palmer
+Falling
+Bliss
+Little Fish
+Son of the South
+PVT Chat
+Music
+Judas and the Black Messiah
+The Mauritanian
+Breaking News in Yuba County
+Barb and Star Go to Vista Del Mar
+Minari
+To All the Boys: Always and Forever
+The World to Come
+French Exit
+Land
+Willy&#39;s Wonderland
+The Map of Tiny Perfect Things
+Fear of Rain
+I Care a Lot
+Flora &amp; Ulysses
+Silk Road
+Tom &amp; Jerry
+The United States vs. Billie Holiday
+Cherry
+Crisis
+Billie Eilish: The World&#39;s a Little Blurry
+The Vigil
+Moxie
+Coming 2 America
+The SpongeBob Movie: Sponge on the Run
+Raya and the Last Dragon
+Chaos Walking
+Boss Level
+Boogie
+Yes Day
+Long Weekend
+Cosmic Sin
+Trust
+Zack Snyder&#39;s Justice League
+The Courier
+City of Lies
+Happily
+Nobody
+Bad Trip
+The Seventh Day
+Senior Moment
+Godzilla vs. Kong
+Concrete Cowboy
+The Unholy
+Every Breath You Take
+Shiva Baby
+The Girl Who Believes in Miracles
+The Believer
+Dawn of the Beast
+Voyagers
+Thunder Force
+Arlo the Alligator Boy
+Monday
+In the Earth
+Stowaway
+Mortal Kombat
+The Mitchells vs. the Machines
+Vanquish
+Together Together
+We Broke Up
+The Deep Ones
+Things Heard &amp; Seen
+Without Remorse
+The Virtuoso
+Four Good Days
+Separation
+The Resort
+Wrath of Man
+Monster
+The Paper Tigers
+Mainstream
+The Water Man
+Here Today
+Above Suspicion
+Reboot Camp
+Benny Loves You
+Oxygen
+Army of the Dead
+Those Who Wish Me Dead
+The Woman in the Window
+Spiral
+Georgetown
+Finding You
+The Killing of Two Lovers
+616 Wilford Lane
+Dream Horse
+Blast Beat
+A Quiet Place Part II
+Cruella
+Plan B
+Changing the Game
+Spirit Untamed
+The Conjuring: The Devil Made Me Do It
+Gully
+Flashback
+Under the Stadium Lights
+Grace and Grit
+Awake
+Infinite
+Peter Rabbit 2: The Runaway
+In the Heights
+Wish Dragon
+The Misfits
+12 Mighty Orphans
+The House Next Door: Meet the Blacks 2
+Queen Bees
+DOMINO: Battle of the Bones
+Hitman&#39;s Wife&#39;s Bodyguard
+Luca
+Fatherhood
+The Birthday Cake
+Rita Moreno: Just a Girl Who Decided to Go for It
+The Sparks Brothers
+Truman &amp; Tennessee: An Intimate Conversation
+Stalker
+Love Spreads
+A Crime on the Bayou
+Good on Paper
+F9
+The Ice Road
+Werewolves Within
+False Positive
+Lansky
+I Carry You with Me
+Mary J. Blige&#39;s My Life
+Fathom
+Rollers
+America: The Motion Picture
+Zola
+No Sudden Move
+The Tomorrow War
+The Boss Baby: Family Business
+The Forever Purge
+Fear Street Part One: 1994
+Summer of Soul
+Till Death
+Let Us In
+Black Widow
+Fear Street Part Two: 1978
+Summertime
+Gunpowder Milkshake
+Space Jam: A New Legacy
+Escape Room: Tournament of Champions
+Fear Street Part Three: 1666
+Die in a Gunfight
+Pig
+Out of Death
+Roadrunner: A Film About Anthony Bourdain
+How It Ends
+Trollhunters: Rise of the Titans
+Snake Eyes
+Old
+Joe Bell
+Jolt
+Midnight in the Switchgrass
+Broken Diamonds
+Val
+Ailey
+Jungle Cruise
+Vivo
+Stillwater
+The Green Knight
+Nine Days
+Ride the Eagle
+The Evening Hour
+Lorelei
+Enemies of the State
+The Suicide Squad
+Naked Singularity
+John and the Hole
+Playing God
+Swan Song
+She Ball
+The Kissing Booth 3
+Homeroom
+Free Guy
+Respect
+Beckett
+Don&#39;t Breathe 2
+CODA
+Not Going Quietly
+PAW Patrol: The Movie
+Reminiscence
+The Protégé
+Sweet Girl
+The Loud House Movie
+The Night House
+Flag Day
+Cryptozoo
+Habit
+Demonic
+Risen
+The Witcher: Nightmare of the Wolf
+Really Love
+Candyman
+Vacation Friends
+He&#39;s All That
+No Man of God
+Rushed
+Afterlife of the Party
+Shang-Chi and the Legend of the Ten Rings
+Cinderella
+Worth
+The Gateway
+Wild Indian
+We Need to Do Something
+Kate
+Everybody&#39;s Talking About Jamie
+Malignant
+Queenpins
+The Card Counter
+Come from Away
+The Voyeurs
+Small Engine Repair
+Language Lessons
+Show Me the Father
+Catch the Bullet
+Dating and New York
+Bad Candy
+Generation Wrecks
+My Son
+Nightbooks
+The Starling
+The Eyes of Tammy Faye
+Cry Macho
+Copshop
+Blue Bayou
+Prisoners of the Ghostland
+Best Sellers
+Lady of the Manor
+The Nowhere Inn
+My Name is Pauli Murray
+The Killing of Kenneth Chamberlain
+Intrusion
+My Little Pony: A New Generation
+Dear Evan Hansen
+The Guilty
+Birds of Paradise
+After We Fell
+Venom: Let There Be Carnage
+The Many Saints of Newark
+The Addams Family 2
+Bingo Hell
+Black as Night
+Old Henry
+The Jesus Music
+Mayday
+God&#39;s Not Dead: We the People
+There&#39;s Someone Inside Your House
+No Time to Die
+Mass
+South of Heaven
+The Manor
+Madres
+Justin Bieber: Our World
+Survive the Game
+Halloween Kills
+The Last Duel
+Needle in a Timestack
+Hard Luck Love Song
+Introducing, Selma Blair
+The Velvet Underground
+Night Teeth
+Dune
+Ron&#39;s Gone Wrong
+The French Dispatch
+The Harder They Fall
+The Electrical Life of Louis Wain
+Warning
+Passing
+Hypnotic
+Antlers
+Army of Thieves
+A Mouthful of Air
+The Souvenir Part II
+Paranormal Activity: Next of Kin
+The Spine of Night
+Violet
+Heart of Champions
+Eternals
+Red Notice
+Finch
+Spencer
+Dangerous
+Love Hard
+The Beta Test
+Clifford the Big Red Dog
+Tick, Tick... Boom!
+Home Sweet Home Alone
+Apex
+The Power of the Dog
+Bruised
+The Princess Switch 3: Romancing the Star
+Ghostbusters: Afterlife
+King Richard
+Extinct
+C&#39;mon C&#39;mon
+Black Friday
+Zeros and Ones
+Friend of the World
+Encanto
+House of Gucci
+The Unforgivable
+Resident Evil: Welcome to Raccoon City
+8-Bit Christmas
+The Humans
+South Park: Post Covid
+Licorice Pizza
+Single All the Way
+Back to the Outback
+Diary of a Wimpy Kid
+Encounter
+Mixtape
+Deadlock
+West Side Story
+Don&#39;t Look Up
+National Champions
+Being the Ricardos
+Red Rocket
+The Hating Game
+Rumble
+South Park: Post Covid: The Return of Covid
+Spider-Man: No Way Home
+Nightmare Alley
+The Lost Daughter
+Swan Song
+The Tender Bar
+Mother/Android
+Fortress
+Sing 2
+The Matrix Resurrections
+The King&#39;s Man
+The Tragedy of Macbeth
+A Journal for Jordan
+American Underdog
+Memoria
 </pre>
 </div>
 </div>
@@ -19389,7 +19517,7 @@ Freedom&#39;s Path (2023)
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;__main__.Movie object at 0x7fe575345cf0&gt;
+<pre>&lt;__main__.Movie object at 0x7fe00ecc3c70&gt;
 </pre>
 </div>
 </div>
@@ -19430,7 +19558,8 @@ Freedom&#39;s Path (2023)
 
 <span class="n">movies</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="n">json_movies</span><span class="p">:</span>
-    <span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Movie</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">]))</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">Movie</span><span class="p">(</span><span class="n">movie</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;cast&#39;</span><span class="p">],</span> <span class="n">movie</span><span class="p">[</span><span class="s1">&#39;genres&#39;</span><span class="p">])</span>
+    <span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -19893,7 +20022,7 @@ Dune: Part Two (2023)
         <span class="bp">self</span><span class="o">.</span><span class="n">movies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
     
     <span class="k">def</span> <span class="nf">cast_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person</span><span class="p">)]</span>    
+        <span class="k">return</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person</span><span class="p">)]</span>
 </pre></div>
 
      </div>
@@ -19940,7 +20069,7 @@ Dune: Part Two (2023)
         <span class="bp">self</span><span class="o">.</span><span class="n">cast</span> <span class="o">=</span> <span class="n">cast</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">genres</span> <span class="o">=</span> <span class="n">genres</span>
 
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">format</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">)&quot;</span>
     
     <span class="k">def</span> <span class="nf">cast_contained</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -19963,6 +20092,12 @@ Dune: Part Two (2023)
     <span class="k">def</span> <span class="nf">year_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span> <span class="k">if</span> <span class="n">m</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="n">year</span><span class="p">]</span>
     
+    <span class="k">def</span> <span class="nf">find_duo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">person1</span><span class="p">,</span> <span class="n">person2</span><span class="p">):</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">movie</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">movies</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">movie</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">movie</span><span class="o">.</span><span class="n">cast_contained</span><span class="p">(</span><span class="n">person2</span><span class="p">):</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">movie</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span>
     
 <span class="k">def</span> <span class="nf">load_movie_catalog</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -19979,6 +20114,62 @@ Dune: Part Two (2023)
 </div>
 </div>
 
+</div><div id="cell-id=09395ef3" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">load_movie_catalog</span><span class="p">(</span><span class="s1">&#39;../../snippets/movie_data.json&#39;</span><span class="p">)</span>
+<span class="n">dunes</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">title_search</span><span class="p">(</span><span class="s2">&quot;Dune&quot;</span><span class="p">)</span>
+<span class="c1">#for d in dunes:</span>
+<span class="c1">#    print(d.cast)</span>
+    
+<span class="n">results</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">find_duo</span><span class="p">(</span><span class="s2">&quot;Christopher Walken&quot;</span><span class="p">,</span> <span class="s2">&quot;Timothée Chalamet&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Dune: Part Two (2023)
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=beda89ef" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise:-Airport-Data">Exercise: Airport Data<a class="anchor-link" href="#Exercise:-Airport-Data">&#182;</a></h2><p><a href="https://replit.com/team/cosi-10a-fall23/JSON-practice">repl.it</a></p>
+
+</div>
+</div>
+</div>
 </div>
 </body>
 
