@@ -16,7 +16,9 @@ let lectures = [
     "12_file_io",
     "13_class_design",
     "14_sorting",
-    "15_requests"
+    "15_regexes",
+    "16_recursion",
+    "17_requests"
 ];
 
 (function() {
