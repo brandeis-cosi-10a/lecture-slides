@@ -15178,7 +15178,7 @@ section.present > section.present {
     overflow-y: scroll;
 }
 </style>
-<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/14_functions_as_objects.ipynb">Link to interactive slides on Google Colab</a></small></p>
+<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/main/lectures/notebooks/14_sorting.ipynb">Link to interactive slides on Google Colab</a></small></p>
 
 </div>
 </div>
@@ -15244,7 +15244,7 @@ section.present > section.present {
 <p>You may think you surveyed multiple numbers at once, but you probably did them one at a time, quickly.</p>
 <p>Computers generally can't compare multiple things at once.</p>
 <p>Complex comparisons are made up of many smaller, individual comparisons.</p>
-<p>Sorting algorithms range from simple to complex, but at the end of the day they are all made up of a series of comparisons of 2 numbers.</p>
+<p>Sorting algorithms range from simple to complex, but if you dig down far enough, they are all made up of a series of comparisons of 2 numbers.</p>
 <p>More complex sorting algorithms attempt to minimize the number of comparisons needed to sort a whole list.</p>
 
 </div>
@@ -15276,7 +15276,7 @@ section.present > section.present {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Bubble-sort">Bubble sort<a class="anchor-link" href="#Bubble-sort">&#182;</a></h2><ol>
 <li>Compare the first 2 elements in the list.<ul>
-<li>If the right is larger than the left, swap them.</li>
+<li>If the first is larger than the second, swap them.</li>
 </ul>
 </li>
 <li>Repeat for each pair of elements in the list - (2 and 3), (3 and 4), (4 and 5), and so on.</li>
@@ -15317,8 +15317,8 @@ section.present > section.present {
 <li><p>Insert each element from the original list into the new list, using the following steps:<br />
 2a. Compare the new element to the first element in the new list.</p>
 <ul>
-<li>If the new element is smaller, insert it into the right of the first element.</li>
-<li>Otherwise, repeat step 2a with the next element in the new list.</li>
+<li>If the new element is smaller, insert the smaller element just before the larger element.</li>
+<li>Otherwise, repeat step 2a with the next element from the new list.</li>
 </ul>
 <p>2b. If the new element is larger than all elements in the new list, insert it at the end.</p>
 </li>
@@ -15439,9 +15439,9 @@ section.present > section.present {
 <span class="c1"># correct</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-        <span class="nb">next</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">next</span>
+        <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
         
 <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
@@ -15498,9 +15498,9 @@ section.present > section.present {
     <span class="n">swapped</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
-            <span class="nb">next</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
             <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">next</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
             <span class="n">swapped</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">swapped</span><span class="p">:</span>
         <span class="k">break</span>
@@ -15625,7 +15625,7 @@ section.present > section.present {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Back-to-using-sorts...">Back to using sorts...<a class="anchor-link" href="#Back-to-using-sorts...">&#182;</a></h2><h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Sort the words in a string alphabetically</p>
+<h2 id="Let's-look-at-some-more-powerful-ways-to-sort-sequences-in-Python">Let's look at some more powerful ways to sort sequences in Python<a class="anchor-link" href="#Let's-look-at-some-more-powerful-ways-to-sort-sequences-in-Python">&#182;</a></h2><h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Sort the words in a string alphabetically</p>
 
 </div>
 </div>
@@ -16337,6 +16337,248 @@ War and Peace (561304 words), by Leo Tolstoy
 
 </div>
 
+</div></section></section><section ><section >
+<div id="cell-id=f165720e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Max/min">Max/min<a class="anchor-link" href="#Max/min">&#182;</a></h1><p>The built-in methods <code>max</code> and <code>min</code> also take <code>key</code> parameters.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=852cac85" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_wc</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">book</span><span class="o">.</span><span class="n">word_count</span>
+
+<span class="n">highest</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">get_wc</span><span class="p">)</span>
+<span class="n">lowest</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">books</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">get_wc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Book with highest wordcount: </span><span class="si">{</span><span class="n">highest</span><span class="o">.</span><span class="n">format</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Book with lowest wordcount: </span><span class="si">{</span><span class="n">lowest</span><span class="o">.</span><span class="n">format</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Book with highest wordcount: War and Peace (561304 words), by Leo Tolstoy
+Book with lowest wordcount: The Old Man and the Sea (26601 words), by Ernest Hemingway
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section></section><section ><section >
+<div id="cell-id=3d5a5d56" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Lambdas">Lambdas<a class="anchor-link" href="#Lambdas">&#182;</a></h1><p>Some of you have seen sorting examples written with the <code>lambda</code> keyword, like this:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=c60d9c99" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">book</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">word_count</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>War and Peace (561304 words), by Leo Tolstoy
+The Golden Compass (112815 words), by Philip Pullman
+The Hobbit (95356 words), by J. R. R. Tolkein
+Harry Potter 1 (77325 words), by J. K. Rowling
+The Old Man and the Sea (26601 words), by Ernest Hemingway
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=1854cd19" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">books</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">book</span><span class="p">:</span> <span class="n">book</span><span class="o">.</span><span class="n">word_count</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>War and Peace (561304 words), by Leo Tolstoy
+The Golden Compass (112815 words), by Philip Pullman
+The Hobbit (95356 words), by J. R. R. Tolkein
+Harry Potter 1 (77325 words), by J. K. Rowling
+The Old Man and the Sea (26601 words), by Ernest Hemingway
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=bf8cf114" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Is equivalent to:</p>
+
+</div>
+</div>
+</div>
+</div></section><section ><div id="cell-id=52b4b4a9" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_wc</span><span class="p">(</span><span class="n">book</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">book</span><span class="o">.</span><span class="n">word_count</span>
+
+<span class="n">books</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">get_wc</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">books</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>War and Peace (561304 words), by Leo Tolstoy
+The Golden Compass (112815 words), by Philip Pullman
+The Hobbit (95356 words), by J. R. R. Tolkein
+Harry Potter 1 (77325 words), by J. K. Rowling
+The Old Man and the Sea (26601 words), by Ernest Hemingway
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></section><section >
+<div id="cell-id=c8a50ee7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This example uses a <strong>lambda</strong> to create a function inline, rather than needing to define it separately.</p>
+<p>A <strong>lambda</strong> is an <strong>anonymous, inline function</strong> that can contain a single expression. The return value is whatever the expression evaluates to.</p>
+<p>The syntax is:</p>
+<pre><code>lambda &lt;arguments&gt;: &lt;expression&gt;
+</code></pre>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div id="cell-id=e3053f5a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Lambdas are similar to list comprehensions: they are a relatively advanced programming feature, and allow you to express complex ideas more concisely.</p>
+<p>You never have to use a lambda. You can always define a normal function.</p>
+<p>We're only covering them because they are very commonly (and conveniently) used to specify sort keys.</p>
+
+</div>
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
