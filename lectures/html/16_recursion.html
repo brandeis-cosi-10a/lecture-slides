@@ -15122,6 +15122,1252 @@ section.present > section.present {
 </div>
 </div>
 </div>
+<div id="cell-id=db07bff7" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Fibonacci-sequence">Fibonacci sequence<a class="anchor-link" href="#Fibonacci-sequence">&#182;</a></h2><p>The &quot;Fibonacci sequence&quot; is a famous sequence of numbers.</p>
+<p>The sequence starts with:</p>
+<p>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...</p>
+<p>The first two numbers are 0 and 1. After that, each number is the sum of the 2 numbers before it.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=a8119a92" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can write code to generate the <code>n</code>th Fibonacci number:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=14e32cdb" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">first</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">second</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">nextnum</span> <span class="o">=</span> <span class="n">first</span> <span class="o">+</span> <span class="n">second</span>
+            <span class="n">first</span> <span class="o">=</span> <span class="n">second</span>
+            <span class="n">second</span> <span class="o">=</span> <span class="n">nextnum</span>
+        <span class="k">return</span> <span class="n">second</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=b8c2d549" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=23a59fb0" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">35</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>9227465
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=af73db0a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Great! But here's another option:</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=a227a6c1" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=e3bb8b21" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=959bfd14" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">35</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>9227465
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=39d97e14" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Recursion">Recursion<a class="anchor-link" href="#Recursion">&#182;</a></h2><p>When a function calls itself, it is called <strong>recursion</strong>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=685e065e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Recursion">Recursion<a class="anchor-link" href="#Recursion">&#182;</a></h2><p>Recursion is often not an efficient solution, as we saw above.</p>
+<p>It is virtually never used in production code. There is always a way to re-write a recursive solution using loops.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=9a232b62" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So why learn it?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=11be954f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Recursion---why-learn-it?">Recursion - why learn it?<a class="anchor-link" href="#Recursion---why-learn-it?">&#182;</a></h2><p>2 reasons:</p>
+<ol>
+<li>Some algorithms are <strong>much simpler</strong> to express recursively.</li>
+<li>It is often easier to prove things (such as correctness or efficiency) about the recursive version of an algorithm.</li>
+</ol>
+<p>If you continue into Computer Science, recursion is a critical concept.</p>
+<p>If you don't, it is still a useful, interesting way to try to break some problems down.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=6ed74834" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="The-recursion-formula">The recursion formula<a class="anchor-link" href="#The-recursion-formula">&#182;</a></h2><p>In recursion, we talk about 2 things: <strong>base cases</strong> and <strong>recursive steps</strong>.</p>
+<p><strong>Base case(s)</strong> are the cases we immediately know the answer to.</p>
+<ul>
+<li>Base cases don't call the same function again.</li>
+<li>If you don't define at least one base case, your recursive function will go on forever.</li>
+<li>For the Fibonacci numbers, the base cases are the first 2 numbers: 0 and 1</li>
+</ul>
+<p><strong>Recursive step(s)</strong> are the steps where we apply the same function to a smaller or simpler version of the input.</p>
+<ul>
+<li>Recursive steps must be guaranteed to somehow get &quot;closer&quot; to the base case, otherwise your recursive function will go on forever.</li>
+<li>For the Fibonacci numbers, we calculate the <code>n</code>th number by computing the <code>n-1</code>th and <code>n-2</code>th number with the same function.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=6f2e53a0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>    <span class="c1"># base case 1</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># base case 2</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>         <span class="c1"># recursive case</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=352a6f1b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Write a recursive function to sum the digits of a number.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=aa90db6e" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>What is our base case?</p>
+<p>What is our recursive step?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=59c0fd3f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Base case: a single digit number sums to itself</p>
+<p>Recursive step: compute the sum of the first <code>n-1</code> digits, and add the <code>n</code>th digit to that sum</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=f529ff46" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_digits</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>     <span class="c1"># base case</span>
+        <span class="k">return</span> <span class="n">num</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">sum_digits</span><span class="p">(</span><span class="n">num</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=1b9e67b1" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">sum_digits</span><span class="p">(</span><span class="mi">1234</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_digits</span><span class="p">(</span><span class="mi">999999999</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>10
+81
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=1b4a9416" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Write a recursive function to calculate the power of a number, given the base and exponent.</p>
+<p>What is the base case? What is the recursive step?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=f6bf3496" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Base case: exponent is 0</p>
+<p>Recursive case: compute the power of <code>base</code> and <code>exponent-1</code>, and multiply that by <code>base</code>.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=d041075d" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">raise_to_power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">exponent</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">raise_to_power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">base</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=ec460894" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">raise_to_power</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raise_to_power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raise_to_power</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>16
+1000
+437.8938903808594
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=b7ffb224" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Write a function to solve a <a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi">Tower of Hanoi</a> puzzle.</p>
+<p>This one is trickier.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=aed46776" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Let's define some notation and assumptions.</p>
+<ul>
+<li>We have 3 pegs to work with, and we'll label them <code>a</code>, <code>b</code>, and <code>c</code>.</li>
+<li>Discs are labeled <code>1</code> through <code>n</code>, with disc <code>1</code> being the smallest and <code>n</code> being the largest.</li>
+<li>The game starts with <code>n</code> discs on peg <code>a</code>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=ea98cd41" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Key-insight">Key insight<a class="anchor-link" href="#Key-insight">&#182;</a></h2><p>If we have a valid stack of discs, and need to move the top <code>m</code> of them from peg <code>a</code> to <code>c</code>, we first have to move <code>m-1</code> discs to peg <code>b</code> to free up disc <code>m</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=2cf6fe34" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The point of the game is: &quot;Move <code>n</code> discs from <code>a</code> to <code>c</code>&quot;</p>
+<p>Using our key insight, we can break that down into a few smaller steps:</p>
+<ol>
+<li>Move <code>n</code> discs from <code>a</code> to <code>c</code> by doing:<ol>
+<li>Move <code>n-1</code> discs from <code>a</code> to <code>b</code>.</li>
+<li>Move disc <code>n</code> to <code>c</code>.</li>
+<li>Move <code>n-1</code> discs from <code>b</code> to <code>c</code>.</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=530e2443" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can then expand further: &quot;Move the top <code>n-1</code> discs from <code>a</code> to <code>b</code>&quot; becomes:</p>
+<ol>
+<li>Move <code>n-2</code> discs from <code>a</code> to <code>c</code>.</li>
+<li>Move disc <code>n-1</code> to <code>b</code>.</li>
+<li>Move <code>n-2</code> discs from <code>c</code> to <code>b</code>.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=69f89576" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So now our entire game looks like this:</p>
+<ol>
+<li>Move <code>n</code> discs from <code>a</code> to <code>c</code> by doing:<ol>
+<li>Move <code>n-1</code> discs from <code>a</code> to <code>b</code>.<ol>
+<li>Move <code>n-2</code> discs from <code>a</code> to <code>c</code>.</li>
+<li>Move disc <code>n-1</code> to <code>b</code>.</li>
+<li>Move the <code>n-2</code> discs from <code>c</code> to <code>b</code>.</li>
+</ol>
+</li>
+<li>Move disc <code>n</code> to <code>c</code>.</li>
+<li>Move <code>n-1</code> discs from <code>b</code> to <code>c</code>.</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=015f16cb" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can similarly expand the last step:</p>
+<ol>
+<li>Move <code>n</code> discs from <code>a</code> to <code>c</code> by doing:<ol>
+<li>Move <code>n-1</code> discs from <code>a</code> to <code>b</code> by doing:<ol>
+<li>Move <code>n-2</code> discs from <code>a</code> to <code>c</code>.</li>
+<li>Move disc <code>n-1</code> to <code>b</code>.</li>
+<li>Move <code>n-2</code> discs from <code>c</code> to <code>b</code>.</li>
+</ol>
+</li>
+<li>Move disc <code>n</code> to peg <code>c</code>.</li>
+<li>Move <code>n-1</code> discs from <code>b</code> to <code>c</code> by doing:<ol>
+<li>Move <code>n-2</code> discs from <code>b</code> to <code>a</code>.</li>
+<li>Move disc <code>n-1</code> to <code>c</code>.</li>
+<li>Move <code>n-2</code> discs from <code>a</code> to <code>c</code>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=1d89d9ff" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>One more level...</p>
+<ol>
+<li>Move <code>n</code> discs from <code>a</code> to <code>c</code> by doing:<ol>
+<li>Move <code>n-1</code> discs from <code>a</code> to <code>b</code> by doing:<ol>
+<li>Move <code>n-2</code> discs from <code>a</code> to <code>c</code> by doing:<ol>
+<li>Move <code>n-3</code> discs from <code>a</code> to <code>b</code>.</li>
+<li>Move disc <code>n-2</code> to <code>c</code></li>
+<li>Move <code>n-3</code> discs from <code>b</code> to <code>c</code>.</li>
+</ol>
+</li>
+<li>Move disc <code>n-1</code> to <code>b</code>.</li>
+<li>Move <code>n-2</code> discs from <code>c</code> to <code>b</code>.</li>
+</ol>
+</li>
+<li>Move disc <code>n</code> to peg <code>c</code>.</li>
+<li>Move <code>n-1</code> discs from <code>b</code> to <code>c</code> by doing:<ol>
+<li>Move <code>n-2</code> discs from <code>b</code> to <code>a</code>.</li>
+<li>Move disc <code>n-1</code> to <code>c</code>.</li>
+<li>Move <code>n-2</code> discs from <code>a</code> to <code>c</code>.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=ef50d5f2" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can see the recursive nature of this solution!</p>
+
+</div>
+</div>
+</div>
+</div>
+<div id="cell-id=f82f5300" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>First, our base case. Moving a single disc.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=e7715765" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">discs</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">discs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Move disc 1 from &#39;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&#39; to &#39;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I dunno&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div id="cell-id=a72c684c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It may not be obvious yet, but it's safe to assume that it's valid to move a single disc from <code>source</code> to <code>target</code>.</p>
+<p>Our final algorithm will never attempt an invalid move.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=70194260" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hanoi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Move disc 1 from &#39;a&#39; to &#39;c&#39;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=76b1004f" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now the recursive case. Remember our steps:</p>
+<ol>
+<li>move <code>n-1</code> to <code>other</code></li>
+<li>move <code>n</code> to <code>target</code></li>
+<li>move <code>n-1</code> to <code>target</code></li>
+</ol>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=509cecc0" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">discs</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">discs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Move disc 1 from &#39;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&#39; to &#39;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">discs</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Move disc </span><span class="si">{</span><span class="n">discs</span><span class="si">}</span><span class="s2"> from &#39;</span><span class="si">{</span><span class="n">source</span><span class="si">}</span><span class="s2">&#39; to &#39;</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">discs</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=33ad8096" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hanoi</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Move disc 1 from &#39;a&#39; to &#39;b&#39;
+Move disc 2 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;c&#39;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=96f48a38" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hanoi</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 3 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=ea8c8d64" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hanoi</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 3 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 4 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 3 from &#39;c&#39; to &#39;b&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 5 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 3 from &#39;b&#39; to &#39;a&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 4 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 3 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 6 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 3 from &#39;c&#39; to &#39;b&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 4 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 3 from &#39;b&#39; to &#39;a&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 5 from &#39;c&#39; to &#39;b&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 3 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 4 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 3 from &#39;c&#39; to &#39;b&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 7 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 3 from &#39;b&#39; to &#39;a&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 4 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 3 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 5 from &#39;b&#39; to &#39;a&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 3 from &#39;c&#39; to &#39;b&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 4 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 3 from &#39;b&#39; to &#39;a&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 6 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 3 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 4 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 3 from &#39;c&#39; to &#39;b&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 5 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 3 from &#39;b&#39; to &#39;a&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 2 from &#39;c&#39; to &#39;a&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 4 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+Move disc 2 from &#39;a&#39; to &#39;b&#39;
+Move disc 1 from &#39;c&#39; to &#39;b&#39;
+Move disc 3 from &#39;a&#39; to &#39;c&#39;
+Move disc 1 from &#39;b&#39; to &#39;a&#39;
+Move disc 2 from &#39;b&#39; to &#39;c&#39;
+Move disc 1 from &#39;a&#39; to &#39;c&#39;
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=b08bef0d" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h2><p>Modify our hanoi function to just count the number of moves required.</p>
+
+</div>
+</div>
+</div>
+</div><div id="cell-id=6248c500" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_hanoi</span><span class="p">(</span><span class="n">discs</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">discs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">count_hanoi</span><span class="p">(</span><span class="n">discs</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="o">+</span> <span class="n">count_hanoi</span><span class="p">(</span><span class="n">discs</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div id="cell-id=308505dc" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">count_hanoi</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>127
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=d2e0c422" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">count_hanoi</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1023
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div id="cell-id=a7a320d7" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">count_hanoi</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1048575
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div id="cell-id=626a14c9" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h1 id="Wrap-up">Wrap up<a class="anchor-link" href="#Wrap-up">&#182;</a></h1><p>We saw, especially with this last example, how recursion can provide very elegant implementations of seemingly complex algorithms.</p>
+<p>It can have a similar effect when trying to prove the efficiency or correctness of an algorithm. Proving things about base cases is often trivial. Proving that the recursive steps are correct, or counting the number of recursive steps needed is also often (relatively) simple.</p>
+<p>Even if you never write a recursive function, learning how to break a problem down into base cases and recursive steps can be a very powerful problem solving technique.</p>
+
+</div>
+</div>
+</div>
+</div>
 </body>
 
 
