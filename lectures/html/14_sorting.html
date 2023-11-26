@@ -15122,7 +15122,7 @@ section.present > section.present {
 </div>
 </div>
 </div>
-<div id="cell-id=bb892b1a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=5b9ec3b0" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15140,7 +15140,7 @@ section.present > section.present {
 <li>Quiz 6: 26 / 49</li>
 <li>Quiz 7: 34 / 49</li>
 <li>Minimum total regrades needed: <strong>131</strong></li>
-<li>People who will <strong>NOT</strong> lose one or more letter grades due to quizzes right now (through Quiz 7): <strong>7</strong> / 49</li>
+<li>People who would lose one or more letter grades due to quizzes right now (through Quiz 7): <strong>42</strong> / 49</li>
 </ul>
 </li>
 </ul>
@@ -15155,7 +15155,7 @@ section.present > section.present {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="7-volunteers-needed">7 volunteers needed<a class="anchor-link" href="#7-volunteers-needed">&#182;</a></h2><p>You'll need to hold a piece of paper with a number on it, and stand at the front of the class for a few demonstrations.</p>
+<h2 id="7-volunteers-needed">7 volunteers needed<a class="anchor-link" href="#7-volunteers-needed">&#182;</a></h2><p>You'll need to stand at the front of the class, hold a piece of paper with a number on it, and compare your number to other numbers.</p>
 
 </div>
 </div>
@@ -15718,13 +15718,24 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_lower</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">value</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_lower</span><span class="p">(</span><span class="n">v</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">v</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
 <span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;This note is about Bill Murray, a famous American actor.&quot;</span>
 <span class="n">words</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
 
 <span class="n">words</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">make_lower</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">words.sort()</span>
+<span class="sd"># --&gt;</span>
+<span class="sd">words[0] &lt; words[1]</span>
+
+<span class="sd">words.sort(key=make_lower)</span>
+<span class="sd"># --&gt;</span>
+<span class="sd">make_lower(words[0]) &lt; make_lower(words[1])</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">words</span><span class="p">))</span>
 </pre></div>
 
@@ -16089,7 +16100,7 @@ section.present > section.present {
     <span class="n">sortable</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">book</span><span class="o">.</span><span class="n">word_count</span><span class="p">,</span> <span class="n">book</span><span class="p">))</span>
 <span class="n">sortable</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">sorted_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#sorted_list = []</span>
 <span class="k">for</span> <span class="n">count</span><span class="p">,</span> <span class="n">book</span> <span class="ow">in</span> <span class="n">sortable</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">book</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
 </pre></div>
@@ -16541,7 +16552,7 @@ The Old Man and the Sea (26601 words), by Ernest Hemingway
 </div>
 </div>
 </div>
-<div id="cell-id=7d8ecc76" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=8e526c78" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -16552,6 +16563,22 @@ The Old Man and the Sea (26601 words), by Ernest Hemingway
 </div>
 </div>
 </div>
+</div><div id="cell-id=09c03732" class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 </body>
 
