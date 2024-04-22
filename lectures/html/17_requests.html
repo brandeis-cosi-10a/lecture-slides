@@ -15211,8 +15211,8 @@ section.present > section.present {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>{&#39;message&#39;: &#39;success&#39;, &#39;iss_position&#39;: {&#39;latitude&#39;: &#39;15.9385&#39;, &#39;longitude&#39;: &#39;116.6686&#39;}, &#39;timestamp&#39;: 1701351726}
-The ISS is at lat: 15.9385, long: 116.6686
+<pre>{&#39;iss_position&#39;: {&#39;longitude&#39;: &#39;-1.5520&#39;, &#39;latitude&#39;: &#39;-32.7317&#39;}, &#39;timestamp&#39;: 1713827677, &#39;message&#39;: &#39;success&#39;}
+The ISS is at lat: -32.7317, long: -1.5520
 </pre>
 </div>
 </div>
@@ -15222,7 +15222,7 @@ The ISS is at lat: 15.9385, long: 116.6686
 </div>
 
 </div>
-<div id="cell-id=a9b70d4a" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=13b0aa9b" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15668,9 +15668,9 @@ access-control-allow-origin: *
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>200
 
-{&#39;Server&#39;: &#39;nginx/1.10.3&#39;, &#39;Date&#39;: &#39;Thu, 30 Nov 2023 13:42:06 GMT&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;Content-Length&#39;: &#39;113&#39;, &#39;Connection&#39;: &#39;keep-alive&#39;, &#39;access-control-allow-origin&#39;: &#39;*&#39;}
+{&#39;Server&#39;: &#39;nginx/1.10.3&#39;, &#39;Date&#39;: &#39;Mon, 22 Apr 2024 23:14:37 GMT&#39;, &#39;Content-Type&#39;: &#39;application/json&#39;, &#39;Content-Length&#39;: &#39;113&#39;, &#39;Connection&#39;: &#39;keep-alive&#39;, &#39;access-control-allow-origin&#39;: &#39;*&#39;}
 
-{&#34;message&#34;: &#34;success&#34;, &#34;iss_position&#34;: {&#34;latitude&#34;: &#34;15.9385&#34;, &#34;longitude&#34;: &#34;116.6686&#34;}, &#34;timestamp&#34;: 1701351726}
+{&#34;iss_position&#34;: {&#34;longitude&#34;: &#34;-1.5520&#34;, &#34;latitude&#34;: &#34;-32.7317&#34;}, &#34;timestamp&#34;: 1713827677, &#34;message&#34;: &#34;success&#34;}
 </pre>
 </div>
 </div>
@@ -15721,7 +15721,7 @@ access-control-allow-origin: *
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>&lt;class &#39;dict&#39;&gt;
-{&#39;message&#39;: &#39;success&#39;, &#39;iss_position&#39;: {&#39;latitude&#39;: &#39;15.9385&#39;, &#39;longitude&#39;: &#39;116.6686&#39;}, &#39;timestamp&#39;: 1701351726}
+{&#39;iss_position&#39;: {&#39;longitude&#39;: &#39;-1.5520&#39;, &#39;latitude&#39;: &#39;-32.7317&#39;}, &#39;timestamp&#39;: 1713827677, &#39;message&#39;: &#39;success&#39;}
 </pre>
 </div>
 </div>
@@ -15779,15 +15779,18 @@ access-control-allow-origin: *
 <span class="n">response_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
 <span class="n">pos</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s1">&#39;iss_position&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+
 <span class="n">geocode_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://geocode.xyz/</span><span class="si">{</span><span class="n">pos</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">,</span><span class="si">{</span><span class="n">pos</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">?json=1&quot;</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Reverse geocoding: </span><span class="si">{</span><span class="n">pos</span><span class="si">=}</span><span class="s2"> with </span><span class="si">{</span><span class="n">geocode_url</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
-
 <span class="n">geolocate_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">geocode_url</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">geolocate_response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">geolocate_response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
 
-<span class="c1"># pretty print:</span>
-<span class="c1">#print(json.dumps(geolocate_response.json(), indent=2, ensure_ascii=False))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">geolocate_response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="c1">#print(geolocate_response.json())</span>
+
+<span class="c1">#pretty print:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">geolocate_response</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15807,9 +15810,41 @@ access-control-allow-origin: *
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Reverse geocoding: pos={&#39;latitude&#39;: &#39;15.9137&#39;, &#39;longitude&#39;: &#39;116.6882&#39;} with geocode_url=&#39;https://geocode.xyz/15.9137,116.6882?json=1&#39;
+<pre>{&#39;longitude&#39;: &#39;-1.5257&#39;, &#39;latitude&#39;: &#39;-32.7099&#39;}
+Reverse geocoding: pos={&#39;longitude&#39;: &#39;-1.5257&#39;, &#39;latitude&#39;: &#39;-32.7099&#39;} with geocode_url=&#39;https://geocode.xyz/-32.7099,-1.5257?json=1&#39;
 200
-{&#39;geonumber&#39;: &#39;8081284738829&#39;, &#39;longt&#39;: &#39;0.00000&#39;, &#39;matches&#39;: None, &#39;error&#39;: {&#39;description&#39;: &#39;23. Your request did not produce any results.&#39;, &#39;code&#39;: &#39;008&#39;}, &#39;suggestion&#39;: {&#39;south&#39;: {&#39;longt&#39;: &#39;116.683333&#39;, &#39;prov&#39;: &#39; UF&#39;, &#39;city&#39;: &#39;Shianfa Ansha&#39;, &#39;distance&#39;: &#39;44&#39;, &#39;latt&#39;: &#39;16.316667&#39;}, &#39;territory&#39;: &#39;Philippines&#39;, &#39;altname&#39;: &#39;Philippines&#39;, &#39;region&#39;: &#39;South China Sea&#39;, &#39;subregion&#39;: &#39;Philippines part of the South China Sea&#39;, &#39;north&#39;: {&#39;longt&#39;: {}, &#39;prov&#39;: {}, &#39;city&#39;: {}, &#39;distance&#39;: {}, &#39;latt&#39;: {}}, &#39;iso&#39;: &#39;PHL&#39;, &#39;eez&#39;: &#39;Philippines Exclusive Economic Zone&#39;}, &#39;latt&#39;: &#39;0.00000&#39;}
+{
+  &#34;geonumber&#34;: &#34;3461139116838&#34;,
+  &#34;longt&#34;: &#34;0.00000&#34;,
+  &#34;matches&#34;: null,
+  &#34;error&#34;: {
+    &#34;description&#34;: &#34;23. Your request did not produce any results.&#34;,
+    &#34;code&#34;: &#34;008&#34;
+  },
+  &#34;suggestion&#34;: {
+    &#34;south&#34;: {
+      &#34;longt&#34;: &#34;-3.666667&#34;,
+      &#34;prov&#34;: &#34; UF&#34;,
+      &#34;city&#34;: &#34;Wüst Seamount&#34;,
+      &#34;distance&#34;: &#34;245&#34;,
+      &#34;latt&#34;: &#34;-34&#34;
+    },
+    &#34;territory&#34;: &#34;Tristan da Cunha&#34;,
+    &#34;altname&#34;: &#34;United Kingdom&#34;,
+    &#34;region&#34;: &#34;South Atlantic Ocean&#34;,
+    &#34;subregion&#34;: &#34;Tristan Da Cunha part of the South Atlantic Ocean&#34;,
+    &#34;north&#34;: {
+      &#34;longt&#34;: {},
+      &#34;prov&#34;: {},
+      &#34;city&#34;: {},
+      &#34;distance&#34;: {},
+      &#34;latt&#34;: {}
+    },
+    &#34;iso&#34;: &#34;TAA&#34;,
+    &#34;eez&#34;: &#34;Tristan Da Cunha Exclusive Economic Zone&#34;
+  },
+  &#34;latt&#34;: &#34;0.00000&#34;
+}
 </pre>
 </div>
 </div>
@@ -16535,11 +16570,11 @@ Cell <span class="ansi-green-fg">In[16], line 4</span>, in <span class="ansi-cya
 
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">meteorites</span><span class="p">:</span>
     <span class="k">if</span> <span class="s1">&#39;year&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
-        <span class="n">no_mass</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">no_year</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">meteorites</span><span class="p">:</span>
     <span class="k">if</span> <span class="s1">&#39;mass&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
-        <span class="n">no_year</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">no_mass</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No year: </span><span class="si">{</span><span class="n">no_year</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">no_year</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">full_count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> %)&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No mass: </span><span class="si">{</span><span class="n">no_mass</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">no_mass</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">full_count</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> %)&quot;</span><span class="p">)</span>
@@ -16562,8 +16597,8 @@ Cell <span class="ansi-green-fg">In[16], line 4</span>, in <span class="ansi-cya
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>No year: 131 (0.29 %)
-No mass: 291 (0.64 %)
+<pre>No year: 291 (0.64 %)
+No mass: 131 (0.29 %)
 </pre>
 </div>
 </div>
@@ -17053,19 +17088,19 @@ No mass: 291 (0.64 %)
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&lt;__main__.Meteorite at 0x7f952b3f9060&gt;,
- &lt;__main__.Meteorite at 0x7f952b4937c0&gt;,
- &lt;__main__.Meteorite at 0x7f952b4f7d60&gt;,
- &lt;__main__.Meteorite at 0x7f952b50fd00&gt;,
- &lt;__main__.Meteorite at 0x7f952b50fe80&gt;,
- &lt;__main__.Meteorite at 0x7f952b50ffa0&gt;,
- &lt;__main__.Meteorite at 0x7f952b51a380&gt;,
- &lt;__main__.Meteorite at 0x7f952b7043a0&gt;,
- &lt;__main__.Meteorite at 0x7f952b7f91e0&gt;,
- &lt;__main__.Meteorite at 0x7f952b8fe680&gt;,
- &lt;__main__.Meteorite at 0x7f952b9cf160&gt;,
- &lt;__main__.Meteorite at 0x7f952b9d5780&gt;,
- &lt;__main__.Meteorite at 0x7f952bc3a200&gt;]</pre>
+<pre>[&lt;__main__.Meteorite at 0x7ff677aa9000&gt;,
+ &lt;__main__.Meteorite at 0x7ff677b3f850&gt;,
+ &lt;__main__.Meteorite at 0x7ff677ba3df0&gt;,
+ &lt;__main__.Meteorite at 0x7ff677bbfcd0&gt;,
+ &lt;__main__.Meteorite at 0x7ff677bbfe50&gt;,
+ &lt;__main__.Meteorite at 0x7ff677bbff70&gt;,
+ &lt;__main__.Meteorite at 0x7ff677bc6350&gt;,
+ &lt;__main__.Meteorite at 0x7ff677db4460&gt;,
+ &lt;__main__.Meteorite at 0x7ff677ea5240&gt;,
+ &lt;__main__.Meteorite at 0x7ff677fae680&gt;,
+ &lt;__main__.Meteorite at 0x7ff67807b100&gt;,
+ &lt;__main__.Meteorite at 0x7ff678085720&gt;,
+ &lt;__main__.Meteorite at 0x7ff6782ea200&gt;]</pre>
 </div>
 
 </div>
@@ -17642,7 +17677,7 @@ Wynella (1945) (40 kg) [-28.95, 148.13333]
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">count_by_year</span><span class="p">(</span><span class="n">mites</span><span class="p">)</span>
-<span class="n">sorted_years</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">sorted_years</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">sorted_years</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">counts</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -17664,259 +17699,259 @@ Wynella (1945) (40 kg) [-28.95, 148.13333]
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>861: 1
-1400: 1
-1491: 1
-1492: 1
-1576: 1
-1583: 1
-1600: 1
-1621: 1
-1623: 1
-1628: 1
-1632: 1
-1637: 1
-1668: 1
-1671: 1
-1688: 1
-1715: 1
-1716: 1
-1723: 1
-1724: 1
-1740: 1
-1741: 1
-1749: 1
-1751: 1
-1753: 2
-1766: 1
-1768: 2
-1773: 1
-1775: 1
-1776: 1
-1781: 1
-1784: 2
-1785: 1
-1787: 1
-1790: 1
-1792: 1
-1793: 1
-1794: 1
-1795: 2
-1796: 2
-1797: 1
-1798: 2
-1801: 1
-1803: 3
-1804: 5
-1805: 3
-1806: 1
-1807: 2
-1808: 5
-1809: 1
-1810: 5
-1811: 3
-1812: 4
-1813: 2
-1814: 5
-1815: 2
-1817: 1
-1818: 5
-1819: 3
-1820: 1
-1821: 1
-1822: 6
-1823: 2
-1824: 3
-1825: 3
-1826: 3
-1827: 3
-1828: 2
-1829: 4
-1830: 2
-1831: 2
-1832: 1
-1833: 1
-1834: 3
-1835: 2
-1836: 5
-1837: 5
-1838: 7
-1839: 5
-1840: 7
-1841: 4
-1842: 4
-1843: 6
-1844: 4
-1845: 3
-1846: 7
-1847: 5
-1848: 4
-1849: 3
-1850: 8
-1851: 3
-1852: 8
-1853: 5
-1854: 9
-1855: 9
-1856: 6
-1857: 10
-1858: 8
-1859: 5
-1860: 11
-1861: 6
-1862: 3
-1863: 15
-1864: 4
-1865: 8
-1866: 12
-1867: 8
-1868: 16
-1869: 12
-1870: 6
-1871: 7
-1872: 6
-1873: 9
-1874: 6
-1875: 13
-1876: 9
-1877: 9
-1878: 9
-1879: 14
-1880: 14
-1881: 9
-1882: 9
-1883: 10
-1884: 11
-1885: 7
-1886: 10
-1887: 21
-1888: 15
-1889: 15
-1890: 20
-1891: 10
-1892: 11
-1893: 12
-1894: 10
-1895: 10
-1896: 9
-1897: 12
-1898: 17
-1899: 14
-1900: 16
-1901: 9
-1902: 12
-1903: 22
-1904: 11
-1905: 14
-1906: 13
-1907: 16
-1908: 13
-1909: 10
-1910: 19
-1911: 11
-1912: 12
-1913: 11
-1914: 18
-1915: 13
-1916: 19
-1917: 19
-1918: 15
-1919: 14
-1920: 14
-1921: 18
-1922: 15
-1923: 16
-1924: 18
-1925: 16
-1926: 13
-1927: 16
-1928: 16
-1929: 15
-1930: 18
-1931: 17
-1932: 25
-1933: 30
-1934: 26
-1935: 19
-1936: 35
-1937: 52
-1938: 44
-1939: 32
-1940: 37
-1941: 23
-1942: 20
-1943: 10
-1944: 18
-1945: 11
-1946: 12
-1947: 17
-1948: 19
-1949: 21
-1950: 36
-1951: 19
-1952: 17
-1953: 9
-1954: 21
-1955: 22
-1956: 25
-1957: 18
-1958: 18
-1959: 16
-1960: 26
-1961: 27
-1962: 36
-1963: 33
-1964: 31
-1965: 46
-1966: 24
-1967: 34
-1968: 52
-1969: 67
-1970: 46
-1971: 47
-1972: 31
-1973: 29
-1974: 691
-1975: 336
-1976: 50
-1977: 420
-1978: 260
-1979: 3045
-1980: 143
-1981: 458
-1982: 344
-1983: 359
-1984: 402
-1985: 377
-1986: 1374
-1987: 914
-1988: 2295
-1989: 135
-1990: 1506
-1991: 869
-1992: 372
-1993: 976
-1994: 717
-1995: 484
-1996: 573
-1997: 1505
-1998: 2147
-1999: 1592
-2000: 1502
-2001: 1339
-2002: 1066
-2003: 1754
-2004: 366
-2005: 328
-2006: 1616
-2007: 1038
-2008: 936
-2009: 1496
-2010: 1005
-2011: 713
-2012: 234
+<pre>2101: 1
 2013: 11
-2101: 1
+2012: 234
+2011: 713
+2010: 1005
+2009: 1496
+2008: 936
+2007: 1038
+2006: 1616
+2005: 328
+2004: 366
+2003: 1754
+2002: 1066
+2001: 1339
+2000: 1502
+1999: 1592
+1998: 2147
+1997: 1505
+1996: 573
+1995: 484
+1994: 717
+1993: 976
+1992: 372
+1991: 869
+1990: 1506
+1989: 135
+1988: 2295
+1987: 914
+1986: 1374
+1985: 377
+1984: 402
+1983: 359
+1982: 344
+1981: 458
+1980: 143
+1979: 3045
+1978: 260
+1977: 420
+1976: 50
+1975: 336
+1974: 691
+1973: 29
+1972: 31
+1971: 47
+1970: 46
+1969: 67
+1968: 52
+1967: 34
+1966: 24
+1965: 46
+1964: 31
+1963: 33
+1962: 36
+1961: 27
+1960: 26
+1959: 16
+1958: 18
+1957: 18
+1956: 25
+1955: 22
+1954: 21
+1953: 9
+1952: 17
+1951: 19
+1950: 36
+1949: 21
+1948: 19
+1947: 17
+1946: 12
+1945: 11
+1944: 18
+1943: 10
+1942: 20
+1941: 23
+1940: 37
+1939: 32
+1938: 44
+1937: 52
+1936: 35
+1935: 19
+1934: 26
+1933: 30
+1932: 25
+1931: 17
+1930: 18
+1929: 15
+1928: 16
+1927: 16
+1926: 13
+1925: 16
+1924: 18
+1923: 16
+1922: 15
+1921: 18
+1920: 14
+1919: 14
+1918: 15
+1917: 19
+1916: 19
+1915: 13
+1914: 18
+1913: 11
+1912: 12
+1911: 11
+1910: 19
+1909: 10
+1908: 13
+1907: 16
+1906: 13
+1905: 14
+1904: 11
+1903: 22
+1902: 12
+1901: 9
+1900: 16
+1899: 14
+1898: 17
+1897: 12
+1896: 9
+1895: 10
+1894: 10
+1893: 12
+1892: 11
+1891: 10
+1890: 20
+1889: 15
+1888: 15
+1887: 21
+1886: 10
+1885: 7
+1884: 11
+1883: 10
+1882: 9
+1881: 9
+1880: 14
+1879: 14
+1878: 9
+1877: 9
+1876: 9
+1875: 13
+1874: 6
+1873: 9
+1872: 6
+1871: 7
+1870: 6
+1869: 12
+1868: 16
+1867: 8
+1866: 12
+1865: 8
+1864: 4
+1863: 15
+1862: 3
+1861: 6
+1860: 11
+1859: 5
+1858: 8
+1857: 10
+1856: 6
+1855: 9
+1854: 9
+1853: 5
+1852: 8
+1851: 3
+1850: 8
+1849: 3
+1848: 4
+1847: 5
+1846: 7
+1845: 3
+1844: 4
+1843: 6
+1842: 4
+1841: 4
+1840: 7
+1839: 5
+1838: 7
+1837: 5
+1836: 5
+1835: 2
+1834: 3
+1833: 1
+1832: 1
+1831: 2
+1830: 2
+1829: 4
+1828: 2
+1827: 3
+1826: 3
+1825: 3
+1824: 3
+1823: 2
+1822: 6
+1821: 1
+1820: 1
+1819: 3
+1818: 5
+1817: 1
+1815: 2
+1814: 5
+1813: 2
+1812: 4
+1811: 3
+1810: 5
+1809: 1
+1808: 5
+1807: 2
+1806: 1
+1805: 3
+1804: 5
+1803: 3
+1801: 1
+1798: 2
+1797: 1
+1796: 2
+1795: 2
+1794: 1
+1793: 1
+1792: 1
+1790: 1
+1787: 1
+1785: 1
+1784: 2
+1781: 1
+1776: 1
+1775: 1
+1773: 1
+1768: 2
+1766: 1
+1753: 2
+1751: 1
+1749: 1
+1741: 1
+1740: 1
+1724: 1
+1723: 1
+1716: 1
+1715: 1
+1688: 1
+1671: 1
+1668: 1
+1637: 1
+1632: 1
+1628: 1
+1623: 1
+1621: 1
+1600: 1
+1583: 1
+1576: 1
+1492: 1
+1491: 1
+1400: 1
+861: 1
 </pre>
 </div>
 </div>
@@ -17926,7 +17961,7 @@ Wynella (1945) (40 kg) [-28.95, 148.13333]
 </div>
 
 </div>
-<div id="cell-id=ca9e2e62" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=f3d00cbc" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -17937,7 +17972,7 @@ Wynella (1945) (40 kg) [-28.95, 148.13333]
 </div>
 </div>
 </div>
-</div><div id="cell-id=140d5215" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div id="cell-id=91ac8f76" class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
