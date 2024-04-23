@@ -6,7 +6,7 @@ This repository contains lecture slides for Cosi-10a, in Python notebook form. T
 
 A pre-commit hook (in `.hooks`) exists to automatically generate both vanilla html and reveal.js html slides when committing changes to notebooks. These versions are stored under `lectures/html`.
 
-Run `git config core.hooksPath hooks` after checking out to enable this pre-commit hook. 
+Run `git config core.hooksPath .hooks` after checking out to enable this pre-commit hook. 
 
 ## Lecture content
 
