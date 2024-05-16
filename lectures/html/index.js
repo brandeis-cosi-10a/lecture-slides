@@ -3,22 +3,9 @@ let lectures = [
     "02_datatypes_expressions_variables",
     "03_conditionals",
     "04_functions",
-    "xx_unit_tests",
-    "05_loops",
-    "06_lists",
-    "07_sequences",
-    "08_references",
-    "09_advanced_lists",
-    "xx_exceptions",
-    "10_dictionaries_sets",
-    "xx_modules",
-    "11_classes",
-    "12_file_io",
-    "13_class_design",
-    "14_sorting",
-    "15_regexes",
-    "16_recursion",
-    "17_requests"
+    "05_testing_and_debugging",
+    "06_loops",
+    "07_lists"
 ];
 
 (function() {
