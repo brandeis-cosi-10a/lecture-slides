@@ -37,18 +37,18 @@ while IFS='' read -r line; do
 done < <(git diff-index --name-only --cached --diff-filter=ACMR "${against}" -- | grep -i "lectures/notebooks/[^/]*\.ipynb$" )
 
 for FILE in ${IPYNB_FILES[@]+"${IPYNB_FILES[@]}"}; do
-	echo "Processing file: '$FILE'"
-	# execute, then remove tagged outputs and convert to slides in a separate step (otherwise the execute seems to happen last)
+    echo "Processing file: '$FILE'"
+    # execute, then remove tagged outputs and convert to slides in a separate step (otherwise the execute seems to happen last)
     jupyter nbconvert --to notebook --execute --allow-errors --inplace "$FILE"
     jupyter nbconvert --to html --output-dir=lectures/html --SlidesExporter.reveal_scroll=True --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_all_outputs_tags "remove-output" "$FILE"
     jupyter nbconvert --to slides --output-dir=lectures/html --SlidesExporter.reveal_scroll=True --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_all_outputs_tags "remove-output" "$FILE"
-	jupyter nbconvert --clear-output "$FILE"
-	git add $FILE
-	HTML="lectures/html/$(basename "${FILE%.*}").html"
-	git add $HTML
-	SLIDES="lectures/html/$(basename "${FILE%.*}").slides.html"
-	git add $SLIDES
-	echo "Re-staged ${FILE} and added ${HTML} and ${SLIDES}"
+    jupyter nbconvert --clear-output --ClearMetadataPreprocessor.enabled=True --ClearMetadataPreprocessor.preserve_cell_metadata_mask=slideshow --ClearMetadataPreprocessor.preserve_cell_metadata_mask=tags --ClearMetadataPreprocessor.clear_notebook_metadata=False "$FILE"
+    git add $FILE
+    HTML="lectures/html/$(basename "${FILE%.*}").html"
+    git add $HTML
+    SLIDES="lectures/html/$(basename "${FILE%.*}").slides.html"
+    git add $SLIDES
+    echo "Re-staged ${FILE} and added ${HTML} and ${SLIDES}"
 done
 
 exit 0

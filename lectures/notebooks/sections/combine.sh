@@ -6,3 +6,4 @@ nbmerge 00_title.ipynb 04* > ../04_functions.ipynb
 nbmerge 00_title.ipynb 05* > ../05_testing_and_debugging.ipynb
 nbmerge 00_title.ipynb 06* > ../06_loops.ipynb
 nbmerge 00_title.ipynb 07* > ../07_lists.ipynb
+jupyter nbconvert --clear-output --ClearMetadataPreprocessor.enabled=True --ClearMetadataPreprocessor.preserve_cell_metadata_mask=slideshow --ClearMetadataPreprocessor.preserve_cell_metadata_mask=tags --ClearMetadataPreprocessor.clear_notebook_metadata=False ../*.ipynb
