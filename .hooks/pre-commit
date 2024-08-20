@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# This pre-commit hook clears output cells in Jupyter notebooks.
+# This pre-commit hook clears output cells in Jupyter notebooks, and generates
+# both static HTML and reveal.js HTML slides.
 
 # setting bash strict mode
 set -o errexit
@@ -29,12 +30,12 @@ else
 	against=$(git hash-object -t tree /dev/null)
 fi
 
-CANDIDATE_FILES=()
 IPYNB_FILES=()
 while IFS='' read -r line; do
 	IPYNB_FILES+=( "$line" );
 # finding all staged *.ipynb files added, copied, modified or renamed since last commit
-done < <(git diff-index --name-only --cached --diff-filter=ACMR "${against}" -- | grep -i \.ipynb$ )
+done < <(git diff-index --name-only --cached --diff-filter=ACMR "${against}" -- | grep -i "lectures/notebooks/[^/]*\.ipynb$" )
+
 for FILE in ${IPYNB_FILES[@]+"${IPYNB_FILES[@]}"}; do
 	echo "Processing file: '$FILE'"
 	# execute, then remove tagged outputs and convert to slides in a separate step (otherwise the execute seems to happen last)
