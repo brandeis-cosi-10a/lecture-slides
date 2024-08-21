@@ -18009,7 +18009,10 @@ Step 6: Eat!
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_step</span><span class="p">(</span><span class="n">step_num</span><span class="p">,</span> <span class="n">instruction</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Step &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">step_num</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">instruction</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
     <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;Here are instructions to make a &quot;</span> <span class="o">+</span> <span class="n">meat</span>
     
     <span class="k">if</span> <span class="n">cheese</span><span class="p">:</span>
@@ -18104,7 +18107,7 @@ Step 7: Eat!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise:-Is-it-odd?">Exercise: Is it odd?<a class="anchor-link" href="#Exercise:-Is-it-odd?">&#182;</a></h1><p><a href="https://classroom.github.com/a/M3gdSqkV">GitHub Classroom -&gt; Class exercises -&gt; Open in GitHub Cospaces</a></p>
+<h1 id="Exercise:-Is-it-odd?">Exercise: Is it odd?<a class="anchor-link" href="#Exercise:-Is-it-odd?">&#182;</a></h1><p><a href="https://codespaces.new/brandeis-cosi-10a/class-exercises?quickstart=1">Open the class exercises Codespace</a></p>
 <p>Open the file: <code>exercises/04/is_odd/README.md</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the &quot;Run&quot; button at the top right of the editor.</li>
@@ -18120,7 +18123,7 @@ Step 7: Eat!
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise:-Lifting-Weights">Exercise: Lifting Weights<a class="anchor-link" href="#Exercise:-Lifting-Weights">&#182;</a></h1><p><a href="https://classroom.github.com/a/M3gdSqkV">GitHub Classroom -&gt; Class exercises -&gt; Open in GitHub Cospaces</a></p>
+<h1 id="Exercise:-Lifting-Weights">Exercise: Lifting Weights<a class="anchor-link" href="#Exercise:-Lifting-Weights">&#182;</a></h1><p><a href="https://codespaces.new/brandeis-cosi-10a/class-exercises?quickstart=1">Open the class exercises Codespace</a></p>
 <p>Open the file: <code>exercises/04/lifting_weights/README.md</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the &quot;Run&quot; button at the top right of the editor.</li>
@@ -20078,9 +20081,7 @@ Step 6: Eat!
     <span class="n">print_step</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="s2">&quot;Lay out 2 slices of &quot;</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">&quot; bread.&quot;</span><span class="p">)</span>
     <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
     
-    <span class="k">if</span> <span class="n">condiment</span><span class="p">:</span>
-        <span class="n">print_step</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="s2">&quot;Spread &quot;</span> <span class="o">+</span> <span class="n">condiment</span> <span class="o">+</span> <span class="s2">&quot; on both slices of &quot;</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">&quot; bread.&quot;</span><span class="p">)</span>
-        <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span> 
+    <span class="n">step</span> <span class="o">=</span> <span class="n">print_condiment_step</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="n">bread</span><span class="p">,</span> <span class="n">condiment</span><span class="p">)</span>
         
     <span class="n">print_step</span><span class="p">(</span><span class="n">step</span><span class="p">,</span> <span class="s2">&quot;Put 3 pieces of &quot;</span> <span class="o">+</span> <span class="n">meat</span> <span class="o">+</span> <span class="s2">&quot; on one slice of &quot;</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">&quot; bread.&quot;</span><span class="p">)</span>
     <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -21121,13 +21122,13 @@ Step 5: Eat!
 </div>
 
 </div></section></section><section ><section >
-<div id="cell-id=1d7b953c" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div id="cell-id=dd969908" class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Exercise:-Rectangle-info">Exercise: Rectangle info<a class="anchor-link" href="#Exercise:-Rectangle-info">&#182;</a></h1><p><a href="https://classroom.github.com/a/M3gdSqkV">GitHub Classroom -&gt; Class exercises -&gt; Open in GitHub Cospaces</a></p>
+<h1 id="Exercise:-Rectangle-info">Exercise: Rectangle info<a class="anchor-link" href="#Exercise:-Rectangle-info">&#182;</a></h1><p><a href="https://codespaces.new/brandeis-cosi-10a/class-exercises?quickstart=1">Open the class exercises Codespace</a></p>
 <p>Open the file: <code>exercises/04/rectangle_info/README.md</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the &quot;Run&quot; button at the top right of the editor.</li>
@@ -21782,7 +21783,7 @@ Outside after func: 2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exercise:-Quiz-Game">Exercise: Quiz Game<a class="anchor-link" href="#Exercise:-Quiz-Game">&#182;</a></h2><p><a href="https://classroom.github.com/a/M3gdSqkV">GitHub Classroom -&gt; Class exercises -&gt; Open in GitHub Cospaces</a></p>
+<h2 id="Exercise:-Quiz-Game">Exercise: Quiz Game<a class="anchor-link" href="#Exercise:-Quiz-Game">&#182;</a></h2><p><a href="https://codespaces.new/brandeis-cosi-10a/class-exercises?quickstart=1">Open the class exercises Codespace</a></p>
 <p>Open the file: <code>exercises/04/quiz_game/README.md</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the &quot;Run&quot; button at the top right of the editor.</li>
