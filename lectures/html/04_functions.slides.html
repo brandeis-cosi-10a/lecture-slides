@@ -12429,7 +12429,13 @@ Step 5: Eat!
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>6561
+<pre>6561</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
 </pre>
 </div>
 </div>
@@ -13656,7 +13662,7 @@ Outside after func: 2
 </div>
 </div>
 </div></div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ead1d90">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4d2fc847">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -13875,16 +13881,11 @@ Average is: 7.986
 <div class="jp-InputPrompt jp-InputArea-prompt">In [146]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_letters</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
-    <span class="n">vowels</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">consonants</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">'a'</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">'e'</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">'i'</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">'o'</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">'u'</span><span class="p">:</span>
-            <span class="n">vowels</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">elif</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
-            <span class="c1"># char.isalpha() returns True if the character is a letter</span>
-            <span class="n">consonants</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">vowels</span><span class="p">,</span> <span class="n">consonants</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">analyze_sentence</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+    <span class="n">spaces</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="n">punctuation</span> <span class="o">=</span> <span class="n">words</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">'.'</span><span class="p">)</span> <span class="o">+</span> <span class="n">words</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span> <span class="o">+</span> <span class="n">words</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">"'"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">length</span><span class="p">,</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">punctuation</span>
 </pre></div>
 </div>
 </div>
@@ -13898,8 +13899,8 @@ Average is: 7.986
 <div class="jp-InputPrompt jp-InputArea-prompt">In [147]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">count_letters</span><span class="p">(</span><span class="s2">"Hello class, count these words with me."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Vowels: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" consonants: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">analyze_sentence</span><span class="p">(</span><span class="s2">"Hello class, count these words with me."</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Our sentence has length: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" spaces: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" punctuation chars: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -13912,7 +13913,7 @@ Average is: 7.986
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Vowels: 10 consonants: 21
+<pre>Our sentence has length: 39 spaces: 6 punctuation chars: 2.
 </pre>
 </div>
 </div>
@@ -13926,8 +13927,8 @@ Average is: 7.986
 <div class="jp-InputPrompt jp-InputArea-prompt">In [148]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">count_letters</span><span class="p">(</span><span class="s2">",.@($@*!#*(! 9219!,;))"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Vowels: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" consonants: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">analyze_sentence</span><span class="p">(</span><span class="s2">",.@($@*!#*(! 9219!,;))"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Our sentence has length: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" spaces: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" punctuation chars: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -13940,7 +13941,7 @@ Average is: 7.986
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Vowels: 0 consonants: 0
+<pre>Our sentence has length: 22 spaces: 1 punctuation chars: 3.
 </pre>
 </div>
 </div>
@@ -13954,8 +13955,8 @@ Average is: 7.986
 <div class="jp-InputPrompt jp-InputArea-prompt">In [149]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">v</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">count_letters</span><span class="p">(</span><span class="s2">" h e l l o . w o r l d"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Vowels: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" consonants: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">))</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">analyze_sentence</span><span class="p">(</span><span class="s2">" h e l l o . w o r l d"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Our sentence has length: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" spaces: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" punctuation chars: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -13968,7 +13969,7 @@ Average is: 7.986
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Vowels: 3 consonants: 7
+<pre>Our sentence has length: 22 spaces: 11 punctuation chars: 1.
 </pre>
 </div>
 </div>
