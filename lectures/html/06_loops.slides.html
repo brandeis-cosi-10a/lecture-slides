@@ -7487,7 +7487,7 @@ section.present > section.present {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Write a function that prints all the numbers between 1 and <code>n</code> which are multiples of <code>n</code></p>
+<p>Write a function that prints all the numbers between 1 and 100 which are multiples of <code>n</code></p>
 </div>
 </div>
 </div>
@@ -7558,11 +7558,11 @@ section.present > section.present {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_multiples</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 
-<span class="n">find_multiples</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">find_multiples</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7575,39 +7575,24 @@ section.present > section.present {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>3
-6
-9
-12
+<pre>10
 15
-18
-21
-24
-27
+20
+25
 30
-33
-36
-39
-42
+35
+40
 45
-48
-51
-54
-57
+50
+55
 60
-63
-66
-69
-72
+65
+70
 75
-78
-81
-84
-87
+80
+85
 90
-93
-96
-99
+95
 </pre>
 </div>
 </div>
@@ -7832,7 +7817,7 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7856,7 +7841,6 @@ section.present > section.present {
 85
 90
 95
-100
 </pre>
 </div>
 </div>
@@ -7871,8 +7855,8 @@ section.present > section.present {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># You can even count down with a negative step</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">counter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"... blastoff!"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -7965,7 +7949,7 @@ section.present > section.present {
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="mi">3</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="k">if</span> <span class="mi">4</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
 <span class="k">if</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="k">if</span> <span class="mi">6</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -8308,10 +8292,16 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">103</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">103</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"If you are "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old..."</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"You were born in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2024</span> <span class="o">-</span> <span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">110</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">"Joe"</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">"Guest"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8330,6 +8320,8 @@ If you are 101 years old...
 You were born in 1923
 If you are 102 years old...
 You were born in 1922
+102
+Guest
 </pre>
 </div>
 </div>
@@ -8370,13 +8362,12 @@ You were born in 1922
 <div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"If you are "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old..."</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"If you are "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old..."</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"You were born in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2024</span> <span class="o">-</span> <span class="mi">100</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"If you are "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">101</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old..."</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"You were born in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2024</span> <span class="o">-</span> <span class="mi">101</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"If you are "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">102</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" years old..."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"You were born in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2024</span> <span class="o">-</span> <span class="mi">103</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"You were born in "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">2024</span> <span class="o">-</span> <span class="mi">102</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -8394,7 +8385,7 @@ You were born in 1924
 If you are 101 years old...
 You were born in 1923
 If you are 102 years old...
-You were born in 1921
+You were born in 1922
 </pre>
 </div>
 </div>
@@ -8490,7 +8481,7 @@ You were born in 1921
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># You can count down with a negative step</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">', '</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">', '</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"... blastoff!"</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8510,7 +8501,7 @@ You were born in 1921
 </div>
 </div>
 </div>
-</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0cfe601a">
+</div></div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c4f453bc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8663,9 +8654,11 @@ You were born in 1921
 <div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">', '</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"1... blastoff!"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">", "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"... blastoff!"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8708,6 +8701,24 @@ You were born in 1921
 <p>Open the file: <code>exercises/06/01_number_facts/README.md</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the "Run" button at the top right of the editor.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=44bb5d3f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h2><ul>
+<li>No quiz this week</li>
+<li>PS4 due 10/10<ul>
+<li>Please submit to Gradescope!</li>
+</ul>
+</li>
+<li>Reminder that working with other people (beyond high level discussion of approach) and using ChatGPT for problem sets are not allowed.</li>
 </ul>
 </div>
 </div>
@@ -8760,8 +8771,9 @@ You were born in 1921
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
-        <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="c1">#total = total + i</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">i</span>
     <span class="k">return</span> <span class="n">total</span>
 </pre></div>
 </div>
@@ -9245,7 +9257,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">):</span>
         <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span>
     <span class="k">return</span> <span class="n">total</span>
-<span class="n">sum_range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -9255,10 +9267,11 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>21</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>21
+</pre>
 </div>
 </div>
 </div>
@@ -9392,7 +9405,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">total_words</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">words</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter a phrase:"</span><span class="p">)</span>
-    <span class="n">total_words</span> <span class="o">+=</span> <span class="n">words</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="n">total_words</span> <span class="o">+=</span> <span class="n">words</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
@@ -9455,7 +9468,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">27</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">340</span>
 <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
@@ -9472,12 +9485,16 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>27
-13.5
-6.75
-3.375
-1.6875
-0.84375
+<pre>340
+170.0
+85.0
+42.5
+21.25
+10.625
+5.3125
+2.65625
+1.328125
+0.6640625
 </pre>
 </div>
 </div>
@@ -9507,7 +9524,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 </div>
 </div>
 </div>
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e77a9d5b">
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e77a9d5b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9518,12 +9535,26 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">103812</span>
 <span class="k">while</span> <span class="n">num</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
     <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>0.10381200000000002
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ef7d8c88">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9568,7 +9599,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 </div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=118f2f47">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9857,6 +9888,34 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 </div>
 </div>
 </div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a66446bf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h2><ul>
+<li>PS4 due 10/10</li>
+<li>Quiz 4 during recitation this Wednesday, 10/9</li>
+<li>PS4 hints &amp; clarifications<ul>
+<li>You may not need to use all the skills listed for each problem!</li>
+<li>When running multiple tests at once, the value of global variables is not reset between test runs!<ul>
+<li>Consider not using globals for Dice Game. If you do, ensure they are reset to their original values when necessary</li>
+</ul>
+</li>
+<li>Code tested by unit tests can't use <code>input()</code>!<ul>
+<li><code>play_game()</code> <strong>is not</strong> run by the unit tests</li>
+<li><code>take_turns(turns)</code> <strong>is</strong> run by the unit tests.</li>
+<li>Do your prompting in <code>play_game()</code> and pass the number of turns into <code>take_turns(turns)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=571b90f0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9995,6 +10054,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">roll</span><span class="p">():</span>
         <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="c1"># count += 1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Rolled a 7: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" times"</span><span class="p">)</span>
 </pre></div>
@@ -10009,7 +10069,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Rolled a 7: 1042 times
+<pre>Rolled a 7: 1027 times
 </pre>
 </div>
 </div>
@@ -10056,7 +10116,7 @@ Cell <span class="ansi-green-fg">In[39], line 1</span>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Rolled a 7 984/10000 times
+<pre>Rolled a 7 1083/10000 times
 Expected number of 7s is ~6513
 </pre>
 </div>
@@ -10180,7 +10240,7 @@ Expected number of 7s is ~6513
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Rolled a 7 6443/10000 times
+<pre>Rolled a 7 6525/10000 times
 Expected number of 7s is ~6513
 </pre>
 </div>
@@ -10251,7 +10311,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60c8ebb6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10259,14 +10319,14 @@ Expected number of 7s is ~6513
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Generate-a-problem:">Generate a problem:<a class="anchor-link" href="#Generate-a-problem:">¶</a></h2><ol>
-<li>Pick a random number between 2 and 5: <code>random.randint(2, 6)</code></li>
+<li>Pick a random number between 2 and 5: <code>random.randint(2, 5)</code></li>
 <li>Generate that many random numbers between 1 and 20</li>
 <li>Join the numbers and <code>+</code> signs together into a string that represents the addition problem.</li>
 </ol>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=53fb28c6">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=53fb28c6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10310,7 +10370,7 @@ Expected number of 7s is ~6513
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>10 + 2 + 13 + 1 + 6 + = 
+<pre>19 + 11 + 13 + 19 + 12 + = 
 </pre>
 </div>
 </div>
@@ -10395,7 +10455,7 @@ Expected number of 7s is ~6513
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>7 + 12 = 
+<pre>1 + 14 + 11 = 
 </pre>
 </div>
 </div>
@@ -10463,8 +10523,8 @@ Expected number of 7s is ~6513
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>4 + 17 + 19 = 
-40
+<pre>9 + 7 = 
+16
 </pre>
 </div>
 </div>
@@ -10653,7 +10713,8 @@ Expected number of 7s is ~6513
     <span class="n">problem</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" = "</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">problem</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">prompt_and_check</span><span class="p">(</span><span class="n">expected_sum</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">prompt_and_check</span><span class="p">(</span><span class="n">expected_sum</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
 </pre></div>
 </div>
 </div>
@@ -10737,7 +10798,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a474b5a1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10752,7 +10813,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=596cc134">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10767,7 +10828,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5083ca99">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10778,6 +10839,21 @@ Expected number of 7s is ~6513
 <p>Open the file: <code>exercises/05/03_number_sum_sequence/README.md</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the "Run" button at the top right of the editor.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9d8b0081">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h2><ul>
+<li>PS4 due tomorrow, Thursday, 11:59pm</li>
+<li>PS5 won't come out until 10/21</li>
+<li>Problem sets increase in overall complexity and difficulty as we go - start early!</li>
 </ul>
 </div>
 </div>
@@ -10799,7 +10875,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=afe944a6">
+</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=afe944a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10825,7 +10901,7 @@ Expected number of 7s is ~6513
 <div class="jp-InputPrompt jp-InputArea-prompt">In [79]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -10838,16 +10914,11 @@ Expected number of 7s is ~6513
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
-**********
+<pre>*****
+*****
+*****
+*****
+*****
 </pre>
 </div>
 </div>
@@ -11377,7 +11448,7 @@ Expected number of 7s is ~6513
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">levels</span> <span class="o">-</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">row</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">levels</span> <span class="o">-</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">()</span>
@@ -11407,13 +11478,13 @@ Expected number of 7s is ~6513
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>      0      
-     111     
-    22222    
-   3333333   
-  444444444  
- 55555555555 
-6666666666666
+<pre>      1      
+     222     
+    33333    
+   4444444   
+  555555555  
+ 66666666666 
+7777777777777
 </pre>
 </div>
 </div>
@@ -11496,7 +11567,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a8770a8e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a8770a8e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -11513,8 +11584,27 @@ Expected number of 7s is ~6513
             <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">levels</span> <span class="o">-</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">()</span>
+        <span class="nb">print</span>
+<span class="w">        </span>
+<span class="sd">'''</span>
+<span class="sd">This is a block comment</span>
+<span class="sd">lweflkje</span>
+<span class="sd">wljkwel</span>
+<span class="sd">wevkln</span>
+<span class="sd">'''</span>        
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[95]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>'\nThis is a block comment\nlweflkje\nwljkwel\nwevkln\n'</pre>
 </div>
 </div>
 </div>
@@ -11540,14 +11630,7 @@ Expected number of 7s is ~6513
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>     111     
-    22222    
-   3333333   
-  444444444  
- 55555555555 
-6666666666666
-777777777777777
-</pre>
+<pre>     111         22222       3333333     444444444   55555555555 6666666666666777777777777777</pre>
 </div>
 </div>
 </div>
@@ -11563,7 +11646,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div>
+</div></div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=346f2265">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -11578,7 +11661,7 @@ Expected number of 7s is ~6513
 </div>
 </div>
 </div>
-</div></div></section></section>
+</div></section></section>
 </div>
 </div>
 </main>
