@@ -7510,6 +7510,34 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eb9f44ad">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>PS6 due tonight</li>
+<li>PS7 (dictionaries) is posted, due Monday Nov. 18, 11:59pm</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8c081c0c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ee8a1d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7890,10 +7918,13 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">number_words</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">th</span> <span class="o">=</span> <span class="s2">"two hundred"</span>
+<span class="n">number_words</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"one"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s2">"four"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-    <span class="s2">"one hundred"</span><span class="p">:</span> <span class="mi">100</span>
+    <span class="s2">"one hundred"</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">th</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="s2">"three "</span> <span class="o">+</span> <span class="s2">"hundred"</span><span class="p">:</span> <span class="mi">300</span>
 <span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">number_words</span><span class="p">[</span><span class="s2">"four"</span><span class="p">])</span>
 </pre></div>
@@ -7922,7 +7953,10 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">number_words</span><span class="p">[</span><span class="s2">"one "</span> <span class="o">+</span> <span class="s2">"hundred"</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">oh</span> <span class="o">=</span> <span class="s2">"one "</span> <span class="o">+</span> <span class="s2">"hundred"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_words</span><span class="p">[</span><span class="n">oh</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_words</span><span class="p">[</span><span class="s2">"two hundred"</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number_words</span><span class="p">[</span><span class="s2">"three hundred"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7936,6 +7970,8 @@ section.present > section.present {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>100
+200
+300
 </pre>
 </div>
 </div>
@@ -8460,11 +8496,16 @@ Cell <span class="ansi-green-fg">In[20], line 3</span>, in <span class="ansi-cya
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Superman"</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Spongebob"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
-<span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Spiderman"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+<span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Spiderman"</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 <span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Spiderman"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
-<span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Spiderman"</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
+<span class="n">record_attempt</span><span class="p">(</span><span class="s2">"Spiderman"</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="n">scores</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8478,7 +8519,12 @@ Cell <span class="ansi-green-fg">In[20], line 3</span>, in <span class="ansi-cya
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'Batman': 100, 'Superman': 10, 'Spongebob': 50, 'Spiderman': 110}
+<pre>{'Batman': 100}
+{'Batman': 100, 'Superman': 10}
+{'Batman': 100, 'Superman': 10, 'Spongebob': 50}
+{'Batman': 100, 'Superman': 10, 'Spongebob': 50, 'Spiderman': 100}
+{'Batman': 100, 'Superman': 10, 'Spongebob': 50, 'Spiderman': 100}
+{'Batman': 100, 'Superman': 10, 'Spongebob': 50, 'Spiderman': 101}
 </pre>
 </div>
 </div>
@@ -8574,11 +8620,11 @@ Cell <span class="ansi-green-fg">In[20], line 3</span>, in <span class="ansi-cya
 <span class="k">def</span> <span class="nf">print_winner</span><span class="p">(</span><span class="n">scores</span><span class="p">):</span>
     <span class="n">best_score</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">best_player</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">for</span> <span class="n">player</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
-            <span class="n">best_score</span> <span class="o">=</span> <span class="n">score</span>
+    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">scores</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
+            <span class="n">best_score</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">player</span><span class="p">]</span>
             <span class="n">best_player</span> <span class="o">=</span> <span class="n">player</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Congratulations, </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2">, you win with </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2"> points!"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Congratulations, </span><span class="si">{</span><span class="n">player</span><span class="si">}</span><span class="s2">, you win with </span><span class="si">{</span><span class="n">scores</span><span class="p">[</span><span class="n">player</span><span class="p">]</span><span class="si">}</span><span class="s2"> points!"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8641,11 +8687,11 @@ Cell <span class="ansi-green-fg">In[20], line 3</span>, in <span class="ansi-cya
 <span class="k">def</span> <span class="nf">print_winner</span><span class="p">(</span><span class="n">scores</span><span class="p">):</span>
     <span class="n">best_score</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">best_player</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">for</span> <span class="n">player</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
-            <span class="n">best_score</span> <span class="o">=</span> <span class="n">score</span>
+    <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">scores</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">scores</span><span class="p">[</span><span class="n">player</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
+            <span class="n">best_score</span> <span class="o">=</span> <span class="n">scores</span><span class="p">[</span><span class="n">player</span><span class="p">]</span>
             <span class="n">best_player</span> <span class="o">=</span> <span class="n">player</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Congratulations, </span><span class="si">{</span><span class="n">best_player</span><span class="si">}</span><span class="s2">, you win with </span><span class="si">{</span><span class="n">best_score</span><span class="si">}</span><span class="s2"> points!"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Congratulations, </span><span class="si">{</span><span class="n">best_player</span><span class="si">}</span><span class="s2">, you win with </span><span class="si">{</span><span class="n">scores</span><span class="p">[</span><span class="n">best_player</span><span class="p">]</span><span class="si">}</span><span class="s2"> points!"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8882,6 +8928,7 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
             <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">counts</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Word: </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">counts</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">counts</span>
 </pre></div>
 </div>
@@ -8906,6 +8953,36 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Word: it, {'it': 1}
+Word: was, {'it': 1, 'was': 1}
+Word: the, {'it': 1, 'was': 1, 'the': 1}
+Word: best, {'it': 1, 'was': 1, 'the': 1, 'best': 1}
+Word: of, {'it': 1, 'was': 1, 'the': 1, 'best': 1, 'of': 1}
+Word: times, {'it': 1, 'was': 1, 'the': 1, 'best': 1, 'of': 1, 'times': 1}
+Word: it, {'it': 2, 'was': 1, 'the': 1, 'best': 1, 'of': 1, 'times': 1}
+Word: was, {'it': 2, 'was': 2, 'the': 1, 'best': 1, 'of': 1, 'times': 1}
+Word: the, {'it': 2, 'was': 2, 'the': 2, 'best': 1, 'of': 1, 'times': 1}
+Word: worst, {'it': 2, 'was': 2, 'the': 2, 'best': 1, 'of': 1, 'times': 1, 'worst': 1}
+Word: of, {'it': 2, 'was': 2, 'the': 2, 'best': 1, 'of': 2, 'times': 1, 'worst': 1}
+Word: times, {'it': 2, 'was': 2, 'the': 2, 'best': 1, 'of': 2, 'times': 2, 'worst': 1}
+Word: it, {'it': 3, 'was': 2, 'the': 2, 'best': 1, 'of': 2, 'times': 2, 'worst': 1}
+Word: was, {'it': 3, 'was': 3, 'the': 2, 'best': 1, 'of': 2, 'times': 2, 'worst': 1}
+Word: the, {'it': 3, 'was': 3, 'the': 3, 'best': 1, 'of': 2, 'times': 2, 'worst': 1}
+Word: age, {'it': 3, 'was': 3, 'the': 3, 'best': 1, 'of': 2, 'times': 2, 'worst': 1, 'age': 1}
+Word: of, {'it': 3, 'was': 3, 'the': 3, 'best': 1, 'of': 3, 'times': 2, 'worst': 1, 'age': 1}
+Word: wisdom, {'it': 3, 'was': 3, 'the': 3, 'best': 1, 'of': 3, 'times': 2, 'worst': 1, 'age': 1, 'wisdom': 1}
+Word: it, {'it': 4, 'was': 3, 'the': 3, 'best': 1, 'of': 3, 'times': 2, 'worst': 1, 'age': 1, 'wisdom': 1}
+Word: was, {'it': 4, 'was': 4, 'the': 3, 'best': 1, 'of': 3, 'times': 2, 'worst': 1, 'age': 1, 'wisdom': 1}
+Word: the, {'it': 4, 'was': 4, 'the': 4, 'best': 1, 'of': 3, 'times': 2, 'worst': 1, 'age': 1, 'wisdom': 1}
+Word: age, {'it': 4, 'was': 4, 'the': 4, 'best': 1, 'of': 3, 'times': 2, 'worst': 1, 'age': 2, 'wisdom': 1}
+Word: of, {'it': 4, 'was': 4, 'the': 4, 'best': 1, 'of': 4, 'times': 2, 'worst': 1, 'age': 2, 'wisdom': 1}
+Word: foolishness, {'it': 4, 'was': 4, 'the': 4, 'best': 1, 'of': 4, 'times': 2, 'worst': 1, 'age': 2, 'wisdom': 1, 'foolishness': 1}
+</pre>
+</div>
+</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
@@ -8920,6 +8997,28 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
  'wisdom': 1,
  'foolishness': 1}</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6c028b91">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>PS7 due Monday Nov. 18</li>
+<li>Quiz 8 this Wednesday</li>
+<li>There will be 10 total quizzes - this week, next week, and Dec. 4</li>
+<li>There will be 9 problem sets - PS7 due Nov 18, PS8 (files) due Nov 26, PS9 due ~Dec 9</li>
+<li><strong>Quiz corrections are due by Friday Dec 13, 5pm</strong><ul>
+<li><strong>One letter grade deduction for each missing or incorrect quiz question</strong></li>
+<li>Correct and/or make up your quizzes now!</li>
+<li>We will live correct regrades during recitations on Nov. 20 and Dec. 4.</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -8984,7 +9083,53 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['Apr', 'Feb', 'Jun', 'Jun', 'Jan', 'Oct', 'Feb', 'Dec', 'Sep', 'May', 'May', 'Jan', 'Mar', 'Aug', 'Jul', 'Mar', 'May', 'Dec', 'May', 'Jun', 'Aug', 'Feb', 'Sep', 'Jan', 'Apr', 'Aug', 'Jul', 'Aug', 'Nov', 'Jul', 'Oct', 'Nov', 'Feb', 'May', 'Jan', 'Oct', 'Dec', 'Jan', 'Dec', 'Jun', 'Oct', 'Jun', 'Jun', 'Feb', 'Mar', 'Sep', 'Oct', 'Sep', 'Oct', 'Aug', 'Feb', 'Apr', 'Dec', 'Sep', 'Dec', 'Feb', 'Jul', 'Jul', 'Jun', 'Dec', 'Oct', 'Jul', 'Jan', 'Sep', 'Jan', 'Mar', 'Aug', 'Jul', 'Apr', 'Apr', 'Jan', 'Nov', 'Jan', 'Oct', 'Feb', 'Aug', 'Dec', 'Feb', 'May', 'May', 'Feb', 'Jan', 'Mar', 'Feb', 'Feb', 'Jan', 'Mar', 'Sep', 'Nov', 'Apr', 'Jul', 'Sep', 'Jul', 'Jan', 'Mar', 'Jan', 'Feb', 'Nov', 'Jan', 'Oct']
+<pre>['Nov', 'Feb', 'Aug', 'Jan', 'May', 'Mar', 'Nov', 'Nov', 'Mar', 'Dec', 'Mar', 'Apr', 'Nov', 'Nov', 'Jul', 'Feb', 'Mar', 'Aug', 'Feb', 'Mar', 'Jun', 'Jul', 'Mar', 'Dec', 'Feb', 'Dec', 'Feb', 'Jan', 'Nov', 'Jan', 'Jan', 'Nov', 'Nov', 'Aug', 'May', 'Mar', 'Jul', 'Dec', 'Sep', 'Mar', 'Oct', 'Feb', 'Jan', 'Aug', 'Apr', 'Oct', 'Aug', 'Jun', 'May', 'Sep', 'Nov', 'Oct', 'Aug', 'May', 'Jul', 'Sep', 'Jan', 'Jun', 'Mar', 'Feb', 'Nov', 'Dec', 'Sep', 'Jun', 'Aug', 'May', 'Jun', 'Nov', 'May', 'Apr', 'May', 'Mar', 'Aug', 'Aug', 'Nov', 'May', 'May', 'Feb', 'Apr', 'Dec', 'Jan', 'Oct', 'Jan', 'Oct', 'Feb', 'Mar', 'Jul', 'Feb', 'Jul', 'May', 'Jun', 'Aug', 'Jul', 'Oct', 'Jun', 'Sep', 'Feb', 'Aug', 'Apr', 'Jul']
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=31b425ff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">months</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Jan'</span><span class="p">,</span> <span class="s1">'Feb'</span><span class="p">,</span> <span class="s1">'Mar'</span><span class="p">,</span> <span class="s1">'Apr'</span><span class="p">,</span> <span class="s1">'May'</span><span class="p">,</span> <span class="s1">'Jun'</span><span class="p">,</span> <span class="s1">'Jul'</span><span class="p">,</span> <span class="s1">'Aug'</span><span class="p">,</span> <span class="s1">'Sep'</span><span class="p">,</span> <span class="s1">'Oct'</span><span class="p">,</span> <span class="s1">'Nov'</span><span class="p">,</span> <span class="s1">'Dec'</span><span class="p">]</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">birthday_data</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+    <span class="n">counts</span><span class="p">[</span><span class="n">month</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counts</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Jan: 8
+Feb: 11
+Mar: 11
+Apr: 5
+May: 10
+Jun: 7
+Jul: 8
+Aug: 11
+Sep: 5
+Oct: 6
+Nov: 12
+Dec: 6
+{'Jan': 8, 'Feb': 11, 'Mar': 11, 'Apr': 5, 'May': 10, 'Jun': 7, 'Jul': 8, 'Aug': 11, 'Sep': 5, 'Oct': 6, 'Nov': 12, 'Dec': 6}
 </pre>
 </div>
 </div>
@@ -9006,16 +9151,26 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">bday_counts</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">bday</span> <span class="ow">in</span> <span class="n">birthday_data</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">bday</span> <span class="ow">in</span> <span class="n">bday_counts</span><span class="p">:</span>
-        <span class="n">bday_counts</span><span class="p">[</span><span class="n">bday</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>        
+        <span class="n">bday_counts</span><span class="p">[</span><span class="n">bday</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">bday_counts</span><span class="p">[</span><span class="n">bday</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1">#print(bday_counts)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bday_counts</span><span class="p">)</span>
+
+<span class="c1">#months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']</span>
+<span class="n">months</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">counts</span><span class="p">:</span>
+    <span class="n">months</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
+<span class="n">months</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">months</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Month </span><span class="si">{</span><span class="n">month</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">bday_counts</span><span class="p">[</span><span class="n">month</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9028,7 +9183,19 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'Apr': 6, 'Feb': 13, 'Jun': 7, 'Jan': 14, 'Oct': 9, 'Dec': 8, 'Sep': 8, 'May': 7, 'Mar': 7, 'Aug': 7, 'Jul': 9, 'Nov': 5}
+<pre>{'Nov': 12, 'Feb': 11, 'Aug': 11, 'Jan': 8, 'May': 10, 'Mar': 11, 'Dec': 6, 'Apr': 5, 'Jul': 8, 'Jun': 7, 'Sep': 5, 'Oct': 6}
+Month Apr: 5
+Month Aug: 11
+Month Dec: 6
+Month Feb: 11
+Month Jan: 8
+Month Jul: 8
+Month Jun: 7
+Month Mar: 11
+Month May: 10
+Month Nov: 12
+Month Oct: 6
+Month Sep: 5
 </pre>
 </div>
 </div>
@@ -9067,7 +9234,7 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">bday_counts</span><span class="p">)</span>
@@ -9083,7 +9250,7 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'Apr': 6, 'Feb': 13, 'Jun': 7, 'Jan': 14, 'Oct': 9, 'Dec': 8, 'Sep': 8, 'May': 7, 'Mar': 7, 'Aug': 7, 'Jul': 9, 'Nov': 5}
+<pre>{'Nov': 12, 'Feb': 11, 'Aug': 11, 'Jan': 8, 'May': 10, 'Mar': 11, 'Dec': 6, 'Apr': 5, 'Jul': 8, 'Jun': 7, 'Sep': 5, 'Oct': 6}
 </pre>
 </div>
 </div>
@@ -9094,7 +9261,7 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sortable</span> <span class="o">=</span> <span class="p">[]</span>
@@ -9118,18 +9285,18 @@ Cell <span class="ansi-green-fg">In[32], line 6</span>, in <span class="ansi-cya
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Count for Jan: 14
-Count for Feb: 13
-Count for Oct: 9
-Count for Jul: 9
-Count for Sep: 8
-Count for Dec: 8
-Count for May: 7
-Count for Mar: 7
+<pre>Count for Nov: 12
+Count for Mar: 11
+Count for Feb: 11
+Count for Aug: 11
+Count for May: 10
+Count for Jul: 8
+Count for Jan: 8
 Count for Jun: 7
-Count for Aug: 7
-Count for Apr: 6
-Count for Nov: 5
+Count for Oct: 6
+Count for Dec: 6
+Count for Sep: 5
+Count for Apr: 5
 </pre>
 </div>
 </div>
@@ -9151,7 +9318,7 @@ Count for Nov: 5
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sortable</span> <span class="o">=</span> <span class="p">[]</span>
@@ -9176,8 +9343,11 @@ Count for Nov: 5
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Count for Jan: 14
-Count for Feb: 13
+<pre>Count for Nov: 12
+Count for Mar: 11
+Count for Feb: 11
+Count for Aug: 11
+Count for May: 10
 </pre>
 </div>
 </div>
@@ -9262,10 +9432,10 @@ Count for Feb: 13
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">,</span> <span class="s2">"Toast"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -9279,7 +9449,7 @@ Count for Feb: 13
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'Spiderman', 'Batman', 'Spongebob'}
+<pre>{'Batman', 'Toast', 'Spongebob', 'Spiderman'}
 </pre>
 </div>
 </div>
@@ -9301,7 +9471,7 @@ Count for Feb: 13
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">])</span>
@@ -9315,7 +9485,7 @@ Count for Feb: 13
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="s2">"Batman"</span> <span class="ow">in</span> <span class="n">names</span>
@@ -9329,7 +9499,7 @@ Count for Feb: 13
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>True</pre>
 </div>
@@ -9341,7 +9511,7 @@ Count for Feb: 13
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="s2">"Peppa"</span> <span class="ow">in</span> <span class="n">names</span>
@@ -9355,7 +9525,7 @@ Count for Feb: 13
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>False</pre>
 </div>
@@ -9379,7 +9549,7 @@ Count for Feb: 13
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">])</span>
@@ -9397,9 +9567,9 @@ Count for Feb: 13
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Spiderman
-Batman
+<pre>Batman
 Spongebob
+Spiderman
 </pre>
 </div>
 </div>
@@ -9421,7 +9591,7 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">])</span>
@@ -9439,7 +9609,7 @@ Spongebob
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'Spiderman', 'Peppa', 'Batman', 'Spongebob'}
+<pre>{'Batman', 'Peppa', 'Spongebob', 'Spiderman'}
 </pre>
 </div>
 </div>
@@ -9450,7 +9620,7 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">])</span>
@@ -9468,7 +9638,7 @@ Spongebob
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'Spiderman', 'Spongebob'}
+<pre>{'Spongebob', 'Spiderman'}
 </pre>
 </div>
 </div>
@@ -9479,7 +9649,7 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">])</span>
@@ -9519,11 +9689,11 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spiderman"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Spongebob"</span><span class="p">])</span>
-<span class="n">names</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s2">"Wolverine"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">,</span> <span class="s2">"Wolverine"</span><span class="p">,</span> <span class="s2">"Magneto"</span><span class="p">])</span>
+<span class="n">names</span><span class="o">.</span><span class="n">update</span><span class="p">([</span><span class="s2">"Wolverine"</span><span class="p">,</span> <span class="s2">"Magneto"</span><span class="p">,</span> <span class="s2">"Batman"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -9537,7 +9707,7 @@ Spongebob
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>{'Spongebob', 'Magneto', 'Spiderman', 'Wolverine', 'Batman'}
+<pre>{'Wolverine', 'Batman', 'Spongebob', 'Magneto', 'Spiderman'}
 </pre>
 </div>
 </div>
@@ -9570,7 +9740,7 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"dandelion"</span><span class="p">,</span> <span class="s2">"pillow"</span><span class="p">])</span>
@@ -9586,7 +9756,7 @@ Spongebob
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>False</pre>
 </div>
@@ -9609,12 +9779,14 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"dandelion"</span><span class="p">,</span> <span class="s2">"pillow"</span><span class="p">])</span>
 <span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"baby"</span><span class="p">,</span> <span class="s2">"horn"</span><span class="p">,</span> <span class="s2">"alarm"</span><span class="p">])</span>
-<span class="n">fluffy</span> <span class="o">&amp;</span> <span class="n">loud</span>
+<span class="n">fluffy_and_loud</span> <span class="o">=</span> <span class="n">fluffy</span> <span class="o">&amp;</span> <span class="n">loud</span>
+<span class="k">for</span> <span class="n">thing</span> <span class="ow">in</span> <span class="n">fluffy_and_loud</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">thing</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9624,10 +9796,12 @@ Spongebob
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'cat', 'dog'}</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>dog
+cat
+</pre>
 </div>
 </div>
 </div>
@@ -9648,12 +9822,13 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"dandelion"</span><span class="p">,</span> <span class="s2">"pillow"</span><span class="p">])</span>
 <span class="n">loud</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"baby"</span><span class="p">,</span> <span class="s2">"horn"</span><span class="p">,</span> <span class="s2">"alarm"</span><span class="p">])</span>
 <span class="n">fluffy</span> <span class="o">|</span> <span class="n">loud</span>
+<span class="n">loud</span> <span class="o">|</span> <span class="n">fluffy</span>
 </pre></div>
 </div>
 </div>
@@ -9664,7 +9839,7 @@ Spongebob
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'alarm', 'baby', 'cat', 'dandelion', 'dog', 'horn', 'pillow'}</pre>
 </div>
@@ -9687,7 +9862,7 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"dandelion"</span><span class="p">,</span> <span class="s2">"pillow"</span><span class="p">])</span>
@@ -9703,7 +9878,7 @@ Spongebob
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'dandelion', 'pillow'}</pre>
 </div>
@@ -9726,10 +9901,10 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">loud</span> <span class="o">-</span> <span class="n">fluffy</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">loud</span> <span class="o">-</span> <span class="n">fluffy</span> 
 </pre></div>
 </div>
 </div>
@@ -9740,7 +9915,7 @@ Spongebob
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'alarm', 'baby', 'horn'}</pre>
 </div>
@@ -9765,7 +9940,7 @@ Spongebob
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">fluffy</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">"cat"</span><span class="p">,</span> <span class="s2">"dog"</span><span class="p">,</span> <span class="s2">"dandelion"</span><span class="p">,</span> <span class="s2">"pillow"</span><span class="p">])</span>
@@ -9781,7 +9956,7 @@ Spongebob
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'alarm', 'baby', 'dandelion', 'horn', 'pillow'}</pre>
 </div>
@@ -9805,7 +9980,7 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">letters</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s2">"abcdefghijklmnopqrstuvwxyz"</span><span class="p">)</span>
@@ -9821,7 +9996,7 @@ Subset: a set is made up only of elements from another set</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>True</pre>
 </div>
@@ -9833,7 +10008,7 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">vowels</span><span class="o">.</span><span class="n">issuperset</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
@@ -9847,7 +10022,7 @@ Subset: a set is made up only of elements from another set</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>False</pre>
 </div>
@@ -9859,10 +10034,10 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">vowels</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">vowels</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -9873,7 +10048,7 @@ Subset: a set is made up only of elements from another set</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>True</pre>
 </div>
@@ -9885,7 +10060,7 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">letters</span><span class="o">.</span><span class="n">issubset</span><span class="p">(</span><span class="n">vowels</span><span class="p">)</span>
@@ -9899,10 +10074,32 @@ Subset: a set is made up only of elements from another set</p>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[62]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>False</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60609aea">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>PS7 due Monday Nov. 18</li>
+<li>Quiz 8 tonight</li>
+<li>There will be 10 total quizzes - this week, next week, and Dec. 4</li>
+<li>There will be 9 problem sets - PS7 due Nov 18, PS8 (files) due Nov 26, PS9 due ~Dec 9</li>
+<li><strong>Quiz corrections are due by Friday Dec 13, 5pm</strong><ul>
+<li><strong>One letter grade deduction for each missing or incorrect quiz question</strong></li>
+<li>Correct and/or make up your quizzes now!</li>
+<li>We will live correct regrades during recitations on Nov. 20 and Dec. 4.</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -9922,7 +10119,7 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span> <span class="s1">'AK'</span><span class="p">,</span> <span class="s1">'AL'</span><span class="p">,</span> <span class="s1">'AR'</span><span class="p">,</span> <span class="s1">'AZ'</span><span class="p">,</span> <span class="s1">'CA'</span><span class="p">,</span> <span class="s1">'CO'</span><span class="p">,</span> <span class="s1">'CT'</span><span class="p">,</span> <span class="s1">'DE'</span><span class="p">,</span> <span class="s1">'FL'</span><span class="p">,</span> <span class="s1">'GA'</span><span class="p">,</span>
@@ -9943,11 +10140,7 @@ Subset: a set is made up only of elements from another set</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span> <span class="s1">'AK'</span><span class="p">,</span> <span class="s1">'AL'</span><span class="p">,</span> <span class="s1">'AR'</span><span class="p">,</span> <span class="s1">'AZ'</span><span class="p">,</span> <span class="s1">'CA'</span><span class="p">,</span> <span class="s1">'CO'</span><span class="p">,</span> <span class="s1">'CT'</span><span class="p">,</span> <span class="s1">'DE'</span><span class="p">,</span> <span class="s1">'FL'</span><span class="p">,</span> <span class="s1">'GA'</span><span class="p">,</span>
-           <span class="s1">'HI'</span><span class="p">,</span> <span class="s1">'IA'</span><span class="p">,</span> <span class="s1">'ID'</span><span class="p">,</span> <span class="s1">'IL'</span><span class="p">,</span> <span class="s1">'IN'</span><span class="p">,</span> <span class="s1">'KS'</span><span class="p">,</span> <span class="s1">'KY'</span><span class="p">,</span> <span class="s1">'LA'</span><span class="p">,</span> <span class="s1">'MA'</span><span class="p">,</span> <span class="s1">'MD'</span><span class="p">,</span> <span class="s1">'ME'</span><span class="p">,</span>
-           <span class="s1">'MI'</span><span class="p">,</span> <span class="s1">'MN'</span><span class="p">,</span> <span class="s1">'MO'</span><span class="p">,</span> <span class="s1">'MS'</span><span class="p">,</span> <span class="s1">'MT'</span><span class="p">,</span> <span class="s1">'NC'</span><span class="p">,</span> <span class="s1">'ND'</span><span class="p">,</span> <span class="s1">'NE'</span><span class="p">,</span> <span class="s1">'NH'</span><span class="p">,</span> <span class="s1">'NJ'</span><span class="p">,</span> <span class="s1">'NM'</span><span class="p">,</span>
-           <span class="s1">'NV'</span><span class="p">,</span> <span class="s1">'NY'</span><span class="p">,</span> <span class="s1">'OH'</span><span class="p">,</span> <span class="s1">'OK'</span><span class="p">,</span> <span class="s1">'OR'</span><span class="p">,</span> <span class="s1">'PA'</span><span class="p">,</span> <span class="s1">'RI'</span><span class="p">,</span> <span class="s1">'SC'</span><span class="p">,</span> <span class="s1">'SD'</span><span class="p">,</span> <span class="s1">'TN'</span><span class="p">,</span> <span class="s1">'TX'</span><span class="p">,</span>
-           <span class="s1">'UT'</span><span class="p">,</span> <span class="s1">'VA'</span><span class="p">,</span> <span class="s1">'VT'</span><span class="p">,</span> <span class="s1">'WA'</span><span class="p">,</span> <span class="s1">'WI'</span><span class="p">,</span> <span class="s1">'WV'</span><span class="p">,</span> <span class="s1">'WY'</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span> <span class="s1">'AK'</span><span class="p">,</span> <span class="s1">'AL'</span><span class="p">,</span> <span class="s1">'AR'</span><span class="p">])</span>
 <span class="n">guesses</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Guess all 50 US state postal abbreviations, without repeating."</span><span class="p">)</span>
@@ -9981,6 +10174,86 @@ Subset: a set is made up only of elements from another set</p>
 <p>Open the file: <code>exercises/08/03_plagiarism_detector/README.md</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the "Run" button at the top right of the editor.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb311b64">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Types-review">Types review<a class="anchor-link" href="#Types-review">¶</a></h1><ul>
+<li><code>str</code>: ordered sequence of characters; Example usages:<ul>
+<li>commonly used to hold words</li>
+</ul>
+</li>
+<li><code>int</code>: integers (whole numbers)</li>
+<li><code>float</code>: floating point numbers (decimal numbers)</li>
+<li><code>bool</code>: True/False</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1efc6c9f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Types-review">Types review<a class="anchor-link" href="#Types-review">¶</a></h1><ul>
+<li><code>list</code>: ordered sequence that can hold any data type<ul>
+<li>Mutable</li>
+<li>Example usages:<ul>
+<li>holding a sequence of numbers</li>
+<li>holding a sequence of names</li>
+<li>holding any ordered sequence of things</li>
+<li>any data where there are values, and the values don't have names (i.e. not key/value data)</li>
+<li>any set of things that you need to iterate over</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>tuple</code>: same thing as list, but immutable<ul>
+<li>Immutable</li>
+<li>Chosen over a list when immutability or performance is important<ul>
+<li>e.g. when passing a sequence to a function - if you pass a tuple, you know the function won't modify it</li>
+</ul>
+</li>
+<li>Can be used as a key in a dictionary (dictionary keys must be immutable)</li>
+<li>In general it is safe to use a list unless there is a reason to use a tuple</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=581b627b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Types-review">Types review<a class="anchor-link" href="#Types-review">¶</a></h1><ul>
+<li><code>dict</code>: key/value data; unordered; mutable<ul>
+<li>Dictionaries map names to values;<ul>
+<li>e.g. names to phone numbers, names to ages, months to birthdays (or vice-versa), names to birthdays, etc</li>
+</ul>
+</li>
+<li>keys can be any mutable type</li>
+<li>values can be any type</li>
+<li>keys are unique</li>
+</ul>
+</li>
+<li><code>set</code>: unordered collection of unique values; used to handle duplicates or when comparison of 2 or more collections is needed (e.g. finding the intersection or union of 2 collections); Example usages:<ul>
+<li>counting unique words</li>
+<li>checking whether a user has guessed all the correct states</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
