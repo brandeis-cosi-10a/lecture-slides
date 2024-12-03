@@ -5,7 +5,7 @@
 <meta content="chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="yes" name="apple-mobile-web-app-capable"/>
 <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<title>10_classes slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+<title>11_modules slides</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
   import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.7.0/mermaid.esm.min.mjs';
   mermaid.initialize({ startOnLoad: true });
 </script>
@@ -7433,79 +7433,81 @@ main {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
 <div class="reveal">
-<div class="slides"><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=775cf7f0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05f7606d">
+<div class="slides"><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ee8a1d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
-<li>PS8 due tomorrow (11/26), 11:59pm</li>
-<li>Next week: one more Problem Set and Quiz to go!<ul>
-<li>Please correct your quizzes!</li>
-</ul>
-</li>
-<li>Have a nice break!</li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=608f6f81">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Classes">Classes<a class="anchor-link" href="#Classes">¶</a></h1><style>
+<h1 id="Modules">Modules<a class="anchor-link" href="#Modules">¶</a></h1><style>
 section.present > section.present { 
     max-height: 90%; 
     overflow-y: scroll;
 }
 </style>
-<p><small><a href="https://colab.research.google.com/github/brandeis-jdelfino/cosi-10a/blob/24fall/lectures/notebooks/10_classes.ipynb">Link to interactive slides on Google Colab</a></small></p>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2b4fbe2a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2143ec83">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Classes">Classes<a class="anchor-link" href="#Classes">¶</a></h1><p>A "class" is something that bundles data and functionality together.</p>
-<p>Classes help us add structure to our programs.</p>
+<h2 id="Modules">Modules<a class="anchor-link" href="#Modules">¶</a></h2><p>So far, we've only written programs that live within a single file. As programs get larger and more complex, some sort of organization and subdivision becomes necessary.</p>
+<p>One way to do this is with <strong>modules</strong>. In Python, all the code that lives in one file makes up a module. <code>main.py</code> is a module. Many of the built-in tools we used are also modules - e.g. <code>random</code> and <code>time</code>.</p>
+<p>You can <strong>import</strong> code from other modules. This makes classes, functions, and variables from the imported module available for use.</p>
 </div>
 </div>
 </div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a19a085">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cbbf2e8b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-exercise-Exercise,-revisited-again">The exercise Exercise, revisited again<a class="anchor-link" href="#The-exercise-Exercise,-revisited-again">¶</a></h1><p>A dictionary held data about people's exercise schedules:</p>
+<h2 id="Example:-Multiple-Modules">Example: Multiple Modules<a class="anchor-link" href="#Example:-Multiple-Modules">¶</a></h2><p><a href="https://codespaces.new/brandeis-cosi-10a/class-exercises?quickstart=1">Open the class exercises Codespace</a></p>
+<p>Open the file: <code>exercises/11/01_module_example</code>, follow the instructions.</p>
+<ul>
+<li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the "Run" button at the top right of the editor.</li>
+</ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=182868ec">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5a8ba447">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="https://replit.com/@cosi-10a-fall23/Modules-examples#main.py">repl.it: Modules examples</a></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ce5ddb9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Importing">Importing<a class="anchor-link" href="#Importing">¶</a></h1><p>There are 2 main ways to import code.</p>
+<ol>
+<li><code>import &lt;module name&gt;</code><ul>
+<li>This imports all code from the module.</li>
+<li>Functions, methods, and objects are accessible via <code>&lt;module name&gt;.&lt;function name&gt;</code>.</li>
+<li>e.g. <code>random.seed()</code> calls the <code>seed()</code> function from the <code>random</code> module.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=99264f04">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7513,21 +7515,8 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"Spongebob"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">31</span><span class="p">],</span>
-    <span class="s2">"Batman"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span>
-    <span class="s2">"Dora"</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span>
-    <span class="s2">"Peppa"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">29</span><span class="p">],</span>
-    <span class="s2">"Bill Murray"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="p">}</span>
-
-<span class="n">most</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">most_name</span> <span class="o">=</span> <span class="s2">""</span>
-<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">most</span><span class="p">:</span>
-        <span class="n">most</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
-        <span class="n">most_name</span> <span class="o">=</span> <span class="n">name</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">most_name</span><span class="si">}</span><span class="s2"> exercised the most, with </span><span class="si">{</span><span class="n">most</span><span class="si">}</span><span class="s2"> days of exercise!"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7537,38 +7526,35 @@ section.present > section.present {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Peppa exercised the most, with 15 days of exercise!
-</pre>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>14</pre>
 </div>
 </div>
 </div>
 </div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9f390191">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c5707179">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Classes-add-structure-to-programs">Classes add structure to programs<a class="anchor-link" href="#Classes-add-structure-to-programs">¶</a></h1><p>To make our program more structured and readable, we can use a <strong>class</strong>.</p>
+<h1 id="Importing">Importing<a class="anchor-link" href="#Importing">¶</a></h1><p>There are 2 main ways to import code.</p>
+<ol start="2">
+<li><code>from &lt;module name&gt; import &lt;function name&gt;</code><ul>
+<li>This imports a single thing from the module.</li>
+<li>When importing this way, you use the function directly, without referencing the module name:</li>
+<li>e.g. <code>from random import seed</code> lets you just type <code>seed()</code> to call the <code>seed()</code> function from the <code>random</code> module.</li>
+<li>You can import multiple things at once with <code>from</code> - e.g. <code>from random import seed, randint</code> imports the <code>seed</code> and <code>randint</code> functions from the <code>random</code> module.</li>
+</ul>
+</li>
+</ol>
 </div>
 </div>
 </div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4728b0c8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here is the code we wish we could write:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=17d985d7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7c228fd8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7576,14 +7562,9 @@ section.present > section.present {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># data = [ ??? ]</span>
-
-<span class="n">most</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="k">for</span> <span class="n">exercise_data</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">most</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">exercise_data</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">most</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">():</span>
-        <span class="n">most</span> <span class="o">=</span> <span class="n">exercise_data</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">most</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> exercised the most, with </span><span class="si">{</span><span class="n">most</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">()</span><span class="si">}</span><span class="s2"> days of exercise!"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">seed</span><span class="p">,</span> <span class="n">randint</span>
+<span class="n">seed</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7593,1228 +7574,79 @@ section.present > section.present {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[2], line 5</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> most <span style="color: rgb(98,98,98)">=</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-bold" style="color: rgb(0,135,0)">for</span> exercise_data <span class="ansi-bold" style="color: rgb(175,0,255)">in</span> data:
-<span class="ansi-green-fg">----&gt; 5</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> most <span style="color: rgb(98,98,98)">==</span> <span class="ansi-bold" style="color: rgb(0,135,0)">None</span> <span class="ansi-bold" style="color: rgb(175,0,255)">or</span> <span class="ansi-yellow-bg">exercise_data</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">days_exercised</span>() <span style="color: rgb(98,98,98)">&gt;</span> most<span style="color: rgb(98,98,98)">.</span>days_exercised():
-<span class="ansi-green-intense-fg ansi-bold">      6</span>         most <span style="color: rgb(98,98,98)">=</span> exercise_data
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">"</span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>most<span style="color: rgb(98,98,98)">.</span>name<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)"> exercised the most, with </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>most<span style="color: rgb(98,98,98)">.</span>days_exercised()<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)"> days of exercise!</span><span style="color: rgb(175,0,0)">"</span>)
-
-<span class="ansi-red-fg">AttributeError</span>: 'str' object has no attribute 'days_exercised'</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2fa16f7a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>But what goes in <code>data</code>?</p>
-<p>Where did that <code>days_exercised()</code> function come from?</p>
-<p>Where did <code>.name</code> come from?</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fb2aa225">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>In order to make this work, we can define a class:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d5446110">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Note: this code is an illustrative example, don't copy this pattern</span>
-<span class="c1"># as we'll see later, there are better ways to write this code using classes</span>
-
-<span class="k">class</span> <span class="nc">ExerciseInfo</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">days_exercised</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">)</span>
-
-<span class="n">peppa_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">()</span>
-<span class="n">peppa_info</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Peppa"</span>
-<span class="n">peppa_info</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
-
-<span class="n">spongebob_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">()</span>
-<span class="n">spongebob_info</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Spongebob"</span>
-<span class="n">spongebob_info</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="n">peppa_info</span><span class="p">,</span> <span class="n">spongebob_info</span><span class="p">]</span>
-
-<span class="n">most</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="k">for</span> <span class="n">exercise_data</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">most</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">exercise_data</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">most</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">():</span>
-        <span class="n">most</span> <span class="o">=</span> <span class="n">exercise_data</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">most</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> exercised the most, with </span><span class="si">{</span><span class="n">most</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">()</span><span class="si">}</span><span class="s2"> days of exercise!"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Peppa exercised the most, with 15 days of exercise!
-</pre>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>17</pre>
 </div>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0ad55772">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8900563a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="What-just-happened?">What just happened?<a class="anchor-link" href="#What-just-happened?">¶</a></h1><p>We defined a class: <code>ExerciseInfo</code></p>
-<p>We added some functionality to the class: a function called <code>days_exercised</code></p>
-<p>We created two <strong>instances</strong> of the class: <code>peppa_info</code> and <code>spongebob_info</code>, and set some data on each instance.</p>
-<p>We put those instances into a list, and used them to figure out who exercised the most.</p>
+<h1 id="Importing">Importing<a class="anchor-link" href="#Importing">¶</a></h1><p>Imports are typically placed at the top of a file.</p>
+<p>They can technically go anywhere in your code, but the top is the best place in almost all cases.</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=07bcf986">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=51f6a31a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Class-vs-Object">Class vs Object<a class="anchor-link" href="#Class-vs-Object">¶</a></h1><p><code>ExerciseInfo</code> is the <strong>class</strong>.</p>
-<p>A <strong>class</strong> specifies the data and behavior which will exist on an object. It is like a blueprint.</p>
-<p><code>peppa_info</code> and <code>spongebob_info</code> are <strong>objects</strong>: specific copies (or instances) of the class.</p>
-<p>Each object has its own data, and different objects are independent from each other.</p>
-<p><strong>Objects</strong> are often called <strong>instances</strong> of a class.</p>
+<h1 id="Creating-modules">Creating modules<a class="anchor-link" href="#Creating-modules">¶</a></h1><p>You can create and use your own modules by putting code in its own file, then importing the module from another file.</p>
+<p>The name of the module is the name of the file (minus the <code>.py</code> extension).</p>
+<p>A best practice is to put a cohesive pieces of code together in a module. Avoid lumping unrelated things together in any module other than <code>main</code>.</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f673641e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=26775e8e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Class-vs-Instance-analogies">Class vs Instance analogies<a class="anchor-link" href="#Class-vs-Instance-analogies">¶</a></h1><p>A 3d model file is like a class, the thing that comes out of the 3d printer is the object, or instance.</p>
-<p>Individual prints might use different colors, or be printed at different scales. They come from the same model file, but have their own, independent properties.</p>
+<h1 id="Third-party-packages">Third party packages<a class="anchor-link" href="#Third-party-packages">¶</a></h1><p>One of the most powerful things about Python is the number of packages that other people have written that you can use freely and easily.</p>
+<p>(A package is a collection of one or more modules)</p>
+<p><a href="https://pypi.org/">pypi.org</a> is a very popular platform which hosts almost 500,000 packages. When you need to do something, try using pypi's search, or your favorite internet search engine, to find a package that can help.</p>
+<p>(But... don't do this for assignments, unless specifically directed to)</p>
 </div>
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b66e6ea8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e93d8656">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Class-vs-Instance-analogies">Class vs Instance analogies<a class="anchor-link" href="#Class-vs-Instance-analogies">¶</a></h1><p>A car blueprint is like a class, a physical car is the object, or instance.</p>
-<p>Individual cars might have different trim levels, or come in different colors, but they are made from the same blueprint.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=22978900">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Class-vs-Instance-analogies">Class vs Instance analogies<a class="anchor-link" href="#Class-vs-Instance-analogies">¶</a></h1><p>A sewing pattern is like a class, a sewn garment is the object, or instance.</p>
-<p>Individual garments can be made out of different fabrics, or cut to different sizes, but they are all produced from the same pattern.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2697b34">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Defining-classes">Defining classes<a class="anchor-link" href="#Defining-classes">¶</a></h1><p>Defining a class is like defining a function. When you define a function, the function doesn't run. The function must be called to make it run.</p>
-<p>Defining a class specifies what the class holds, and what it does, but it doesn't create any instances. Instances must be explicitly created.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=df5594fb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Defining-classes">Defining classes<a class="anchor-link" href="#Defining-classes">¶</a></h1><p>Defining a class is done with the <code>class</code> keyword. This code defines a class named <code>ExerciseInfo</code>:</p>
-<pre><code>class ExerciseInfo:
-    # class definition statements go here
-</code></pre>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6bba6c80">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Adding-behavior-to-classes">Adding behavior to classes<a class="anchor-link" href="#Adding-behavior-to-classes">¶</a></h1><p>Functions can be included in class definitions. Functions on classes are called <strong>methods</strong>.</p>
-<p>The name difference is a fine distinction for our purposes, you can use "function" and "method" interchangably in this class.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e4e2fdce">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Adding-behavior-to-classes">Adding behavior to classes<a class="anchor-link" href="#Adding-behavior-to-classes">¶</a></h1><p>This code defines the <code>ExerciseInfo</code> class, and includes a single method named <code>days_exercised</code>:</p>
-<pre><code>class ExerciseInfo:
-   def days_exercised(self):
-      return len(self.dates)
-</code></pre>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c34afcdb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Creating-objects">Creating objects<a class="anchor-link" href="#Creating-objects">¶</a></h1><p>Objects are created by adding <code>()</code> to the class name.</p>
-<p>This code creates a single <code>ExerciseInfo</code> object, or instance, and stores it in a variable named <code>peppa_info</code>:</p>
-<pre><code>peppa_info = ExerciseInfo()
-</code></pre>
-<p>(Just like functions, we'll see later that arguments can sometimes go inside those empty parentheses)</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=195f9dd9">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Attributes">Attributes<a class="anchor-link" href="#Attributes">¶</a></h1><p>Instances can hold variables. These are called attributes.</p>
-<p>One way to add an attribute is to just set one on an instance:</p>
-<pre><code>peppa_info.name = "Peppa"
-</code></pre>
-<p>The <code>peppa_info</code> instance now holds an attribute named <code>name</code>, with the value <code>"Peppa"</code>.</p>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=140bd17e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ExerciseInfo</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">days_exercised</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">)</span>
-
-<span class="n">peppa_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">()</span>
-<span class="n">peppa_info</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Peppa"</span>
-<span class="n">peppa_info</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">29</span><span class="p">]</span>
-
-<span class="n">spongebob_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">()</span>
-<span class="n">spongebob_info</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Spongebob"</span>
-<span class="n">spongebob_info</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
-
-<span class="c1"># ...</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=385ff957">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="But...">But...<a class="anchor-link" href="#But...">¶</a></h1><p>This approach has flaws. It requires users of the class to know which fields to set, and to always remember to set them consistently.</p>
-<p>In order for classes to actually add structure to our programs, they should be able to specify which fields they have.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=90acfb06">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Specifying-attributes-in-the-class-definition">Specifying attributes in the class definition<a class="anchor-link" href="#Specifying-attributes-in-the-class-definition">¶</a></h1><p>The crazy* Python syntax for setting attributes in the class definition is:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=300cc4d8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ExerciseInfo</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">""</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">def</span> <span class="nf">days_exercised</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7e5b6e4f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>* It's not actually crazy, there are reasons it is done this way, but the syntax is intimidating and obtuse</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf5b3af2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-init-function">The <strong>init</strong> function<a class="anchor-link" href="#The-init-function">¶</a></h1><p>That crazy-looking function: <code>__init__(self)</code> is called a <strong>constructor</strong>.</p>
-<p>It is run automatically when a new instance of the class is created.</p>
-<p>In the case of <code>ExerciseInfo</code>, 2 attributes are defined: <code>name</code> and <code>dates</code>:</p>
-<pre><code>    def __init__(self):
-        self.name = ""
-        self.dates = []
-</code></pre>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f64d7b90">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-init-function">The init function<a class="anchor-link" href="#The-init-function">¶</a></h1><p>The init function can also take arguments:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4a1b53e2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ExerciseInfo</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exerciser_name</span><span class="p">,</span> <span class="n">exerciser_dates</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">exerciser_name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="n">exerciser_dates</span>
-
-    <span class="k">def</span> <span class="nf">days_exercised</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0718355e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-init-function">The init function<a class="anchor-link" href="#The-init-function">¶</a></h1><p>Now, when we create an <code>ExerciseInfo</code>, we must supply two arguments: <code>exerciser_name</code> and <code>exerciser_dates</code>:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4b2620a6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ExerciseInfo</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exerciser_name</span><span class="p">,</span> <span class="n">exerciser_dates</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">exerciser_name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="n">exerciser_dates</span>
-
-    <span class="k">def</span> <span class="nf">days_exercised</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">)</span>
-
-<span class="c1"># ExerciseInfo()</span>
-<span class="n">peppa_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">(</span><span class="s2">"Peppa"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">29</span><span class="p">])</span>
-<span class="n">spongebob_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">(</span><span class="s2">"Spongebob"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">31</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">peppa_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> exercised on days: </span><span class="si">{</span><span class="n">peppa_info</span><span class="o">.</span><span class="n">dates</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"That's </span><span class="si">{</span><span class="n">peppa_info</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">()</span><span class="si">}</span><span class="s2"> days!"</span><span class="p">)</span>
-<span class="c1"># ...</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Peppa exercised on days: [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29].
-That's 15 days!
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7881349e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="self"><code>self</code><a class="anchor-link" href="#self">¶</a></h2><p>We see this strange parameter, <code>self</code>, on each method.</p>
-<p>Methods need a way to access the instances on which they are called.</p>
-<p>e.g. <code>days_exercised</code> needs access to a list of dates, so that the number of days can be calculated</p>
-<p>But the <code>days_exercised</code> for <code>peppa_info</code> is different from the <code>days_exercised</code> for <code>spongebob_info</code>.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5b901ada">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="self"><code>self</code><a class="anchor-link" href="#self">¶</a></h2><p>When a class method is called, the instance is always "magically" passed as the first parameter to the method.</p>
-<p>Let's look at <code>ExerciseInfo</code> in PythonTutor to see this: <a href="https://pythontutor.com/render.html#code=class%20ExerciseInfo%3A%0A%20%20%20%20def%20__init__%28self,%20exerciser_name,%20exerciser_dates%29%3A%0A%20%20%20%20%20%20%20%20self.name%20%3D%20exerciser_name%0A%20%20%20%20%20%20%20%20self.dates%20%3D%20exerciser_dates%0A%0A%20%20%20%20def%20days_exercised%28self%29%3A%0A%20%20%20%20%20%20%20%20return%20len%28self.dates%29%0A%0Apeppa_days%20%3D%20%5B1,%203,%205,%207,%209,%2011,%2013,%2015,%2017,%2019,%2021,%2023,%2025,%2027,%2029%5D%0Apeppa_info%20%3D%20ExerciseInfo%28%22Peppa%22,%20peppa_days%29%0Aspongebob_days%20%3D%20%5B1,%207,%2015,%2031%5D%0Aspongebob_info%20%3D%20ExerciseInfo%28%22Spongebob%22,%20spongebob_days%29%0A%0Apeppa_num_days%20%3D%20peppa_info.days_exercised%28%29%0Aprint%28f%22%7Bpeppa_info.name%7D%20exercised%20on%20days%3A%20%7Bpeppa_info.dates%7D.%20That%27s%20%7Bpeppa_num_days%7D%20days!%22%29%0A%23%20...&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=72f41231">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="self-and-methods"><code>self</code> and methods<a class="anchor-link" href="#self-and-methods">¶</a></h2><p>These two lines of code are equivalent:</p>
-<pre><code>peppa_info.days_exercised()
-</code></pre>
-<p>vs.</p>
-<pre><code>ExerciseInfo.days_exercised(peppa_info)
-</code></pre>
-<p>They both say: call the method <code>days_exercised</code> on the <code>ExerciseInfo</code> class, and use <code>peppa_info</code> as the instance.</p>
-<p>We virtually always use the first syntax, but the second syntax more clearly shows how that first parameter, <code>self</code> gets filled in.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fab25e2f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Common-gotcha:-forgetting-your-self">Common gotcha: forgetting your self<a class="anchor-link" href="#Common-gotcha:-forgetting-your-self">¶</a></h2><p>A common "gotcha" is forgetting to add the <code>self</code> parameter to a method definition:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9388ea73">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ExerciseInfo</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exerciser_name</span><span class="p">,</span> <span class="n">exerciser_dates</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">exerciser_name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="n">exerciser_dates</span>
-
-    <span class="c1"># no self parameter here - incorrect!</span>
-    <span class="k">def</span> <span class="nf">days_exercised</span><span class="p">():</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">)</span>
-        
-<span class="n">peppa_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">(</span><span class="s2">"Peppa"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">29</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Peppa exercised for </span><span class="si">{</span><span class="n">peppa_info</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">()</span><span class="si">}</span><span class="s2"> days!"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[8], line 11</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">len</span>(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>dates)
-<span class="ansi-green-intense-fg ansi-bold">     10</span> peppa_info <span style="color: rgb(98,98,98)">=</span> ExerciseInfo(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Peppa</span><span style="color: rgb(175,0,0)">"</span>, [<span style="color: rgb(98,98,98)">1</span>, <span style="color: rgb(98,98,98)">3</span>, <span style="color: rgb(98,98,98)">5</span>, <span style="color: rgb(98,98,98)">7</span>, <span style="color: rgb(98,98,98)">9</span>, <span style="color: rgb(98,98,98)">11</span>, <span style="color: rgb(98,98,98)">13</span>, <span style="color: rgb(98,98,98)">15</span>, <span style="color: rgb(98,98,98)">17</span>, <span style="color: rgb(98,98,98)">19</span>, <span style="color: rgb(98,98,98)">21</span>, <span style="color: rgb(98,98,98)">23</span>, <span style="color: rgb(98,98,98)">25</span>, <span style="color: rgb(98,98,98)">27</span>, <span style="color: rgb(98,98,98)">29</span>])
-<span class="ansi-green-fg">---&gt; 11</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Peppa exercised for </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>peppa_info<span style="color: rgb(98,98,98)">.</span>days_exercised()<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)"> days!</span><span style="color: rgb(175,0,0)">"</span>)
-
-<span class="ansi-red-fg">TypeError</span>: days_exercised() takes 0 positional arguments but 1 was given</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=be01ee3e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">ExerciseInfo</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exerciser_name</span><span class="p">,</span> <span class="n">exerciser_dates</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">exerciser_name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dates</span> <span class="o">=</span> <span class="n">exerciser_dates</span>
-
-    <span class="c1"># no self parameter here - incorrect!</span>
-    <span class="k">def</span> <span class="nf">days_exercised</span><span class="p">():</span>
-        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dates</span><span class="p">)</span>
-
-<span class="n">peppa_info</span> <span class="o">=</span> <span class="n">ExerciseInfo</span><span class="p">(</span><span class="s2">"Peppa"</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">29</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Peppa exercised for </span><span class="si">{</span><span class="n">peppa_info</span><span class="o">.</span><span class="n">days_exercised</span><span class="p">()</span><span class="si">}</span><span class="s2"> days!"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[9], line 11</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span>         <span class="ansi-bold" style="color: rgb(0,135,0)">return</span> <span style="color: rgb(0,135,0)">len</span>(<span style="color: rgb(0,135,0)">self</span><span style="color: rgb(98,98,98)">.</span>dates)
-<span class="ansi-green-intense-fg ansi-bold">     10</span> peppa_info <span style="color: rgb(98,98,98)">=</span> ExerciseInfo(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Peppa</span><span style="color: rgb(175,0,0)">"</span>, [<span style="color: rgb(98,98,98)">1</span>, <span style="color: rgb(98,98,98)">3</span>, <span style="color: rgb(98,98,98)">5</span>, <span style="color: rgb(98,98,98)">7</span>, <span style="color: rgb(98,98,98)">9</span>, <span style="color: rgb(98,98,98)">11</span>, <span style="color: rgb(98,98,98)">13</span>, <span style="color: rgb(98,98,98)">15</span>, <span style="color: rgb(98,98,98)">17</span>, <span style="color: rgb(98,98,98)">19</span>, <span style="color: rgb(98,98,98)">21</span>, <span style="color: rgb(98,98,98)">23</span>, <span style="color: rgb(98,98,98)">25</span>, <span style="color: rgb(98,98,98)">27</span>, <span style="color: rgb(98,98,98)">29</span>])
-<span class="ansi-green-fg">---&gt; 11</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">f</span><span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Peppa exercised for </span><span class="ansi-bold" style="color: rgb(175,95,135)">{</span>peppa_info<span style="color: rgb(98,98,98)">.</span>days_exercised()<span class="ansi-bold" style="color: rgb(175,95,135)">}</span><span style="color: rgb(175,0,0)"> days!</span><span style="color: rgb(175,0,0)">"</span>)
-
-<span class="ansi-red-fg">TypeError</span>: days_exercised() takes 0 positional arguments but 1 was given</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6714f5eb">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><code>TypeError: days_exercised() takes 0 positional arguments but 1 was given</code></p>
-<p>It <strong>looks</strong> like we called days_exercised with 0 arguments: <code>peppa_info.days_exercised()</code></p>
-<p>But because we are calling a function on an <strong>instance</strong>, the instance is "magically" passed as the first parameter.</p>
-<p>So, we're actually calling <code>days_exercised</code> with 1 argument, and that argument is <code>peppa_info</code>.</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fa564dcd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Class-example:-Animals">Class example: Animals<a class="anchor-link" href="#Class-example:-Animals">¶</a></h1><p>Let's create a class to represent animals. An animal has:</p>
+<h2 id="pip"><code>pip</code><a class="anchor-link" href="#pip">¶</a></h2><p>Usually, third party modules are installed with the <code>pip</code> command line tool.</p>
 <ul>
-<li>A name</li>
-<li>A species</li>
-<li>A weight in pounds</li>
-<li>A sound it makes</li>
+<li>If you have python installed, you almost certainly also have <code>pip</code> installed.</li>
+<li><code>pip</code> is available from the command line in the "Shell" tab in repl.it.</li>
 </ul>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bcf2df8e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's define a minimal <code>Animal</code> class:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a7d6258f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">sound</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="n">sound</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca52564a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Note the similar variable names: <code>self.name = name</code>, <code>self.species = species</code>, etc</p>
-<p><code>name</code> is the the parameter to <code>__init__</code></p>
-<p><code>self.name</code> is the attribute on the <code>Animal</code> instance being created.</p>
-<p>Those lines of code are setting fields on the instance based on the parameters passed to <code>__init__</code>.</p>
-<p>We happened to name the parameter and the attribute the same thing, but they can each be named anything.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0b854f8e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's create a few animals:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=50250a5b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">lion</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Simba"</span><span class="p">,</span> <span class="s2">"Lion"</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="s2">"rawr"</span><span class="p">)</span>
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Spot"</span><span class="p">,</span> <span class="s2">"Dalmatian"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"woof"</span><span class="p">)</span>
-<span class="n">cat</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Toast"</span><span class="p">,</span> <span class="s2">"Domestic cat"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">"meh"</span><span class="p">)</span>
-<span class="n">fox</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Rusty"</span><span class="p">,</span> <span class="s2">"Red Fox"</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">"???"</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dog info: name: </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, species/breed: </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s2"> lbs, says: '</span><span class="si">{</span><span class="n">dog</span><span class="o">.</span><span class="n">sound</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Dog info: name: Spot, species/breed: Dalmatian, 50 lbs, says: 'woof'
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=34a4d875">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's write a function to print out our animals</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b7e54fb2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_animal</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Animal info: name: </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, species/breed: </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s2"> lbs, says: '</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">sound</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
-
-<span class="n">print_animal</span><span class="p">(</span><span class="n">lion</span><span class="p">)</span>
-<span class="n">print_animal</span><span class="p">(</span><span class="n">dog</span><span class="p">)</span>
-<span class="n">print_animal</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
-<span class="n">print_animal</span><span class="p">(</span><span class="n">fox</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Animal info: name: Simba, species/breed: Lion, 400 lbs, says: 'rawr'
-Animal info: name: Spot, species/breed: Dalmatian, 50 lbs, says: 'woof'
-Animal info: name: Toast, species/breed: Domestic cat, 9 lbs, says: 'meh'
-Animal info: name: Rusty, species/breed: Red Fox, 12 lbs, says: '???'
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d637e9d1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>But wait! Classes help us group data and functionality together.</p>
-<p>Printing out info about an animal belongs with the <code>Animal</code> class:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=45c1d544">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">sound</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="n">sound</span>
-    
-    <span class="k">def</span> <span class="nf">print_description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Animal info: name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, species/breed: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s2"> lbs, says: '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ddeec82a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">lion</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Simba"</span><span class="p">,</span> <span class="s2">"Lion"</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="s2">"rawr"</span><span class="p">)</span>
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Spot"</span><span class="p">,</span> <span class="s2">"Dalmatian"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"woof"</span><span class="p">)</span>
-<span class="n">cat</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Toast"</span><span class="p">,</span> <span class="s2">"Domestic cat"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">"meh"</span><span class="p">)</span>
-<span class="n">fox</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Rusty"</span><span class="p">,</span> <span class="s2">"Red Fox"</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">"???"</span><span class="p">)</span>
-
-<span class="n">lion</span><span class="o">.</span><span class="n">print_description</span><span class="p">()</span>
-<span class="n">dog</span><span class="o">.</span><span class="n">print_description</span><span class="p">()</span>
-<span class="n">cat</span><span class="o">.</span><span class="n">print_description</span><span class="p">()</span>
-<span class="n">fox</span><span class="o">.</span><span class="n">print_description</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Animal info: name: Simba, species/breed: Lion, 400 lbs, says: 'rawr'
-Animal info: name: Spot, species/breed: Dalmatian, 50 lbs, says: 'woof'
-Animal info: name: Toast, species/breed: Domestic cat, 9 lbs, says: 'meh'
-Animal info: name: Rusty, species/breed: Red Fox, 12 lbs, says: '???'
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1abe8b6e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Great, we have some animals.</p>
-<p>Now, we have decided to help our friend choose a new pet.</p>
-<p>They travel by plane a lot. So they need to know if the pet can accompany them.</p>
-<p>Airlines allow pets up to ~20 pounds in the cabin.</p>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=721435b5">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>We can add some functionality to our Animal class to help us filter animals that can travel:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=072b63fe">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">sound</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="n">sound</span>
-    
-    <span class="k">def</span> <span class="nf">print_description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Animal info: name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, species/breed: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s2"> lbs, says: '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">can_travel_by_plane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">&lt;=</span> <span class="mi">20</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a847e86c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">lion</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Simba"</span><span class="p">,</span> <span class="s2">"Lion"</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="s2">"rawr"</span><span class="p">)</span>
-<span class="n">dog</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Spot"</span><span class="p">,</span> <span class="s2">"Dalmatian"</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="s2">"woof"</span><span class="p">)</span>
-<span class="n">cat</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Toast"</span><span class="p">,</span> <span class="s2">"Domestic cat"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">"meh"</span><span class="p">)</span>
-<span class="n">fox</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Rusty"</span><span class="p">,</span> <span class="s2">"Red Fox"</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">"???"</span><span class="p">)</span>
-  
-<span class="n">all_animals</span> <span class="o">=</span> <span class="p">[</span> <span class="n">lion</span><span class="p">,</span> <span class="n">dog</span><span class="p">,</span> <span class="n">cat</span><span class="p">,</span> <span class="n">fox</span><span class="p">]</span>
-
-<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">all_animals</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">animal</span><span class="o">.</span><span class="n">can_travel_by_plane</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"I found an animal for you!"</span><span class="p">)</span>
-        <span class="n">animal</span><span class="o">.</span><span class="n">print_description</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>I found an animal for you!
-Animal info: name: Toast, species/breed: Domestic cat, 9 lbs, says: 'meh'
-I found an animal for you!
-Animal info: name: Rusty, species/breed: Red Fox, 12 lbs, says: '???'
-</pre>
-</div>
+<p>For example, <code>pip install wikipedia</code> installs a package named <code>wikipedia</code>.</p>
+<p><a href="https://pypi.org/project/wikipedia/">wikipedia package on pypi</a></p>
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29506eec">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=60976ded">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
-<li>PS9 due Wednesday, 12/11, 11:59pm - <strong>no late days allowed</strong></li>
-<li>Quiz 10 Wednesday</li>
-<li>Quiz corrections are due Friday, 12/13, <strong>no exceptions</strong></li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c9b7b696">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Types">Types<a class="anchor-link" href="#Types">¶</a></h2><p>Each class definition creates a new <strong>type</strong> - just like <code>int</code>, <code>str</code>, <code>list</code>, <code>dict</code>, etc are types.</p>
-<p>You can check the type of a variable with the built-in <code>isinstance()</code> function:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=afbd8fcc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>True</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=67c91f72">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="s2">"hi"</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>True</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dc8e3640">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Stuff</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">amount</span> <span class="o">=</span> <span class="n">amount</span>
-        
-<span class="n">s</span> <span class="o">=</span> <span class="n">Stuff</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">isinstance</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">Stuff</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>True</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=67e9c15f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>You can also get the type of an object with <code>type()</code>:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d23af553">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>int</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1718780d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">"hi"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>str</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=663158bc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">Stuff</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>__main__.Stuff</pre>
-</div>
-</div>
-</div>
-</div>
-</div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c77ebae">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="References">References<a class="anchor-link" href="#References">¶</a></h2><p><a href="https://pythontutor.com/render.html#code=class%20BankAccount%3A%0A%20%20%20%20def%20__init__%28self,%20initial_balance%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%3D%20initial_balance%0A%20%20%20%20%0A%20%20%20%20def%20deposit%28self,%20amount%29%3A%0A%20%20%20%20%20%20%20%20self.balance%20%2B%3D%20amount%0A%0Ab%20%3D%20BankAccount%28100%29%0Ac%20%3D%20b%0Ab.deposit%28200%29%0Aprint%28%22b%3A%20%22%20%2B%20str%28b.balance%29%29%0Aprint%28%22c%3A%20%22%20%2B%20str%28c.balance%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">PythonTutor link</a></p>
-<p>Class instances behave just like lists, dictionaries, and other mutable objects. Variables <strong>refer</strong> to the instances, and any mutations of the instances will be seen by all variables referring to the same object.</p>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0e9e9ada">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">sound</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">sound</span> <span class="o">=</span> <span class="n">sound</span>
-    
-    <span class="k">def</span> <span class="nf">print_description</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Animal info: name: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, species/breed: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">weight</span><span class="si">}</span><span class="s2"> lbs, says: '</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">sound</span><span class="si">}</span><span class="s2">'"</span><span class="p">)</span>
-    
-    <span class="k">def</span> <span class="nf">can_travel_by_plane</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">weight</span> <span class="o">&lt;=</span> <span class="mi">20</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9ea1bd4d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cat1</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s2">"Toast"</span><span class="p">,</span> <span class="s2">"Domestic cat"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">"meh"</span><span class="p">)</span>
-<span class="n">cat2</span> <span class="o">=</span> <span class="n">cat1</span>
-<span class="n">cat1</span><span class="o">.</span><span class="n">weight</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">cat1</span><span class="o">.</span><span class="n">weight</span><span class="si">=}</span><span class="s2"> </span><span class="si">{</span><span class="n">cat2</span><span class="o">.</span><span class="n">weight</span><span class="si">=}</span><span class="s2">"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>cat1.weight=15 cat2.weight=15
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a6de7fda">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="When-to-use-a-class,-and-why">When to use a class, and why<a class="anchor-link" href="#When-to-use-a-class,-and-why">¶</a></h1><p>Classes can add structure to your programs.</p>
-<p>If you have a bunch of related data and functionality, grouping them together on a class may improve your code.</p>
-<p>If you are ever dealing with multiple "parallel" lists, where entries at index <code>i</code> in each list are all related somehow, then grouping that data together on a class may improve your code.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=887507ed">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="When-it's-ok-to-not-worry-about-classes">When it's ok to not worry about classes<a class="anchor-link" href="#When-it's-ok-to-not-worry-about-classes">¶</a></h1><p>Coming out of Cosi-10a, you can almost always ignore classes (except for PS9)!</p>
-<p>Classes aren't necessary for the types and sizes of problems we've worked on in this class.</p>
-<p>For larger or more complex programs, they become critical in order to keep code organized.</p>
-<p>Some languages also require the use of classes (e.g. Java)</p>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5bb7ca70">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Best-practices">Best practices<a class="anchor-link" href="#Best-practices">¶</a></h1><p>Classes should:</p>
-<ul>
-<li>Focus on modeling a single thing</li>
-<li>Make code that uses them clearer, not more confusing</li>
-<li>Hide complexity</li>
-</ul>
-</div>
-</div>
-</div>
-</div><aside class="notes">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c31396b0">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="More-Classes">More Classes<a class="anchor-link" href="#More-Classes">¶</a></h1><p>If you continue on to Cosi-12b, you'll learn a lot more about classes, why they're important, and the more advanced programming patterns that they unlock.</p>
-</div>
-</div>
-</div>
-</div>
-</aside></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cbbf2e8b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise:-Country-Info">Exercise: Country Info<a class="anchor-link" href="#Exercise:-Country-Info">¶</a></h2><p><a href="https://codespaces.new/brandeis-cosi-10a/class-exercises?quickstart=1">Open the class exercises Codespace</a></p>
-<p>Open the file: <code>exercises/10/01_country_data</code>, follow the instructions.</p>
+<h2 id="Example:-Using-Wikipedia">Example: Using Wikipedia<a class="anchor-link" href="#Example:-Using-Wikipedia">¶</a></h2><p><a href="https://codespaces.new/brandeis-cosi-10a/class-exercises?quickstart=1">Open the class exercises Codespace</a></p>
+<p>Open the file: <code>exercises/11/02_third_party_modules</code>, follow the instructions.</p>
 <ul>
 <li>If you don't see this folder: Open the file: <code>get_exercises.sh</code>, click the "Run" button at the top right of the editor.</li>
 </ul>
