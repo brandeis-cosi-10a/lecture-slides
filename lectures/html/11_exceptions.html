@@ -7510,6 +7510,25 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9151c49d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>Quiz 10 tonight</li>
+<li>Please do not leave recitation until you have submitted corrections to every outstanding quiz question</li>
+<li>Quiz corrections due <strong>Friday Dec /13, 11:59pm, no exceptions</strong></li>
+<li>PS9 due Wednesday, 12/11, 11:59pm<ul>
+<li>No late days allowed for this assignment, no late submissions accepted</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1ee8a1d2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7532,7 +7551,7 @@ section.present > section.present {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h2><p>Write a function that checks whether a string variable can be converted to an float</p>
+<h2 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">¶</a></h2><p>Write a function that checks whether a string variable can be converted to a float</p>
 </div>
 </div>
 </div>
@@ -8054,7 +8073,7 @@ except &lt;error type&gt;:
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">"1.0"</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">0</span>
 <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Couldn't convert!"</span><span class="p">)</span>
@@ -8073,8 +8092,8 @@ except &lt;error type&gt;:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Couldn't convert!
-x = None
+<pre>Couldn't divide!
+x = 1.0
 </pre>
 </div>
 </div>
@@ -8167,7 +8186,7 @@ Cell <span class="ansi-green-fg">In[18], line 3</span>, in <span class="ansi-cya
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"a1"</span><span class="p">)</span>
-    <span class="n">b</span><span class="p">()</span>
+    <span class="n">b</span><span class="p">()</span> 
     <span class="nb">print</span><span class="p">(</span><span class="s2">"a2"</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
@@ -8177,6 +8196,7 @@ Cell <span class="ansi-green-fg">In[18], line 3</span>, in <span class="ansi-cya
     
 <span class="k">def</span> <span class="nf">c</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"c1"</span><span class="p">)</span>
+    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"sorry"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"c2"</span><span class="p">)</span>
 
 <span class="n">a</span><span class="p">()</span>
@@ -8195,10 +8215,39 @@ Cell <span class="ansi-green-fg">In[18], line 3</span>, in <span class="ansi-cya
 <pre>a1
 b1
 c1
-c2
-b2
-a2
 </pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">Exception</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[19], line 16</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">sorry</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-intense-fg ansi-bold">     14</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">c2</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg">---&gt; 16</span> <span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg">In[19], line 3</span>, in <span class="ansi-cyan-fg">a</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">a</span>():
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">a1</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg">----&gt; 3</span>     <span class="ansi-yellow-bg">b</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span> 
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">a2</span><span style="color: rgb(175,0,0)">"</span>)
+
+Cell <span class="ansi-green-fg">In[19], line 8</span>, in <span class="ansi-cyan-fg">b</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">b</span>():
+<span class="ansi-green-intense-fg ansi-bold">      7</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">b1</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg">----&gt; 8</span>     <span class="ansi-yellow-bg">c</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">b2</span><span style="color: rgb(175,0,0)">"</span>)
+
+Cell <span class="ansi-green-fg">In[19], line 13</span>, in <span class="ansi-cyan-fg">c</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span> <span class="ansi-bold" style="color: rgb(0,135,0)">def</span> <span style="color: rgb(0,0,255)">c</span>():
+<span class="ansi-green-intense-fg ansi-bold">     12</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">c1</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-fg">---&gt; 13</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">raise</span> <span class="ansi-bold" style="color: rgb(215,95,95)">Exception</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">sorry</span><span style="color: rgb(175,0,0)">"</span>)
+<span class="ansi-green-intense-fg ansi-bold">     14</span>     <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">c2</span><span style="color: rgb(175,0,0)">"</span>)
+
+<span class="ansi-red-fg">Exception</span>: sorry</pre>
 </div>
 </div>
 </div>
