@@ -1,0 +1,989 @@
+{
+  "Variables": {
+    "name": "Variables",
+    "problems": {
+      "Mad Libs": {
+        "ps": "PS1"
+      },
+      "Weight Comparisons": {
+        "ps": "PS1"
+      },
+      "Interest Calculator": {
+        "ps": "PS1"
+      },
+      "Light wavelength analyzer": {
+        "ps": "PS2"
+      },
+      "Choose your own adventure": {
+        "ps": "PS2"
+      },
+      "Dice game: debugging": {
+        "ps": "PS2"
+      },
+      "Tip Calculator": {
+        "ps": "PS3"
+      },
+      "Number guessing": {
+        "ps": "PS4"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      }
+    },
+    "cap": 4
+  },
+  "Datatypes": {
+    "name": "Datatypes",
+    "problems": {
+      "Weight Comparisons": {
+        "ps": "PS1"
+      },
+      "Interest Calculator": {
+        "ps": "PS1"
+      },
+      "Dice game: debugging": {
+        "ps": "PS2"
+      },
+      "Tip Calculator": {
+        "ps": "PS3"
+      },
+      "Number Guessing": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      }
+    },
+    "cap": 4
+  },
+  "Expressions": {
+    "name": "Expressions",
+    "problems": {
+      "Mad Libs": {
+        "ps": "PS1"
+      },
+      "Weight Comparisons": {
+        "ps": "PS1"
+      },
+      "Interest Calculator": {
+        "ps": "PS1"
+      },
+      "Light wavelength analyzer": {
+        "ps": "PS2"
+      },
+      "Dice game: debugging": {
+        "ps": "PS2"
+      },
+      "Tip Calculator": {
+        "ps": "PS3"
+      },
+      "Multiplication Tables": {
+        "ps": "PS4"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "input()": {
+    "name": "input()",
+    "problems": {
+      "Mad Libs": {
+        "ps": "PS1"
+      },
+      "Weight Comparisons": {
+        "ps": "PS1"
+      },
+      "Interest Calculator": {
+        "ps": "PS1"
+      },
+      "Choose your own adventure": {
+        "ps": "PS2"
+      },
+      "Tip Calculator": {
+        "ps": "PS3"
+      },
+      "Number Guessing": {
+        "ps": "PS4"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      }
+    },
+    "cap": 4
+  },
+  "String escaping": {
+    "name": "String escaping",
+    "problems": {
+      "String escaping": {
+        "ps": "PS1"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Multiplication Tables": {
+        "ps": "PS4"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      }
+    },
+    "cap": 4
+  },
+  "Conditionals": {
+    "name": "Conditionals",
+    "problems": {
+      "Light wavelength analyzer": {
+        "ps": "PS2"
+      },
+      "Choose your own adventure": {
+        "ps": "PS2"
+      },
+      "Dice game: debugging": {
+        "ps": "PS2"
+      },
+      "Tip Calculator": {
+        "ps": "PS3"
+      },
+      "Number Guessing": {
+        "ps": "PS4"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Vowel Filter": {
+        "ps": "PS6"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Conditional logic": {
+    "name": "Conditional logic",
+    "problems": {
+      "Light wavelength analyzer": {
+        "ps": "PS2"
+      },
+      "Choose your own adventure": {
+        "ps": "PS2"
+      },
+      "Tip Calculator": {
+        "ps": "PS3"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Vowel Filter": {
+        "ps": "PS6"
+      },
+      "Age range filter": {
+        "ps": "PS7"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Function invocation": {
+    "name": "Function invocation",
+    "problems": {
+      "Old lady": {
+        "ps": "PS3"
+      },
+      "Dice Game Refactored": {
+        "ps": "PS3"
+      },
+      "Drawing Squares": {
+        "ps": "PS3"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Dice Game Loops": {
+        "ps": "PS4"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      }
+    },
+    "cap": 4
+  },
+  "Function definition": {
+    "name": "Function definition",
+    "problems": {
+      "Old lady": {
+        "ps": "PS3"
+      },
+      "Dice Game Refactored": {
+        "ps": "PS3"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Dice Game Loops": {
+        "ps": "PS4"
+      },
+      "Multiplication Tables": {
+        "ps": "PS4"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Vowel Filter": {
+        "ps": "PS6"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Age range filter": {
+        "ps": "PS7"
+      },
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Function parameters": {
+    "name": "Function parameters",
+    "problems": {
+      "Old lady": {
+        "ps": "PS3"
+      },
+      "Dice Game Refactored": {
+        "ps": "PS3"
+      },
+      "Drawing Squares": {
+        "ps": "PS3"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Dice Game Loops": {
+        "ps": "PS4"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Function returns": {
+    "name": "Function returns",
+    "problems": {
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Multiplication Tables": {
+        "ps": "PS4"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Vowel Filter": {
+        "ps": "PS6"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Age range filter": {
+        "ps": "PS7"
+      },
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Globals": {
+    "name": "Globals",
+    "problems": {
+      "Dice Game Refactored": {
+        "ps": "PS3"
+      },
+      "Dice Game Loops": {
+        "ps": "PS4"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      }
+    },
+    "cap": 3
+  },
+  "Loops - for/range": {
+    "name": "Loops - for/range",
+    "problems": {
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Dice Game Loops": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Loops - while": {
+    "name": "Loops - while",
+    "problems": {
+      "Number Guessing": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      }
+    },
+    "cap": 4
+  },
+  "Cumulative algorithm": {
+    "name": "Cumulative algorithm",
+    "problems": {
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Fencepost algorithm": {
+    "name": "Fencepost algorithm",
+    "problems": {
+      "Multiplication Tables": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 3
+  },
+  "Loops - nested": {
+    "name": "Loops - nested",
+    "problems": {
+      "Multiplication Tables": {
+        "ps": "PS4"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 3
+  },
+  "Loops - choosing structure": {
+    "name": "Loops - choosing structure",
+    "problems": {
+      "Number Guessing": {
+        "ps": "PS4"
+      },
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Dice Game Loops": {
+        "ps": "PS4"
+      },
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      }
+    },
+    "cap": 4
+  },
+  "Lists get/set": {
+    "name": "Lists get/set",
+    "problems": {
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Age range filter": {
+        "ps": "PS7"
+      },
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "List iteration": {
+    "name": "List iteration",
+    "problems": {
+      "Number filter": {
+        "ps": "PS5"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Vowel Filter": {
+        "ps": "PS6"
+      },
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Lists - nested": {
+    "name": "Lists - nested",
+    "problems": {
+      "Factor finder": {
+        "ps": "PS6"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "String manipulation": {
+    "name": "String manipulation",
+    "problems": {
+      "Vowel Filter": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      }
+    },
+    "cap": 4
+  },
+  "Tuples": {
+    "name": "Tuples",
+    "problems": {
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "References": {
+    "name": "References",
+    "problems": {
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 3
+  },
+  "Dictionaries get/set": {
+    "name": "Dictionaries get/set",
+    "problems": {
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Dictionary iteration": {
+    "name": "Dictionary iteration",
+    "problems": {
+      "Age range filter": {
+        "ps": "PS7"
+      },
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Dictionary filtering": {
+    "name": "Dictionary filtering",
+    "problems": {
+      "Age range filter": {
+        "ps": "PS7"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 2
+  },
+  "Sorting": {
+    "name": "Sorting",
+    "problems": {
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 3
+  },
+  "Sets": {
+    "name": "Sets",
+    "problems": {
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Nested data structures": {
+    "name": "Nested data structures",
+    "problems": {
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Data structures - choosing appropriately": {
+    "name": "Data structures - choosing appropriately",
+    "problems": {
+      "Contacts App": {
+        "ps": "PS8"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 3
+  },
+  "File I/O": {
+    "name": "File I/O",
+    "problems": {
+      "Word Analyzer": {
+        "ps": "PS8"
+      },
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "File I/O - CSVs": {
+    "name": "File I/O - CSVs",
+    "problems": {
+      "Lottery Analyzer": {
+        "ps": "PS8"
+      }
+    },
+    "cap": 1
+  },
+  "File I/O - JSON": {
+    "name": "File I/O - JSON",
+    "problems": {
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 2
+  },
+  "Classes - definition": {
+    "name": "Classes - definition",
+    "problems": {
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 1
+  },
+  "Classes - usage": {
+    "name": "Classes - usage",
+    "problems": {
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 1
+  },
+  "Unit Testing": {
+    "name": "Unit Testing",
+    "problems": {
+      "Calendar Assistant": {
+        "ps": "PS4"
+      },
+      "Multiplication Tables": {
+        "ps": "PS4"
+      },
+      "Odd Calendar": {
+        "ps": "PS5"
+      },
+      "Vowel Filter": {
+        "ps": "PS6"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Age range filter": {
+        "ps": "PS7"
+      },
+      "Birthday Tracker": {
+        "ps": "PS7"
+      },
+      "Hiking Trails": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Functional Decomposition": {
+    "name": "Functional Decomposition",
+    "problems": {
+      "Old lady": {
+        "ps": "PS3"
+      },
+      "To-do list": {
+        "ps": "PS5"
+      },
+      "Pig Latin": {
+        "ps": "PS6"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  },
+  "Using IDE": {
+    "name": "Using IDE",
+    "problems": {
+      "Hello World": {
+        "ps": "PS0"
+      },
+      "Light wavelength analyzer": {
+        "ps": "PS2"
+      }
+    },
+    "cap": 1
+  },
+  "Debugging": {
+    "name": "Debugging",
+    "problems": {
+      "Dice game: debugging": {
+        "ps": "PS2"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      },
+      "Nobel Prizes": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 3
+  },
+  "Using pre-existing code": {
+    "name": "Using pre-existing code",
+    "problems": {
+      "Dice game: debugging": {
+        "ps": "PS2"
+      },
+      "Dice Game Refactored: Using pre": {
+        "ps": "PS3"
+      },
+      "Dice Game Loops: Using pre": {
+        "ps": "PS4"
+      },
+      "Dice Game Again": {
+        "ps": "PS7"
+      },
+      "Importing Contacts": {
+        "ps": "PS9"
+      }
+    },
+    "cap": 4
+  }
+}
