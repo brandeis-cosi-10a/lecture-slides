@@ -24,20 +24,37 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="../images/favicon.ico">
 
 </head>
 <body>
 
   <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  ––––––––––––––––––––––––––––––––––––––––––––––––––-->
   <div class="container" id="outer_container">
-    <h3 style="margin-top:5%">10a Delfino Lecture Notes</h4>
+    <h3 style="margin-top:5%">10a Delfino Grade Calculator</h4>
     <div class="row">
-        <div class="nine columns">
+        <div class="three columns">Your skills</div>
+        <div class="one columns" id="earned-skills"></div>
+    </div>
+    <div class="row">
+        <div class="three columns">Total possible skills</div>
+        <div class="one columns" id="possible-skills"></div>
+    </div>
+    <div class="row">
+        <div class="three columns">Percentage</div>
+        <div class="one columns"><span id="skills-percentage"></span>%</div>
+    </div>
+    <div class="row">
+        <div class="three columns">Letter grade</div>
+        <div class="one columns" id="grade"></div>
+    </div>
+
+    <div class="row">
+        <div class="eight columns">
             <div class="container" id="container"></div>
         </div>
-        <div class="three columns">
+        <div class="four columns">
             <div class="container" id="pscontainer"></div>
         </div>
     </div>

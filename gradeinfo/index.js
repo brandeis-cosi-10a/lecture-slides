@@ -1001,6 +1001,29 @@ function setProblem(skill, problem, value) {
 
 }
 
+function setSkill(skill, value) {
+    for(const problemname in skills[skill].problems) {
+        setProblem(skill, problemname, value);
+    }
+    update();
+}
+
+function countPs() {
+    let counts = {};
+    for(const skillname in skills) {
+        for(const problemname in skills[skillname].problems) {
+            let problem = skills[skillname].problems[problemname];
+            counts[problem.ps] = counts[problem.ps] || {count: 0, total: 0};
+
+            counts[problem.ps].total++;
+            if(problem.selected) {
+                counts[problem.ps].count++;
+            }
+        }
+    }
+    return counts;
+}
+
 function setPs(ps, value) {
     for(const skillname in skills) {
         for(const problemname in skills[skillname].problems) {
@@ -1013,6 +1036,8 @@ function setPs(ps, value) {
 }
 
 function update() {
+    let earned_count = 0;
+    let total_count = 0;
     for(const skillname in skills) {
         const cap = skills[skillname].cap;
         let selected = 0;
@@ -1026,9 +1051,49 @@ function update() {
                 document.getElementById(skillname + "-" + problemname + "-selected").innerHTML = "no";
             }
         }
+        total_count += cap;
         const skill = document.getElementById(skillname + "-total");
-        const total = selected > cap ? cap : selected;
-        skill.innerHTML = total;
+        const skilltotal = selected > cap ? cap : selected;
+        skill.innerHTML = skilltotal;
+        earned_count += skilltotal;
+    }
+    document.getElementById("earned-skills").innerHTML = earned_count;
+    document.getElementById("possible-skills").innerHTML = total_count;
+    document.getElementById("skills-percentage").innerHTML = (earned_count / total_count * 100).toFixed(2);
+    let grade = "E";
+    if(earned_count >= 135) {
+        grade = "A+";
+    } else if(earned_count >= 130) {
+        grade = "A";
+    } else if(earned_count >= 127) {
+        grade = "A-";
+    } else if(earned_count >= 123) {
+        grade = "B+";
+    } else if(earned_count >= 117) {
+        grade = "B";
+    } else if(earned_count >= 113) {
+        grade = "B-";
+    } else if(earned_count >= 109) {
+        grade = "C+";
+    } else if(earned_count >= 103) {
+        grade = "C";
+    } else if(earned_count >= 99) {
+        grade = "C-";
+    } else if(earned_count >= 94) {
+        grade = "D+";
+    } else if(earned_count >= 89) {
+        grade = "D";
+    } else if(earned_count >= 85) {
+        grade = "D-";
+    } else {
+        grade = "E";
+    }
+    document.getElementById("grade").innerHTML = grade;
+
+    let ps = countPs();
+    for(const p in ps) {
+        document.getElementById(p + "-earned").innerHTML = ps[p].count;
+        document.getElementById(p + "-total").innerHTML = ps[p].total;
     }
 }
 
@@ -1038,7 +1103,11 @@ function update() {
     let ps = [];
     for(const skillname in skills) {
         console.log(skillname)
-        let content = "<div class='row'><div class='twelve columns'><b>" + skillname + "</b></div></div>";
+        let content = "<div class='row'>" +
+        "<div class='ten columns' style='padding-top:10px'><b>" + skillname + "</b></div>" +
+        "<div class='one columns'><button style='padding: 0px 10px 0px 10px' onclick='setSkill(\"" + skillname + "\", true)'>all</button></div>" +
+        "<div class='one columns'><button style='padding: 0px 10px 0px 10px' onclick='setSkill(\"" + skillname + "\", false)'>none</button></div>" +
+        "</div>";
 
         for(const problemname in skills[skillname].problems) {
             const problem = skills[skillname].problems[problemname];
@@ -1066,9 +1135,10 @@ function update() {
     ps.sort();
     for(const p of ps) {
         let content = "<div class='row'>" +
-            "<div class='four columns' style='padding-top:10px'><b>" + p + "</b></div>" +
-            "<div class='four columns'><button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", true)'>all</button></div>" +
-            "<div class='four columns'><button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", false)'>none</button></div>" +
+            "<div class='three columns' style='padding-top:10px'><b>" + p + "</b></div>" +
+            "<div class='three columns' style='padding-top:10px'>(<span id='" + p + "-earned'></span>/<span id='" + p + "-total'></span>)</div>" +
+            "<div class='three columns'><button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", true)'>all</button></div>" +
+            "<div class='three columns'><button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", false)'>none</button></div>" +
             "</div>";
         pscontainer.insertAdjacentHTML( 'beforeend', content);
     }
