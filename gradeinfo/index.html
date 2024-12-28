@@ -21,6 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="../css/normalize.css">
   <link rel="stylesheet" href="../css/skeleton.css">
+  <link rel="stylesheet" href="../css/custom.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,37 +32,49 @@
 
   <!-- Primary Page Layout
   ––––––––––––––––––––––––––––––––––––––––––––––––––-->
-  <div class="container" id="outer_container">
-    <h3 style="margin-top:5%">10a Delfino Grade Calculator</h4>
-    <div class="row">
-        <div class="three columns">Your skills</div>
-        <div class="one columns" id="earned-skills"></div>
-    </div>
-    <div class="row">
-        <div class="three columns">Total possible skills</div>
-        <div class="one columns" id="possible-skills"></div>
-    </div>
-    <div class="row">
-        <div class="three columns">Percentage</div>
-        <div class="one columns"><span id="skills-percentage"></span>%</div>
-    </div>
-    <div class="row">
-        <div class="three columns">Letter grade</div>
-        <div class="one columns" id="grade"></div>
-    </div>
-
-    <div class="row">
-        <div class="eight columns">
-            <div class="container" id="container"></div>
+  <div class="section title">
+    <div class="container" id="outer_container">
+      <div class="row">
+        <div class="twelve columns">
+          <h2 class="hero-heading">10a Grade Calculator</h2>
         </div>
-        <div class="four columns">
-            <div class="container" id="pscontainer"></div>
+      </div>
+    </div>
+  </div>
+  <div class="section summary">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column">
+          <h2 class="stat"><span id="earned-skills"></span> / <span id="possible-skills"></span></h2>
+          <h5>Skills earned</h5>
         </div>
+        <div class="one-third column ">
+          <h2 class="stat"><span id="skills-percentage"></span>%</h2>
+          <h5>Percentage</h5>
+        </div>
+        <div class="one-third column">
+          <h2 id="grade" class="stat"></h2>
+          <h5>Letter grade</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section skills">
+    <div class="container">
+      <div class="row">
+        <div class="six columns skilltoggles">
+          <div class="container skill-toggle-container" id="container"></div>
+        </div>
+        <div class="two columns bumper">&nbsp;</div>
+        <div class="four columns pstoggles">
+          <div class="container ps-container" id="pscontainer"></div>
+        </div>
+      </div>
     </div>
   </div>
   <script type="application/javascript" src="index.js"></script>
 
-<!-- End Document
+  <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 </html>

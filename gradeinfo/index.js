@@ -1,39 +1,50 @@
-const skills = {
+let skills = {
     "Variables": {
       "name": "Variables",
       "problems": {
         "Mad Libs": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Weight Comparisons": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Interest Calculator": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Light wavelength analyzer": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Choose your own adventure": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Dice game: debugging": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Tip Calculator": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Number guessing": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         }
       },
       "cap": 4
@@ -42,28 +53,36 @@ const skills = {
       "name": "Datatypes",
       "problems": {
         "Weight Comparisons": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Interest Calculator": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Dice game: debugging": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Tip Calculator": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Number Guessing": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         }
       },
       "cap": 4
@@ -72,40 +91,52 @@ const skills = {
       "name": "Expressions",
       "problems": {
         "Mad Libs": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Weight Comparisons": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Interest Calculator": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Light wavelength analyzer": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Dice game: debugging": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Tip Calculator": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Multiplication Tables": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -114,34 +145,44 @@ const skills = {
       "name": "input()",
       "problems": {
         "Mad Libs": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Weight Comparisons": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Interest Calculator": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Choose your own adventure": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Tip Calculator": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Number Guessing": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         }
       },
       "cap": 4
@@ -150,19 +191,24 @@ const skills = {
       "name": "String escaping",
       "problems": {
         "String escaping": {
-          "ps": "PS1"
+          "ps": "PS1",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Multiplication Tables": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         }
       },
       "cap": 4
@@ -171,43 +217,56 @@ const skills = {
       "name": "Conditionals",
       "problems": {
         "Light wavelength analyzer": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Choose your own adventure": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Dice game: debugging": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Tip Calculator": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Number Guessing": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Vowel Filter": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -216,28 +275,36 @@ const skills = {
       "name": "Conditional logic",
       "problems": {
         "Light wavelength analyzer": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Choose your own adventure": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Tip Calculator": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Vowel Filter": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Age range filter": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -246,31 +313,40 @@ const skills = {
       "name": "Function invocation",
       "problems": {
         "Old lady": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Dice Game Refactored": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Drawing Squares": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Dice Game Loops": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         }
       },
       "cap": 4
@@ -279,52 +355,68 @@ const skills = {
       "name": "Function definition",
       "problems": {
         "Old lady": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Dice Game Refactored": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Dice Game Loops": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Multiplication Tables": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Vowel Filter": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Age range filter": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -333,34 +425,44 @@ const skills = {
       "name": "Function parameters",
       "problems": {
         "Old lady": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Dice Game Refactored": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Drawing Squares": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Dice Game Loops": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -369,40 +471,52 @@ const skills = {
       "name": "Function returns",
       "problems": {
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Multiplication Tables": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Vowel Filter": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Age range filter": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -411,13 +525,16 @@ const skills = {
       "name": "Globals",
       "problems": {
         "Dice Game Refactored": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Dice Game Loops": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         }
       },
       "cap": 3
@@ -426,28 +543,36 @@ const skills = {
       "name": "Loops - for/range",
       "problems": {
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Dice Game Loops": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -456,16 +581,20 @@ const skills = {
       "name": "Loops - while",
       "problems": {
         "Number Guessing": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         }
       },
       "cap": 4
@@ -474,28 +603,36 @@ const skills = {
       "name": "Cumulative algorithm",
       "problems": {
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -504,13 +641,16 @@ const skills = {
       "name": "Fencepost algorithm",
       "problems": {
         "Multiplication Tables": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 3
@@ -519,13 +659,16 @@ const skills = {
       "name": "Loops - nested",
       "problems": {
         "Multiplication Tables": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 3
@@ -534,25 +677,32 @@ const skills = {
       "name": "Loops - choosing structure",
       "problems": {
         "Number Guessing": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Dice Game Loops": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         }
       },
       "cap": 4
@@ -561,37 +711,48 @@ const skills = {
       "name": "Lists get/set",
       "problems": {
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Age range filter": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -600,40 +761,52 @@ const skills = {
       "name": "List iteration",
       "problems": {
         "Number filter": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Vowel Filter": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -642,16 +815,20 @@ const skills = {
       "name": "Lists - nested",
       "problems": {
         "Factor finder": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -660,16 +837,20 @@ const skills = {
       "name": "String manipulation",
       "problems": {
         "Vowel Filter": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         }
       },
       "cap": 4
@@ -678,16 +859,20 @@ const skills = {
       "name": "Tuples",
       "problems": {
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -696,13 +881,16 @@ const skills = {
       "name": "References",
       "problems": {
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 3
@@ -711,16 +899,20 @@ const skills = {
       "name": "Dictionaries get/set",
       "problems": {
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -729,19 +921,24 @@ const skills = {
       "name": "Dictionary iteration",
       "problems": {
         "Age range filter": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -750,10 +947,12 @@ const skills = {
       "name": "Dictionary filtering",
       "problems": {
         "Age range filter": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 2
@@ -762,13 +961,16 @@ const skills = {
       "name": "Sorting",
       "problems": {
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 3
@@ -777,16 +979,20 @@ const skills = {
       "name": "Sets",
       "problems": {
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -795,22 +1001,28 @@ const skills = {
       "name": "Nested data structures",
       "problems": {
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -819,13 +1031,16 @@ const skills = {
       "name": "Data structures - choosing appropriately",
       "problems": {
         "Contacts App": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 3
@@ -834,16 +1049,20 @@ const skills = {
       "name": "File I/O",
       "problems": {
         "Word Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -852,7 +1071,8 @@ const skills = {
       "name": "File I/O - CSVs",
       "problems": {
         "Lottery Analyzer": {
-          "ps": "PS8"
+          "ps": "PS8",
+          "selected": false
         }
       },
       "cap": 1
@@ -861,10 +1081,12 @@ const skills = {
       "name": "File I/O - JSON",
       "problems": {
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 2
@@ -873,7 +1095,8 @@ const skills = {
       "name": "Classes - definition",
       "problems": {
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 1
@@ -882,7 +1105,8 @@ const skills = {
       "name": "Classes - usage",
       "problems": {
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 1
@@ -891,28 +1115,36 @@ const skills = {
       "name": "Unit Testing",
       "problems": {
         "Calendar Assistant": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Multiplication Tables": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Odd Calendar": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Vowel Filter": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Age range filter": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Birthday Tracker": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Hiking Trails": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -921,19 +1153,24 @@ const skills = {
       "name": "Functional Decomposition",
       "problems": {
         "Old lady": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "To-do list": {
-          "ps": "PS5"
+          "ps": "PS5",
+          "selected": false
         },
         "Pig Latin": {
-          "ps": "PS6"
+          "ps": "PS6",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -942,10 +1179,12 @@ const skills = {
       "name": "Using IDE",
       "problems": {
         "Hello World": {
-          "ps": "PS0"
+          "ps": "PS0",
+          "selected": false
         },
         "Light wavelength analyzer": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         }
       },
       "cap": 1
@@ -954,13 +1193,16 @@ const skills = {
       "name": "Debugging",
       "problems": {
         "Dice game: debugging": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         },
         "Nobel Prizes": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 3
@@ -969,19 +1211,24 @@ const skills = {
       "name": "Using pre-existing code",
       "problems": {
         "Dice game: debugging": {
-          "ps": "PS2"
+          "ps": "PS2",
+          "selected": false
         },
         "Dice Game Refactored: Using pre": {
-          "ps": "PS3"
+          "ps": "PS3",
+          "selected": false
         },
         "Dice Game Loops: Using pre": {
-          "ps": "PS4"
+          "ps": "PS4",
+          "selected": false
         },
         "Dice Game Again": {
-          "ps": "PS7"
+          "ps": "PS7",
+          "selected": false
         },
         "Importing Contacts": {
-          "ps": "PS9"
+          "ps": "PS9",
+          "selected": false
         }
       },
       "cap": 4
@@ -994,16 +1241,18 @@ function toggleProblem(skill, problem) {
     setProblem(skill, problem, !skills[skill].problems[problem].selected);
 }
 
-function setProblem(skill, problem, value) {
+function setProblem(skill, problem, value, up=true) {
     skills[skill].problems[problem].selected = value;
     document.getElementById(skill + "-" + problem + "-selected").checked = value;
-    update();
+    if(up) {
+        update();
+    }
 
 }
 
 function setSkill(skill, value) {
     for(const problemname in skills[skill].problems) {
-        setProblem(skill, problemname, value);
+        setProblem(skill, problemname, value, false);
     }
     update();
 }
@@ -1028,7 +1277,7 @@ function setPs(ps, value) {
     for(const skillname in skills) {
         for(const problemname in skills[skillname].problems) {
             if(skills[skillname].problems[problemname].ps === ps) {
-                setProblem(skillname, problemname, value);
+                setProblem(skillname, problemname, value, false);
             }
         }
     }
@@ -1095,29 +1344,34 @@ function update() {
         document.getElementById(p + "-earned").innerHTML = ps[p].count;
         document.getElementById(p + "-total").innerHTML = ps[p].total;
     }
+    console.log(skills);
+    localStorage.setItem("skills", JSON.stringify(skills));
 }
 
 (function() {
+    if(localStorage.getItem("skills") !== null) {
+        skills = JSON.parse(localStorage.getItem("skills"));
+    }
+    console.log(skills);
     const skillcontainer = document.getElementById("container");
     const pscontainer = document.getElementById("pscontainer")
     let ps = [];
     for(const skillname in skills) {
         console.log(skillname)
-        let content = "<div class='row'>" +
+        let content = "<div class='row skill-heading'>" +
         "<div class='ten columns' style='padding-top:10px'><b>" + skillname + "</b></div>" +
-        "<div class='one columns'><button style='padding: 0px 10px 0px 10px' onclick='setSkill(\"" + skillname + "\", true)'>all</button></div>" +
-        "<div class='one columns'><button style='padding: 0px 10px 0px 10px' onclick='setSkill(\"" + skillname + "\", false)'>none</button></div>" +
+        //"<div class='one columns'><button style='padding: 0px 10px 0px 10px' onclick='setSkill(\"" + skillname + "\", true)'>all</button></div>" +
+        //"<div class='one columns'><button style='padding: 0px 10px 0px 10px' onclick='setSkill(\"" + skillname + "\", false)'>none</button></div>" +
         "</div>";
 
         for(const problemname in skills[skillname].problems) {
             const problem = skills[skillname].problems[problemname];
-            problem.selected = false;
+            const selected = problem.selected ? "checked" : "";
             content += "<div class='row'>" +
-                "<div class='nine columns'>" + problemname + "</div>" +
-                "<div class='two columns'>" + problem.ps + "</div>" +
-                "<div class='one columns'>" +
+                "<div class='ten columns'><i>" + problem.ps + "</i> " + problemname + "</div>" +
+                "<div class='two columns'>" +
                     // add checkbox, call toggleProblem when toggled
-                    "<input type='checkbox' id='" + skillname + "-" + problemname + "-selected' onclick='toggleProblem(\"" + skillname + "\", \"" + problemname + "\")'>" +
+                    "<input type='checkbox' " + selected + " id='" + skillname + "-" + problemname + "-selected' onclick='toggleProblem(\"" + skillname + "\", \"" + problemname + "\")'>" +
                 "</div>" +
                 "</div>";
             if (!ps.includes(problem.ps)) {
@@ -1125,8 +1379,8 @@ function update() {
             }
         }
         content += "<div class='row'>" +
-            "<div class='eleven columns'><b>" + skillname + " total: </div>" +
-            "<div class='one columns'><b><span id='" + skillname + "-total'>" + 0 + "</span></b></div>" +
+            "<div class='ten columns'><b>" + skillname + " total: </div>" +
+            "<div class='two columns'><b><span id='" + skillname + "-total'>" + 0 + "</span> / " + skills[skillname].cap + "</b></div>" +
             "</div>";
 
         skillcontainer.insertAdjacentHTML( 'beforeend', content);
@@ -1135,11 +1389,11 @@ function update() {
     ps.sort();
     for(const p of ps) {
         let content = "<div class='row'>" +
-            "<div class='three columns' style='padding-top:10px'><b>" + p + "</b></div>" +
-            "<div class='three columns' style='padding-top:10px'>(<span id='" + p + "-earned'></span>/<span id='" + p + "-total'></span>)</div>" +
-            "<div class='three columns'><button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", true)'>all</button></div>" +
-            "<div class='three columns'><button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", false)'>none</button></div>" +
+            "<div class='five columns' style='padding-top:10px'><b>" + p + "</b> (<span id='" + p + "-earned'></span>/<span id='" + p + "-total'></span>)</div>" +
+            "<div class='seven columns'><button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", true)'>all</button>" +
+            "<button style='padding: 0px 10px 0px 10px' onclick='setPs(\"" + p + "\", false)'>none</button></div>" +
             "</div>";
         pscontainer.insertAdjacentHTML( 'beforeend', content);
     }
+    update();
 })();

@@ -1,0 +1,80 @@
+.section {
+  padding: 5rem 0 3rem;
+}
+
+.hero-heading {
+  text-align: center;
+}
+
+.title {
+  background-color: #304f60;
+  color: #e2f3fd;
+
+}
+.summary {
+  text-align: center;
+  background-color: #ffe1a0;
+  color: #304f60;
+}
+
+.skill-toggle-container {
+  width: 100%;
+}
+
+.ps-container {
+  width: 100%;
+  margin-top: 2.3rem;
+}
+
+.pstoggles {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.skill-heading {
+  border-top: 1px solid;
+}
+
+/* Bigger than 550 */
+@media (min-width: 550px) {
+  .section {
+    padding: 4rem 0 2rem;
+  }
+  .hero-heading {
+    font-size: 4rem;
+  }
+}
+
+.bumper {
+  display: none;
+}
+
+.stat {
+  margin-bottom: 1rem;
+}
+
+/* Bigger than 750 */
+@media (min-width: 750px) {
+  .section {
+    padding: 5rem 0 2rem;
+  }
+  .hero-heading {
+    font-size: 5rem;
+  }
+  .bumper {
+    display: block;
+  }
+}
+
+/* Bigger than 1000 */
+@media (min-width: 1000px) {
+  .section {
+    padding: 7rem 0 2rem;
+  }
+  .hero-heading {
+    font-size: 7rem;
+  }
+  .container {
+    max-width: 1000px;
+  }
+}
