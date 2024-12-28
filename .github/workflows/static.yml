@@ -35,8 +35,9 @@ jobs:
       - name: Copy assets
         run: |
           mkdir build
-          cp -r ./lectures/html ./build/
-          cp -r ./lectures/notebooks/images ./build/html/
+          mkdir -p build/lectures/html
+          cp -r ./lectures/html ./build/lectures/html/
+          cp -r ./lectures/notebooks/images ./build/lectures/html/
           cp -r ./index.html ./build/
           cp -r ./gradeinfo ./build/
           cp -r ./css ./build/
@@ -44,7 +45,7 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: 'build/'
+          path: 'build/g'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
