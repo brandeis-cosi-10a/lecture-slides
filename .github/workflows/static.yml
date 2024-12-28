@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir build
           mkdir -p build/lectures/html
-          cp -r ./lectures/html ./build/lectures/html/
+          cp ./lectures/html/* ./build/lectures/html/
           cp -r ./lectures/notebooks/images ./build/lectures/html/
           cp -r ./index.html ./build/
           cp -r ./gradeinfo ./build/
