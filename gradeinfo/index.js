@@ -68,21 +68,17 @@ let problems = {
       "Function invocation": false,
       "Function definition": false,
       "Function parameters": false,
-      "Globals": false
+      "Globals": false,
+      "Using pre-existing code": false
     },
     "Drawing Squares": {
       "Function invocation": false,
       "Function parameters": false
     },
-    "Dice Game Refactored: Using pre": {
-      "Using pre-existing code": false
-    }
   },
   "PS4": {
-    "Number guessing": {
-      "Variables": false
-    },
-    "Number Guessing": {
+    "Number Guessing Game": {
+      "Variables": false,
       "Datatypes": false,
       "input()": false,
       "Conditionals": false,
@@ -118,9 +114,7 @@ let problems = {
       "Function parameters": false,
       "Globals": false,
       "Loops - for/range": false,
-      "Loops - choosing structure": false
-    },
-    "Dice Game Loops: Using pre": {
+      "Loops - choosing structure": false,
       "Using pre-existing code": false
     }
   },
