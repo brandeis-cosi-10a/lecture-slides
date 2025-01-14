@@ -21,18 +21,26 @@
   width: 100%;
 }
 
-.ps-container {
+.skilltotal-container {
   width: 100%;
   margin-top: 2.3rem;
 }
 
-.pstoggles {
+.skilltotals {
   border-top: 1px solid;
   border-bottom: 1px solid;
 }
 
 .skill-heading {
   border-top: 1px solid;
+}
+
+.toggle-btn {
+  line-height: 2rem;
+  height: 3rem;
+  padding: 0px 5px 0px 5px;
+  margin-top: 1rem;
+  float: right;
 }
 
 /* Bigger than 550 */
