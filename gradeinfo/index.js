@@ -1,3 +1,5 @@
+const VERSION = 6;
+
 let problems = {
   "PS0": {
     "Hello World": {
@@ -6,23 +8,27 @@ let problems = {
   },
   "PS1": {
     "Mad Libs": {
+      "Using IDE": false,
       "Variables": false,
       "Expressions": false,
       "input()": false
     },
     "Weight Comparisons": {
+      "Using IDE": false,
       "Variables": false,
       "Datatypes": false,
       "Expressions": false,
       "input()": false
     },
     "Interest Calculator": {
+      "Using IDE": false,
       "Variables": false,
       "Datatypes": false,
       "Expressions": false,
       "input()": false
     },
     "String escaping puzzle": {
+      "Using IDE": false,
       "String escaping": false
     }
   },
@@ -58,11 +64,22 @@ let problems = {
       "Conditionals": false,
       "Conditional logic": false
     },
-    "Old lady": {
+    "Shake it off": {
       "Function invocation": false,
       "Function definition": false,
       "Function parameters": false,
-      "Functional Decomposition": false
+      "Functional decomposition": false
+    },
+    "Magic 8-ball": {
+      "Variables": false,
+      "input()": false,
+      "String escaping": false,
+      "Conditionals": false,
+      "Conditional logic": false,
+      "Function invocation": false,
+      "Function definition": false,
+      "Function returns": false,
+      "Functional decomposition": false
     },
     "Dice Game Refactored": {
       "Function invocation": false,
@@ -71,12 +88,12 @@ let problems = {
       "Globals": false,
       "Using pre-existing code": false
     },
+  },
+  "PS4": {
     "Drawing Squares": {
       "Function invocation": false,
       "Function parameters": false
     },
-  },
-  "PS4": {
     "Number Guessing Game": {
       "Variables": false,
       "Datatypes": false,
@@ -85,14 +102,16 @@ let problems = {
       "Loops - while": false,
       "Loops - choosing structure": false
     },
-    "Multiplication Tables": {
+    "Combinatorics": {
+      "input()": false,
+      "Datatypes": false,
       "Expressions": false,
-      "String escaping": false,
       "Function definition": false,
+      "Function invocation": false,
+      "Function parameters": false,
       "Function returns": false,
-      "Fencepost algorithm": false,
-      "Loops - nested": false,
-      "Unit Testing": false
+      "Loops - for/range": false,
+      "Functional decomposition": false
     },
     "Calendar Assistant": {
       "input()": false,
@@ -105,20 +124,41 @@ let problems = {
       "Function returns": false,
       "Loops - for/range": false,
       "Cumulative algorithm": false,
-      "Loops - choosing structure": false,
-      "Unit Testing": false
+      "Loops - choosing structure": false
     },
+  },
+  "PS5": {
     "Dice Game Loops": {
       "Function invocation": false,
       "Function definition": false,
       "Function parameters": false,
       "Globals": false,
       "Loops - for/range": false,
+      "Loops - while": false,
       "Loops - choosing structure": false,
       "Using pre-existing code": false
+    },
+    "Multiplication Tables": {
+      "Expressions": false,
+      "String escaping": false,
+      "Function definition": false,
+      "Function returns": false,
+      "Fencepost algorithm": false,
+      "Loops - nested": false,
+      "Unit Testing": false
+    },
+    "Pascals Triangle": {
+      "Using pre-existing code": false,
+      "Expressions": false,
+      "Function returns": false,
+      "Function invocation": false,
+      "Loops - choosing structure": false,
+      "Fencepost algorithm": false,
+      "Loops - nested": false,
+      "Unit Testing": false
     }
   },
-  "PS5": {
+  "PS6": {
     "To-do list": {
       "Variables": false,
       "input()": false,
@@ -130,7 +170,7 @@ let problems = {
       "Loops - while": false,
       "Lists get/set": false,
       "List iteration": false,
-      "Functional Decomposition": false
+      "Functional decomposition": false
     },
     "Number filter": {
       "Datatypes": false,
@@ -158,7 +198,7 @@ let problems = {
       "Unit Testing": false
     }
   },
-  "PS6": {
+  "PS7": {
     "Factor finder": {
       "Expressions": false,
       "Conditionals": false,
@@ -184,7 +224,7 @@ let problems = {
       "List iteration": false,
       "String manipulation": false,
       "Unit Testing": false,
-      "Functional Decomposition": false
+      "Functional decomposition": false
     },
     "Vowel Filter": {
       "Conditionals": false,
@@ -196,7 +236,7 @@ let problems = {
       "Unit Testing": false
     }
   },
-  "PS7": {
+  "PS8": {
     "Dice Game Again": {
       "Variables": false,
       "input()": false,
@@ -232,7 +272,7 @@ let problems = {
       "Unit Testing": false
     }
   },
-  "PS8": {
+  "PS9": {
     "Lottery Analyzer": {
       "Variables": false,
       "Expressions": false,
@@ -279,7 +319,7 @@ let problems = {
       "File I/O": false
     }
   },
-  "PS9": {
+  "PS10": {
     "Hiking Trails": {
       "Expressions": false,
       "Function parameters": false,
@@ -311,7 +351,7 @@ let problems = {
       "Nested data structures": false,
       "File I/O": false,
       "File I/O - JSON": false,
-      "Functional Decomposition": false,
+      "Functional decomposition": false,
       "Debugging": false
     },
     "Importing Contacts": {
@@ -323,7 +363,7 @@ let problems = {
       "Data structures - choosing appropriately": false,
       "File I/O": false,
       "File I/O - JSON": false,
-      "Functional Decomposition": false,
+      "Functional decomposition": false,
       "Debugging": false,
       "Using pre-existing code": false
     }
@@ -332,170 +372,90 @@ let problems = {
 
 let skills = {
   "Using IDE": {
-    "cap": 1,
-    "count": 2
   },
   "Variables": {
-    "cap": 4,
-    "count": 11
   },
   "Datatypes": {
-    "cap": 4,
-    "count": 8
   },
   "Expressions": {
-    "cap": 4,
-    "count": 12
   },
   "input()": {
-    "cap": 4,
-    "count": 10
   },
   "String escaping": {
-    "cap": 4,
-    "count": 5
   },
   "Conditionals": {
-    "cap": 4,
-    "count": 13
   },
   "Conditional logic": {
-    "cap": 4,
-    "count": 8
   },
   "Function invocation": {
-    "cap": 4,
-    "count": 9
   },
   "Function definition": {
-    "cap": 4,
-    "count": 16
   },
   "Function parameters": {
-    "cap": 4,
-    "count": 10
   },
   "Function returns": {
-    "cap": 4,
-    "count": 12
   },
   "Globals": {
-    "cap": 3,
-    "count": 3
   },
   "Loops - for/range": {
-    "cap": 4,
-    "count": 8
   },
   "Loops - while": {
-    "cap": 4,
-    "count": 4
   },
   "Cumulative algorithm": {
-    "cap": 4,
-    "count": 8
   },
   "Fencepost algorithm": {
-    "cap": 3,
-    "count": 3
   },
   "Loops - nested": {
-    "cap": 3,
-    "count": 3
   },
   "Loops - choosing structure": {
-    "cap": 4,
-    "count": 7
   },
   "Lists get/set": {
-    "cap": 4,
-    "count": 11
   },
   "List iteration": {
-    "cap": 4,
-    "count": 12
   },
   "Lists - nested": {
-    "cap": 4,
-    "count": 4
   },
   "String manipulation": {
-    "cap": 4,
-    "count": 4
   },
   "Tuples": {
-    "cap": 4,
-    "count": 4
   },
   "References": {
-    "cap": 3,
-    "count": 3
   },
   "Dictionaries get/set": {
-    "cap": 4,
-    "count": 4
   },
   "Dictionary iteration": {
-    "cap": 4,
-    "count": 5
   },
   "Dictionary filtering": {
-    "cap": 2,
-    "count": 2
   },
   "Sorting": {
-    "cap": 3,
-    "count": 3
   },
   "Sets": {
-    "cap": 4,
-    "count": 4
   },
   "Nested data structures": {
-    "cap": 4,
-    "count": 6
   },
   "Data structures - choosing appropriately": {
-    "cap": 3,
-    "count": 3
   },
   "File I/O": {
-    "cap": 4,
-    "count": 4
   },
   "File I/O - CSVs": {
-    "cap": 1,
-    "count": 1
   },
   "File I/O - JSON": {
-    "cap": 2,
-    "count": 2
   },
   "Classes - definition": {
-    "cap": 1,
-    "count": 1
   },
   "Classes - usage": {
-    "cap": 1,
-    "count": 1
   },
   "Unit Testing": {
-    "cap": 4,
-    "count": 8
   },
-  "Functional Decomposition": {
-    "cap": 4,
-    "count": 5
+  "Functional decomposition": {
   },
   "Debugging": {
-    "cap": 3,
-    "count": 3
   },
   "Using pre-existing code": {
-    "cap": 4,
-    "count": 5
   }
 }
+
+let totalCap = 0;
 
 function toggleProblem(skill, ps, problem) {
     // toggle the checkbox for this skill/problem
@@ -558,6 +518,40 @@ function resetEarnedCounts() {
   }
 }
 
+function computeCounts() {
+  for(const ps in problems) {
+    for(const problemname in problems[ps]) {
+      for(const skillname in problems[ps][problemname]) {
+        console.log(skillname);
+        if(!("count" in skills[skillname])) {
+          skills[skillname].count = 0;
+        }
+        skills[skillname].count += 1;
+      }
+    }
+  }
+  for(const skillname in skills) {
+    let c = skills[skillname].count;
+    if(c == 1) {
+      skills[skillname].cap = 1;
+    } else if(c == 2 || c == 3) {
+      skills[skillname].cap = 2;
+    } else if(c == 4) {
+      skills[skillname].cap = 3;
+    } else if(c == 5 || c == 6) {
+      skills[skillname].cap = 4;
+    } else if(c == 7) {
+      skills[skillname].cap = 5;
+    } else if(c >= 12) {
+      skills[skillname].cap = 8;
+    } else {
+      skills[skillname].cap = 6;
+    }
+    totalCap += skills[skillname].cap;
+    skills[skillname].earned = 0;
+  }
+}
+
 function update() {
     resetEarnedCounts();
     let total_earned_count = 0;
@@ -570,6 +564,7 @@ function update() {
             skills[skillname].earned += 1;
             document.getElementById(skillname + "-" + problemname + "-selected").innerHTML = "yes";
           } else {
+            console.log(skillname + "-" + problemname + "-selected");
               document.getElementById(skillname + "-" + problemname + "-selected").innerHTML = "no";
           }
         }
@@ -577,13 +572,12 @@ function update() {
     }
 
     for(const skillname in skills) {
-      console.log(skillname)
       const earned_count = skills[skillname]['earned'];
       const cap = skills[skillname]['cap'];
       total_count += skills[skillname]['cap'];
       const capped_count = earned_count > cap ? cap : earned_count;
       document.getElementById(skillname + "-total").innerHTML = capped_count;
-      //document.getElementById(skillname + "-overcap").innerHTML = earned_count;
+      document.getElementById(skillname + "-overcap").innerHTML = earned_count;
       total_earned_count += capped_count;
     }
 
@@ -591,29 +585,29 @@ function update() {
     document.getElementById("possible-skills").innerHTML = total_count;
     document.getElementById("skills-percentage").innerHTML = (total_earned_count / total_count * 100).toFixed(2);
     let grade = "E";
-    if(total_earned_count >= 135) {
+    if(total_earned_count >= (totalCap * 0.96)) {
         grade = "A+";
-    } else if(total_earned_count >= 130) {
+    } else if(total_earned_count >= (totalCap * 0.93)) {
         grade = "A";
-    } else if(total_earned_count >= 127) {
+    } else if(total_earned_count >= (totalCap * 0.9)) {
         grade = "A-";
-    } else if(total_earned_count >= 123) {
+    } else if(total_earned_count >= (totalCap * 0.87)) {
         grade = "B+";
-    } else if(total_earned_count >= 117) {
+    } else if(total_earned_count >= (totalCap * 0.83)) {
         grade = "B";
-    } else if(total_earned_count >= 113) {
+    } else if(total_earned_count >= (totalCap * 0.8)) {
         grade = "B-";
-    } else if(total_earned_count >= 109) {
+    } else if(total_earned_count >= (totalCap * 0.77)) {
         grade = "C+";
-    } else if(total_earned_count >= 103) {
+    } else if(total_earned_count >= (totalCap * 0.73)) {
         grade = "C";
-    } else if(total_earned_count >= 99) {
+    } else if(total_earned_count >= (totalCap * 0.7)) {
         grade = "C-";
-    } else if(total_earned_count >= 94) {
+    } else if(total_earned_count >= (totalCap * 0.66)) {
         grade = "D+";
-    } else if(total_earned_count >= 89) {
+    } else if(total_earned_count >= (totalCap * 0.63)) {
         grade = "D";
-    } else if(total_earned_count >= 85) {
+    } else if(total_earned_count >= (totalCap * 0.6)) {
         grade = "D-";
     } else {
         grade = "E";
@@ -628,12 +622,18 @@ function update() {
 
     console.log(skills);
     localStorage.setItem("problems", JSON.stringify(problems));
+    localStorage.setItem("version", VERSION);
 }
 
 (function() {
-    if(localStorage.getItem("problems") !== null) {
+    let ver = localStorage.getItem("version");
+    if(ver !== null && ver >= VERSION) {
+      if(localStorage.getItem("problems") !== null) {
         problems = JSON.parse(localStorage.getItem("problems"));
+      }
     }
+
+    computeCounts();
     console.log(skills);
     const skillcontainer = document.getElementById("container");
     const skilltotal_container = document.getElementById("skilltotal-container")
@@ -670,12 +670,11 @@ function update() {
     }
 
     for(const skillname in skills) {
-      console.log("init skillname", skillname);
       const cap = skills[skillname]['cap'];
       let content = "<div class='row'>" +
         "<div class='eight columns'>" + skillname + ": </div>" +
         //"<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span></b> (<span id='" + skillname + "-overcap'>" + 0 + "</span>) / <b>" + cap + "</b></div>" +
-        "<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span> / " + cap + "</b></div>" +
+        "<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span> / " + cap + "</b> (<span id='" + skillname + "-overcap'></span> / " + skills[skillname].count + ")</div>" +
         "</div>";
 
         skilltotal_container.insertAdjacentHTML( 'beforeend', content);
