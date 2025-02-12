@@ -7817,7 +7817,7 @@ And the green grass grew all around, all around, and the green grass grew all ar
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Our first function:</span>
 <span class="k">def</span> <span class="nf">tree</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"And the sapling was in the ground"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"And the tree was in the ground"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"And the green grass grew all around, all around, and the green grass grew all around"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">()</span>
     
@@ -7854,7 +7854,7 @@ And the green grass grew all around, all around, and the green grass grew all ar
 <pre>Oh in the woods there was a tree
 The prettiest tree
 You ever did see
-And the sapling was in the ground
+And the tree was in the ground
 And the green grass grew all around, all around, and the green grass grew all around
 
 And on that tree
@@ -7862,7 +7862,7 @@ There was a limb
 The prettiest limb
 That you ever did see
 And the limb was on the tree
-And the sapling was in the ground
+And the tree was in the ground
 And the green grass grew all around, all around, and the green grass grew all around
 
 And on that limb
@@ -7871,7 +7871,7 @@ The prettiest branch
 That you ever did see
 And the branch was on the limb,
 And the limb was on the tree,
-And the sapling was in the ground
+And the tree was in the ground
 And the green grass grew all around, all around, and the green grass grew all around
 
 </pre>
@@ -9094,6 +9094,57 @@ Cell <span class="ansi-green-fg">In[22], line 11</span>, in <span class="ansi-cy
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4ef56418">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Functions-review">Functions review<a class="anchor-link" href="#Functions-review">¶</a></h2><p>Define a function:</p>
+<pre><code>def &lt;name&gt;(parameter1, [parameter2], ...):
+    statement(s)
+</code></pre>
+<p>e.g.</p>
+<pre><code>def add_one(x):
+    print(x + 1)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=50e1eeff">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Functions-review">Functions review<a class="anchor-link" href="#Functions-review">¶</a></h2><p>Call (or invoke) a function:</p>
+<pre><code>&lt;name&gt;([parameter 1], [parameter 2], ...)
+</code></pre>
+<p>e.g.
+<code>add_one(10)</code></p>
+<ul>
+<li>Defining a function makes it avaible to use</li>
+<li>Calling it actually runs the code in the function</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=204469cb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Functions-review">Functions review<a class="anchor-link" href="#Functions-review">¶</a></h2><ul>
+<li>Defining a function makes it avaible to use</li>
+<li>Calling it actually runs the code in the function</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23dfa6a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9225,19 +9276,14 @@ Step 7: Eat!
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
-    <span class="n">desc</span> <span class="o">=</span> <span class="s2">"Here are instructions to make a "</span> <span class="o">+</span> <span class="n">meat</span>
-    
-    <span class="k">if</span> <span class="n">cheese</span><span class="p">:</span>
-        <span class="n">desc</span> <span class="o">+=</span> <span class="s2">" and "</span>  <span class="o">+</span> <span class="n">cheese</span>
-    
-    <span class="n">desc</span> <span class="o">+=</span> <span class="s2">" on "</span> <span class="o">+</span> <span class="n">bread</span>
-    
-    <span class="k">if</span> <span class="n">condiment</span><span class="p">:</span>
-        <span class="n">desc</span> <span class="o">+=</span> <span class="s2">" with "</span> <span class="o">+</span> <span class="n">condiment</span>
-    
-    <span class="n">desc</span> <span class="o">+=</span> <span class="s2">"."</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cheese</span> <span class="ow">and</span> <span class="n">condiment</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Here are instructions to make a "</span> <span class="o">+</span> <span class="n">meat</span> <span class="o">+</span> <span class="s2">" and "</span> <span class="o">+</span> <span class="n">cheese</span> <span class="o">+</span> <span class="s2">" on "</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">" with "</span> <span class="o">+</span> <span class="n">condiment</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">cheese</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">condiment</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Here are instructions to make a "</span> <span class="o">+</span> <span class="n">meat</span> <span class="o">+</span> <span class="s2">" and "</span> <span class="o">+</span> <span class="n">cheese</span> <span class="o">+</span> <span class="s2">" on "</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">cheese</span> <span class="ow">and</span> <span class="n">condiment</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Here are instructions to make a "</span> <span class="o">+</span> <span class="n">meat</span> <span class="o">+</span> <span class="s2">" on "</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">" with "</span> <span class="o">+</span> <span class="n">condiment</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Here are instructions to make a "</span> <span class="o">+</span> <span class="n">meat</span> <span class="o">+</span> <span class="s2">" on "</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">"."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9352,6 +9398,152 @@ Step 7: Eat!
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6abac9ee">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We can do a bit better - let's remove some duplication:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=04999d10">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
+    <span class="n">desc</span> <span class="o">=</span> <span class="s2">"Here are instructions to make a "</span> <span class="o">+</span> <span class="n">meat</span>
+    
+    <span class="k">if</span> <span class="n">cheese</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">=</span> <span class="n">desc</span> <span class="o">+</span> <span class="s2">" and "</span>  <span class="o">+</span> <span class="n">cheese</span>
+    
+    <span class="n">desc</span> <span class="o">+=</span> <span class="s2">" on "</span> <span class="o">+</span> <span class="n">bread</span>
+    
+    <span class="k">if</span> <span class="n">condiment</span><span class="p">:</span>
+        <span class="n">desc</span> <span class="o">+=</span> <span class="s2">" with "</span> <span class="o">+</span> <span class="n">condiment</span>
+    
+    <span class="n">desc</span> <span class="o">+=</span> <span class="s2">"."</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">desc</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6aa059d1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Here are instructions to make a turkey and swiss on sourdough with mustard.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=daade7a0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Here are instructions to make a turkey on sourdough with mustard.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c3b0eefe">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Here are instructions to make a turkey and swiss on sourdough.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=110c2d46">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Here are instructions to make a turkey on sourdough.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9b84e040">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -9367,7 +9559,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -9391,7 +9583,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -9430,7 +9622,7 @@ Step 1: Lay out 2 slices of sourdough bread.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -9460,7 +9652,7 @@ Step 1: Lay out 2 slices of sourdough bread.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -9490,7 +9682,7 @@ Step 3: Put 3 pieces of turkey on one slice of sourdough bread.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -9530,7 +9722,7 @@ Step 2: Put 3 pieces of turkey on one slice of sourdough bread.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -9573,7 +9765,7 @@ Step 2: Put 3 pieces of turkey on one slice of sourdough bread.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -9605,10 +9797,10 @@ Step 5: Put the second slice of bread on top of the swiss.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -9621,11 +9813,10 @@ Step 5: Put the second slice of bread on top of the swiss.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Here are instructions to make a turkey on sourdough with mustard.
+<pre>Here are instructions to make a turkey on sourdough.
 Step 1: Lay out 2 slices of sourdough bread.
-Step 2: Spread mustard on both slices of sourdough bread.
-Step 3: Put 3 pieces of turkey on one slice of sourdough bread.
-Step 4: Put the second slice of bread on top of the turkey.
+Step 2: Put 3 pieces of turkey on one slice of sourdough bread.
+Step 3: Put the second slice of bread on top of the turkey.
 </pre>
 </div>
 </div>
@@ -9636,7 +9827,7 @@ Step 4: Put the second slice of bread on top of the turkey.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -9667,7 +9858,7 @@ Step 4: Put the second slice of bread on top of the swiss.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -9720,7 +9911,7 @@ Step 3: Put the second slice of bread on top of the turkey.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -9736,7 +9927,6 @@ Step 3: Put the second slice of bread on top of the turkey.
     <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Step "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="s2">": Lay out 2 slices of "</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">" bread."</span><span class="p">)</span>
     <span class="n">step</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="c1">#step = step + 1</span>
 
     <span class="k">if</span> <span class="n">condiment</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Step "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">step</span><span class="p">)</span> <span class="o">+</span> <span class="s2">": Spread "</span> <span class="o">+</span> <span class="n">condiment</span> <span class="o">+</span> <span class="s2">" on both slices of "</span> <span class="o">+</span> <span class="n">bread</span> <span class="o">+</span> <span class="s2">" bread."</span><span class="p">)</span>
@@ -9768,7 +9958,7 @@ Step 3: Put the second slice of bread on top of the turkey.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -9802,7 +9992,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -9834,7 +10024,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -9867,7 +10057,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -9914,7 +10104,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_step</span><span class="p">(</span><span class="n">step_num</span><span class="p">,</span> <span class="n">instruction</span><span class="p">):</span>
@@ -9929,7 +10119,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">print_step</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"Toast bread"</span><span class="p">)</span>
@@ -9956,7 +10146,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">print_step</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"Get ingredients"</span><span class="p">)</span>
@@ -9983,7 +10173,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_step</span><span class="p">(</span><span class="n">step_num</span><span class="p">,</span> <span class="n">instruction</span><span class="p">):</span>
@@ -10036,7 +10226,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -10096,6 +10286,23 @@ Step 7: Eat!
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cae95aec">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>PS2 due Thursday night<ul>
+<li>Start before Wed/Thursday! Use office hours!</li>
+</ul>
+</li>
+<li>Quiz 2 (Functions, up to but not including returns) Thursday during recitation</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=735255b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -10114,7 +10321,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -10131,7 +10338,7 @@ Step 7: Eat!
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3</pre>
 </div>
@@ -10154,7 +10361,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_and_return</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -10172,7 +10379,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">add_and_return</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -10186,7 +10393,7 @@ Step 7: Eat!
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[60]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>5</pre>
 </div>
@@ -10198,7 +10405,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">add_and_print</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
@@ -10321,7 +10528,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_and_print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -10339,7 +10546,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"add_and_print produces the value: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">add_and_print</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
@@ -10367,7 +10574,7 @@ add_and_print produces the value: None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"add_and_return produces the value: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">add_and_return</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
@@ -10394,7 +10601,7 @@ add_and_print produces the value: None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [60]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"add_and_print produces the value: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">add_and_print</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
@@ -10422,7 +10629,7 @@ add_and_print produces the value: None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"add_and_return produces the value: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">add_and_return</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
@@ -10472,7 +10679,7 @@ add_and_print produces the value: None
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [62]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Adding 1 to add_and_print(2,3) produces: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">add_and_print</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
@@ -10498,7 +10705,7 @@ add_and_print produces the value: None
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[62], line 1</span>
+Cell <span class="ansi-green-fg">In[67], line 1</span>
 <span class="ansi-green-fg">----&gt; 1</span> <span style="color: rgb(0,135,0)">print</span>(<span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">Adding 1 to add_and_print(2,3) produces: </span><span style="color: rgb(175,0,0)">"</span> <span style="color: rgb(98,98,98)">+</span> <span style="color: rgb(0,135,0)">str</span>(<span class="ansi-yellow-bg">add_and_print</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">2</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">3</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">+</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">1</span>))
 
 <span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: 'NoneType' and 'int'</pre>
@@ -10511,7 +10718,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Adding 1 to add_and_return(2,3) produces: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">add_and_return</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
@@ -10569,7 +10776,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">do_stuff</span><span class="p">():</span>
@@ -10598,7 +10805,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">do_stuff</span><span class="p">():</span>
@@ -10628,7 +10835,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">do_stuff</span><span class="p">():</span>
@@ -10672,7 +10879,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">div</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
@@ -10689,7 +10896,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -10716,7 +10923,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">div</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
@@ -10769,7 +10976,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [70]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
@@ -10785,7 +10992,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> 
@@ -10799,7 +11006,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[71]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[76]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>3.0</pre>
 </div>
@@ -10811,7 +11018,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [72]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [77]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">average</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9999</span><span class="p">)</span>
@@ -10825,7 +11032,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[72]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[77]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>2000.6</pre>
 </div>
@@ -10837,7 +11044,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [73]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [78]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">average</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -10851,7 +11058,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[73]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[78]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>0.0</pre>
 </div>
@@ -10874,7 +11081,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [74]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [79]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_question</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">all_caps</span><span class="p">):</span>
@@ -10891,7 +11098,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [75]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [80]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">make_question</span><span class="p">(</span><span class="s2">"Hi class"</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -10905,7 +11112,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[75]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[80]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>'Hi class?'</pre>
 </div>
@@ -10917,7 +11124,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [76]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [81]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">make_question</span><span class="p">(</span><span class="s2">"Hi class"</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
@@ -10931,7 +11138,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[76]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[81]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>'HI CLASS?'</pre>
 </div>
@@ -10943,7 +11150,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [77]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [82]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Today I went to 10a, and it was... "</span> <span class="o">+</span> <span class="n">make_question</span><span class="p">(</span><span class="s2">"the best day ever"</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
@@ -10992,7 +11199,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [78]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [83]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_step</span><span class="p">(</span><span class="n">step_num</span><span class="p">,</span> <span class="n">instruction</span><span class="p">):</span>
@@ -11045,7 +11252,7 @@ Cell <span class="ansi-green-fg">In[62], line 1</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [79]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [84]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11102,7 +11309,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [80]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [85]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11152,7 +11359,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [81]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [86]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_intro</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11177,7 +11384,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [82]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [87]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">print_intro</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11204,7 +11411,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [83]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [88]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">print_intro</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11231,7 +11438,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [84]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [89]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">print_intro</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -11258,7 +11465,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [85]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [90]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11298,7 +11505,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [86]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [91]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11366,7 +11573,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [87]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [92]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Attempt 1: return whether or not a step was used</span>
@@ -11385,7 +11592,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [88]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [93]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11425,7 +11632,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [89]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [94]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11480,7 +11687,7 @@ if used_condiment:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [90]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [95]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_condiment_step</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">bread</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11498,7 +11705,7 @@ if used_condiment:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [91]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [96]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11536,7 +11743,7 @@ if used_condiment:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [92]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [97]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11570,7 +11777,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [93]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [98]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -11614,7 +11821,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [94]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [99]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11652,7 +11859,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [95]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [100]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_second_slice_instructions</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">meat</span><span class="p">):</span>
@@ -11675,7 +11882,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [96]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [101]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11706,7 +11913,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [97]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [102]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11740,7 +11947,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [98]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [103]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11784,7 +11991,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [99]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [104]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_cut_and_eat</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -11801,7 +12008,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [100]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [105]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11829,7 +12036,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [101]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [106]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11874,7 +12081,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [102]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [107]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_bread_step</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">bread</span><span class="p">):</span>
@@ -11894,7 +12101,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [103]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [108]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sandwich</span><span class="p">(</span><span class="n">bread</span><span class="p">,</span> <span class="n">meat</span><span class="p">,</span> <span class="n">cheese</span><span class="p">,</span> <span class="n">condiment</span><span class="p">):</span>
@@ -11917,7 +12124,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [104]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [109]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11951,7 +12158,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [105]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [110]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -11995,7 +12202,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [106]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [111]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">print_step</span><span class="p">(</span><span class="n">step_num</span><span class="p">,</span> <span class="n">instruction</span><span class="p">):</span>
@@ -12071,7 +12278,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [107]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [112]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -12105,7 +12312,7 @@ Step 7: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [108]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [113]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"mustard"</span><span class="p">)</span>
@@ -12138,7 +12345,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [109]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [114]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">"swiss"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -12171,7 +12378,7 @@ Step 6: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [110]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [115]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">sandwich</span><span class="p">(</span><span class="s2">"sourdough"</span><span class="p">,</span> <span class="s2">"turkey"</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
@@ -12228,7 +12435,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [111]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [116]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">add_number</span><span class="p">(</span><span class="n">string_val</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
@@ -12277,7 +12484,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [112]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [117]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">append_number</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">number</span><span class="p">):</span>
@@ -12316,6 +12523,23 @@ Step 5: Eat!
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8cddf08c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>Quiz 2 tomorrow (2/6) during recitation<ul>
+<li>Functions (up to, but not including, return values)</li>
+</ul>
+</li>
+<li>PS2 due tomorrow (2/6)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bbfe6bf5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -12331,12 +12555,14 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [113]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [118]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">value</span> <span class="o">*</span> <span class="n">value</span>
 
+<span class="k">def</span> <span class="nf">mult_by_2</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">value</span> <span class="o">*</span> <span class="mi">2</span>
 
 <span class="k">def</span> <span class="nf">mod</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">value</span> <span class="o">%</span> <span class="n">divisor</span>
@@ -12354,11 +12580,14 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [114]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [119]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">subtract_3</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+
+<span class="n">answer2</span> <span class="o">=</span> <span class="n">mult_by_2</span><span class="p">(</span><span class="s2">"hi"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -12372,6 +12601,7 @@ Step 5: Eat!
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>33
+hihi
 </pre>
 </div>
 </div>
@@ -12382,7 +12612,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [115]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [120]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -12405,7 +12635,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [116]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [121]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">subtract_3</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="n">mod</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">5</span><span class="p">)))</span>
@@ -12433,7 +12663,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [117]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [122]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -12456,7 +12686,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [118]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [123]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
@@ -12484,7 +12714,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [119]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [124]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -12507,7 +12737,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [120]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [125]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">mod</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="n">square</span><span class="p">(</span><span class="n">subtract_3</span><span class="p">(</span><span class="mi">7</span><span class="p">)))</span>
@@ -12535,7 +12765,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [121]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [126]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
@@ -12558,7 +12788,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [122]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [127]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">mod</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">subtract_3</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="n">mod</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))))</span>
@@ -12616,11 +12846,15 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [123]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [128]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">house</span><span class="p">():</span>
     <span class="n">furniture</span> <span class="o">=</span> <span class="s2">"couch"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">furniture</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">barn</span><span class="p">():</span>
+    <span class="n">furniture</span> <span class="o">=</span> <span class="s2">"haybale"</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">furniture</span><span class="p">)</span>
 
 <span class="n">house</span><span class="p">()</span>
@@ -12647,7 +12881,7 @@ Step 5: Eat!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [124]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [129]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">house</span><span class="p">():</span>
@@ -12670,7 +12904,7 @@ Step 5: Eat!
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[124], line 5</span>
+Cell <span class="ansi-green-fg">In[129], line 5</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     furniture <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">couch</span><span style="color: rgb(175,0,0)">"</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span> house()
 <span class="ansi-green-fg">----&gt; 5</span> <span style="color: rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">furniture</span>)
@@ -12733,7 +12967,7 @@ Cell <span class="ansi-green-fg">In[124], line 5</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [125]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [130]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">color1</span> <span class="o">=</span> <span class="s2">"red"</span>
@@ -12766,7 +13000,7 @@ Cell <span class="ansi-green-fg">In[124], line 5</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [126]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [131]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">color1</span> <span class="o">=</span> <span class="s2">"red"</span>
@@ -12800,7 +13034,7 @@ Cell <span class="ansi-green-fg">In[124], line 5</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [127]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [132]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">color1</span> <span class="o">=</span> <span class="s2">"red"</span>
@@ -12826,7 +13060,7 @@ Cell <span class="ansi-green-fg">In[124], line 5</span>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[127], line 7</span>
+Cell <span class="ansi-green-fg">In[132], line 7</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     <span class="ansi-bold" style="color: rgb(0,135,0)">if</span> <span style="color: rgb(98,98,98)">2</span> <span style="color: rgb(98,98,98)">&gt;</span> <span style="color: rgb(98,98,98)">1</span>:
 <span class="ansi-green-intense-fg ansi-bold">      5</span>         color3 <span style="color: rgb(98,98,98)">=</span> <span style="color: rgb(175,0,0)">"</span><span style="color: rgb(175,0,0)">blue</span><span style="color: rgb(175,0,0)">"</span>
 <span class="ansi-green-fg">----&gt; 7</span> <span style="color: rgb(0,135,0)">print</span>(color1, <span class="ansi-yellow-bg">color2</span>, color3)
@@ -12853,12 +13087,12 @@ Cell <span class="ansi-green-fg">In[127], line 7</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [128]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [133]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="s2">"red"</span>
 <span class="k">def</span> <span class="nf">paint</span><span class="p">():</span>
-    <span class="c1">#color = "green"</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="s2">"green"</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Inside paint: "</span> <span class="o">+</span> <span class="n">color</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Outside before func: "</span> <span class="o">+</span> <span class="n">color</span><span class="p">)</span>
@@ -12877,7 +13111,7 @@ Cell <span class="ansi-green-fg">In[127], line 7</span>
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Outside before func: red
-Inside paint: red
+Inside paint: green
 Outside after func: red
 </pre>
 </div>
@@ -12915,7 +13149,7 @@ Outside after func: red
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [129]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [134]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="s2">"red"</span>
@@ -12974,12 +13208,13 @@ Outside after func: red
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [130]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [135]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">paint</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">color</span>
     <span class="n">color</span> <span class="o">=</span> <span class="s2">"green"</span>
+    
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Inside paint: "</span> <span class="o">+</span> <span class="n">color</span><span class="p">)</span>
 
 <span class="n">color</span> <span class="o">=</span> <span class="s2">"red"</span>
@@ -13007,6 +13242,21 @@ Outside after func: green
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=106b128c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="The-global-keyword">The <code>global</code> keyword<a class="anchor-link" href="#The-global-keyword">¶</a></h2><ul>
+<li>The <code>global</code> keyword tells Python: when this variable name is referenced, use the global scope</li>
+<li>It doesn't automatically create a variable</li>
+<li>It also does <strong>not</strong> "convert" a local variable to a global</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=df17984e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -13022,7 +13272,7 @@ Outside after func: green
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [131]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [136]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">1</span>
@@ -13072,7 +13322,7 @@ Outside after func: 2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [132]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [137]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">score</span> <span class="o">=</span> <span class="mi">1</span>
@@ -13120,6 +13370,23 @@ Outside after func: 2
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7c6e00bb">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>Quiz 2 tonight during recitation<ul>
+<li>Functions (up to, but not including, return values)</li>
+</ul>
+</li>
+<li>PS2 due tonight, 11:59pm</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c4d0a102">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -13146,9 +13413,9 @@ Outside after func: 2
 <span class="n">incorrect</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">points</span> <span class="o">=</span> <span class="mi">0</span>
 
+
 <span class="n">answer1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Question 1: Does Kansas border Colorado? (y/n) "</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">answer1</span> <span class="o">==</span> <span class="s1">'y'</span><span class="p">:</span>
-    <span class="c1">#points = points + 1</span>
     <span class="n">points</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">incorrect</span> <span class="o">=</span> <span class="n">incorrect</span> <span class="o">+</span> <span class="mi">1</span>
@@ -13697,10 +13964,7 @@ Outside after func: 2
 
 <span class="k">def</span> <span class="nf">check_answer</span><span class="p">(</span><span class="n">actual</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
     <span class="c1"># TODO: replace this with much fancier logic</span>
-    <span class="n">actual_lower</span> <span class="o">=</span> <span class="n">actual</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="n">expected_lower</span> <span class="o">=</span> <span class="n">expected</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="c1"># actual_lower != expected_lower</span>
-    <span class="k">return</span> <span class="n">actual_lower</span> <span class="o">==</span> <span class="n">expected_lower</span>
+    <span class="k">return</span> <span class="n">actual</span> <span class="o">==</span> <span class="n">expected</span>
 
 <span class="k">def</span> <span class="nf">do_question</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">question</span><span class="p">,</span> <span class="n">expected_answer</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">points</span>
@@ -13788,7 +14052,7 @@ Outside after func: 2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [143]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [148]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_sum_and_avg</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
@@ -13805,7 +14069,7 @@ Outside after func: 2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [144]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [149]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">find_sum_and_avg</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -13819,7 +14083,7 @@ Outside after func: 2
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[144]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[149]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>(116, 23.2)</pre>
 </div>
@@ -13842,7 +14106,7 @@ Outside after func: 2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [145]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [150]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">grand_total</span><span class="p">,</span> <span class="n">avg_price</span> <span class="o">=</span> <span class="n">find_sum_and_avg</span><span class="p">(</span><span class="mf">1.99</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">29.95</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">.99</span><span class="p">)</span>
@@ -13883,7 +14147,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [146]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">analyze_sentence</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
@@ -13901,7 +14165,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [147]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">analyze_sentence</span><span class="p">(</span><span class="s2">"Hello class, count these words with me."</span><span class="p">)</span>
@@ -13929,7 +14193,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [148]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">analyze_sentence</span><span class="p">(</span><span class="s2">",.@($@*!#*(! 9219!,;))"</span><span class="p">)</span>
@@ -13957,7 +14221,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [149]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [154]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">l</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">analyze_sentence</span><span class="p">(</span><span class="s2">" h e l l o . w o r l d"</span><span class="p">)</span>
@@ -13994,6 +14258,21 @@ Average is: 7.986
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b859d407">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>Quiz 3 on Thursday (Functions)</li>
+<li>PS3 due Friday, 2/14 (Happy Valentine's Day)</li>
+<li>No assignments over the break</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a80466c9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14010,7 +14289,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [150]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [155]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"guest"</span><span class="p">):</span>
@@ -14025,7 +14304,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [151]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [156]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">()</span>
@@ -14052,7 +14331,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [152]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [157]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="s2">"Joe"</span><span class="p">)</span>
@@ -14101,7 +14380,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [153]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [158]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">invite_in</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -14120,7 +14399,7 @@ Average is: 7.986
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [154]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [159]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="s2">"Joe"</span><span class="p">)</span> 
@@ -14148,7 +14427,7 @@ Great to see you!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [155]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [160]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Override the default value for invite_in</span>
@@ -14177,7 +14456,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [156]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [161]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="s2">"Joe"</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -14216,7 +14495,7 @@ Great to see you!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [157]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [162]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Raises an error - name has no default, we must specify value for it</span>
@@ -14236,7 +14515,7 @@ Great to see you!
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[157], line 2</span>
+Cell <span class="ansi-green-fg">In[162], line 2</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)"># Raises an error - name has no default, we must specify value for it</span>
 <span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">greet</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">)</span>
 
@@ -14261,7 +14540,7 @@ Cell <span class="ansi-green-fg">In[157], line 2</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [158]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [163]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"guest"</span><span class="p">,</span> <span class="n">invite_in</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -14280,7 +14559,7 @@ Cell <span class="ansi-green-fg">In[157], line 2</span>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [159]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [164]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">()</span>
@@ -14308,7 +14587,7 @@ Great to see you!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [160]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [165]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="s2">"Joe"</span><span class="p">)</span>
@@ -14336,7 +14615,7 @@ Great to see you!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [161]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [166]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="s2">"Joe"</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
@@ -14375,7 +14654,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [162]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [167]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Option 1:   </span>
@@ -14426,7 +14705,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [163]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [168]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="n">invite_in</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14465,7 +14744,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [164]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [169]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="s2">"Joe"</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
@@ -14504,7 +14783,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [165]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [170]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="n">invite_in</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14532,7 +14811,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [166]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [171]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="n">invite_in</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
@@ -14583,7 +14862,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [167]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [172]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">meet</span><span class="p">(</span><span class="n">name1</span><span class="p">,</span> <span class="n">name2</span><span class="p">):</span>
@@ -14598,7 +14877,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [168]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [173]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">meet</span><span class="p">(</span><span class="s2">"Bill"</span><span class="p">,</span> <span class="s2">"Ted"</span><span class="p">)</span>
@@ -14625,7 +14904,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [169]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [174]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">meet</span><span class="p">(</span><span class="s2">"Harry"</span><span class="p">,</span> <span class="n">name2</span> <span class="o">=</span> <span class="s2">"Hermione"</span><span class="p">)</span>
@@ -14652,7 +14931,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [170]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [175]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">meet</span><span class="p">(</span><span class="n">name1</span> <span class="o">=</span> <span class="s2">"Mario"</span><span class="p">,</span> <span class="n">name2</span> <span class="o">=</span> <span class="s2">"Luigi"</span><span class="p">)</span>
@@ -14690,7 +14969,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [171]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [176]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">meet</span><span class="p">(</span><span class="n">name2</span> <span class="o">=</span> <span class="s2">"your father"</span><span class="p">,</span> <span class="n">name1</span> <span class="o">=</span> <span class="s2">"Luke"</span><span class="p">)</span>
@@ -14728,7 +15007,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [172]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [177]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">menu</span><span class="p">(</span><span class="n">breakfast</span><span class="p">,</span> <span class="n">lunch</span> <span class="o">=</span> <span class="s2">"PB&amp;J"</span><span class="p">,</span> <span class="n">dinner</span> <span class="o">=</span> <span class="s2">"Ramen"</span><span class="p">,</span> <span class="n">dessert</span> <span class="o">=</span> <span class="s2">"1 full pint of Ben &amp; Jerry's"</span><span class="p">):</span>
@@ -14747,7 +15026,7 @@ Come on in!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [173]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [178]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s2">"Eggs"</span><span class="p">)</span>
@@ -14778,7 +15057,7 @@ Dessert: 1 full pint of Ben &amp; Jerry's
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [174]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [179]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">menu</span><span class="p">(</span><span class="n">breakfast</span><span class="p">,</span> <span class="n">lunch</span> <span class="o">=</span> <span class="s2">"PB&amp;J"</span><span class="p">,</span> <span class="n">dinner</span> <span class="o">=</span> <span class="s2">"Ramen"</span><span class="p">,</span> <span class="n">dessert</span> <span class="o">=</span> <span class="s2">"1 full pint of Ben &amp; Jerry's"</span><span class="p">):</span>
@@ -14797,7 +15076,7 @@ Dessert: 1 full pint of Ben &amp; Jerry's
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [175]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [180]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s2">"Cereal"</span><span class="p">,</span> <span class="n">dinner</span> <span class="o">=</span> <span class="s2">"Lobster"</span><span class="p">)</span>
@@ -14828,7 +15107,7 @@ Dessert: 1 full pint of Ben &amp; Jerry's
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [176]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [181]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">menu</span><span class="p">(</span><span class="n">breakfast</span><span class="p">,</span> <span class="n">lunch</span> <span class="o">=</span> <span class="s2">"PB&amp;J"</span><span class="p">,</span> <span class="n">dinner</span> <span class="o">=</span> <span class="s2">"Ramen"</span><span class="p">,</span> <span class="n">dessert</span> <span class="o">=</span> <span class="s2">"1 full pint of Ben &amp; Jerry's"</span><span class="p">):</span>
@@ -14847,7 +15126,7 @@ Dessert: 1 full pint of Ben &amp; Jerry's
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [177]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [182]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s2">"Lox"</span><span class="p">,</span> <span class="s2">"Tuna Sandwich"</span><span class="p">,</span> <span class="s2">"Sushi"</span><span class="p">)</span>
@@ -14889,7 +15168,7 @@ Dessert: 1 full pint of Ben &amp; Jerry's
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [178]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [183]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s2">"Oatmeal"</span><span class="p">,</span> <span class="n">dessert</span> <span class="o">=</span> <span class="s2">"Skittles"</span><span class="p">,</span> <span class="s2">"Ham &amp; Cheese"</span><span class="p">)</span>
@@ -14906,7 +15185,7 @@ Dessert: 1 full pint of Ben &amp; Jerry's
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
 <pre>
-<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[178], line 1</span>
+<span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[183], line 1</span>
 <span class="ansi-red-fg">    menu("Oatmeal", dessert = "Skittles", "Ham &amp; Cheese")</span>
                                                         ^
 <span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> positional argument follows keyword argument
