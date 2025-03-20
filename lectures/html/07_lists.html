@@ -7526,6 +7526,20 @@ section.present > section.present {
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1af00a25">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>Quiz 5 tomorrow (loops, testing, lists (from today))</li>
+<li>PS4 due tonight, PS5 (loops #2) out tomorrow</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e04d6879">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7715,9 +7729,6 @@ section.present > section.present {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-
-<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">"h"</span> <span class="o">+</span> <span class="s2">"i"</span><span class="p">,</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7731,7 +7742,6 @@ section.present > section.present {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>[[1, 2, 3], [4, 5, 6]]
-[6, 'hi', False]
 </pre>
 </div>
 </div>
@@ -7996,9 +8006,7 @@ Cell <span class="ansi-green-fg">In[8], line 2</span>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># drop the first item in the list</span>
-<span class="n">new_mountains</span> <span class="o">=</span> <span class="n">mountains</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mountains</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">new_mountains</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mountains</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
 </pre></div>
 </div>
 </div>
@@ -8011,8 +8019,7 @@ Cell <span class="ansi-green-fg">In[8], line 2</span>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['everest', 'whitney', 'washington', 'denali', 'rainier']
-['whitney', 'washington', 'denali', 'rainier']
+<pre>['whitney', 'washington', 'denali', 'rainier']
 </pre>
 </div>
 </div>
@@ -8181,6 +8188,7 @@ Cell <span class="ansi-green-fg">In[8], line 2</span>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">mountains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"rushmore"</span><span class="p">,</span> <span class="s2">"whitney"</span><span class="p">,</span> <span class="s2">"washington"</span><span class="p">,</span> <span class="s2">"denali"</span><span class="p">,</span> <span class="s2">"rainier"</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mountains</span><span class="p">)</span>
 <span class="n">mountains</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"everest"</span>
 <span class="n">mountains</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"monadnock"</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mountains</span><span class="p">)</span>
@@ -8196,7 +8204,8 @@ Cell <span class="ansi-green-fg">In[8], line 2</span>
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>['everest', 'whitney', 'washington', 'denali', 'monadnock']
+<pre>['rushmore', 'whitney', 'washington', 'denali', 'rainier']
+['everest', 'whitney', 'washington', 'denali', 'monadnock']
 </pre>
 </div>
 </div>
@@ -8488,7 +8497,7 @@ Cell <span class="ansi-green-fg">In[8], line 2</span>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">catNames</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>    
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter the name of a cat (or enter nothing to stop):'</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">''</span><span class="p">:</span>
@@ -8524,8 +8533,7 @@ Cell <span class="ansi-green-fg">In[8], line 2</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">number_of_cats_so_far</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">catNames</span><span class="p">)</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter the name of cat '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_of_cats_so_far</span><span class="p">)</span> <span class="o">+</span>
-      <span class="s1">' (Or enter nothing to stop):'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Enter the name of cat '</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">number_of_cats_so_far</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' (Or enter nothing to stop):'</span><span class="p">)</span>
     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">''</span><span class="p">:</span>
         <span class="k">break</span>
@@ -8912,8 +8920,7 @@ My #4 favorite thing: Spicy food
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_average</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
-        <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">num</span>
-        <span class="c1"># sum += num</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">num</span>
     <span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">avg</span>
 </pre></div>
@@ -8929,7 +8936,7 @@ My #4 favorite thing: Spicy food
 <div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">find_average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">100000</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">find_average</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10000</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -8942,7 +8949,7 @@ My #4 favorite thing: Spicy food
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>20002.0</pre>
+<pre>2501.5</pre>
 </div>
 </div>
 </div>
@@ -9044,7 +9051,7 @@ My #4 favorite thing: Spicy food
 <div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">find_largest</span><span class="p">([</span><span class="mi">18</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">])</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">find_largest</span><span class="p">([</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -9057,7 +9064,7 @@ My #4 favorite thing: Spicy food
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>1000</pre>
+<pre>0</pre>
 </div>
 </div>
 </div>
@@ -9418,6 +9425,28 @@ Cell <span class="ansi-green-fg">In[44], line 2</span>, in <span class="ansi-cya
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>-1</pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0838d75e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Announcements">Announcements<a class="anchor-link" href="#Announcements">¶</a></h1><ul>
+<li>PS5 is out now, due 3/17<ul>
+<li>PS5 and PS6 were combined, so this PS is a bit larger (but not twice as large).</li>
+<li>It deals with loops and lists</li>
+<li>Start early!</li>
+</ul>
+</li>
+<li>Quiz 5 (loops, testing, basic lists) today!<ul>
+<li>Please correct outstanding quiz questions before leaving recitation</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
