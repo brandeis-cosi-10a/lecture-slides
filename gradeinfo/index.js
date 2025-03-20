@@ -616,7 +616,6 @@ function update() {
     let ps = [];
     let psets = {};
 
-    //for(const skillname in skills) {
     for(const pset in problems) {
         console.log(pset);
         let content = "<div class='row skill-heading'>" +
@@ -645,12 +644,13 @@ function update() {
         skillcontainer.insertAdjacentHTML('beforeend', content);
     }
 
+    skilltotal_container.insertAdjacentHTML('beforeend', "<div class='row earned-heading'><div class='twelve columns'><b>Skills earned:<br/><code>earned/cap</code></b><br/><code>(total earned/total chances)</code></div></div>");
     for(const skillname in skills) {
       const cap = skills[skillname]['cap'];
       let content = "<div class='row'>" +
-        "<div class='eight columns'>" + skillname + ": </div>" +
+          "<div class='eight columns'>" + skillname + ": </div>" +
         //"<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span></b> (<span id='" + skillname + "-overcap'>" + 0 + "</span>) / <b>" + cap + "</b></div>" +
-        "<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span> / " + cap + "</b> (<span id='" + skillname + "-overcap'></span> / " + skills[skillname].count + ")</div>" +
+          "<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span> / " + cap + "</b> (<span id='" + skillname + "-overcap'></span> / " + skills[skillname].count + ")</div>" +
         "</div>";
 
         skilltotal_container.insertAdjacentHTML( 'beforeend', content);

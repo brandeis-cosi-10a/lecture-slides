@@ -31,8 +31,10 @@
   border-bottom: 1px solid;
 }
 
-.skill-heading {
-  border-top: 1px solid;
+.earned-heading {
+  border-bottom: 1px solid;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .toggle-btn {
