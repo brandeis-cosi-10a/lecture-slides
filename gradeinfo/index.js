@@ -538,10 +538,17 @@ function update() {
         for(const skillname in problems[ps][problemname]) {
           if(problems[ps][problemname][skillname]) {
             skills[skillname].earned += 1;
-            document.getElementById(skillname + "-" + problemname + "-selected").innerHTML = "yes";
+            const element = document.getElementById(skillname + "-" + problemname + "-selected");
+            element.classList.add("green");
+            element.classList.remove("red");
+            console.log(skillname + "-" + problemname + "-selected");
+            console.log(element);
+            console.log(element.classList);
           } else {
             console.log(skillname + "-" + problemname + "-selected");
-              document.getElementById(skillname + "-" + problemname + "-selected").innerHTML = "no";
+                const element = document.getElementById(skillname + "-" + problemname + "-selected");
+                element.classList.add("red");
+                element.classList.remove("green");
           }
         }
       }
@@ -619,27 +626,27 @@ function update() {
     for(const pset in problems) {
         console.log(pset);
         let content = "<div class='row skill-heading'>" +
-        "<div class='eight columns' style='padding-top:10px'><b>" + pset + "</b> (<span id='" + pset + "-earned'></span>/<span id='" + pset + "-total'></span>)</div>" +
+        "<div class='eight columns'><b>" + pset + "</b> (<span id='" + pset + "-earned'></span>/<span id='" + pset + "-total'></span>)</div>" +
           "<div class='four columns'>" +
-            "<button class='toggle-btn' onclick='setPs(\"" + pset + "\", false)'>none</button>" +
-            "<button class='toggle-btn' onclick='setPs(\"" + pset + "\", true)'>all</button>" +
+            "<button class='toggle-btn fright' onclick='setPs(\"" + pset + "\", false)'>none</button>" +
+            "<button class='toggle-btn fright' onclick='setPs(\"" + pset + "\", true)'>all</button>" +
           "</div>" +
         "</div>";
 
         for(const problemname in problems[pset]) {
           content += "<div class='row'>" +
-            "<div class='ten columns'><b>&nbsp;&nbsp;" + problemname + "</b> (<span id='" + problemname + "-earned'></span>/<span id='" + problemname + "-total'></span>)</div>" +
-            "</div>";
+            "<div class='ten columns'><b>" + problemname + "</b> (<span id='" + problemname + "-earned'></span>/<span id='" + problemname + "-total'></span>)</div>" +
+            "</div><div class='row'>";
 
           for(const skillname in problems[pset][problemname]) {
             const selected = problems[pset][problemname][skillname] ? "checked" : "";
-            content += "<div class='row'>" +
-              "<div class='ten columns'>&nbsp;&nbsp;&nbsp;&nbsp;" + skillname + "</div>" +
-              "<div class='two columns'>" +
-                  "<input type='checkbox' " + selected + " id='" + skillname + "-" + problemname + "-selected' onclick='toggleProblem(\"" + skillname + "\", \"" + pset + "\", \"" + problemname + "\")'>" +
-              "</div>" +
-              "</div>";
+            content += "<button id='" + skillname + "-" + problemname + "-selected' class='toggle-btn " + (selected ? "green" : "red") + "' onclick='toggleProblem(\"" + skillname + "\", \"" + pset + "\", \"" + problemname + "\")'>" +
+                skillname +
+                "</button>";
+              //"</div>" +
+              //"</div>";
           }
+          content += "</div>";
         }
         skillcontainer.insertAdjacentHTML('beforeend', content);
     }
@@ -647,10 +654,14 @@ function update() {
     skilltotal_container.insertAdjacentHTML('beforeend', "<div class='row earned-heading'><div class='twelve columns'><b>Skills earned:<br/><code>earned/cap</code></b><br/><code>(total earned/total chances)</code></div></div>");
     for(const skillname in skills) {
       const cap = skills[skillname]['cap'];
-      let content = "<div class='row'>" +
+      let content = "<div class='row' style='text-align: right'>" +
+        // skillname + " <span class='skill-count'><b><span class='skill-num' id='" + skillname + "-total'>" + 0 + "</span>/<span class='skill-num'>" + cap + "</span></b> (<span class='skill-num'  id='" + skillname + "-overcap'></span>/<span class='skill-num'>" + skills[skillname].count + "</span>)</span>" +
+
           "<div class='eight columns'>" + skillname + ": </div>" +
-        //"<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span></b> (<span id='" + skillname + "-overcap'>" + 0 + "</span>) / <b>" + cap + "</b></div>" +
-          "<div class='four columns'><b><span id='" + skillname + "-total'>" + 0 + "</span> / " + cap + "</b> (<span id='" + skillname + "-overcap'></span> / " + skills[skillname].count + ")</div>" +
+          "<div class='four columns'>" +
+            "<span class='skill-count'><b><span class='skill-num' id='" + skillname + "-total'>" + 0 + "</span>/<span class='skill-num'>" + cap + "</span></b> (<span class='skill-num'  id='" + skillname + "-overcap'></span>/<span class='skill-num'>" + skills[skillname].count + "</span>)</span>" +
+          "</div>" +
+
         "</div>";
 
         skilltotal_container.insertAdjacentHTML( 'beforeend', content);

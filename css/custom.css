@@ -1,9 +1,39 @@
 .section {
-  padding: 5rem 0 3rem;
+  padding: 2rem 0 1rem;
 }
 
 .hero-heading {
   text-align: center;
+}
+
+.green {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.green:hover {
+  background-color: #218838;
+  color: #ffffff;
+}
+
+.green:focus {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.red {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.red:hover {
+  background-color: #c82333;
+  color: #ffffff;
+}
+
+.red:focus {
+  background-color: #dc3545;
+  color: #ffffff;
 }
 
 .title {
@@ -13,7 +43,7 @@
 }
 .summary {
   text-align: center;
-  background-color: #ffe1a0;
+  background: #ffe1a0;
   color: #304f60;
 }
 
@@ -41,8 +71,46 @@
   line-height: 2rem;
   height: 3rem;
   padding: 0px 5px 0px 5px;
-  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+
+.skill-count {
+  display: inline-block;
+  width: 11rem;
+  text-align: center;
+}
+
+.skill-num {
+  display: inline-block;
+  width: 2rem;
+}
+
+.fright {
   float: right;
+}
+
+.skill-heading {
+  padding-top: 2rem;
+}
+
+@media (max-width: 750px) {
+  .stat {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+  }
+
+  .stat-label {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+  }
 }
 
 /* Bigger than 550 */
