@@ -147,18 +147,6 @@ let problems = {
       "Loops - nested": false,
       "Unit Testing": false
     },
-    "Pascals Triangle": {
-      "Using pre-existing code": false,
-      "Expressions": false,
-      "Function returns": false,
-      "Function invocation": false,
-      "Loops - choosing structure": false,
-      "Fencepost algorithm": false,
-      "Loops - nested": false,
-      "Unit Testing": false
-    }
-  },
-  "PS6": {
     "To-do list": {
       "Variables": false,
       "input()": false,
@@ -171,18 +159,6 @@ let problems = {
       "Lists get/set": false,
       "List iteration": false,
       "Functional decomposition": false
-    },
-    "Number filter": {
-      "Datatypes": false,
-      "input()": false,
-      "Conditionals": false,
-      "Loops - for/range": false,
-      "Loops - while": false,
-      "Cumulative algorithm": false,
-      "Fencepost algorithm": false,
-      "Loops - choosing structure": false,
-      "Lists get/set": false,
-      "List iteration": false
     },
     "Odd Calendar": {
       "Datatypes": false,
